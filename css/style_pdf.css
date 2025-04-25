@@ -1,0 +1,68 @@
+﻿/*CSS Document */
+
+body {
+font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+color: #454545;
+font-size: 13px;
+}
+
+#container {
+width:960px;
+margin: 0 auto;
+}
+.titTestata {
+color: #333365; 
+font-weight: bold; 
+font-size: 20px; 
+text-align:right;
+}
+.orange {
+color: #fe6634;
+}
+hr {
+height:1px;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom:1px dotted #666; 
+
+}
+td {
+padding:5px;
+}
+.boxFattura {
+background-color:#eee;
+border:2px solid #54495a;
+float:right;
+width:490px;
+margin-top:50px;
+}
+.boxFattura td {
+border-bottom:1px dotted #54495a;
+border-right:1px dotted #54495a;
+padding:15px;
+}
+.boxFattura td.totFattura {
+background-color:#fe6634;
+color:#FFF;
+font-size:18px;
+font-weight:bold;
+border-right:none;
+border-bottom:none;
+}
+.boxFattura td p {
+    margin:0;
+    padding:0;
+}
+#pagato {
+position:absolute;
+z-index:2000;
+}
+#pagato.sopra {
+top:20px;
+left:125px;
+}
+#pagato.sotto {
+top:350px;
+left:80px;
+}

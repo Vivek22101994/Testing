@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaInvoice_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1435\EXPRESS01;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_2017DEVS" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.INV_LK_PAYMENT_CAUSE" Member="INV_LK_PAYMENT_CAUSEs">
+    <Type Name="INV_LK_PAYMENT_CAUSE">
+      <Column Name="code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INV_TBL_INVOICE_ITEM" Member="INV_TBL_INVOICE_ITEM">
+    <Type Name="INV_TBL_INVOICE_ITEM">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_invoice" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quantity_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price_unit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="price_tf" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="price_tax_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price_tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="price_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INV_TBL_PAYMENT" Member="INV_TBL_PAYMENT">
+    <Type Name="INV_TBL_PAYMENT">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="rnt_pid_reservation" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="rnt_reservation_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="rnt_reservation_part" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="direction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_mode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_cause" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_invoice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_client" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_place" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pr_tf" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="is_complete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_pid_txn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_txn_gross" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtExpire" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="creation_pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="state_body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="state_pid_pptxn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_noInvoice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="chargeFee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="chargeFeePerc" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="chargeFeeInvoice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="barClayStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="barClayError" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="barClayPayUncertain" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="barClayAcceptance" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="barClayPayId" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INV_TBL_DIGITAL_INVOICE_ERROR" Member="INV_TBL_DIGITAL_INVOICE_ERROR">
+    <Type Name="INV_TBL_DIGITAL_INVOICE_ERROR">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_invoice" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="error" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INV_TBL_INVOICE" Member="INV_TBL_INVOICE">
+    <Type Name="INV_TBL_INVOICE">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_holder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_pid_reservation" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="rnt_reservation_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pr_tf" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_tax_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="inv_pid_payment" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inv_mode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_counter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_direction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_dtInvoice" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="inv_dtExpire" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="inv_dtPayment" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="inv_notesInner" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inv_notesPublic" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="is_payed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_pid_discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_loc_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_loc_state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_loc_city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_loc_address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="cl_loc_zip_code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cl_doc_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cl_doc_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cl_doc_issue_place" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cl_doc_issue_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cl_doc_expiry_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cl_doc_vat_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cl_doc_cf_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="is_exported_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_exported_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_exported_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_loc_province" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="responseUniqueId" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="idCodice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="numSentInvoice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="xmltext" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="numSentCreditNotes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INV_TBL_DIGITAL_CREDITNOTE_ERROR" Member="INV_TBL_DIGITAL_CREDITNOTE_ERRORs">
+    <Type Name="INV_TBL_DIGITAL_CREDITNOTE_ERROR">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_invoice" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="error" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.INV_TBL_INVOICE_NOTIFICATION" Member="INV_TBL_INVOICE_NOTIFICATIONs">
+    <Type Name="INV_TBL_INVOICE_NOTIFICATION">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_invoice" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="uuid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="invoice_uuid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InvPayBancaSellaVerifiedByVisaTXN" Member="InvPayBancaSellaVerifiedByVisaTXN">
+    <Type Name="InvPayBancaSellaVerifiedByVisaTXN">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="reservationId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="paymentId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="VbVRisp" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="transKey" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PARes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InvInvoiceTBL" Member="InvInvoiceTBL">
+    <Type Name="InvInvoiceTBL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="refererInvoiceID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="cashInOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cashTaxFree" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTaxAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashPayed" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashUnpayed" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="docIsRegistered" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="docCaseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="docCaseCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="docNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="docYearCounter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="docIssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="docExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="notesInner" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="notesPublic" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdUserNameFull" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ownerId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ownerUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ownerCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ownerNameFull" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ownerType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="owner_docType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="owner_docNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="owner_docIssuePlace" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="owner_docIssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="owner_docExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="owner_docVat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="owner_docCf" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="owner_locCountry" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="owner_locState" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="owner_locCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="owner_locAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="owner_locZipCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InvInvoiceItemTBL" Member="InvInvoiceItemTBL">
+    <Type Name="InvInvoiceItemTBL">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidInvoice" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="quantityType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantityAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="singleUnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTaxFree" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTaxAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTaxID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cashTotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

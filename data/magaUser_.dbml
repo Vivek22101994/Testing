@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaUser_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1433\SQLEXPRESS2014;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_remoteaccess" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.USR_RL_ADMIN_COUNTRY" Member="USR_RL_ADMIN_COUNTRies">
+    <Type Name="USR_RL_ADMIN_COUNTRY">
+      <Column Name="pid_admin" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_country" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_RL_COUNTRY_LANG" Member="USR_RL_COUNTRY_LANGs">
+    <Type Name="USR_RL_COUNTRY_LANG">
+      <Column Name="pid_country" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_admin" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_VIEW_RL_COUNTRY_LANG" Member="USR_VIEW_RL_COUNTRY_LANGs">
+    <Type Name="USR_VIEW_RL_COUNTRY_LANG">
+      <Column Name="pid_country" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="country_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lang_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_admin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="admin_name" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_LK_ADMIN_AVAILABILITY" Member="USR_LK_ADMIN_AVAILABILITies">
+    <Type Name="USR_LK_ADMIN_AVAILABILITY">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="is_working_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_mailing_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_TBL_ADMIN_AVAILABILITY" Member="USR_TBL_ADMIN_AVAILABILITies">
+    <Type Name="USR_TBL_ADMIN_AVAILABILITY">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_availability" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_availability" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_working_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_mailing_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_LK_MAIL_COUNT" Member="USR_LK_MAIL_COUNTs">
+    <Type Name="USR_LK_MAIL_COUNT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mail_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_LK_HONORIFIC" Member="USR_LK_HONORIFICs">
+    <Type Name="USR_LK_HONORIFIC">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_TB_DOC_TYPE" Member="USR_TB_DOC_TYPEs">
+    <Type Name="USR_TB_DOC_TYPE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_ADMIN_CONFIG" Member="USR_ADMIN_CONFIGs">
+    <Type Name="USR_ADMIN_CONFIG">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_smtp_host" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_smtp_port" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mailing_smtp_pwd" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_smtp_ssl" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="mailing_smtp_usr" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_from_name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_from_mail" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_signature" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mailing_header" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mailing_imap_host" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_imap_port" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mailing_imap_pwd" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_imap_ssl" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="mailing_imap_usr" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_RL_ROLE_PERMISSION" Member="USR_RL_ROLE_PERMISSIONs">
+    <Type Name="USR_RL_ROLE_PERMISSION">
+      <Column Name="pid_role" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="permission" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="can_read" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="can_edit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="can_create" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="can_delete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="only_owned" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_TBL_OWNER" Member="USR_TBL_OWNER">
+    <Type Name="USR_TBL_OWNER">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="birth_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="birth_place" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birth_country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birth_state" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="loc_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="loc_state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="loc_city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="loc_address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="loc_zip_code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="account_bank_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="account_bank_address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="account_abi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_cab" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_swift" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_holder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="account_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_cin" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="account_iban" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="count_pwd_sent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="contact_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact_email_2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact_email_3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact_email_4" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact_email_5" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_phone_trip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_phone_mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_phone_office" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_issue_place" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_issue_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="doc_expiry_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="doc_vat_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_cf_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_RL_ADMIN_LANG" Member="USR_RL_ADMIN_LANG">
+    <Type Name="USR_RL_ADMIN_LANG">
+      <Column Name="pid_admin" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_TBL_ROLE" Member="USR_TBL_ROLE">
+    <Type Name="USR_TBL_ROLE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="permission_list" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="rnt_onlyOwnedRequests" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_onlyOwnedReservations" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_onlyOwnedAgents" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_onlyOwnUserDetails" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_onlyOwnedPlannerCheckinCheckout" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_ADMIN" Member="USR_ADMIN">
+    <Type Name="USR_ADMIN">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="unique_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="pid_config" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="surname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_canHaveAgent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_canHaveRequest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_canHaveReservation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hasAuthUserReport" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cell" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="media_folder" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="mailing_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mailing_days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_1_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_1_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_2_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_2_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_3_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_3_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_4_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_4_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_5_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_5_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_6_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_6_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_7_start" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="day_7_end" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rnt_canChangeReservationAccount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isAgentContact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USR_TBL_CLIENT" Member="USR_TBL_CLIENTs">
+    <Type Name="USR_TBL_CLIENT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="birth_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="birth_place" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birth_country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birth_state" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="loc_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="loc_state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="loc_city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="loc_address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="loc_zip_code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="account_bank_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="account_bank_address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="account_abi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_cab" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_swift" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_holder" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="account_number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="account_cin" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="account_iban" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isCompleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="contact_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contact_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_phone_trip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_phone_mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_phone_office" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contact_fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_issue_place" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_issue_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="doc_expiry_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="doc_vat_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_cf_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="loc_province" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="inv_loc_province" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="idCodice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

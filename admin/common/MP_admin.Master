@@ -1,0 +1,526 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP_admin.master.cs" Inherits="RentalInRome.admin.common.MP_admin" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Src="~/admin/uc/UC_loader.ascx" TagName="UC_loader" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Rental In Rome - Area Amministrativa</title>
+    <script src="/js/tiny_mce/tiny_mce.js" type="text/javascript"></script>
+    <script src="/js/tiny_mce/init.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        @import url(/admin/css/adminStyle.css?<%= DateTime.Now.Ticks%>);
+        @import url(/js/chrome/chromestyle-admin.css);
+        @import url(/js/shadowbox/shadowbox.css);
+        @import url(/jquery/css/ui-core.css);
+        @import url(/jquery/css/ui-autocomplete.css);
+        @import url(/jquery/css/ui-datepicker.css);
+        @import url(/css/common.css);
+    </style>
+    <script src="/jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-all.min.js" type="text/javascript"></script>
+    <script src="/jquery/datepicker-lang/jquery.ui.datepicker-it.js" type="text/javascript"></script>
+    <script src="/jquery/plugin/scrollTo/scrollTo.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.tooltip.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/rollover.js"></script>
+    <script type="text/javascript" src="/js/chrome/chrome.js"></script>
+    <script type="text/javascript" src="/js/shadowbox/shadowbox.js"></script>
+    <script type="text/javascript" src="/js/shadowbox/players/shadowbox-iframe.js"></script>
+    <script type="text/javascript" src="/js/shadowbox/players/shadowbox-html.js"></script>
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+        <script type="text/javascript">
+            function setToolTipAction() {
+                $('.ttp').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+                $('._tooltip').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+                $('.ico_tooltip_right').tooltip({ track: true, delay: 0, positionLeft: false, top: 20, left: 20 });
+                $('.ico_tooltip').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+            }
+            function setToolTip() {
+                setTimeout("setToolTipAction();", 0);
+            }
+            function SITE_showLoader() {
+                $('#<%=loading_cont.ClientID %>').show();
+            }
+            function SITE_hideLoader() {
+                $('#<%=loading_cont.ClientID %>').hide();
+            }
+
+        </script>
+    </telerik:RadCodeBlock>
+    <script type="text/javascript">
+        function RedirectPage(url) {
+            if (url)
+                window.location = url;
+            else {
+                window.location = "/admin/";
+                Shadowbox.close();
+            }
+        }
+        function getCheckBoxListValues(elmID, splitSep) {
+            if (splitSep == undefined || splitSep == null) splitSep = "";
+            var returnArray = new Array();
+            var returnString = "";
+            var returnStringSep = "";
+            $("#" + elmID + " input:checkbox:checked").each(function (index) { returnArray.push($(this).val()); returnString += returnStringSep + $(this).val(); returnStringSep = splitSep });
+            return splitSep == "" ? returnArray : returnString;
+        }
+        function CheckSession() {
+            var _url = "/admin/common/SessionCheck.aspx";
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    if (html != "ok")
+                        $('#session_timeout_cont').show();
+                    else
+                        setTimeout("CheckSession()", (20 * 60 * 1000));
+                }
+            });
+        }
+        function Check_mailClients(start) {
+            var restart = true;
+            var _url = "/admin/common/mailClients.aspx";
+            if (start) {
+                _url += "?start=true";
+                restart = false;
+            }
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    $('#mailClients_reporter').html("" + html);
+                    if (restart)
+                        setTimeout("Check_mailClients()", (5 * 60 * 1000));
+                }
+            });
+        }
+        function checkReservationExpire(start) {
+            var restart = true;
+            var _url = "/admin/common/checkReservationExpire.aspx";
+            if (start) {
+                _url += "?start=true";
+                restart = false;
+            }
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    //$('#mailClients_reporter').html("" + html);
+                    //if (restart)
+                    //setTimeout("checkReservationExpire()", (5 * 60 * 1000));
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function RNT_refresh_cache(action) {
+            $("#RNT_refresh_cache_reporter").html("");
+            var alert = "";
+            if (action == "all") alert = "Aggiornata tutta la cache ";
+            if (action == "rnt_estate") alert = "Aggiornata la cache delle Strutture";
+            if (action == "rnt_reservation") alert = "Aggiornata la cache Prenotazioni / Disponibilità";
+            var _url = "/webservice/refresh_cache.aspx";
+            _url += "?action=" + action;
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    if (html == "ok") $("#RNT_refresh_cache_reporter").html(alert);
+                    else $("#RNT_refresh_cache_reporter").html("Errore imprevisto");
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(window).load(function () {
+                $(".hiddenbeforload").show();
+            });
+        });
+    </script>
+</head>
+<body onload="CheckSession();Check_mailClients();checkReservationExpire();">
+    <form id="form1" runat="server">
+        <asp:PlaceHolder ID="PH_session_timeout" runat="server">
+            <div id="session_timeout_cont" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0; display: none;" onclick="window.location = '/admin/login.aspx?referer=<%= Server.UrlEncode(Request.RawUrl)%>';">
+                <div class="info_area cont" style="">
+                    <span>Sessione scaduta !<br />
+                        si prega di autenticarsi...</span>
+                </div>
+            </div>
+        </asp:PlaceHolder>
+        <asp:PlaceHolder ID="PH_admin_offline" runat="server" Visible="false">
+            <div id="session_timeout_cont" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0;" onclick="window.location = '/admin/login.aspx';">
+                <div class="info_area cont" style="">
+                    <span>Gestionale fuori servizio!<br />
+                        si prega di riprovare più tardi...</span>
+                </div>
+            </div>
+        </asp:PlaceHolder>
+        <div id="required_fileds_validator" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0; display: none;" onclick="document.getElementById('required_fileds_validator').style.display = 'none';">
+            <div class="info_area cont">
+                <span>Campi evidenziati in rosso sono obbligatori !<br />
+                    si prega di compilare tutti...</span>
+            </div>
+        </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout ="360000">
+        </asp:ScriptManager>
+        <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
+        </telerik:RadWindowManager>
+        <asp:UpdateProgress ID="loading_cont" runat="server" DisplayAfter="10">
+            <ProgressTemplate>
+                <%="<div id=\"loading_big_cont\"></div><div id=\"overlay_site\"></div>" %>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+        <telerik:RadCodeBlock ID="rcbMenu" runat="server">
+            <div id="header_admin">
+                <img src="/images/css/logo.gif" class="logo" height="76px" alt="" />
+                <div id="menu">
+                    <div id="chromemenu" class="chromestyle" style="margin-top: 50px;">
+                        <ul>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("usr_mail")
+                               || UserAuthentication.hasPermission("usr_mail_config")
+                               || UserAuthentication.hasPermission("usr_operator")
+                               || UserAuthentication.hasPermission("usr_operator_avv")
+                               || UserAuthentication.hasPermission("usr_country_lang")
+                               || UserAuthentication.hasPermission("usr_client")
+                               || UserAuthentication.hasPermission("usr_owner")
+                               || UserAuthentication.hasPermission("usr_agent")
+                               || UserAuthentication.hasPermission("authUserReport")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_user">Anagrafica</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("rnt_estate")
+                               || UserAuthentication.hasPermission("rnt_request")
+                               || UserAuthentication.hasPermission("rnt_reservation_planner")
+                               || UserAuthentication.hasPermission("rnt_reservation_list")
+                               || UserAuthentication.hasPermission("rnt_reservation_event")
+                               || UserAuthentication.hasPermission("rnt_period")
+                               || UserAuthentication.hasPermission("rnt_estate_comment")
+                               || UserAuthentication.hasPermission("rnt_special_offer")
+                               || UserAuthentication.hasPermission("extras")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_rnt">Rental</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("loc_city")
+                               || UserAuthentication.hasPermission("loc_zone")
+                               || UserAuthentication.hasPermission("loc_point")
+                               || UserAuthentication.hasPermission("loc_pointtype")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_loc">Location</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("cont_stp")
+                               || UserAuthentication.hasPermission("cont_tour")
+                               || UserAuthentication.hasPermission("cont_tour_item")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_cont">Contenuti</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("blog"))
+                                   { %>
+                                <a href="#" rel="drop_menu_blog">Blog</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("manage_lang")
+                               || UserAuthentication.hasPermission("def_sys_setting")
+                               || UserAuthentication.hasPermission("mail_template")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_admin">Gestione</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("inv_invoice")
+                               || UserAuthentication.hasPermission("inv_payment")
+                               || UserAuthentication.hasPermission("rep_stats")
+                               || UserAuthentication.hasPermission("RntDiscountPromoCode")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_inv">Contabilità</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("limo_pickupPlace")
+                               || UserAuthentication.hasPermission("limo_transportDuration")
+                               || UserAuthentication.hasPermission("limo_transportType")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_limo">Limo</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <% if (UserAuthentication.hasPermission("Statistiche_Account")
+                              || UserAuthentication.hasPermission("Statistiche_Immobili")
+                              || UserAuthentication.hasPermission("Tempi_di_Risposta")
+                               )
+                                   { %>
+                                <a href="#" rel="drop_menu_stat">Statistiche</a>
+                                <%  }%>
+                            </li>
+                            <li>
+                                <a href="#" rel="drop_refresh_cache">Aggiorna la cache</a></li>
+                            <li>
+                                <a id="RNT_refresh_cache_reporter"></a>
+                            </li>
+                            <li>
+                                <a href="/admin/login.aspx?logout=true">Logout</a>
+                            </li>
+                            <li>
+                                <a id="mailClients_reporter"></a>
+                            </li>
+                            <asp:PlaceHolder ID="PH_admin_menu" runat="server"></asp:PlaceHolder>
+                        </ul>
+                    </div>
+                    <div id="drop_refresh_cache" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <a href="javascript:RNT_refresh_cache('rnt_estate');">Strutture</a>
+                            <a href="javascript:RNT_refresh_cache('rnt_reservation');">Prenotazioni / Disponibilità</a>
+                            <a href="javascript:RNT_refresh_cache('rnt_comment');">Commenti Votazioni delle Strutture</a>
+                            <a href="javascript:RNT_refresh_cache('def_sys_setting');">Variabili del sistema</a>
+                            <a href="javascript:RNT_refresh_cache('');"></a>
+                            <a href="javascript:RNT_refresh_cache('all');">* tutto</a>
+                            <a target="_blank" href="http://www.rentalinvenice.com/webservice/refresh_cache.aspx?action=all">Rental in Venice</a>
+                            <a target="_blank" href="http://www.rentalinflorence.com/webservice/refresh_cache.aspx?action=all">Rental in Florence</a>
+                            <a target="_blank" href="http://www.rentalinkenya.com/webservice/refresh_cache.aspx?action=all">Rental in Kenya</a>
+                        </div>
+                    </div>
+                    <div id="drop_menu_user" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("usr_mail", "/admin/usr_mail_list.aspx", "E-mail")%>
+                            <%= drawMenuItem("usr_mail_config", "/admin/usr_admin_config_list.aspx", "Configurazione Mailing")%>
+                            <%= drawMenuItem("usr_operator", "/admin/usr_operator_list.aspx", "Gestione Account")%>
+                            <%= drawMenuItem("usr_operator_avv", "/admin/usr_admin_availability.aspx", "Disponibilità Account")%>
+                            <%= drawMenuItem("usr_country_lang", "/admin/usr_country_lang.aspx", "Gestione Lingue per Location")%>
+                            <%= drawMenuItem("usr_client", "/admin/usr_client_list.aspx", "Elenco Clienti")%>
+                            <%= drawMenuItem("usr_owner", "/admin/usr_owner_list.aspx", "Elenco Proprietari")%>
+                            <%= drawMenuItem("usr_agent", "/admin/modRental/agentList.aspx", "Elenco Agenzie")%>
+                            <%= drawMenuItem("usr_client", "/admin/modAuth/clientList.aspx", "Anagrafica Contabilità")%>
+                            <%= drawMenuItem("authUserReport", "/admin/modAuth/userReportList.aspx", "Gestione Report")%>
+                            <%= drawMenuItem("usr_agent", "/admin/modRental/EstateExtraOwnerList.aspx", "Elenco Società di Servizi")%>
+                        </div>
+                    </div>
+                    <div id="drop_menu_rnt" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("rnt_estate", "/admin/rnt_estate_list.aspx", "Appartamenti")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/EstateInternsSubTypeList.aspx", "Interni SubType")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/EstateInternsFeatureList.aspx", "Interni Caratteristiche")%>
+
+                            <%= drawMenuItem("superadmin", "/admin/modRental/EstateSequence.aspx", "Cambia ordine delle strutture")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/EstateZoneSequence.aspx", "Cambia ordine delle strutture per zona")%>
+                            <%= drawMenuItem("rnt_request", "/admin/rnt_request_list.aspx", "Richieste")%>
+                            <%= drawMenuItem("rnt_reservation_list", "/admin/rnt_estate_search.aspx", "Ricerca disponibili")%>
+                            <%= drawMenuItem("rnt_reservation_planner", "/admin/rnt_reservation.aspx", "Prenotazioni / Disponibilità - griglia")%>
+                            <%= drawMenuItem("rnt_reservation_list", "/admin/rnt_reservation_list.aspx", "Prenotazioni / Disponibilità - elenco")%>
+                            <%= drawMenuItem("rnt_reservation_event", "/admin/rnt_reservation_event.aspx", "Planner CheckIn / CheckOut")%>
+                            <%= drawMenuItem("rnt_period", "/admin/modRental/SeasonDates.aspx", "Gestione di Stagioni")%>
+                            <%= drawMenuItem("rnt_estate_comment", "/admin/rnt_estate_comment.aspx", "Commenti per Appartamenti - OLD")%>
+                            <%= drawMenuItem("rnt_estate_comment", "/admin/modRental/EstateCommentsList.aspx", "Commenti per Appartamenti - NEW")%>
+                            <%= drawMenuItem("rnt_special_offer", "/admin/rnt_special_offer_list.aspx", "Offerte Speciali")%>
+                            <%= drawMenuItem("rnt_estate", "/admin/rnt_estate_position.aspx", "Posizionamento in HomePage")%>
+                            <%= drawMenuItem("rnt_estate", "/admin/rnt_config_list.aspx", "Gestione accessori")%>
+                            <%= drawMenuItem("extras", "/admin/modRental/EstateExtrasList.aspx", "Extra services")%>
+                            <%= drawMenuItem("extras", "/admin/modRental/EstateExtraMacroCategoryList.aspx", "Extra services Category")%>
+                            <%= drawMenuItem("rnt_estate", "/admin/modAuth/errorEcoLog.aspx", "Errori ECO")%>
+                            <%= drawMenuItem("rnt_estate", "/admin/modAuth/errorSrsLog.aspx", "Errori SRS")%>
+                            <%= drawMenuItem("rnt_estate", "/admin/modRental/IcalImportLog.aspx", "Errori IcalImport")%>
+                        </div>
+                    </div>
+                    <div id="drop_menu_limo" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("limo_pickupPlace", "/admin/limo_pickupPlace_manage.aspx", "Punti di trasporto")%>
+                            <%= drawMenuItem("limo_transportDuration", "/admin/limo_transportDuration.aspx", "Durata di trasporto")%>
+                            <%= drawMenuItem("limo_transportType", "/admin/limo_transportType.aspx", "Tipi di trasporto")%>
+                        </div>
+                    </div>
+                    <div id="drop_menu_stat" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("Statistiche_Account", "/admin/statistiche/account.aspx", "Account Vendite")%>
+                            <%= drawMenuItem("Statistiche_Immobili", "/admin/statistiche/immobili.aspx", "Prenotazioni Strutture")%>
+                            <%= drawMenuItem("Statistiche_Timing", "/admin/statistiche/timing.aspx", "Tempi di Risposta")%>
+                            <%= drawMenuItem("Statistiche_Timing", "/admin/modRental/ReservationOccupancyReport.aspx", "Occupazione e Prenotazioni")%>
+                        </div>
+                    </div>
+                    <div id="drop_menu_loc" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("loc_city", "/admin/loc_city_list.aspx", "Città")%>
+                            <%= drawMenuItem("loc_zone", "/admin/loc_zone_list.aspx", "Zone")%>
+                            <%= drawMenuItem("loc_point", "/admin/loc_point_list.aspx", "Punti d'interesse")%>
+                            <%= drawMenuItem("loc_pointtype", "/admin/loc_pointtype_list.aspx", "Tipologie Punti d'interesse")%>
+                            <%= drawMenuItem("loc_city", "/admin/loc_country_list.aspx", "Country")%>
+                        </div>
+                    </div>
+                    <div id="drop_menu_blog" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("blog", "/admin/modBlog/ZoneList.aspx", "Zone di Roma")%>
+                            <%= drawMenuItem("blog", "/admin/modBlog/articleList.aspx", "Articoli")%>
+                            <%= drawMenuItem("blog", "/admin/modBlog/tagEdit.aspx", "Tag d'Articoli")%>
+                            <%= drawMenuItem("blog", "/admin/modBlog/commentList.aspx", "Commenti per Articoli")%>
+                            <%= drawMenuItem("blog", "/admin/modBlog/categoryList.aspx", "Categorie")%>
+                        </div>
+                    </div>
+                    <div id="drop_menu_cont" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("cont_stp", "/admin/cont_stp_list.aspx", "Gestione Pagine Statiche")%>
+                            <%= drawMenuItem("cont_stp", "/admin/modContent/RifStpList.aspx", "Pagine di RentalInFlorence")%>
+                            <%= drawMenuItem("cont_stp", "/admin/modContent/RivStpList.aspx", "Pagine di RentalInVenice")%>
+                            <%= drawMenuItem("cont_stp", "/admin/modContent/RiKenyaStpList.aspx", "Pagine di RentalInKenya")%>
+                            <%= drawMenuItem("cont_tour", "/admin/cont_tour_list.aspx", "Gestione Tour")%>
+                            <%= drawMenuItem("cont_tour_item", "/admin/cont_tour_item_list.aspx", "Escursioni-Tour")%>
+                            <%= drawMenuItem("cont_stp", "/admin/manage_static_block.aspx", "Gestione Blocchi Statici")%>
+                            <%= drawMenuItem("","","") %>
+                            <a style="display: none;" href="manage_static_collection.aspx">Gestione Collezioni Statici</a>
+                        </div>
+                    </div>
+                    <div id="drop_menu_admin" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("superadmin", "/admin/modRental/BcomHotelEdit.aspx", "Booking.com - Hotels")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/BcomRequestLog.aspx", "Booking.com - Log")%>
+                             <%= drawMenuItem("superadmin", "/admin/modRental/chnlExpediaHotelEdit.aspx", "Expedia - Hotels")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/chnlExpediaRequestLog.aspx", "Expedia - Log")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/BcomExport_Excel.aspx", "Booking.com - Export")%>
+                            <%= drawMenuItem("superadmin", "/admin/util_UrlRedirectTool.aspx", "Redirect delle pagine vecchie")%>
+                            <%= drawMenuItem("manage_lang", "/admin/modContent/labelEdit.aspx", "Variabili di Lingua")%>
+                            <%= drawMenuItem("def_sys_setting", "/admin/def_sys_setting.aspx", "Variabili del sistema")%>
+                            <%= drawMenuItem("mail_template", "/admin/mail_template.aspx", "Gestione Mail Template")%>
+                            <%= drawMenuItem("superadmin", "/admin/usr_role_permission.aspx", "Gestione Permessi")%>
+                            <%= drawMenuItem("superadmin", "/admin/usr_admin_role.aspx", "Gestione Utenti-Ruoli-img_Web")%>
+                            <%= drawMenuItem("RntDiscountPromoCode", "/admin/modRental/DiscountPromoCodeList.aspx", "Sconti PromoCode")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/DiscountTypeList.aspx", "Sconti per le agenzie")%>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/ChannelManagerEdit.aspx", "Gestione Google Calendar")%>
+                            <%= drawMenuItem("util_sendMail", "/admin/util_sendMail.aspx", "Invio mail per agenzie")%>
+                            <%if (UserAuthentication.CurrentUserID == 2)
+                              { %>
+                            <a href="/admin/modAppServerCommon/BlockedIpList.aspx">Elenco IP bloccati</a>
+                            <a href="/admin/util_ErrorLog.aspx">ErrorLog</a>
+                            <a href="/admin/modAuth/errorLog.aspx">ErrorLog - new</a>
+                            <a href="/admin/util_MailErrorLog.aspx">MailErrorLog</a>
+                            <a href="/admin/modContent/langEdit.aspx">Gestione lingue del sito</a>
+                            <a href="/admin/modContent/SysConfigEdit.aspx">Tutte le variabili del sistema</a>
+                            <%} %>
+                            <%= drawMenuItem("superadmin", "/admin/modRental/EstateLog.aspx", "Log Strutture")%>
+                            <%= drawMenuItem("","","") %>
+                            <a style="display: none;" href="pdf_template.aspx">Gestione Pdf Template</a>
+                        </div>
+                    </div>
+                    <div id="drop_menu_inv" class="dropmenudiv">
+                        <div style="text-align: left;">
+                            <%= drawMenuItem("inv_invoice", "/admin/inv_invoice_list.aspx", "Fatture")%>
+                            <%= drawMenuItem("inv_invoice", "/admin/inv_invoice_export.aspx", "Fatture Esportati")%>
+                            <%= drawMenuItem("inv_invoice", "/admin/inv_invoice_export.aspx?type=2", "Fatture Esportati Co.Ge.")%>
+                            <%= drawMenuItem("inv_invoice", "/admin/modInvoice/invoiceList.aspx", "Nota di credito")%>
+                            <%= drawMenuItem("inv_invoice", "/admin/modInvoice/invCashTaxEdit.aspx", "Gestione Iva")%>
+                            <%= drawMenuItem("rep_stats", "/admin/rnt_reservation_list_totals.aspx", "Statistiche")%>
+                            <%= drawMenuItem("inv_payment", "/admin/modInvoice/invCashDocumentList.aspx", "Documenti")%>
+                            <%= drawMenuItem("inv_payment", "/admin/modInvoice/invCashBook.aspx", "Prima nota")%>
+                            <%= drawMenuItem("inv_payment", "/admin/modInvoice/cashBookPrintList.aspx", "Stampa Riepilogo PrimaNota")%>
+                            <%= drawMenuItem("inv_payment", "/admin/modInvoice/invCashDocCaseEdit.aspx", "Elenco Causale Pagamento")%>
+                            <%= drawMenuItem("inv_payment", "/admin/modInvoice/invCashPlaceEdit.aspx", "Elenco Posti di Pagamento")%>
+                            <%= drawMenuItem("inv_payment", "/admin/modInvoice/invCashTypeEdit.aspx", "Elenco Tipi di Pagamento")%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </telerik:RadCodeBlock>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="nulla">
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+        function SetClassName(elm, cl) {
+            elm.className = "" + cl;
+        }
+        function showTooltip() {
+            setTimeout("document.getElementById('sb-title').style.height = 'auto'", 1500);
+            setTimeout("document.getElementById('sb-title-inner').style.height = 'auto'", 1500);
+        }
+        function Shadowbox_init() {
+            Shadowbox.init({
+                handleOversize: "resize",
+                onOpen: showTooltip
+            });
+        }
+        Shadowbox_init();
+        function openShadowboxImg(path) {
+            Shadowbox.open({
+                content: "" + path,
+                player: 'img'
+            });
+        }
+        function OpenShadowbox(url, width, height) {
+            Shadowbox.open({
+                content: url,
+                player: 'iframe',
+                height: height,
+                width: width
+            });
+        }
+        function OpenShadowboxHtml(container, width, height) {
+            Shadowbox.open({
+                content: $("#" + container).html(),
+                player: 'html',
+                height: height,
+                width: width
+            });
+        }
+        function OpenEasyShuttleReservation(id) {
+            Shadowbox.open({
+                content: 'https://www.romeasyshuttle.com/webwervice/reservationEvents.aspx?login=rentalinrome&password=rome2012&eventid=' + id,
+                player: 'iframe',
+                height: 0,
+                width: 640
+            });
+        }
+        function OpenSrsReservation(id) {
+            Shadowbox.open({
+                content: 'https://www.shortrentalsolution.com/webservice/reservationEvents.aspx?ref_id=1&eventid=' + id,
+                player: 'iframe',
+                height: 250,
+                width: 700
+            });
+        }
+
+
+        function showMessage(messageId) {
+            $('#trSelected_' + messageId).show();
+            $('#lnk_open_' + messageId).hide();
+            $('#lnk_close_' + messageId).show();
+            $.scrollTo("#trSelected_" + messageId, 400);
+        }
+        function hideMessage(messageId) {
+            $('#trSelected_' + messageId).hide();
+            $('#lnk_open_' + messageId).show();
+            $('#lnk_close_' + messageId).hide();
+            $.scrollTo("#trSelected_" + messageId, 400);
+        }
+
+    </script>
+    <telerik:RadCodeBlock ID="rcbChrome" runat="server">
+        <script type="text/javascript">
+            cssdropdown.startchrome("chromemenu");
+        </script>
+    </telerik:RadCodeBlock>
+</body>
+</html>

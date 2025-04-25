@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DCmodAppServerCommon" namespace="ModAppServerCommon" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DCmodAppServerCommon" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="ModAppServerCommon" default="true">
+      <orm:class name="dbUtlsBlockedIpLST" behavior="readwrite" uniqueId="ba2a2405-d00f-4b1d-a324-612fddc35536">
+        <orm:table name="UtlsBlockedIpLST" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="ip1" property="ip" behavior="readwrite" uniqueId="daff0159-2c09-4e57-98ed-67bebb645472" type="System.String">
+          <orm:column name="ip" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="actionType1" property="actionType" behavior="readwrite" uniqueId="b1a78d42-6f37-4271-9f06-2d4db45fc566" type="System.String">
+          <orm:column name="actionType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="actionTo1" property="actionTo" behavior="readwrite" uniqueId="3be37263-95a4-4c17-a0ea-0bc7c732be3f" type="System.String">
+          <orm:column name="actionTo" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="660dc027-53b4-4557-b8c6-2adbc7de76e1" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbSmtpConfigLST" uniqueId="b05308ac-cb50-4439-8b86-bc131158b882">
+        <orm:table name="SmtpConfigLST" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="f1d6e06a-e624-4f0e-9b0c-5883dc886c9a" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="2f671984-66f0-4e9c-a40e-6893b3b67a0f" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="sequence1" property="sequence" behavior="readwrite" uniqueId="b6001b78-74b9-4d00-b01e-266cbb53fd73" type="System.Int32">
+          <orm:column name="sequence" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="21ed2afc-3936-464e-9392-e9493593333f" type="System.Boolean">
+          <orm:column name="isActive" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="SmtpHost1" property="SmtpHost" behavior="readwrite" uniqueId="844f9032-c039-48b5-9ee0-0a55266b268f" type="System.String">
+          <orm:column name="SmtpHost" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="SmtpPort1" property="SmtpPort" behavior="readwrite" uniqueId="8ded866e-9cb8-4c55-a1f2-e7a8f5e73c9e" type="System.Int32">
+          <orm:column name="SmtpPort" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="SmtpSsl1" property="SmtpSsl" behavior="readwrite" uniqueId="cdfe7e0e-5692-4201-8a0c-8fd4d8d095c4" type="System.Boolean">
+          <orm:column name="SmtpSsl" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="SmtpAuth1" property="SmtpAuth" behavior="readwrite" uniqueId="eeb24b0a-21b2-4d2f-83a8-66f6fcc218e5" type="System.Boolean">
+          <orm:column name="SmtpAuth" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="SmtpUsr1" property="SmtpUsr" behavior="readwrite" uniqueId="d58bf115-2f95-427a-be05-1bc6ad76770e" type="System.String">
+          <orm:column name="SmtpUsr" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="SmtpPwd1" property="SmtpPwd" behavior="readwrite" uniqueId="382d35e7-33b9-4eab-83f0-cefaa5e4ef8e" type="System.String">
+          <orm:column name="SmtpPwd" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayManagerTBL" uniqueId="137be31d-8637-4bec-9161-9ada8d65cc51">
+        <orm:table name="RntChnlHomeAwayManagerTBL" />
+        <orm:identity>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="136d6c88-ab60-4cb1-b2d0-4968451c929f" type="System.String">
+          <orm:column name="id" sql-type="varchar" nullable="false" length="200" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="assignedSystemId1" property="assignedSystemId" behavior="readwrite" uniqueId="3e1908a5-2a6a-44e2-bb32-7a9a14f11a44" type="System.String">
+          <orm:column name="assignedSystemId" sql-type="varchar" nullable="false" length="200" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="authorizationToken1" property="authorizationToken" behavior="readwrite" uniqueId="8955e8aa-c6da-49a2-a6dd-f07bd386804e" type="System.String">
+          <orm:column name="authorizationToken" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="InquiryEndpointUrl1" property="InquiryEndpointUrl" behavior="readwrite" uniqueId="6d6c322a-1f29-4e30-acbe-4e0c1dae29ad" type="System.String">
+          <orm:column name="InquiryEndpointUrl" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="isDemo1" property="isDemo" behavior="readwrite" uniqueId="2c8f2e33-9a7d-4a34-b017-0d1c2d36146a" type="System.Int32">
+          <orm:column name="isDemo" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="UtlsBlockedIpLST">
+        <orm:column name="ip" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="actionType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="actionTo" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+      </orm:table>
+      <orm:table name="SmtpConfigLST">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="sequence" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="isActive" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="SmtpHost" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="SmtpPort" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="SmtpSsl" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="SmtpAuth" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="SmtpUsr" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="SmtpPwd" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayManagerTBL">
+        <orm:column name="id" sql-type="varchar" nullable="false" length="200" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="assignedSystemId" sql-type="varchar" nullable="false" length="200" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="authorizationToken" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="InquiryEndpointUrl" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="isDemo" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+    </orm:schema>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ModAppServerCommonDBConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=178.23.175.73,1433\SQLEXPRESS;initial catalog=AppServerCommonDB;persist security info=True;user id=mssql_remoteaccess;password=G5di8Pr9</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <AddPrefix>db</AddPrefix>
+      </ClassRules>
+      <FieldRules />
+      <PropertyRules />
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Attributes</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>mssql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="ba2a2405-d00f-4b1d-a324-612fddc35536" name="dbUtlsBlockedIpLST" namespace="ModAppServerCommon" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="660dc027-53b4-4557-b8c6-2adbc7de76e1" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="3be37263-95a4-4c17-a0ea-0bc7c732be3f" name="actionTo" label="actionTo : String" kind="Persistent" fieldName="actionTo1" />
+      <Property Id="b1a78d42-6f37-4271-9f06-2d4db45fc566" name="actionType" label="actionType : String" kind="Persistent" fieldName="actionType1" />
+      <Property Id="daff0159-2c09-4e57-98ed-67bebb645472" name="ip" label="ip : String" kind="Persistent" fieldName="ip1" />
+    </DomainClass>
+    <DomainClass Id="b05308ac-cb50-4439-8b86-bc131158b882" name="dbSmtpConfigLST" namespace="ModAppServerCommon" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="f1d6e06a-e624-4f0e-9b0c-5883dc886c9a" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="2f671984-66f0-4e9c-a40e-6893b3b67a0f" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="21ed2afc-3936-464e-9392-e9493593333f" name="isActive" type="Boolean" label="isActive : Boolean" kind="Persistent" fieldName="isActive1" />
+      <Property Id="b6001b78-74b9-4d00-b01e-266cbb53fd73" name="sequence" type="Int32" label="sequence : Int32" kind="Persistent" fieldName="sequence1" />
+      <Property Id="eeb24b0a-21b2-4d2f-83a8-66f6fcc218e5" name="SmtpAuth" type="Boolean" label="SmtpAuth : Boolean" kind="Persistent" fieldName="SmtpAuth1" />
+      <Property Id="844f9032-c039-48b5-9ee0-0a55266b268f" name="SmtpHost" label="SmtpHost : String" kind="Persistent" fieldName="SmtpHost1" />
+      <Property Id="8ded866e-9cb8-4c55-a1f2-e7a8f5e73c9e" name="SmtpPort" type="Int32" label="SmtpPort : Int32" kind="Persistent" fieldName="SmtpPort1" />
+      <Property Id="382d35e7-33b9-4eab-83f0-cefaa5e4ef8e" name="SmtpPwd" label="SmtpPwd : String" kind="Persistent" fieldName="SmtpPwd1" />
+      <Property Id="cdfe7e0e-5692-4201-8a0c-8fd4d8d095c4" name="SmtpSsl" type="Boolean" label="SmtpSsl : Boolean" kind="Persistent" fieldName="SmtpSsl1" />
+      <Property Id="d58bf115-2f95-427a-be05-1bc6ad76770e" name="SmtpUsr" label="SmtpUsr : String" kind="Persistent" fieldName="SmtpUsr1" />
+    </DomainClass>
+    <DomainClass Id="137be31d-8637-4bec-9161-9ada8d65cc51" name="dbRntChnlHomeAwayManagerTBL" namespace="ModAppServerCommon" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="136d6c88-ab60-4cb1-b2d0-4968451c929f" name="id" label="id : String" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="3e1908a5-2a6a-44e2-bb32-7a9a14f11a44" name="assignedSystemId" label="assignedSystemId : String" kind="Persistent" fieldName="assignedSystemId1" />
+      <Property Id="8955e8aa-c6da-49a2-a6dd-f07bd386804e" name="authorizationToken" label="authorizationToken : String" kind="Persistent" fieldName="authorizationToken1" />
+      <Property Id="6d6c322a-1f29-4e30-acbe-4e0c1dae29ad" name="InquiryEndpointUrl" label="InquiryEndpointUrl : String" kind="Persistent" fieldName="InquiryEndpointUrl1" />
+      <Property Id="2c8f2e33-9a7d-4a34-b017-0d1c2d36146a" name="isDemo" type="Int32" label="isDemo : Int32" kind="Persistent" fieldName="isDemo1" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="aafb2103-9863-4080-9425-064182d1220f">
+      <domainContainer name="DCmodAppServerCommon" namespace="ModAppServerCommon" showPropertiesCompartment="true">
+        <entitySetProperty name="dbUtlsBlockedIpLSTs" namespace="ModAppServerCommon" type="dbUtlsBlockedIpLST" label="dbUtlsBlockedIpLSTs : IQueryable&lt;ModAppServerCommon.dbUtlsBlockedIpLST&gt;" />
+        <entitySetProperty name="dbSmtpConfigLSTs" namespace="ModAppServerCommon" type="dbSmtpConfigLST" label="dbSmtpConfigLSTs : IQueryable&lt;ModAppServerCommon.dbSmtpConfigLST&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayManagerTBLs" namespace="ModAppServerCommon" type="dbRntChnlHomeAwayManagerTBL" label="dbRntChnlHomeAwayManagerTBLs : IQueryable&lt;ModAppServerCommon.dbRntChnlHomeAwayManagerTBL&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

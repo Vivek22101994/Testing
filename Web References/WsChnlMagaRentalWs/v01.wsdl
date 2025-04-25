@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://magarental.com/agentapi/v1" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://magarental.com/agentapi/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://magarental.com/agentapi/v1">
+      <s:element name="GetActiveProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetActivePropertiesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActivePropertiesRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetTexts" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetPhotos" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetPrices" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetAvailability" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetExtras" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetComments" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetDataFrom" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetDataTo" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActivePropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivePropertiesResult" type="tns:GetActivePropertiesResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActivePropertiesResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfPropertyUnit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyUnit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyUnit" nillable="true" type="tns:PropertyUnit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyUnit">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CityId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZoneId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComplexType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ComplexId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseAvailability" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImgPreview" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImgBanner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GmapCoords" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocPhone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocPhone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocInnerBell" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_bed_single" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_bed_double" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_bed_double_divisible" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_bed_double_2level" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_sofa_single" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_sofa_double" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_persons_max" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_persons_min" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_persons_adult" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_persons_optional" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_persons_child" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_rooms_bed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_rooms_bath" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pr_deposit" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="pr_percentage" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="on_floor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="mq_inner" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mq_outer" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="mq_terrace" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_terraces" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nights_min" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nights_minVHSeason" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="nights_max" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_parkingClosed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="num_parkingOpen" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="importance_vote" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Texts" type="tns:ArrayOfPropertyText" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photos" type="tns:ArrayOfPropertyPhoto" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prices" type="tns:ArrayOfPropertyPriceItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvailabilityList" type="tns:ArrayOfPropertyAvailabilityItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extras" type="tns:ArrayOfPropertyExtraItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="tns:ArrayOfPropertyCommentItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyText">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyText" nillable="true" type="tns:PropertyText" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyText">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Summary" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyPhoto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyPhoto" nillable="true" type="tns:PropertyPhoto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyPhoto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Thumb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Big" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyPriceItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyPriceItem" nillable="true" type="tns:PropertyPriceItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyPriceItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DtStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DtEnd" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinNights" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Period" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstClosedArrival" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="PricePerPersons" type="tns:ArrayOfPropertyPricePerPersonItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceChangeDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyPricePerPersonItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyPricePerPersonItem" nillable="true" type="tns:PropertyPricePerPersonItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyPricePerPersonItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Person" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceAgent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PriceTotal" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyAvailabilityItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyAvailabilityItem" nillable="true" type="tns:PropertyAvailabilityItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyAvailabilityItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DtStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DtEnd" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DtCreation" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="statePid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cl_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cl_email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="prTotal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="numPersonAdult" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="numpersonChilOver" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="numPersonChildMin" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="stateBody" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stateDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="statePidUser" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="stateSubject" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAvv" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Units" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceResId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="pidEstateRoomNumber" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyExtraItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyExtraItem" nillable="true" type="tns:PropertyExtraItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyExtraItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPrice" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="minPax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="maxPax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Hours" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Days" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="priceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paymentType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="actualPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="actualPriceChild" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommissionType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="costPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="costPriceChild" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyCommentItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyCommentItem" nillable="true" type="tns:PropertyCommentItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyCommentItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtCreation" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtComment" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bodyNegative" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pidEstate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isAnonymous" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="cl_name_full" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cl_email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cl_country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pers" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pid_user" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pidReservation" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="cl_pid_lang" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="voteStaff" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="voteService" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="voteCleaning" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="voteComfort" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="voteQualityPrice" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="votePosition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="vote" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetActiveCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="languageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCitiesResult" type="tns:GetActiveCitiesResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActiveCitiesResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfCity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="City">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImgPreview" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImgBanner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GmapCoords" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="languageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveZonesResult" type="tns:GetActiveZonesResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActiveZonesResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfZone" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Zone" nillable="true" type="tns:Zone" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Zone">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CityId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImgPreview" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImgBanner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GmapCoords" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveDiscountPromos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="languageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveDiscountPromosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveDiscountPromosResult" type="tns:GetActiveDiscountPromosResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActiveDiscountPromosResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfDiscountPromo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDiscountPromo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DiscountPromo" nillable="true" type="tns:DiscountPromo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DiscountPromo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPercentage" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangeAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NightsBeforeCheckIn" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NightsBeforeCheckOut" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NightsMinToApply" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NightsMaxToApply" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveExtras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="languageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveExtrasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveExtrasResult" type="tns:GetActiveExtrasResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActiveExtrasResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfExtra" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExtra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Extra" nillable="true" type="tns:Extra" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Extra">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="languageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCategoryResult" type="tns:GetActiveCategoryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetActiveCategoryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Category">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreateBookingRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateBookingRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateEnd" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumAdults" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumChilds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumEnfants" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestMobilePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateBookingResult" type="tns:CreateBookingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateBookingResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyDiscount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyDiscountAlreadyApplied" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdvancePayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnArrival" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPrice" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UpdateBookingRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateBookingRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cancelled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateEnd" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumAdults" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumChilds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumEnfants" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestMobilePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateBookingResult" type="tns:UpdateBookingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateBookingResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyDiscount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyDiscountAlreadyApplied" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdvancePayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnArrival" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPrice" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication_Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="Authentication_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Authentication_TestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetActivePropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveProperties" />
+  </wsdl:message>
+  <wsdl:message name="GetActivePropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivePropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivePropertiesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCities" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCitiesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveZones" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveZonesAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveDiscountPromosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveDiscountPromos" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveDiscountPromosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveDiscountPromosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveDiscountPromosAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveExtrasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveExtras" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveExtrasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveExtrasAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCategory" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCategoryAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBooking" />
+  </wsdl:message>
+  <wsdl:message name="CreateBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBookingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBooking" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="Authentication_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication_Test" />
+  </wsdl:message>
+  <wsdl:message name="Authentication_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:Authentication_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Authentication_TestAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="v01Soap">
+    <wsdl:operation name="GetActiveProperties">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetActiveProperties desc</wsdl:documentation>
+      <wsdl:input message="tns:GetActivePropertiesSoapIn" />
+      <wsdl:output message="tns:GetActivePropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCities">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetActiveCities desc</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveCitiesSoapIn" />
+      <wsdl:output message="tns:GetActiveCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetActiveZones desc</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveZonesSoapIn" />
+      <wsdl:output message="tns:GetActiveZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDiscountPromos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetActiveDiscountPromos desc</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveDiscountPromosSoapIn" />
+      <wsdl:output message="tns:GetActiveDiscountPromosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveExtras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetActiveExtras desc</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveExtrasSoapIn" />
+      <wsdl:output message="tns:GetActiveExtrasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetActiveCategory desc</wsdl:documentation>
+      <wsdl:input message="tns:GetActiveCategorySoapIn" />
+      <wsdl:output message="tns:GetActiveCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CreateBooking desc</wsdl:documentation>
+      <wsdl:input message="tns:CreateBookingSoapIn" />
+      <wsdl:output message="tns:CreateBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">UpdateBooking desc</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBookingSoapIn" />
+      <wsdl:output message="tns:UpdateBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test of Authentication</wsdl:documentation>
+      <wsdl:input message="tns:Authentication_TestSoapIn" />
+      <wsdl:output message="tns:Authentication_TestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="v01Soap" type="tns:v01Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActiveProperties">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/GetActiveProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActivePropertiesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCities">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/GetActiveCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActiveCitiesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveZones">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/GetActiveZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActiveZonesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDiscountPromos">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/GetActiveDiscountPromos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActiveDiscountPromosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveExtras">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/GetActiveExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActiveExtrasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCategory">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/GetActiveCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetActiveCategoryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBooking">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/CreateBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBooking">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/UpdateBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_Test">
+      <soap:operation soapAction="http://magarental.com/agentapi/v1/Authentication_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Authentication_TestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="v01Soap12" type="tns:v01Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetActiveProperties">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/GetActiveProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActivePropertiesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCities">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/GetActiveCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActiveCitiesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveZones">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/GetActiveZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActiveZonesAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDiscountPromos">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/GetActiveDiscountPromos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActiveDiscountPromosAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveExtras">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/GetActiveExtras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActiveExtrasAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCategory">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/GetActiveCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetActiveCategoryAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBooking">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/CreateBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBooking">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/UpdateBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateBookingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_Test">
+      <soap12:operation soapAction="http://magarental.com/agentapi/v1/Authentication_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Authentication_TestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="v01">
+    <wsdl:port name="v01Soap" binding="tns:v01Soap">
+      <soap:address location="http://vision.dev.magarental.com/agentapi/v01.asmx" />
+    </wsdl:port>
+    <wsdl:port name="v01Soap12" binding="tns:v01Soap12">
+      <soap12:address location="http://vision.dev.magarental.com/agentapi/v01.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

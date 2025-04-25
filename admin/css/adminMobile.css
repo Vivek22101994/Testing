@@ -1,0 +1,232 @@
+﻿body
+{
+    margin: 0 auto;
+	background-color: #fff;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #575b63;
+	width:300px;
+}
+#header_mobile {
+	height: 60px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	width: 100%;
+	clear:both;
+	text-align:center;
+}
+#main {
+	width: 100%;
+	height: auto;
+	clear:both;
+}
+
+.nulla
+{	
+    font-size:0;
+    height:0px;
+    clear:both;
+}
+
+.sezione
+{
+    border-bottom: 1px dotted #ececec;
+    padding-bottom:15px;
+    text-align: center;
+}
+.sezione a.prev {
+    display:block;
+    width:24px;
+    height:24px;
+    background: url(../images/prev-bg.gif) left top no-repeat;
+    float:left;
+    margin:0 0 0 5%;
+    
+}
+.sezione a.prev:hover {
+    background-position:bottom left; 
+}
+
+.sezione span {
+    font-size:17px;
+    font-weight:bold;
+    color:# FE6634;
+    margin-top:5px;
+    line-height:24px;
+}
+
+.sezione a.next {
+    display:block;
+    width:24px;
+    height:24px;
+    background: url(../images/next-bg.gif) left top no-repeat;
+    float:right;
+    margin:0 5% 0 0;
+    
+}
+.sezione a.next:hover {
+    background-position:bottom left; 
+}
+.sezione h3 {
+    margin:0;
+    color:#333366;
+    font-size:17px;
+    line-height:20px;
+}
+
+.contenuto
+{
+	text-align:center;
+	margin:10px 0;
+}
+
+.contenuto table tr td {
+    padding: 5px;
+    font-size:12px;
+    line-height:14px;
+    font-weight:bold;
+    text-align:left;
+    color:#FE6634;
+}
+.contenuto table tr td span {
+display:block;
+}
+.contenuto table tr td span.time {
+    font-weight:normal;
+    color:#333366;
+    font-size:12px;
+    line-height:12px;
+}
+.contenuto table tr.alternate {
+    background-color:#f1f1f8;
+}
+.contenuto table tr td a.start.in {
+    background: url(../images/start_in.png) top left no-repeat;
+    display:block;
+    width:42px;
+    height:42px;
+}
+.contenuto table tr td a.start.out {
+    background: url(../images/start_out.png) top left no-repeat;
+    display:block;
+    width:42px;
+    height:42px;
+}
+.contenuto table tr td a.start:hover, .contenuto table tr td a.start:active {
+    background-position:bottom left;
+}
+.contenuto table tr td a.fatto {
+    background: url(../images/fatto.png) top left no-repeat;
+    display:block;
+    width:42px;
+    height:42px;
+}
+.contenuto table tr td a.fatto:hover, .contenuto table tr td a.fatto:active {
+    background-position:bottom left;
+}
+.contenuto table tr td a.mappa {
+    background: url(../images/mappa.png) top left no-repeat;
+    display:block;
+    width:42px;
+    height:42px;
+}
+.contenuto table tr td a.mappa:hover, .contenuto table tr td a.mappa:active {
+    background-position:bottom left;
+}
+.contenuto table tr td a.problemi {
+    background: url(../images/problemi.png) top left no-repeat;
+    display:block;
+    width:42px;
+    height:42px;
+}
+.contenuto table tr td a.problemi:hover, .contenuto table tr td a.problemi:active {
+    background-position:bottom left;
+}
+.contenuto table tr td a.info {
+    background: url(../images/info.png) top left no-repeat;
+    display:block;
+    width:42px;
+    height:42px;
+}
+.contenuto table tr td a.info:hover, .contenuto table tr td a.info:active {
+    background-position:bottom left;
+}
+.button_segnala a {
+    display:block;
+    height:42px;
+    background: url(../images/btn-dx.png) top left no-repeat;
+    padding-left:21px;
+    text-decoration:none;
+    margin:5px 5%;
+}
+.button_segnala a:hover, .button_segnala a:active {
+    background-position:bottom left;
+}
+.button_segnala a span{
+    display:block;
+    text-align:center;
+    font-size:17px;
+    font-weight:bold;
+    line-height:42px;
+    height:42px;
+    background: url(../images/btn-sx.png) top right no-repeat;
+    padding-right:21px;
+    color: #FE6634;
+}
+.button_segnala a:hover span, .button_segnala a:active span {
+    background-position:bottom right;
+    color:#FFF;
+}
+.button_menu {
+width:100%
+}
+.button_menu a{
+    background: url(../images/home.png) top right no-repeat;
+    display:block;
+    width:100px;
+    height:30px;
+    float:right;
+    text-align:left;
+    padding-top:12px;
+    font-size:17px;
+    line-height:18px;
+    text-decoration:none;
+    font-weight:bold;
+    color: #FE6634;
+    margin:0 5% 10px 0;
+}
+.button_menu a:hover, .button_menu a:active {
+    background-position:bottom right;
+}
+.button_zoom {
+    float:left;
+}
+.button_zoom a {
+    background-position: top right no-repeat;
+    background-repeat: no-repeat;
+    display:block;
+    width:42px;
+    height:36px;
+    float:left;
+    text-align:center;
+    padding-top:6px;
+    font-size:30px;
+    line-height:30px;
+    text-decoration:none;
+    font-weight:bold;
+    color:# FE6634;
+    margin:0 5% 10px 0;
+
+}
+.button_zoom a:hover, .button_zoom a:active, .button_zoom a.in:hover, .button_zoom a.in:active, .button_zoom a.out:hover, .button_zoom a.out:active {
+    background-position: bottom right;
+}
+.button_zoom a.in {
+    background: url(../images/zoom-in-bg.png) top right no-repeat;
+}
+.button_zoom a.out {
+    background: url(../images/zoom-out-bg.png) top right no-repeat;
+}
+

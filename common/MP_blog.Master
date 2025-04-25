@@ -1,0 +1,497 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP_blog.Master.cs" Inherits="RentalInRome.common.MP_blog" %>
+
+<%@ Register Src="../uc/UC_header.ascx" TagName="UC_header" TagPrefix="uc1" %>
+<%@ Register Src="../uc/UC_footer.ascx" TagName="UC_footer" TagPrefix="uc2" %>
+<%@ Register Src="../uc/UC_loader.ascx" TagName="UC_loader" TagPrefix="uc3" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="NlSx8KjFFw9tuY_pwuH8kIoeoYq88Jvd26kT5mEsSbo" />
+    <asp:ContentPlaceHolder ID="CPH_head_top" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="<%=CurrentAppSettings.ROOT_PATH %>favicon.ico" />
+    <%if (1 == 1)
+      { %>
+    <link rel="stylesheet" type="text/css" href="/css/style.css<%="?tmp="+DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" type="text/css" href="/css/common.css<%="?tmp="+DateTime.Now.Ticks %>" />
+    <link href="/jquery/plugin/shadowbox/shadowbox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/jquery/css/ui-all.css" />
+    <script src="/jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-all.min.js" type="text/javascript"></script>
+    <%}else{%>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/js/shadowbox/shadowbox.css" />
+    <link rel="stylesheet" type="text/css" href="/jquery/css/ui-core.css" />
+    <link rel="stylesheet" type="text/css" href="/jquery/css/ui-slider.css" />
+    <link rel="stylesheet" type="text/css" href="/jquery/css/ui-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/jquery/css/ui-autocomplete.css" />
+    <script src="/jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui--core.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-effects.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-widget.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-position.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-autocomplete.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-datepicker.min.js" type="text/javascript"></script>
+    <%} %>
+    <script src="/jquery/datepicker-lang/jquery.ui.datepicker-<%= CurrentLang.JS_CAL_FILE %>" type="text/javascript"></script>
+    <script src="/jquery/plugin/scrollTo/scrollTo.min.js" type="text/javascript"></script>
+    <%if (!(currPageType == "stp" && currPageID==1))
+    {%>
+    <script type="text/javascript">
+        $(function () {
+            $(window).load(function () {
+                $.getScript("/jquery/plugin/shadowbox/shadowbox.js", function (data, textStatus, jqxhr) {
+                    Shadowbox.init({ modal: true, handleOversize: "none" });
+                });
+            });
+        });
+    </script>
+    <%
+    }%>
+    <script type="text/javascript" src="/js/jquery.tooltip.js"></script>
+    <script type="text/javascript">
+	    function setToolTip() {
+	        $('.ico_tooltip').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+	        $('.ico_tooltip_right').tooltip({ track: true, delay: 0, positionLeft: false, top: 20, left: 20 });
+	    }
+	    function SITE_addDinamicLabel(labelId, controlId) {
+	        $('#'+controlId).bind("blur",function(){if($.trim($('#'+controlId).val())==""){$('#'+labelId).css("display","block");}else{ $('#'+labelId).css("display","none");}});
+	        $('#'+labelId).bind("click",function(){$('#'+controlId).focus();$('#'+labelId).css("display","none");});
+	        $('#'+controlId).bind("focus",function(){$('#'+labelId).css("display","none");});
+            if($.trim($('#'+controlId).val())==""){$('#'+labelId).css("display","block");}else{ $('#'+labelId).css("display","none");}
+	    }
+	    function SITE_showLoader() {
+	        $('#<%=loading_cont.ClientID %>').show();
+	    }
+	    function SITE_hideLoader() {
+	        $('#<%=loading_cont.ClientID %>').hide();
+	    }
+        function SITE_cursorWait_show() {
+            $(document).bind("mousemove", SITE_cursorWait_move);
+            $(document).trigger('mousemove');
+        }
+        function SITE_cursorWait_hide() {
+            $(document).unbind("mousemove", SITE_cursorWait_move);
+            $('#SITE_cursorWait').css({'left': '-2000em', 'top': '-2000em'});
+        }
+        function SITE_cursorWait_move(e) {
+            $('#SITE_cursorWait').css({'left': e.pageX+20 + 'px', 'top': e.pageY+20 + 'px'});
+        }
+	    function FORM_validateEmail(str) {
+	        return str.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
+	    }
+	    var FORM_errorClass = "formErrorState";
+	    var GLOBAL_currPageID = <%= currPageID %>;
+	    var GLOBAL_currPageType = "<%= currPageType %>";
+	    var GLOBAL_currPagePath = "<%= currPagePath %>";
+	    var GLOBAL_currPageName = "<%= currPageName %>";
+    </script>
+    <script type="text/javascript">
+        var GLOBAL_imgLoader = new Array();
+        $(document).ready(function () {
+            $(window).load(function () {
+                for (var i = 0; i < GLOBAL_imgLoader.length; i++) {
+                    $("#" + GLOBAL_imgLoader[i][0]).attr("src", "" + GLOBAL_imgLoader[i][1]);
+                }
+                $("img[realsrc]").each(function (i, selected) {
+                    $(selected).attr("src", $(selected).attr("realsrc"));
+                });
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="CPH_head_bottom" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29559505-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</head>
+<body>
+    <div id="required_fileds_validator" style="overflow: auto; width: 100%; height: 2000em; z-index: 999; position: fixed; top: 0; left: 0; display: none;" onclick="document.getElementById('required_fileds_validator').style.display = 'none';">
+        <div class="info_area cont">
+            <span>Campi evidenziati in rosso sono obbligatori !<br />
+                si prega di compilarli tutti...</span>
+        </div>
+    </div>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdateProgress ID="loading_cont" runat="server" DisplayAfter="0">
+        <ProgressTemplate>
+            <uc3:UC_loader ID="UC_loader1" Visible="True" runat="server" />
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <asp:HiddenField ID="HF_unique" runat="server" Value="" Visible="false" />
+    <div id="container">
+        <uc1:UC_header runat="server" ID="UC_header" />
+        <div class="nulla">
+        </div>
+        <div id="main">
+            <div>
+                <div id="fl_menu" style="">
+                    <div class="left">
+                        <div id="sendMailToFriend_cont" class="form">
+                            <a class="close" href="javascript:sendMailToFriend_toggle();"></a>
+                            <span class="f1tit">
+                                <%= CurrentSource.getSysLangValue("lblSendToAFriend")%></span>
+                            <label>
+                                <%= CurrentSource.getSysLangValue("lblYourName")%>:</label>
+                            <span class="boxinput">
+                                <asp:TextBox ID="txt_pagetofriend_senderName" runat="server" Style="width: 250px;"></asp:TextBox></span>
+                            <div class="nulla">
+                            </div>
+                            <label>
+                                <%= CurrentSource.getSysLangValue("lblEmailOfYourFriend")%>:</label>
+                            <span class="boxinput">
+                                <asp:TextBox ID="txt_pagetofriend_receiverMail" runat="server" Style="width: 250px;"></asp:TextBox></span>
+                            <div class="nulla">
+                            </div>
+                            <a id="sendMailToFriend_lnk" class="f1btn" href="javascript:sendMailToFriend_send();" style="margin-right: 10px;">
+                                <%= CurrentSource.getSysLangValue("reqSubmit")%></a>
+                            <span class="f1sendok" id="sendMailToFriend_done" style="display: none;">
+                                <%= CurrentSource.getSysLangValue("lblSendOK")%></span> <span class="f1sendloading" id="sendMailToFriend_loading" style="display: none;">Loading...</span> <span id="sendMailToFriend_check" class="alertErrorSmall" style="width: 200px;"></span>
+                            <div class="nulla">
+                            </div>
+                        </div>
+                        <div id="myAptList_cont" class="form">
+                            <a class="close" href="javascript:myAptList_toggle();"></a>
+                            <span class="f1tit">
+                                <%= CurrentSource.getSysLangValue("lblWishList")%></span>
+                            <ul class="f1mylist" id="myAptList_list">
+                            </ul>
+                            <a href="<%=CurrentSource.getPagePath("4", "stp", CurrentLang.ID.ToString()) %>"><span>
+                                <%= CurrentSource.getSysLangValue("lblRequestInfoWishList")%></span></a>
+                            <div class="nulla">
+                            </div>
+                        </div>
+                        <div id="lastVisitedEstateList_cont" class="form">
+                            <a class="close" href="javascript:lastVisitedEstateList_toggle();"></a>
+                            <span class="f1tit">
+                                <%= CurrentSource.getSysLangValue("lblLastVisitedAptList")%></span>
+                            <ul class="f1mylist" id="lastVisitedEstateList_list">
+                            </ul>
+                            <div class="nulla">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_utility_right">
+                        <%if (currPageType == "pg_estate")
+                          {%>
+                        <a id="lnk_getPdf" href="#" onclick="pdfDownLoad(this); return false;" class="pdf ico_tooltip" title="<%= CurrentSource.getSysLangValue("lblDownloadPdfOfThePage", "Download this page in Pdf format")%>"></a>
+                        <%
+                          }%>
+                        <a id="lastVisitedEstateList_toggler" href="javascript:lastVisitedEstateList_toggle();" style="display: none;" class="cronapt ico_tooltip" title="<%= CurrentSource.getSysLangValue("lblLastVisitedAptList")%>"></a>
+                        <%if (!(currPageType == "" && currPageID==0))
+                          {%>
+                        <a id="sendMailToFriend_toggler" href="javascript:sendMailToFriend_toggle();" class="lettera ico_tooltip" title="<%= CurrentSource.getSysLangValue("lblSendToAFriend")%>"></a>
+                        <%
+                          }%>
+                        <%if (!(currPageType == "stp" && currPageID==4))
+                          {%>
+                        <a id="myAptList_toggler" style="display: none;" href="javascript:myAptList_toggle();" class="mylist ico_tooltip" title="<%= CurrentSource.getSysLangValue("lblWishList")%>"></a>
+                        <%
+                          }%>
+                        <%
+                        if (currPageType == "pg_estate")
+                        {
+                            if (!clUtils.getConfig(CURRENT_SESSION_ID).myPreferedEstateList.Contains(currPageID))
+                            {%>
+                        <a id="addToMyList_toggler" href="javascript:refreshMyList(<%=currPageID%>);" class="addmylist ico_tooltip addToMyList_toggler" title="<%=CurrentSource.getSysLangValue("lblAddToWishList")%>"></a>
+                        <%
+                            }%>
+                        <%--// TODO: da abbilitare  <a href="javascript:alert('opt 5');" class="book ico_tooltip" title="<%=CurrentSource.getSysLangValue("reqBookNow")%>"></a>--%>
+                        <%
+                        }%>
+                        <div class="nulla">
+                        </div>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="CPH_main" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <uc2:UC_footer runat="server" ID="UC_footer" />
+    </div>
+    </form>
+    <input type="hidden" id="sendMailToFriend_state" />
+    <script type="text/javascript">
+        function closeAll() {
+            $("#sendMailToFriend_cont").slideUp();
+            $("#sendMailToFriend_state").val("0");
+            $("#myAptList_cont").slideUp();
+            $("#myAptList_state").val("0");
+            $("#lastVisitedEstateList_cont").slideUp();
+            $("#lastVisitedEstateList_state").val("0");
+            return true;
+        }
+    </script>
+    <script type="text/javascript">
+        function pdfDownLoad(elm) {
+            var iFrameSrc = 'http://modpdf.ts.magadesign.net/createPdf.aspx<%= "?url=" + ("http://www.rentalinrome.com/pg_estate_pdf.aspx?id=" + currPageID).urlEncode() + "&filename=" + (currPageName != "" ? currPageName.clearPathName() + ".pdf" : "RomeApartment.pdf").urlEncode()%>';
+            //iFrameSrc = "<%= App.RP + "admin/modPdf/createPdf.aspx?url=" + currPagePath.urlEncode() + "&filename=" + (currPageName != "" ? currPageName.clearPathName() + ".pdf" : "RomeApartment.pdf").urlEncode()%>";
+            var iFrameHtml = '<iframe width="0" height="0" id="ajax-temp" name="ajax-temp" border="0" style="width: 0; height: 0; border: none; display: none;" onload="$(\'#lnk_getPdf\').removeClass(\'loading\');" src="' + iFrameSrc + '"></iframe>';
+            var iFrameCont = document.createElement("div");
+            iFrameCont.setAttribute("width", "0");
+            iFrameCont.setAttribute("height", "0");
+            iFrameCont.setAttribute("border", "0");
+            iFrameCont.setAttribute("style", "width: 0; height: 0; border: none; display: none;");
+            $("#lnk_getPdf").addClass("loading");
+            document.body.appendChild(iFrameCont);
+            $(iFrameCont).html(iFrameHtml);
+
+            return;
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("id", "ajax-temp");
+            iframe.setAttribute("name", "ajax-temp");
+            iframe.setAttribute("width", "0");
+            iframe.setAttribute("height", "0");
+            iframe.setAttribute("border", "0");
+            iframe.setAttribute("style", "width: 0; height: 0; border: none; display: none;");
+            iframe.setAttribute("onload", "$('#lnk_getPdf').removeClass('loading');");
+            iframe.src = iFrameSrc;
+            //$(iframe).load(function () {  });
+            $("#lnk_getPdf").addClass("loading");
+            document.body.appendChild(iframe);
+        }
+        function sendMailToFriend_toggle() {
+            if ($("#sendMailToFriend_state").val() == "1") {
+                $("#sendMailToFriend_toggler").removeClass("opened");
+                $("#sendMailToFriend_toggler").addClass("closed");
+                $("#sendMailToFriend_cont").slideUp();
+                $("#sendMailToFriend_state").val("0");
+            }
+            else {
+                $("#sendMailToFriend_toggler").removeClass("closed");
+                $("#sendMailToFriend_toggler").addClass("opened");
+                if (closeAll()) $("#sendMailToFriend_cont").slideDown();
+                $("#sendMailToFriend_state").val("1");
+            }
+        }
+        $("#sendMailToFriend_state").val("0");
+        function sendMailToFriend_reset() {
+            $("#<%= txt_pagetofriend_senderName.ClientID %>").val('');
+            $("#<%= txt_pagetofriend_receiverMail.ClientID %>").val('');
+            $("#sendMailToFriend_done").hide();
+            $("#sendMailToFriend_loading").hide();
+            $("#sendMailToFriend_lnk").show();
+        }
+        function sendMailToFriend_check() {
+            $("#sendMailToFriend_check").html('');
+            $("#<%= txt_pagetofriend_senderName.ClientID %>").removeClass(FORM_errorClass);
+            $("#<%= txt_pagetofriend_receiverMail.ClientID %>").removeClass(FORM_errorClass);
+            if ($.trim($("#<%= txt_pagetofriend_senderName.ClientID %>").val()) == "") {
+                $("#sendMailToFriend_check").html('<%= CurrentSource.getSysLangValue("reqRequiredField")%>');
+                $("#<%= txt_pagetofriend_senderName.ClientID %>").addClass(FORM_errorClass);
+                return false;
+            }
+            if ($.trim($("#<%= txt_pagetofriend_receiverMail.ClientID %>").val()) == "") {
+                $("#sendMailToFriend_check").html('<%= CurrentSource.getSysLangValue("reqRequiredField")%>');
+                $("#<%= txt_pagetofriend_receiverMail.ClientID %>").addClass(FORM_errorClass);
+                return false;
+            }
+            if (!FORM_validateEmail($("#<%= txt_pagetofriend_receiverMail.ClientID %>").val())) {
+                $("#sendMailToFriend_check").html('<%= CurrentSource.getSysLangValue("reqInvalidEmailFormat")%>');
+                $("#<%= txt_pagetofriend_receiverMail.ClientID %>").addClass(FORM_errorClass);
+                return false;
+            }
+            return true;
+        }
+        function sendMailToFriend_send() {
+            if (!sendMailToFriend_check()) return;
+            $("#sendMailToFriend_done").hide();
+            $("#sendMailToFriend_loading").show();
+            $("#sendMailToFriend_lnk").hide();
+            var _url = "/webservice/util_mail_pagetofriend.aspx";
+            _url += "?senderName=" + encodeURIComponent($("#<%= txt_pagetofriend_senderName.ClientID %>").val());
+            _url += "&receiverMail=" + encodeURIComponent($("#<%= txt_pagetofriend_receiverMail.ClientID %>").val());
+            _url += "&currPagePath=<%= currPagePath.urlEncode() %>";
+            _url += "&currPageName=<%= currPageName.urlEncode() %>";
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    $("#sendMailToFriend_done").show();
+                    $("#sendMailToFriend_loading").hide();
+                    $("#sendMailToFriend_lnk").hide();
+                    setTimeout('sendMailToFriend_reset()', 5000);
+                }
+            });
+        }
+    </script>
+    <input type="hidden" id="myAptList_state" />
+    <script type="text/javascript">
+        function myAptList_toggle() {
+            if ($("#myAptList_state").val() == "1") {
+                $("#myAptList_toggler").removeClass("opened");
+                $("#myAptList_toggler").addClass("closed");
+                $("#myAptList_cont").slideUp();
+                $("#myAptList_state").val("0");
+            }
+            else {
+                $("#myAptList_toggler").removeClass("closed");
+                $("#myAptList_toggler").addClass("opened");
+                if (closeAll()) $("#myAptList_cont").slideDown();
+                $("#myAptList_state").val("1");
+            }
+        }
+        function refreshMyList(id) {
+            var _url = "/webservice/rnt_myPreferedEstateList.aspx";
+            _url += "?SESSION_ID=<%= CURRENT_SESSION_ID %>";
+            _url += "&currEstate=" + id;
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    if (html != "") {
+                        $("#myAptList_list").html(html);
+                        $("#myAptList_toggler").show();
+                        if (id == 0) return;
+                        $("#myAptList_toggler").removeClass("closed");
+                        $("#myAptList_toggler").addClass("opened");
+                        if (closeAll()) $("#myAptList_cont").slideDown();
+                        $("#myAptList_state").val("1");
+                    }
+                    else {
+                        $("#myAptList_cont").slideUp();
+                        $("#myAptList_toggler").hide();
+                        $("#myAptList_list").html(html);
+                    }
+                }
+            });
+            if (id != 0)
+                $(".addToMyList_toggler").hide();
+        }
+        $(document).ready(function () {
+            $(window).load(function () {
+                $("#myAptList_state").val("0");
+                refreshMyList(0);
+            });
+        });
+    </script>
+    <input type="hidden" id="lastVisitedEstateList_state" />
+    <script type="text/javascript">
+        function lastVisitedEstateList_toggle() {
+            if ($("#lastVisitedEstateList_state").val() == "1") {
+                $("#lastVisitedEstateList_toggler").removeClass("opened");
+                $("#lastVisitedEstateList_toggler").addClass("closed");
+                $("#lastVisitedEstateList_cont").slideUp();
+                $("#lastVisitedEstateList_state").val("0");
+            }
+            else {
+                $("#lastVisitedEstateList_toggler").removeClass("closed");
+                $("#lastVisitedEstateList_toggler").addClass("opened");
+                if (closeAll()) $("#lastVisitedEstateList_cont").slideDown();
+                $("#lastVisitedEstateList_state").val("1");
+            }
+        }
+        function refresh_lastVisitedEstateList() {
+            var _url = "/webservice/rnt_myLastVisitedEstateList.aspx";
+            _url += "?SESSION_ID=<%= CURRENT_SESSION_ID %>";
+            //_url += "?currEstate=" + id;
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    if (html != "") {
+                        $("#lastVisitedEstateList_list").html(html);
+                        $("#lastVisitedEstateList_toggler").show();
+                    }
+                    else {
+                        $("#lastVisitedEstateList_cont").slideUp();
+                        $("#lastVisitedEstateList_toggler").hide();
+                        $("#lastVisitedEstateList_list").html(html);
+                    }
+                }
+            });
+        }
+        $(document).ready(function () {
+            $(window).load(function () {
+                $("#lastVisitedEstateList_state").val("0");
+                refresh_lastVisitedEstateList();
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //config
+        $float_speed = 1500; //milliseconds
+        $float_easing = "easeOutQuint";
+        $menu_fade_speed = 500; //milliseconds
+        $closed_menu_opacity = 0.75;
+
+        //cache vars
+        $fl_menu = $("#fl_menu");
+        //$fl_menu_menu = $("#fl_menu .menu");
+        //$fl_menu_label = $("#fl_menu .label");
+
+        $(document).ready(function () {
+            menuPosition = $fl_menu.position().top;
+            $fl_menu.css("display", "block");
+            FloatMenu();
+            //            $fl_menu.hover(
+            //		function() { //mouse over
+            //		    $fl_menu_label.fadeTo($menu_fade_speed, 1);
+            //		    $fl_menu_menu.fadeIn($menu_fade_speed);
+            //		},
+            //		function() { //mouse out
+            //		    $fl_menu_label.fadeTo($menu_fade_speed, $closed_menu_opacity);
+            //		    $fl_menu_menu.fadeOut($menu_fade_speed);
+            //		}
+            //	);
+        });
+
+        $(window).scroll(function () {
+            FloatMenu();
+        });
+
+        function FloatMenu() {
+            var scrollAmount = $(document).scrollTop();
+            var newPosition = scrollAmount + 200;
+            //var newPosition = menuPosition + scrollAmount;
+            var max_top = $("#main").height() - 100;
+            if (max_top < newPosition) {
+                newPosition = max_top;
+            }
+            if ($($("#main")).height() < $fl_menu.height()) {
+                $fl_menu.css("top", menuPosition);
+            } else {
+                $fl_menu.stop().animate({ top: newPosition }, $float_speed, $float_easing);
+            }
+        }
+    </script>
+    <img id="SITE_cursorWait" alt="loading" src="/images/css-common/cursor_loader.gif" style="position: absolute; left: -2000em; top: -2000em;" />
+    <!-- Start of Woopra Code -->
+    <script type="text/javascript">
+        function woopraReady(tracker) {
+            tracker.setDomain('rentalinrome.com');
+            tracker.setIdleTimeout(300000);
+            tracker.track({ type: 'pageview', url: window.location.pathname + window.location.search, title: document.title });
+            return false;
+        }
+        $(document).ready(function () {
+            $(window).load(function () {
+                var wsc = document.createElement('script');
+                wsc.src = document.location.protocol + '//static.woopra.com/js/woopra.js';
+                wsc.type = 'text/javascript';
+                wsc.async = true;
+                var ssc = document.getElementsByTagName('script')[0];
+                ssc.parentNode.insertBefore(wsc, ssc);
+            });
+        });
+    </script>
+    <!-- End of Woopra Code -->
+</body>
+</html>

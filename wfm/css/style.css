@@ -1,0 +1,97 @@
+﻿	#tooltip {
+		color:White;
+		position: absolute;
+		z-index: 3000;
+		margin-right:5px;
+		font-size:11px;
+		background-color:#cbbb9d;
+		padding: 4px 8px;
+		max-width:250px;
+	}
+	#tooltip h3, #tooltip div { margin: 0; }
+	#tooltip span.title{
+		clear:both; 
+		display:block;
+		font-size:14px; 
+		font-weight:bold;
+	}
+	#tooltip span.desc{
+		clear:both;
+		display:block;
+		font-size:12px; 
+		font-weight:normal;
+	}
+	td{
+		 vertical-align:top;
+	}
+	td.header_bg_sx{
+		 background-image:url(../images/header_bg_sx.png); background-repeat:no-repeat; width:14px; height:46px;
+	}
+	td.header_bg_dx{
+		 background-image:url(../images/header_bg_dx.png); background-repeat:no-repeat; width:14px; height:46px;
+	}
+	td.header_bg{
+		 background-image:url(../images/header_bg.png); background-repeat:repeat-x; height:46px;
+	}
+	td.main_bg_sx{
+		 background-image:url(../images/main_bg_sx.png); background-repeat:repeat-y; width:14px;
+	}
+	td.main_bg_dx{
+		 background-image:url(../images/main_bg_dx.png); background-repeat:repeat-y; width:14px;
+	}
+	td.main_bg{
+		 background-color:#FFF;
+	}
+	td.bottom_bg_sx{
+		 background-image:url(../images/bottom_bg_sx.png); background-repeat:no-repeat; width:14px; height:14px;
+	}
+	td.bottom_bg_dx{
+		 background-image:url(../images/bottom_bg_dx.png); background-repeat:no-repeat; width:14px; height:14px;
+	}
+	td.bottom_bg{
+		 background-image:url(../images/bottom_bg.png); background-repeat:repeat-x; height:14px;
+	}
+	td.sub_menu_sx_dot{
+		 background-image:url(../images/sub_menu_sx_dot.png); background-repeat:no-repeat; width:9px; height:25px;
+	}
+	td.sub_menu_dx_dot{
+		 background-image:url(../images/sub_menu_dx_dot.png); background-repeat:no-repeat; width:9px; height:25px;
+	}
+	td.sub_menu_sx{
+		 background-image:url(../images/sub_menu_sx.png); background-repeat:no-repeat; width:9px; height:25px;
+	}
+	td.sub_menu_dx{
+		 background-image:url(../images/sub_menu_dx.png); background-repeat:no-repeat; width:9px; height:25px;
+	}
+	td.sub_menu_bg{
+		 background-image:url(../images/sub_menu_bg.png); background-repeat:repeat-x; height:25px;
+	}
+	a.toggle_fs{
+		background-image:url('../images/toggle_fs.png'); 
+		width:32px; 
+		height:27px; 
+		display: block; 
+		margin-top: 4px; 
+		float:left;
+		background-position: 32px 0;
+	}
+	a.toggle_fs:hover {
+		background-position: 32px -27px;
+	}
+	a.off{
+		background-position: 0 0;
+	}
+	a.off:hover {
+		background-position: 0 -27px;
+	}
+	a.close_window{
+		background-image:url('../images/close_window.png'); 
+		background-position: 0 0;
+		width:32px; 
+		height:27px; 
+		display: block; 
+		margin-top: 4px; 
+		float:right;
+	}
+
+

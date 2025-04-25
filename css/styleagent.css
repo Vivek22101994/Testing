@@ -1,0 +1,453 @@
+#container.agency .div_terms {
+    border: 1px solid #C1C1D6;
+    color: #333366;
+    height: 95px;
+    margin-bottom: 7px;
+}
+#container.agency .accettocheck {
+    font-size:11px;
+    float:left;
+}
+#container.agency .accettocheck input {
+    float: left;
+    margin: 1px 4px 0 0;
+}
+.titprivacyagenty {
+    color: #FE6634;
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 15px;
+    
+}
+.dxhead_privagency {
+    float: left;
+    margin: 50px 0 0 58px;
+}
+.dxhead_privagency .titag {
+    color: #FE6634;
+    font-weight:bold;
+    /*text-transform:uppercase;*/
+    display:block;
+    font-size:16px;
+    font-style:italic;
+}
+.dxhead_privagency .nomeag { font-size: 12px;}
+.dxhead_privagency .nomeag strong {}
+#container.agency #menuMain ul li a {
+    padding: 6px 10px 0 10px;
+}
+#container.agency #main > div {
+    padding: 20px 24px 6px;
+    width: 872px;
+}
+#container.agency #main .colsx {
+    width: 262px;
+    float:left;
+}
+#container.agency #main .coldx {
+    float: right;
+    width: 580px;
+}
+#container.agency .menulogout {
+    font-size: 10px;
+    margin-left: 11px;
+}
+#container.agency a.buttprosegui {
+    padding:4px 15px;
+    -khtml-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-weight:bold;
+    font-size:14px;
+    text-transform:uppercase;
+    display:block;
+    float:left;
+    text-decoration:none;
+}
+#container.agency a.buttprosegui:link, #container.agency a.buttprosegui:visited { background-color:#FE6634; color:#FFF; }
+#container.agency a.buttprosegui:hover, #container.agency a.buttprosegui:active { background-color:#333366; color:#FFF; }
+
+#container.agency .reslist .ordina {
+    border:none;
+    border-radius:none;
+    clear:both;
+    float:left;
+    margin:0;
+    padding:0;
+    width: 872px;
+}
+#container.agency .reslist .table_fascia {
+    margin: 10px 0;
+    width:872px;
+}
+a.acolor2 {
+}
+a.acolor2:link, a.acolor2:visited {
+    background-position: right -48px;
+}
+a.acolor2:hover, a.acolor2:active {
+    background-position: right -24px;
+}
+#infoCont .infoBox .menu_area_reservation_details a.acolor2:link span, #infoCont .infoBox .menu_area_reservation_details a.acolor2:visited span {
+    background-position: left -48px;
+}
+#infoCont .infoBox .menu_area_reservation_details a.acolor2:hover span, #infoCont .infoBox .menu_area_reservation_details a.acolor2:active span {
+    background-position: left -24px;
+}
+#container.agency .reslist .table_fascia.tfagency {
+    margin: 0;
+    width: 597px;
+}
+#container.agency .reslist .table_fascia.tfagency th a {
+    background-image:url(../images/css/agencyascdesc.gif);
+    background-repeat:no-repeat;
+    padding-right:10px;
+    margin-right:5px;
+    float: left;
+}
+#container.agency .reslist .table_fascia.tfagency th a:link,
+#container.agency .reslist .table_fascia.tfagency th a:visited {
+    background-position:right 6px;
+}
+#container.agency .reslist .table_fascia.tfagency th a:hover,
+#container.agency .reslist .table_fascia.tfagency th a:active  {
+    background-position:right -5px;
+}
+#container.agency #lista_search .sx {
+    margin-left: 0;
+    width:262px;
+}
+#container.agency #lista_search .dx {
+    width:597px;
+}
+#container.agency .reslist .table_fascia.tfagency th a.asc:link,
+#container.agency .reslist .table_fascia.tfagency th a.asc:visited {
+    background-position:right -16px;
+}
+#container.agency .reslist .table_fascia.tfagency th a.asc:hover,
+#container.agency .reslist .table_fascia.tfagency th a.asc:active  {
+    background-position:right -27px;
+}
+#container.agency .reslist .table_fascia.tfagency th a.desc:link,
+#container.agency .reslist .table_fascia.tfagency th a.desc:visited {
+    background-position:right -38px;
+}
+#container.agency .reslist .table_fascia.tfagency th a.desc:hover,
+#container.agency .reslist .table_fascia.tfagency th a.desc:active  {
+    background-position:right -49px;
+}
+#container.agency .reslist .table_fascia.tfagency td input[type="text"] {
+	width:30px;
+}
+
+a.abookit {
+    background-image:url(../images/css/buttbookit2.jpg);
+    background-repeat:no-repeat;
+    float: left;
+}
+a.abookit:link, a.abookit:visited {
+    background-position:right 0;
+}
+a.abookit:hover, a.abookit:active {
+    background-position:right -20px;
+}
+a.abookit span {
+    background-image:url(../images/css/buttbookit1.jpg);
+    background-repeat:no-repeat;
+    display: block;
+    float: left;
+    min-width: 50px;
+    padding: 2px 11px 2px 7px;
+    font-weight:bold;
+}
+a.abookit:link span, a.abookit:visited span {
+    background-position:left 0;
+    color:#FFFFFF;
+}
+a.abookit:hover span, a.abookit:active span {
+    background-position:left -20px;
+    color:#FFFFFF;
+}
+#container.agency .reslist .table_fascia.tfagency td:last-child a.abookit {
+	width:45px;
+}
+.filt {
+	background-color:#333366;
+	clear:none;
+	/*display:inline-block;
+	float:left;*/
+	margin-bottom:10px;
+	margin-top:2px;
+	position:static;
+	width:auto;
+}
+.filt .t, .filt .b {
+	clear:both;
+	height:6px;
+	width:inherit;
+}
+.filt .c {
+	clear:both;
+	padding-left:10px;
+	padding-right:10px;
+}
+.filt .c a.filto_bottone {
+	background-image:url(../images/filtr_piumeno.gif);
+	background-position:0px 1px;
+	background-repeat:no-repeat;
+	color:#FFF;
+	cursor:pointer;
+	font-size:10px;
+	height:12px;
+	line-height:12px;
+	padding-left:15px;
+	text-decoration:none;
+}
+.filt .c a.filto_bottone:hover {
+	background-image:url(../images/filtr_piumeno.gif);
+	background-position:0px -11px;
+}
+.filt .c a.filto_bottone2 {
+	background-image:url(../images/filtr_piumeno.gif);
+	background-position:0px -23px;
+	background-repeat:no-repeat;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-size:10px;
+	height:12px;
+	line-height:12px;
+	padding-left:15px;
+	text-decoration:none;
+}
+.filt .c a.filto_bottone2:hover  {
+	background-image:url(../images/filtr_piumeno.gif);
+	background-position:0px -35px;
+}
+.filt .filtro_cont {
+	border-top: 1px dotted #616195;
+	margin-top:3px;
+	margin-bottom:3px;
+	padding-top:5px;
+	
+}
+.filt .filtro_cont label {
+	float:left;
+	font-size:10px;
+	color: #FFF;
+}
+.filt .filtro_cont .inp {
+	clear:both;
+	float:left;
+	margin-right:10px;
+	color:#666666;
+	font-size:11px;
+	margin-top:0;
+	margin-bottom:5px;
+	margin-right:5px;
+}
+.filt .filtro_cont input {
+	float:left;
+	padding:1px;
+}
+.filt .filtro_cont a.ricercaris {
+	background-image: url(../images/ricercaris2.gif);
+	background-repeat: no-repeat;
+	background-position: right 0px;
+	float:left;
+	text-decoration:none;
+}
+.filt .filtro_cont a.ricercaris:hover {
+	background-position: right -33px;
+}
+.filt .filtro_cont a.ricercaris span {
+	background-image: url(../images/ricercaris1.gif);
+	background-repeat: no-repeat;
+	background-position: left 0px;
+	display:block;
+	height:17px;
+	padding:8px 15px 8px 15px;
+	float:left;
+	color:#FFF;
+	font-size:15px;
+	line-height:17px;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration:none;
+	min-width: 100px;
+}
+.filt .filtro_cont a.ricercaris:hover span {
+	color:#f6d0ad;
+	background-position: left -33px;
+}
+.agentprice {
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	border-bottom: 1px dashed #C1C1D6;
+	padding-bottom: 20px;
+}
+	.agentprice table tr td a {
+		display:block;
+		padding: 5px 10px;
+		background:#FE6634;
+		border-radius: 5px;
+		margin: 10px 10px 0 0;
+		color:#FFF;
+		text-decoration: none;
+		font-weight:bold;
+		font-size: 12px;
+		line-height:12px;
+		text-align:center;
+	}
+		.agentprice table tr td a:hover {
+			background: #333366;
+		}
+.table_fascia.tfagency, .estatelist, .estatelist table {
+	float: left;
+	width: 100%;
+	clear: both;
+}
+.table_fascia.tfagency {
+	border-top: 1px solid #f5f5fc;
+}
+	.table_fascia.tfagency tr td {
+		font-size: 12px;
+		line-height: 12px;
+		border-bottom: 1px solid #f5f5fc;
+		padding: 10px 5px;
+	}
+		.table_fascia.tfagency tr:hover td {
+			background: #f5f5fc;
+		}
+		.table_fascia.tfagency tr td a {
+			color: #333366;
+			font-size:13px;
+			line-height: 13px;
+		}
+			.table_fascia.tfagency tr td a:hover {
+				color: #FE6634;
+			}
+		.table_fascia.tfagency tr td:last-child {
+			text-align: right;
+		}
+			.table_fascia.tfagency tr td:last-child a {
+				display:block;
+				float:right;
+				padding: 5px 10px;
+				background:#FE6634;
+				border-radius: 5px;
+				color:#FFF;
+				text-decoration: none;
+				font-weight:bold;
+				font-size: 12px;
+				line-height:12px;
+				text-align:center;
+				margin: 0 !important;
+			}
+				.table_fascia.tfagency tr td:last-child a:hover {
+					background: #333366;
+				}
+.agentEstateDetail {
+	display: block;
+	float: left;
+	width: 100%;
+}
+.agentEstateDett {
+	float: left;
+	margin: 20px;
+	width: 50%;
+	padding-bottom:20px;
+}
+	.agentEstateDett table {
+		width: 100%;
+	}
+		.agentEstateDett table tr td {
+			width: 50%;
+			padding: 5px;
+			color: #333366;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 21px;
+		}
+			.agentEstateDett table tr td input[type="text"] {
+				width:96%;
+			}
+		.agentEstateDett table tr td a {
+			display:block;
+			float:right;
+			padding: 5px 0;
+			background:#FE6634;
+			border-radius: 5px;
+			color:#FFF;
+			text-decoration: none;
+			font-weight:bold;
+			font-size: 12px;
+			line-height:12px;
+			text-align:center;
+			margin: 0 !important;
+			width: 100%;
+		}
+			.agentEstateDett table tr td a:hover {
+				background: #333366;
+			}
+.mainline.agentEstatePrice {
+	float:none;
+	margin:9px 0 0;
+}
+.mainline.agentEstatePrice .mainbox {
+    clear: both;
+    display: block;
+    float: none;
+}
+	.mainline.agentEstatePrice .mainbox .top, .mainline.agentEstatePrice .mainbox .bottom {
+		display: none;
+	}
+	.mainline.agentEstatePrice .mainbox .center {
+		border: none;
+		padding:0;
+		margin-right:16px;
+	}
+		.mainline.agentEstatePrice .mainbox .center .boxmodulo > table {
+			width: 100%;
+		}
+			.mainline.agentEstatePrice .mainbox .center .boxmodulo > table:last-child {
+				padding-top: 15px;
+				margin-top: 15px;
+				border-top: 1px dashed #C1C1D6;
+			}
+			.mainline.agentEstatePrice .mainbox .center .boxmodulo > table tr td {
+				text-align: center;
+				padding:5px 10px;
+				vertical-align:middle;
+				background:#f5f5fc;
+			}
+				.mainline.agentEstatePrice .mainbox .center .boxmodulo > table tr td:first-child {
+					text-align: left;
+					font-weight:bold;
+					color:#333366;
+				}
+				.mainline.agentEstatePrice .mainbox .center .boxmodulo > table tr td[colspan] {
+					background: #FFF;
+					padding-left:0;
+					padding-right:0;
+				}
+				.mainline.agentEstatePrice .mainbox .center .boxmodulo > table tr td .titoloboxmodulo {
+					margin: 5px 0 6px 0;
+				}
+			.mainline.agentEstatePrice .mainbox .center .boxmodulo > table tr th {
+				text-align: center;
+				padding:5px 10px;
+				vertical-align:middle;
+				background:#333366;
+				color:#FFF;
+			}
+				.mainline.agentEstatePrice .mainbox .center .boxmodulo > table tr th:first-child {
+					text-align: left;
+				}
+			.mainline.agentEstatePrice .mainbox .center .boxmodulo > table:first-child tr:first-child td {
+				padding-bottom:15px;
+			}

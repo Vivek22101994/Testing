@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP.master.cs" Inherits="WebFileManager.wfm.MP" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery-ui-1.8.7.custom.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.tooltip.js"></script>
+
+	<script type="text/javascript" src="js/common.js"></script>
+
+	<script type="text/javascript">
+		function setParentBackgroundColor() {
+			$(function() {
+			$("#sb-body-inner", window.parent.document).css("background-color", "transparent");
+			$("#sb-body", window.parent.document).css("background-color", "transparent");
+			});
+		}
+	</script>
+
+	<script type="text/javascript">
+		var Shadowbox_width;
+		var Shadowbox_height;
+		var Shadowbox_left;
+		var Shadowbox_top;
+		var Shadowbox_wrapper_paddingTop;
+		var Window_width;
+		var Window_height;
+		function Shadowbox_setFullScreen() {
+			Shadowbox_width = $("#sb-wrapper", window.parent.document).css("width");
+			Shadowbox_height = $("#sb-body", window.parent.document).css("height");
+			Shadowbox_left = $("#sb-wrapper", window.parent.document).css("left");
+			Shadowbox_top = $("#sb-wrapper", window.parent.document).css("top");
+			Shadowbox_wrapper_paddingTop = $("#sb-wrapper", window.parent.document).css("padding-top");
+			Window_width = $(window.parent.window).width();
+			Window_height = $(window.parent.window).height();
+			$("#sb-wrapper", window.parent.document).css("width", "" + Window_width);
+			$("#sb-body", window.parent.document).css("height", "" + Window_height);
+			$("#sb-wrapper", window.parent.document).css("left", "0px");
+			$("#sb-wrapper", window.parent.document).css("top", "0px");
+			$("#sb-title", window.parent.document).css("display", "none");
+			$("#sb-info", window.parent.document).css("display", "none");
+			$("#sb-wrapper", window.parent.document).css("padding-top","0");
+
+		}
+		function Shadowbox_closeFullScreen() {
+			$("#sb-wrapper", window.parent.document).css("width", "" + Shadowbox_width);
+			$("#sb-body", window.parent.document).css("height", "" + Shadowbox_height);
+			$("#sb-wrapper", window.parent.document).css("left", "" + Shadowbox_left);
+			$("#sb-wrapper", window.parent.document).css("top", "" + Shadowbox_top);
+			$("#sb-wrapper", window.parent.document).css("padding-top", "" + Shadowbox_wrapper_paddingTop);
+			$("#sb-title", window.parent.document).css("display", "");
+			$("#sb-info", window.parent.document).css("display", "");
+		}
+		function toggleFS() {
+			if ($("#is_toggle_fs").val() == "1") {
+				Shadowbox_setFullScreen();
+				$("#is_toggle_fs").val("0");
+				$('#toggle_fs').addClass("off");
+			}
+			else {
+				Shadowbox_closeFullScreen();
+				$("#is_toggle_fs").val("1");
+				$('#toggle_fs').removeClass("off");
+			}
+		}
+		function CloseWindow() {
+			parent.Shadowbox.close();
+		}
+	</script>
+
+	<asp:ContentPlaceHolder ID="CPH_head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+	<asp:ScriptManager ID="ScriptManager1" runat="server">
+	</asp:ScriptManager>
+	<asp:UpdateProgress ID="UpdateProgress1" runat="server">
+		<ProgressTemplate>
+			<div style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0; display: block;">
+				<div class="info_area" id="loader">
+					<img alt="loading" src="<%=CurrentAppSettings.ROOT_PATH%>admin/images/loader.gif" style="float: left;" /><span>Loading...</span>
+				</div>
+			</div>
+		</ProgressTemplate>
+	</asp:UpdateProgress>
+
+	<script type="text/javascript">
+		var prm = Sys.WebForms.PageRequestManager.getInstance();
+		prm.add_initializeRequest(InitializeRequest);
+		prm.add_endRequest(EndRequest);
+
+		function InitializeRequest(sender, args) {
+			document.body.style.cursor = 'wait';
+		}
+
+		function EndRequest(sender, args) {
+			document.body.style.cursor = 'default';
+		}
+
+	</script>
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td class="header_bg_sx">
+			</td>
+			<td class="header_bg">
+				<input type="hidden" id="is_toggle_fs" value="1" />
+				<a href="javascript:CloseWindow()" class="close_window" id="close_window" title="Close Window"></a>
+				<a href="javascript:toggleFS()" class="toggle_fs" id="toggle_fs" title="Toggle Fullscreen Mode"></a>
+			</td>
+			<td class="header_bg_dx">
+			</td>
+		</tr>
+		<tr>
+			<td class="main_bg_sx">
+			</td>
+			<td class="main_bg">
+				<asp:ContentPlaceHolder ID="CPH_main" runat="server">
+		        
+				</asp:ContentPlaceHolder>
+			</td>
+			<td class="main_bg_dx">
+			</td>
+		</tr>
+		<tr>
+			<td class="bottom_bg_sx">
+			</td>
+			<td class="bottom_bg">
+			</td>
+			<td class="bottom_bg_dx">
+			</td>
+		</tr>
+	</table>
+    </form>
+</body>
+</html>

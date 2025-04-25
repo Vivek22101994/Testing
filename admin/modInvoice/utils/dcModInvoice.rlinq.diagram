@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 19, 16.75" name="dcModInvoice" isDefault="true">
+    <DomainModelMoniker name="/DCmodInvoice" />
+    <nestedChildShapes>
+      <classShape Id="fe308987-c822-4a52-a047-6a6becd8b205" absoluteBounds="7.5, 5.25, 1.875, 2.147374674479166">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashTypeLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="78c536ed-1640-4fda-b8e9-4c5d17aeda34" absoluteBounds="7.515, 5.76, 1.8450000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d6c88cb2-97f7-4e35-8ca7-1b8048b2193a" absoluteBounds="7.515, 6.7885953776041665, 1.8450000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="2bb2267e-c1a4-4acd-942f-e407ea19617d" absoluteBounds="7.515, 7.0479850260416663, 1.8450000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="40e99a06-327a-4357-adef-e15a12c35ccf" absoluteBounds="9.5, 0.5, 1.875, 3.4934847005208325">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashPlaceLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="470ef778-c627-45b6-83e7-b6202d81a588" absoluteBounds="9.515, 1.0099999999999998, 1.8450000000000002, 2.364705403645833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ca43ef91-b451-48b1-ab44-6581a60a1763" absoluteBounds="9.515, 3.3847054036458326, 1.8450000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e2478850-e3af-4971-a83a-6d867ad6c4d3" absoluteBounds="9.515, 3.6440950520833324, 1.8450000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="b3b48f4c-3e0d-491f-b757-ac141923021f" absoluteBounds="0.625, 0.5, 2, 6.7626090494791651">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashDocumentTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="30b3d994-b8dc-496f-b3d1-cdab3e4b82b1" absoluteBounds="0.64, 1.01, 1.9700000000000002, 5.6338297526041661" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ab4688c7-bb47-45e5-a9d6-597e462f76f4" absoluteBounds="0.64, 6.6538297526041656, 1.9700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d853f185-a135-475e-a934-7c553797c5c0" absoluteBounds="0.64, 6.9132194010416654, 1.9700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="4283e9cd-f80c-4d0d-b79a-cf11ee23f70f" absoluteBounds="7.5, 0.5, 1.875, 2.3396761067708329">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashDocCaseLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="05c726e0-f990-4c4f-a88a-8099361913e8" absoluteBounds="7.515, 1.01, 1.8450000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4231012b-c59c-4ac8-876f-64579ab20942" absoluteBounds="7.515, 2.2308968098958335, 1.8450000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="1fad08f5-e78f-427a-a277-30504af0a292" absoluteBounds="7.515, 2.4902864583333333, 1.8450000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="32ae512f-2705-42eb-8ad9-b3958792209a" absoluteBounds="3, 0.5, 2, 3.878087565104166">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashBookTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="078b5b79-9576-46f9-a31f-8f76cb3c839f" absoluteBounds="3.015, 1.01, 1.9700000000000002, 2.749308268229167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="7c3936f0-8281-490b-ae98-78d6e1deb60a" absoluteBounds="3.015, 3.7693082682291665, 1.9700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="2569ac59-336b-44ab-a2c5-56337d7dfdb8" absoluteBounds="3.015, 4.0286979166666663, 1.9700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="d000463e-09d0-4880-a812-246746d32a65" absoluteBounds="5.25, 0.5, 2, 8.877924804687499">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashBookVIEW" />
+        <nestedChildShapes>
+          <elementListCompartment Id="70b53716-e40d-41a7-8a61-e8846e678c17" absoluteBounds="5.265, 1.01, 1.9700000000000002, 7.7491455078125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="fc4e4a68-5548-43ec-a68b-5e407bd4500d" absoluteBounds="5.265, 8.7691455078125, 1.9700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="051f6652-8232-4079-81a2-80921ce4243f" absoluteBounds="5.265, 9.02853515625, 1.9700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="217d1c24-adbd-49d9-a88a-a25334b64177" absoluteBounds="15, 0.5, 1.875, 3.4934847005208329">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvInvoiceItemTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="1571cf7a-8c16-4835-a533-7b94b8e72da2" absoluteBounds="15.015, 1.01, 1.8450000000000002, 2.364705403645833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="cb303aeb-70b0-4418-be6c-5e723cfacc7b" absoluteBounds="15.015, 3.3847054036458326, 1.8450000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a25dbdef-6233-4807-acde-4e1824af3e04" absoluteBounds="15.015, 3.6440950520833324, 1.8450000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="544dd280-f1d3-4e28-b2c7-f95422a2d4b6" absoluteBounds="12.375, 0.5, 1.5, 9.0702262369791651">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvInvoiceTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="83973095-d481-4400-9034-a0df64b23569" absoluteBounds="12.39, 1.0099999999999998, 1.4700000000000002, 7.9414469401041661" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="50a66b36-e138-447c-8401-d3da2ad2f2ea" absoluteBounds="12.39, 8.9614469401041656, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4b61b048-29d2-4b72-8293-7a9879c8ff63" absoluteBounds="12.39, 9.2208365885416654, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="c394c386-fa54-4182-b811-30442a6808c8" absoluteBounds="3, 4.625, 2, 2.3396761067708329">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashDocumentFilesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d1f5fb69-64ed-482c-8e55-63df006f554b" absoluteBounds="3.015, 5.135, 1.9700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c0cc9363-9a8c-428c-8f5d-f240b71b9d6b" absoluteBounds="3.015, 6.3558968098958335, 1.9700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="35bf2950-088a-4233-acd5-7490c7f8f5bd" absoluteBounds="3.015, 6.6152864583333333, 1.9700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="ea594ea4-e8c0-4bee-a0fe-c0ca875d6cc1" absoluteBounds="0.5, 7.75, 1.5, 2.1473746744791669">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCompanyTaxRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="343cf367-c1b9-4086-8d06-e77c9384c41d" absoluteBounds="0.515, 8.26, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a4e097f9-3674-4728-a8f0-94146f991c3e" absoluteBounds="0.515, 9.2885953776041674, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c0610b03-9021-483b-a869-82536da4bfd6" absoluteBounds="0.515, 9.5479850260416672, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="6c0c3293-0177-4234-9dbc-9ad28dbab8b1" absoluteBounds="17.25, 0.5, 1.5, 2.7242789713541664">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvPayBancaSellaVerifiedByVisaTXN" />
+        <nestedChildShapes>
+          <elementListCompartment Id="63aac67b-60f8-42a0-be7a-4935b8f71cb9" absoluteBounds="17.265, 1.01, 1.4700000000000002, 1.5954996744791665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b4b28304-b192-47c8-b38c-5bec00bb5e50" absoluteBounds="17.265, 2.6154996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3138bd1c-213a-4e66-bc27-ed86c88852a9" absoluteBounds="17.265, 2.8748893229166663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="066e6d23-4e4f-4194-8e97-19487a06d705" absoluteBounds="5.125, 9.875, 1.5, 1.955073242187499">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCashTaxLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="b7391f7d-5585-43cf-a121-504577575913" absoluteBounds="5.14, 10.385, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="2ab44217-64ac-43ad-97e8-439addba2e66" absoluteBounds="5.14, 11.2212939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e3f05544-a003-422a-a6f3-b3cc9eac950b" absoluteBounds="5.14, 11.48068359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="8ad4c3a6-d287-44bb-bc79-fa43cf8a2d6d" absoluteBounds="3.125, 7.375, 1.5, 9.0702262369791669">
+        <DomainClassMoniker name="/DCmodInvoice/dbInvCompanyTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="5f03926d-5511-41aa-b992-1870aa7c7cbe" absoluteBounds="3.14, 7.885, 1.4700000000000002, 7.9414469401041661" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d1a1d89d-a4ac-46d5-bd26-cd5eeab4afcb" absoluteBounds="3.14, 15.836446940104166, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="30b0f5d5-8de6-458e-aaf0-33d14a3bff66" absoluteBounds="3.14, 16.095836588541665, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

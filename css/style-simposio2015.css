@@ -1,0 +1,562 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'FuturaStdBook';
+    src: url('../font/futurastd-book.eot');
+    src: url('../font/futurastd-book.eot') format('embedded-opentype'),
+         url('../font/futurastd-book.woff2') format('woff2'),
+         url('../font/futurastd-book.woff') format('woff'),
+         url('../font/futurastd-book.ttf') format('truetype'),
+         url('../font/futurastd-book.svg#FuturaStdBook') format('svg');
+}
+body {
+	background: #FFF !important;
+	color:#5C5C5E;
+	font-size: 11px;
+}
+.containerSimposio {
+	width:100%;
+	clear:both;
+}
+.headerSimposio {
+	width:100%;
+	clear:both;
+	background: url(../images/bg-header-simposio2015.gif) top center no-repeat;
+	height:275px;
+}
+.headerSimposio > div {
+	width: 1004px;
+	height:275px;
+	margin: 0 auto;
+}
+h1, h2, h3, h1 span, h2 span, h3 span, h1 strong, h2 strong, h3 strong {
+	font-family: 'FuturaStdBook';
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.logoSimposio {
+	display:block;
+	float:left;
+}
+.logoSimposio img {
+	display:block;
+	float:left;
+	border:none;
+}
+.titMainSimposio {
+	display:block;
+	float:right;
+	font-size:83px;
+	line-height:83px;
+	text-align:right;
+	margin-top:17px;
+	color:#fff;
+	letter-spacing:6px;
+	margin-right:-14px;
+}
+.titMainSimposio span {
+	color:#771f07;
+}
+.subTitMainSimposio {
+	display:block;
+	float:left;
+	clear:both;
+	width: 100%;
+}
+.subTitMainSimposio > strong {
+	display:block;
+	float:left;
+	clear:both;
+	width: 1024px;
+	margin-left:-10px;
+	font-weight: normal;
+	text-align:center
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine2 {
+	color:#FFF;
+	font-size:61px;
+	line-height:61px;
+	margin-top: 4px;
+	letter-spacing:14.5px;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine2 > span {
+	color:#ea673d;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine3 {
+	color: #333366;
+    font-size: 55px;
+    letter-spacing: 5px;
+    line-height: 61px;
+    margin-top: 3px;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine3 > span {
+	color:#ea673d;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine4 {
+	color: #333366;
+    font-size: 21px;
+    letter-spacing: 3.2px;
+    line-height: 21px;
+    margin-top: 7px;
+	text-align:right;
+	width:1004px;
+	padding-right:20px;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine4 > span {
+	color:#ea673d;
+}
+.infoClickSimposio {
+	display:block;
+	float:left;
+	position:relative;
+	margin-top:-14px;
+	font-size: 13px;
+	line-height:13px;
+}
+.hotelThumbsSimposioCont {
+	width: 1004px;
+	margin: 7px auto 0;
+	height: 243px;
+}
+.hotelThumbsSimposio {
+	width: 1014px;
+	height: 243px;
+} 
+a.hotelThumbSimposio {
+	display:block;
+	float:left;
+	width:243px;
+	height:243px;
+	text-decoration: none;
+	position: relative;
+	z-index: 1;
+	margin-right: 10px;
+	opacity: 1;
+	-webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-timing-function: ease;
+  -o-transition-property: all;
+  -o-transition-duration: 0.3s;
+  -o-transition-timing-function: ease;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.3s;
+  -ms-transition-timing-function: ease;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+a.hotelThumbSimposio:hover {
+	opacity: 0.7;
+}
+
+a.hotelThumbSimposio:after {
+	content: "+";
+	font-size: 60px;
+	line-height: 60px;
+	display:block;
+	position:absolute;
+	bottom: 0px;
+	right:10px;
+	text-shadow: 0 0 10px #000;
+	z-index:2;
+	color:#FFF;
+}
+.nameHotelSimposio {
+	display:block;
+	position: absolute; 
+	z-index:3;
+	background:url(../images/tit-bg-simposio.png) repeat;
+	color: #FFF;
+	font-size:15px;
+	line-height:15px;
+	padding:7px;
+	top: 10px;
+	left:0;
+}
+.searchSimposioCont {
+	float:left;
+	clear:both;
+	width: 100%;
+	background:url(../images/bg-search-tit-simposio2015.gif) top center no-repeat;
+	height:474px;
+	margin-top: 20px;
+}
+.searchSimposioCont > div {
+	clear:both;
+	width: 1004px;
+	background:url(../images/bg-search-tit-simposio2015.gif) top center no-repeat;
+	height:474px;
+	margin: 0 auto;
+	position:relative;
+	z-index:1;
+	overflow:hidden;
+}
+.titsearchSimposio {
+	display: block;
+	float: left;
+	width: 100%;
+	clear:both;
+}
+.titsearchSimposio > strong {
+	display: block;
+	float: left;
+	width: 100%;
+	clear:both;
+	width: 1024px;
+	margin-left:-10px;
+	text-align: center;
+}
+.titsearchSimposio > strong.titsearchSimposioLine1 {
+	color: #742103;
+	font-size: 42px;
+	line-height: 42px;
+	letter-spacing: 2px;
+	margin-top:9px;
+}
+.titsearchSimposio > strong.titsearchSimposioLine1 > span {
+	color:#fff;
+}
+.titsearchSimposio > strong.titsearchSimposioLine2 {
+	color: #333366;
+	font-size: 34px;
+	line-height: 34px;
+	letter-spacing: 3px;
+	margin-top:11px;
+}
+.titsearchSimposio > strong.titsearchSimposioLine2 > span {
+	color:#ea673d;
+}
+.titsearchSimposio > strong.titsearchSimposioLine3 {
+	color: #333366;
+	font-size: 40px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	margin-top:3px;
+}
+.titsearchSimposio > strong.titsearchSimposioLine3 > span {
+	color:#ea673d;
+}
+
+.searchSimposioCont #SearchHomepage {
+	top: 161px;
+}
+.imgSearchAptSimposio {
+	float: left;
+	clear:both;
+	margin-top: 12px;
+}
+.footerSimposio {
+	background:#333366;
+	width: 100%;
+	height: 98px;
+	float:left;
+	clear:both;
+	margin-top: 20px;
+}
+.footerSimposio > div {
+	width: 1004px;
+	height: 98px;
+	margin: 0 auto;
+}
+.datiSocSimposio {
+	display:block;
+	float:left;
+	margin-top: 22px;
+	font-size: 12px;
+	line-height: 18px;
+	color: #a3a3c5;
+}
+.telFooterSimposio {
+	display:block;
+	float: right;
+	margin-top: 33px;
+}
+a.emailFooterSimposio {
+	display: block;
+	float:right;
+	margin:40px 20px 0 0;
+	height:18px;
+	font-size:17px;
+	line-height: 17px;
+	color:#FFF;
+	font-family: 'FuturaStdBook';
+	text-decoration: none;
+}
+a.emailFooterSimposio:hover {
+	text-decoration: underline;
+	color:#FFF;
+}
+a.emailFooterSimposio img {
+	float:left;
+	margin-right: 10px;
+}
+
+.hotelSimposioContainer {
+	width: 964px;
+	padding: 10px;
+	background: #FFF;
+	clear:both;
+	margin: 0 auto;
+}
+.titHotelSimposio {
+	background: url(../images/bg-tit-hotel-simposio.png) top right no-repeat;
+	display:block;
+	float:left;
+	height:56px;
+	font-size:35px;
+	line-height:56px;
+	padding:0 20px 0 10px;
+	position:relative;
+	z-index:2;
+	margin-bottom:-15px;
+	color:#FFF;
+}
+.hotelAddress {
+	color: #333366;
+	display: block;
+	float: right;
+	font-size: 16px;
+	margin: 7px 10px 0 5px;
+}
+.galleryHotelCont {
+	width: 945px;
+	margin: 0 0 0 10px;
+	clear: both;
+	float: left;
+	height: 400px;
+	position: relative;
+	z-index: 1;
+	overflow:hidden;
+}
+	.galleryHotelCont #galleryHotel {
+		width: 945px;
+		height: 400px;
+		float:left;
+		overflow:hidden;
+	}
+		.galleryHotelCont #galleryHotel .items {
+			height: 400px;
+		}
+			.galleryHotelCont #galleryHotel .items > img {
+				width: 945px;
+				height: 400px;
+				float: left;
+			}
+	.galleryHotelCont a.browse {
+		display: block;
+		width: 50px;
+		height: 45px;
+		position: absolute;
+		z-index: 10;
+		top: 180px;
+		cursor:pointer;
+	}
+		.galleryHotelCont a.browse:hover {
+			opacity: 0.7;
+		}
+		.galleryHotelCont a.browse.left {
+			background: url(../images/prev.png) top left no-repeat;
+			left: 0;
+		}
+		.galleryHotelCont a.browse.right {
+			background: url(../images/next.png) top left no-repeat;
+			right: 0;
+		}
+.detailsHotelSimposio {
+	width: 945px;
+	margin: 20px 0 20px 10px;
+	clear: both;
+	float: left;
+	border-bottom: 1px dashed #e2e2f0;
+	padding-bottom:20px;
+}
+.txtHotelSimposio {
+	width: 620px;
+	float:left;
+	color:#5c5c5e;
+	font-size:12px;
+	line-height:18px;
+}
+.box1Col.tariffeHotelSimposio {
+	float:right;
+	width:280px;
+	margin-right:0;
+	min-height:0;
+}
+.separator {
+	display: block;
+	float: left;
+	clear: both;
+	border-bottom: 1px dashed #e2e2f0;
+	width:100%;
+	margin:10px 0;
+}
+.titBarHome.titTariffeHotelSimposio {
+	margin:-11px 0 0 -11px;
+	width:282px;
+	background:#333366;
+	text-align: center;
+	margin-bottom:10px;
+}
+	.titBarHome.titTariffeHotelSimposio strong {
+		font-weight: normal;
+		letter-spacing: 2px;
+	}
+.subTitTariffeHotelSimposio {
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	font-size:14px;
+	line-height:14px;
+	color:#333366;
+	margin-bottom:10px;
+}
+ul.listRatesHotelSimposio {
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	list-style: none;
+}
+ul.listRatesHotelSimposio li {
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	list-style: none;
+	font-size:12px;
+	line-height:12px;
+	margin-bottom:5px;
+}
+	ul.listRatesHotelSimposio li > span {
+		display: block;
+		float: left;
+	}
+	ul.listRatesHotelSimposio li > em {
+		display: block;
+		float: right;
+		color:#ea673d;
+	}
+a.btnRequestInfoHotelSimposio {
+	display:block;
+	float:left;
+	background: url(../images/email-request-hotel-simposio.gif) top left no-repeat;
+	width:441px;
+	height:38px;
+	padding-left:10px;
+	font-family: 'FuturaStdBook';
+	font-size: 18px;
+	line-height: 38px;
+	color:#FFF;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-decoration: none;
+	margin-left:10px;
+}
+	a.btnRequestInfoHotelSimposio:hover {
+		opacity: 0.8;
+		color:#FFF;
+	}
+.infoCodeHotelSimposio {
+	width: 470px;
+	display: block;
+	float: right;
+	text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+	margin-bottom:10px;
+	margin-right:10px;
+}
+.codeHotelSimposio {
+	display: block;
+	width: 468px;
+	border-radius: 5px;
+	border: 1px solid #e2e2f0;
+	color: #ea673d;
+	margin-top:5px;
+	padding:4px 0;
+}
+
+.infoCodiceHotelSimposio {
+	width: 640px;
+	display: block;
+	float: left;
+	font-size: 17px;
+	line-height: 17px;
+	margin-top:8px;
+	margin-left:10px;
+	color:#333366;
+}
+.codiceHotelSimposio {
+	display: block;
+	width: 300px;
+	float:right;
+	border-radius: 5px;
+	border: 1px solid #a3a3c5;
+	color: #ea673d;
+	margin-top:0;
+	margin-right:10px;
+	padding:5px 0;
+	font-size:18px;
+	text-align:center;
+	margin-bottom:20px;
+}
+.codeSimposioApt {
+	display: block;
+	position: absolute;
+	z-index: 5;
+	bottom: 13px;
+	left: 0;
+	background: #ea673d;
+	box-shadow: 0 0 5px #000;
+	border-radius:0 10px 10px 0;
+	padding: 10px;
+	text-align:center;
+	border-top: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	
+}
+	.codeSimposioApt > span {
+		display: block;
+		float: left;
+		clear: both;
+		width: 100%;
+		font-family: 'FuturaStdBook';
+		font-size: 15px;
+		line-height: 15px;
+		margin-bottom: 5px;
+		text-transform:uppercase;
+		color:#742103;
+	}
+		.codeSimposioApt > span > strong {
+			font-family: 'FuturaStdBook';
+			font-weight: normal;
+			color: #fff;
+		}
+		.codeSimposioApt > strong {
+		display: block;
+		float: left;
+		clear: both;
+		width: 99%;
+		font-family: 'FuturaStdBook';
+		font-size: 25px;
+		line-height: 25px;
+		text-transform:uppercase;
+		color:#ea673d;
+		padding:10px 0;
+		border-radius:10px;
+		border: 1px solid #771f07;
+		background:#FFF;
+		box-shadow: 0 0 5px #aaa inset;
+	}
+
+#SearchHomepage.formHome select.zoneSelect > option {
+	padding: 0 5px;
+	text-align:left;
+}

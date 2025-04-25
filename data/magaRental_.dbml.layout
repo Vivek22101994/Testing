@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24, 52.875" name="magaRental_">
+  <DataContextMoniker Name="/magaRental_DataContext" />
+  <nestedChildShapes>
+    <classShape Id="334fd5e1-e66f-4203-9442-7a32b0c612de" absoluteBounds="9.875, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LK_REQUEST_STATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de47fd7e-bb0c-4529-aeb1-e778beaaa76d" absoluteBounds="9.89, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b51f45e-c44c-472d-998d-1760fdc4d3bd" absoluteBounds="9.875, 2, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_REQUEST_ITEM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d62fa831-b433-4ca0-a64c-f33557a8d071" absoluteBounds="9.89, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68b99c9c-3690-4dec-94ff-cf3a12a1e3fd" absoluteBounds="2.75, 23.125, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LK_RESERVATION_STATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71ac1f2c-f653-452b-a0c0-5cdfa6bed7d3" absoluteBounds="2.765, 23.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="336fab26-7a52-45b2-b101-a2d2e51a4acd" absoluteBounds="10.25, 12, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_REQUEST_STATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e755c19-66b6-457a-aed4-f42bb00da6ab" absoluteBounds="10.265, 12.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5004d225-eb68-45e7-8864-dd016fdb73a5" absoluteBounds="18.625, 2.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_PERIOD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4024e88d-465a-4d9d-8b61-708786f8e34e" absoluteBounds="18.64, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d407e4c3-9585-46fb-8367-d85ca0236870" absoluteBounds="18.625, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_PERIOD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="faa5b233-9499-4dfd-aae9-3ea9b916a0ef" absoluteBounds="18.64, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8f21ef6-addd-4b4e-85fd-4cffabd567a0" absoluteBounds="18.625, 4.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_PERIOD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e6d44ba-2443-4d6f-b33f-4c60c5674f91" absoluteBounds="18.64, 4.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5722bf0-ff2a-46fe-8fe9-b692e384fdfc" absoluteBounds="12.75, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_CONFIG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5203df7d-fbfb-4b02-a177-bff1becc2ba7" absoluteBounds="12.765, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6bd8236d-bf88-4f16-8426-913502b45fba" absoluteBounds="16.125, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_CONFIG_OPTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4b6c851-86e1-438e-b6c8-82fe53820a91" absoluteBounds="16.14, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="861b474a-d03e-4a2b-8a33-1311fb90ae8e" absoluteBounds="12.25, 2.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_CONFIG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5689249a-499f-4eb6-82e6-47e7f1b8ba2a" absoluteBounds="12.265, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67abb603-d3b4-48c0-8666-24808ce6a528" absoluteBounds="16.125, 2.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_CONFIG_OPTION1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95c219e2-ced8-438c-81eb-aa52e1d02722" absoluteBounds="16.14, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="207f8b83-8fed-4b26-92d3-d3670338c641" absoluteBounds="12.375, 4.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_CONFIG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db0d070c-ea7d-400a-9044-9d67725ef2cf" absoluteBounds="12.39, 5.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a58f87b4-d841-469b-8dfe-0229bd9f8ec6" absoluteBounds="16.125, 4.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_CONFIG_OPTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5820fe1-ecd9-444b-8e1a-0ba8ce79de83" absoluteBounds="16.14, 4.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4af4e42b-2e5c-493c-86ff-d3cbfa5128fe" absoluteBounds="3, 6, 2, 2.5401025390625">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_ESTATE_MEDIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="544e0c78-f9c2-482a-9fc4-1775a0bfc887" absoluteBounds="3.0149999999999997, 6.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5eedc72-079f-4d44-8505-c4b763e27973" absoluteBounds="7.25, 20, 2, 7.5399397786458326">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_RESIDENCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81715faf-f36f-4406-86d7-b6b9ad29db9e" absoluteBounds="7.2650000000000006, 20.46, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7964a228-4614-4220-a8d4-072f974d7901" absoluteBounds="9.375, 20, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_RESIDENCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a67469a7-9334-4840-a71c-e95219341cc6" absoluteBounds="9.39, 20.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0a1cf23-1ab8-4524-9a48-448bbd1f65d0" absoluteBounds="9.375, 23.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_RESIDENCE_CONFIG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="025e030b-78d3-41a6-96f8-1209548d7c1a" absoluteBounds="9.39, 23.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8244dac8-0ddd-494b-9921-b35e8692fb89" absoluteBounds="9.375, 24.625, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_RESIDENCE_MEDIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb5c9d17-21c8-4a42-b9ad-b64aa1df3cdb" absoluteBounds="9.39, 25.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="994c7131-8244-4f9f-9ad3-65674b8a50f4" absoluteBounds="11.75, 20, 2, 9.4629541015625">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_RESIDENCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cee34175-662a-4472-b68a-c5ee85914936" absoluteBounds="11.765, 20.46, 1.9700000000000002, 8.9029541015625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fad3850-75c4-4cbe-93ea-8a62a01f8eb3" absoluteBounds="4.875, 35.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_SPECIAL_OFFER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6b405d3-06be-42b3-93d8-9fd19ef62a51" absoluteBounds="4.89, 35.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47c15c66-d087-4c37-b2d7-63abed8a0745" absoluteBounds="2.75, 20.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_RESERVATION_STATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ef964b7-ca4e-4cfd-afe4-066736ac0617" absoluteBounds="2.765, 21.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1a9e249-58b5-4c6a-8bf1-d758b87902ab" absoluteBounds="18.625, 7, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_ESTATE_POINT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad2fa391-9ff1-4301-b9a8-cbc0ab005b2e" absoluteBounds="18.64, 7.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaf3d4e9-dee1-4566-bcc2-b173393f7849" absoluteBounds="3, 8.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TBL_ESTATE_COMMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db37e420-dd60-4337-a310-38a33ac57526" absoluteBounds="3.015, 9.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ff6e7aa-6aab-45d8-8908-b9e2cec30801" absoluteBounds="7.875, 30.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_ESTATE_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f0a4105-32c6-49dc-bb25-5619dd42f739" absoluteBounds="7.89, 30.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef8a1f4b-7d8f-4ce9-b3a5-b69a0d7cf7ea" absoluteBounds="7.875, 32.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_ESTATE_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2031d0ab-6342-42e4-b69b-3468697eff01" absoluteBounds="7.89, 32.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9470a762-950f-416b-930e-ca9804a02c58" absoluteBounds="7.875, 34.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_ESTATE_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11013980-0b62-4f28-a14d-cb8a7ada00a0" absoluteBounds="7.89, 34.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a3686498-eb72-446c-b886-76ebcb98644d" absoluteBounds="4.875, 30.5, 2, 4.8477197265625">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_SPECIAL_OFFER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d71db0a5-34c7-457d-963e-2b4003d0383a" absoluteBounds="4.89, 30.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f40f5307-8316-49b5-806d-0f8de739df32" absoluteBounds="2.75, 25.125, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_RESERVATION_PERSON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ce3ae5c-e589-4203-90bf-cad2d29f4a28" absoluteBounds="2.765, 25.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e4342fc-58c0-44ed-9a05-7e4d3e0945f8" absoluteBounds="10.25, 30.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_ESTATE_SERVICE_PERIOD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be851fe8-7b9e-47cf-a235-e85e1e46d7bb" absoluteBounds="10.265, 30.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6aa1315-3822-4bc4-9eed-5c54a7fc215e" absoluteBounds="2.75, 30.5, 2, 6.7707340494791657">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_SPECIAL_OFFER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3577544-ab3f-4329-a558-29db0484cf84" absoluteBounds="2.765, 30.96, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1dad3bc-9dc5-4b6d-a519-658642737090" absoluteBounds="10, 4.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/magaRental_DataContext/RntHaPropertyTypeLK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b944d1e-c12d-4690-a603-95836f47b795" absoluteBounds="10.015, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="270a3d3f-b0c1-4255-8fcb-c521556d9e2b" absoluteBounds="5.125, 19.875, 2, 8.1168440755208326">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_RESERVATION_EVENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f87d4021-21fd-4d0b-b56a-da01345bd609" absoluteBounds="5.14, 20.335, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62051643-ea61-4565-a86d-d8fe0befbedb" absoluteBounds="16.25, 7, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_RL_ESTATE_CONFIG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d105f8ff-7561-4ce7-a65f-b98fa39216a3" absoluteBounds="16.265, 7.4600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64242fbe-6dae-4eb5-b905-09769d6f05b0" absoluteBounds="13.875, 8.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_HACONFIG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de311269-dc24-4996-87e4-41b52bb52ddf" absoluteBounds="13.89, 8.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29c7bac5-5258-49c7-99f9-510d169f0653" absoluteBounds="3, 0.875, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_LN_ESTATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d2e0d2c-1543-4d16-b9ab-4abaed38e645" absoluteBounds="3.015, 1.335, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55cc61b8-0db5-41e0-8160-1f3a739dda8d" absoluteBounds="21.75, 2.25, 2, 39.269676106770831">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TBL_RESERVATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cab2814-5727-4182-ab18-17992100fb5c" absoluteBounds="21.765, 2.71, 1.9700000000000002, 38.709676106770829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1da496bc-9ebe-440c-94c5-81c125d44d9e" absoluteBounds="5.25, 0.75, 2, 10.424461263020833">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_VIEW_ESTATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5df550a6-521c-44a1-8aae-6ff0453e4ae5" absoluteBounds="5.265, 1.21, 1.9700000000000002, 9.8644612630208321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d268591b-c0f3-4988-b769-f40272d5fa7b" absoluteBounds="10.75, 8.5, 2, 10.232159830729165">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TBL_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8d657f7-1476-45ab-ade1-b325271aa2a8" absoluteBounds="10.765, 8.96, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b1a0132-95ef-429c-a595-116a807b5142" absoluteBounds="8.5, 1.75, 2, 33.308331705729167">
+      <DataClassMoniker Name="/magaRental_DataContext/RNT_TB_ESTATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8d48696-cbae-4840-a8a4-1c3824610773" absoluteBounds="8.515, 2.21, 1.9700000000000002, 32.748331705729164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19bd45c9-f323-44c0-a88f-4ef5130ebe99" absoluteBounds="3, 12.875, 2, 18.308819986979167">
+      <DataClassMoniker Name="/magaRental_DataContext/RntAgentTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fa69285-f567-4f36-9d2e-ffb216a3df68" absoluteBounds="3.015, 13.335, 1.9700000000000002, 17.748819986979164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50c79038-6cf4-4f59-8040-f499b892d92a" absoluteBounds="5, 12.875, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaRental_DataContext/RntBcomHotelTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2474a88-9793-4815-9ea0-2282f623cfb3" absoluteBounds="5.015, 13.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29cb0f2c-e3a4-4c32-ad86-4cf3af16666e" absoluteBounds="4.875, 38.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RntBcomRequestLOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c48123c3-663f-4b0c-8ee5-106803e7b0af" absoluteBounds="4.89, 38.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="822352f4-4a86-47e8-b56a-0f184d2a266d" absoluteBounds="4.875, 40.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntBcomEstateClosedDatesRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d79c621a-bd17-45e6-a8c4-acff12f3cb62" absoluteBounds="4.89, 40.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b379d21-7fdb-4fd4-9e3a-8b53e75dd7e5" absoluteBounds="4.875, 42, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntBcomEstateRateChangesRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="364ca563-13b3-428d-b2c2-1194389ce85d" absoluteBounds="4.89, 42.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9635a932-43af-47f2-8c3b-ca759225d82b" absoluteBounds="6.875, 40.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RntBcomEstateRatesRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd85ef1b-dcee-45ba-a57f-329dcd7a43d5" absoluteBounds="6.89, 40.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7aa1314d-3050-43f7-b82c-b9876923a5c8" absoluteBounds="9.125, 38.625, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbEstateTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69f8ba02-5360-4131-8b5d-5d5c65815c2a" absoluteBounds="9.14, 39.085, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a1cb746-317e-43f1-83a5-c70eda07a2a6" absoluteBounds="11.25, 38.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbRequestLOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8c56765-6e72-412d-b334-64ba26d73612" absoluteBounds="11.265, 39.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb7f795b-ad7d-4213-b51c-e9a69be5ca3c" absoluteBounds="6.75, 38.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntEstateInternsTB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2b5d737-0d74-4b2a-9fd8-e447a41f9a26" absoluteBounds="6.765, 39.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a0edbe9-8df3-4a9e-bc9d-a799a5fb120f" absoluteBounds="6.75, 42.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaRental_DataContext/RntEstateInternsFeatureRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfe80bab-afd4-4efc-85b7-d4e0e2d64857" absoluteBounds="6.765, 42.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="adeeba9f-6af3-4ba5-beee-6b9d2ce924cf" absoluteBounds="9.125, 43.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RntEstateExtrasRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e71cbfda-9a42-4a5d-a21e-1a4cfeeb6048" absoluteBounds="9.14, 43.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ea6c6a8-a034-4d50-a536-245cf8f28c57" absoluteBounds="6.75, 43.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbLkAmenityTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6aca67e3-9d8f-4857-9489-716163258308" absoluteBounds="6.765, 44.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc44c1cb-3937-44d3-8828-37135e1e0c0b" absoluteBounds="6.75, 45.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbLkPropertyTypeTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7af42130-e1a6-4e13-a7d1-ad130d1f9e9f" absoluteBounds="6.765, 45.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12fb47ec-cd2e-462e-b68f-ed9fcf9b683d" absoluteBounds="9.125, 45, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbMediaTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5cd33c46-f04d-4ec6-96b0-0312e1442aad" absoluteBounds="9.14, 45.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6dcf8300-f3d4-4ce4-b3f8-b4731e223633" absoluteBounds="6.75, 46.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RntAgentContractPricesTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71741124-d851-4ada-97a1-f27b4d99d71f" absoluteBounds="6.765, 46.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b520152b-425d-4544-be83-4bec4ba97ea6" absoluteBounds="9.125, 47.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/magaRental_DataContext/RntAgentContractTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18ff6bfb-0503-411a-8a38-743cbf5d7dc8" absoluteBounds="9.14, 47.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86d6b678-c5d4-486f-b9df-ca9b442117e8" absoluteBounds="4.75, 44.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaRental_DataContext/RntEstateAgentContractRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6da7910-3f23-4abf-8452-e82aa09780b5" absoluteBounds="4.765, 44.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76c8088a-9c7e-436d-81f3-21bf2bc3b9a2" absoluteBounds="6.875, 48.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/magaRental_DataContext/RntReservationLastUpdatedLOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cdb99436-3688-4599-8e64-fce56c98167d" absoluteBounds="6.89, 48.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3167b725-b16a-492d-9bcd-0749db8270dd" absoluteBounds="4.125, 48.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RntSeasonDatesTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8fe79219-7972-42a0-a7f4-3cfaceb8282c" absoluteBounds="4.14, 48.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f5df5eb-c214-4644-88bf-1ac490200675" absoluteBounds="4.875, 50.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbEstateSyncRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9de48048-ee1f-4d67-91cb-e94db66f6a09" absoluteBounds="4.89, 50.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5df8a358-8d5f-4eac-8842-b231272f964a" absoluteBounds="7.375, 50.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RntChnlAirbnbEstateStatusRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d728bf02-df8a-48af-aa1e-a2cba3264d73" absoluteBounds="7.39, 51.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94005533-a445-4150-acc0-0dc36196fadc" absoluteBounds="1, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaRental_DataContext/RntIcalImportLOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be5ed87f-acae-443c-b098-e0494e804903" absoluteBounds="1.0150000000000001, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee0dbc67-b9d3-4885-84db-a97261f512b7" absoluteBounds="1, 2.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/magaRental_DataContext/RntIcalImportErrorLOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41668bf2-d7fa-44ef-8521-a2fcf8992f2a" absoluteBounds="1.0150000000000001, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2919b59-bcaa-485e-a760-7bf7a651b7d5" absoluteBounds="0.625, 3.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaRental_DataContext/RntEstateInternsLN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92897322-55e2-4757-93dd-275772b74c9d" absoluteBounds="0.64, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fad92e71-662a-49a0-939c-e2a0b34b4986" absoluteBounds="0.5, 32.75, 2, 13.308982747395833">
+      <DataClassMoniker Name="/magaRental_DataContext/RntReservationTMP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5c6a99b-ecde-4d32-8d44-d17e9146bd64" absoluteBounds="0.51500000000000012, 33.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5463a4d6-ec78-4320-99d2-8c2081ed1725" absoluteBounds="0.5, 3.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaRental_DataContext/RntSeasonGroupTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4af6941-26a0-4c78-816c-495233a924c3" absoluteBounds="0.515, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdb1cbb5-70fc-45af-a31b-bc9f35144d6b" absoluteBounds="5.75, 28.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaRental_DataContext/RntAgentPriceChangeLimitTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3e05c31-3c49-4e84-afae-84bd91901420" absoluteBounds="5.765, 28.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

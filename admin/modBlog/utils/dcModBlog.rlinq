@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DCmodBlog" namespace="ModBlog" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DCmodBlog" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="ModBlog" default="true">
+      <orm:class name="dbBlogArticleLN" uniqueId="2279b650-f95d-4c81-a38a-3b2240e2afbf">
+        <orm:table name="BlogArticleLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidArticle1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidArticle1" property="pidArticle" behavior="readwrite" uniqueId="6ba78d67-6fd8-43d8-b307-c1f5566d3ed8" type="System.Int64">
+          <orm:column name="pidArticle" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="d64f6cee-6fea-43c2-8835-3a5da8ebef25" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="33798279-2be5-491a-be80-e223f9c6dde7" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="subTitle1" property="subTitle" behavior="readwrite" uniqueId="659f7293-5c17-4207-82b1-044f3ba8e687" type="System.String">
+          <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="d274355a-25cc-4f7d-81a5-30d2211076c5" type="System.String">
+          <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="60c633aa-ac4a-4875-b7d3-c68e46bd87b2" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="6fd97a32-afdf-4947-9247-840725a778a8" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaTitle1" property="metaTitle" behavior="readwrite" uniqueId="e22ac8fc-6c6b-48cb-8f6c-9842974d9f11" type="System.String">
+          <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaKeywords1" property="metaKeywords" behavior="readwrite" uniqueId="05752a96-0eea-4ff7-a086-8cd49863e32d" type="System.String">
+          <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaDescription1" property="metaDescription" behavior="readwrite" uniqueId="b4616fce-7169-4c9e-88ab-c0ab341e2434" type="System.String">
+          <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogArticleTagRL" uniqueId="95aab480-7d51-419c-9a7f-dd346fbb0b8f">
+        <orm:table name="BlogArticleTagRL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidArticle1" />
+            <orm:single-field field-name="pidTag1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidArticle1" property="pidArticle" behavior="readwrite" uniqueId="1ea4c673-e481-4f33-b452-66e5315ef0a8" type="System.Int64">
+          <orm:column name="pidArticle" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidTag1" property="pidTag" behavior="readwrite" uniqueId="8b713554-0c7f-426c-9ea7-d86dd782351a" type="System.Int64">
+          <orm:column name="pidTag" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="sequence1" property="sequence" behavior="readwrite" uniqueId="2e1c34ec-55a6-4aa0-9198-74b6c0bcf8c5" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogArticleTB" uniqueId="921a737d-c001-4b90-82ce-2b766e5f20b8">
+        <orm:table name="BlogArticleTB" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="2b448259-45ab-4487-8e86-4246816cd9ab" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidParentArticle1" property="pidParentArticle" behavior="readwrite" uniqueId="bc665352-bca5-483e-8ed6-87df65280252" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidParentArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidCategory1" property="pidCategory" behavior="readwrite" uniqueId="55405de1-4021-4fc5-9b2f-f168804032b2" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="imgThumb1" property="imgThumb" behavior="readwrite" uniqueId="6a07f93e-4747-4d22-8398-cb485bbe5d14" type="System.String">
+          <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgPreview1" property="imgPreview" behavior="readwrite" uniqueId="a9f5ec08-c8a4-4c31-9661-bc7b24295277" type="System.String">
+          <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgBanner1" property="imgBanner" behavior="readwrite" uniqueId="cdf7693d-f611-4ecb-8de1-b4f6db89c5e1" type="System.String">
+          <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="cssFile1" property="cssFile" behavior="readwrite" uniqueId="138d587b-79d4-4199-a152-1b2320a4cffa" type="System.String">
+          <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="pageRewrite1" property="pageRewrite" behavior="readwrite" uniqueId="000dd699-bf84-4b78-8fc0-ffc4872a5e10" type="System.String">
+          <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="8f38c7e7-4405-44d3-8771-5281fcf147a6" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="publicDate1" property="publicDate" behavior="readwrite" uniqueId="95375a4a-7b2c-4621-aa42-f119dac39350" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="publicDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="649f5252-d06e-46c4-8bf8-b2291c624cc8" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="786c3e00-c632-486a-8367-8b46d7da4d4d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="08a23e37-0cab-4297-a961-46a60d22d5fe" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="pidZone1" property="pidZone" behavior="readwrite" uniqueId="36006366-84b5-40c2-9645-8feaf8a310da" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column nullable="true" length="0" name="pidZone" scale="0" sql-type="int" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogCategoryLN" uniqueId="151ae1a5-23f9-4702-a7a9-aae5d2a442bb">
+        <orm:table name="BlogCategoryLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidCategory1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidCategory1" property="pidCategory" behavior="readwrite" uniqueId="4e1b500a-ba07-444a-8d62-59a24bb2659d" type="System.Int64">
+          <orm:column name="pidCategory" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="ccb363c0-7cc6-4882-8139-441a33873dd5" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="1e5a3ed4-3f62-4672-9bdc-e859207d8bea" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="subTitle1" property="subTitle" behavior="readwrite" uniqueId="f518e142-c016-46da-ac91-4c536f2e95de" type="System.String">
+          <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="14d52b8c-9494-4f8e-93df-cb4ac32cd61a" type="System.String">
+          <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="e3ac859d-57e5-4412-941c-d70464519d65" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="fffccc55-6363-40dc-908e-578e7ec33403" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaTitle1" property="metaTitle" behavior="readwrite" uniqueId="b0638860-2977-4b8b-a4d5-1cff90cbacf4" type="System.String">
+          <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaKeywords1" property="metaKeywords" behavior="readwrite" uniqueId="a7c5dad7-27e0-4767-b1e7-2ffe594b4d72" type="System.String">
+          <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaDescription1" property="metaDescription" behavior="readwrite" uniqueId="216faaad-0966-41ad-aa25-86f9cbca1a01" type="System.String">
+          <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogCategoryTB" uniqueId="db449911-c2ac-4c32-bd24-b517cd25e2a6">
+        <orm:table name="BlogCategoryTB" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="180c603f-5098-441b-8801-dd722565e743" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidParentCategory1" property="pidParentCategory" behavior="readwrite" uniqueId="1b57f7f5-2702-429b-b028-7178fdc2cc83" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidParentCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="imgThumb1" property="imgThumb" behavior="readwrite" uniqueId="233f7393-ef19-4051-adb3-6f46b7509245" type="System.String">
+          <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgPreview1" property="imgPreview" behavior="readwrite" uniqueId="fe7b84b6-cd4a-41a0-9fd4-f798456edb53" type="System.String">
+          <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgBanner1" property="imgBanner" behavior="readwrite" uniqueId="323ec1a2-63f4-4771-920d-249d283bbd80" type="System.String">
+          <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="cssFile1" property="cssFile" behavior="readwrite" uniqueId="f3b2433f-87ba-4c52-979b-522c712390f5" type="System.String">
+          <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="pageRewrite1" property="pageRewrite" behavior="readwrite" uniqueId="a888566f-ab4f-404b-9207-f93bedaee02f" type="System.String">
+          <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="84d0ab6d-efb1-4e21-aacf-88ee69f6339e" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogCommentTBL" uniqueId="75efc5a7-e27d-4203-8669-b719d20423eb">
+        <orm:table name="BlogCommentTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="6e243856-2723-4efa-a16d-392977eec496" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="typeTitle1" property="typeTitle" behavior="readwrite" uniqueId="462844b2-fad5-4567-a764-8b21c0ed09c7" type="System.String">
+          <orm:column name="typeTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="typeCode1" property="typeCode" behavior="readwrite" uniqueId="2733e807-f13f-4a7c-9bcc-58617adaeaea" type="System.String">
+          <orm:column name="typeCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="db7de9a1-6b14-4b25-9550-9e25de1991d4" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidLang" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pidArticle1" property="pidArticle" behavior="readwrite" uniqueId="88d1d312-a3db-4c41-a2d9-384c10b9aad9" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="phoneMobile1" property="phoneMobile" behavior="readwrite" uniqueId="51211305-8f7c-469d-b5af-b2338ff68ffe" type="System.String">
+          <orm:column name="phoneMobile" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="phone1" property="phone" behavior="readwrite" uniqueId="a66dc3bc-1054-4d20-b6ca-cebfea3be7f9" type="System.String">
+          <orm:column name="phone" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="nameLast1" property="nameLast" behavior="readwrite" uniqueId="6b1115c0-7375-4f4e-ad01-75a5cca7a31c" type="System.String">
+          <orm:column name="nameLast" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="nameFull1" property="nameFull" behavior="readwrite" uniqueId="b83ecaab-7972-4026-ab56-e780c31476b3" type="System.String">
+          <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="nameFirst1" property="nameFirst" behavior="readwrite" uniqueId="888b9f1e-fe51-471c-aab9-95cdd347123a" type="System.String">
+          <orm:column name="nameFirst" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="1a0eb757-69b1-4290-bc47-40b0278e1463" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="fbe53415-ef3e-4099-8330-9d958a4e82b8" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="fax1" property="fax" behavior="readwrite" uniqueId="dbdc5bf4-10d9-4629-9221-593a8d178daa" type="System.String">
+          <orm:column name="fax" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="email1" property="email" behavior="readwrite" uniqueId="42649af3-1cc6-43c0-a014-237c262ad4cf" type="System.String">
+          <orm:column name="email" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="ace37169-af71-4fa9-9478-5d995992d742" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="72efe13a-d95a-4188-a0e4-ec6270a926a3" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="40a1c07c-6b61-446f-8dcd-40594d1bba6b" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="country1" property="country" behavior="readwrite" uniqueId="028911c3-0f10-4914-a62d-a513ddbfd518" type="System.String">
+          <orm:column name="country" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="commentVote1" property="commentVote" behavior="readwrite" uniqueId="2c23f32a-05b1-4175-94f9-a3680e654834" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="commentVote" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="commentSubject1" property="commentSubject" behavior="readwrite" uniqueId="5d62f370-913e-4a9c-afd9-e96c9031078a" type="System.String">
+          <orm:column name="commentSubject" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="commentDate1" property="commentDate" behavior="readwrite" uniqueId="707545e5-a842-49d2-a196-dc77a0000878" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="commentDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="commentBody1" property="commentBody" behavior="readwrite" uniqueId="58ccd6a2-195e-4ff6-9f7a-286aa2e318c2" type="System.String">
+          <orm:column name="commentBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="browserIP1" property="browserIP" behavior="readwrite" uniqueId="8734f97f-0fae-486d-beee-63b6a5217b93" type="System.String">
+          <orm:column name="browserIP" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogTagLN" uniqueId="d59eade9-429d-43ed-b3c8-c45ed4d18487">
+        <orm:table name="BlogTagLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidTag1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidTag1" property="pidTag" behavior="readwrite" uniqueId="f5fdfab0-60cc-45ec-809e-0af87638cc96" type="System.Int64">
+          <orm:column name="pidTag" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="a89163b7-ac51-47f6-a0d5-76baff113131" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="f7b8bbe9-85bd-4adc-af23-7668013ae1c4" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="b4c2e066-9fca-4c82-a8ac-f9f9d4f18210" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogTagTB" uniqueId="d3dac44d-0163-4cf9-955f-15c10c1759ee">
+        <orm:table name="BlogTagTB" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="858b36bf-6bd6-4b1c-a595-8feace01ab89" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="isImportant1" property="isImportant" behavior="readwrite" uniqueId="3c23a782-60c7-4b53-8a2b-9c2ff714a153" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isImportant" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogCategoryVIEW" uniqueId="e1f3cb0b-a4a0-46b4-bbf6-2d655ae9a32d">
+        <orm:table name="BlogCategoryVIEW" view="true" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="id1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="3acaa139-2205-416b-a552-d15e95522853" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="ab510d16-8d00-453e-a5ba-1ec57aeab6f0" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="d59f72c7-c2d4-4193-a96b-d602efe5266f" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="subTitle1" property="subTitle" behavior="readwrite" uniqueId="1f42339c-55e2-4fd2-b7a7-fcdae997bfd2" type="System.String">
+          <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="821527d4-4e89-4b9f-8fcd-64502266690d" type="System.String">
+          <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="4c06c6d5-cfd9-403b-9922-153f45ae9acf" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="efc1ecdc-79c5-43b7-8e90-1185d3e7178d" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaTitle1" property="metaTitle" behavior="readwrite" uniqueId="21f26a79-1b97-4c59-a89e-21f4f22a7838" type="System.String">
+          <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaKeywords1" property="metaKeywords" behavior="readwrite" uniqueId="039178de-2ad6-475f-adf5-153c9eaface2" type="System.String">
+          <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaDescription1" property="metaDescription" behavior="readwrite" uniqueId="50ef8da4-2944-4e5c-98a1-4c8bdad6e598" type="System.String">
+          <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="pidParentCategory1" property="pidParentCategory" behavior="readwrite" uniqueId="af9281bb-5fff-47ae-a22b-eedc40e15fdd" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidParentCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="imgThumb1" property="imgThumb" behavior="readwrite" uniqueId="4627f54e-4332-4b9f-a020-1a62e2fdd739" type="System.String">
+          <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgPreview1" property="imgPreview" behavior="readwrite" uniqueId="8a56b3f2-4080-4943-810d-7a2c207e6b06" type="System.String">
+          <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgBanner1" property="imgBanner" behavior="readwrite" uniqueId="5a3a434a-16ab-4741-89e0-952b13e37b83" type="System.String">
+          <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="cssFile1" property="cssFile" behavior="readwrite" uniqueId="82cf4f68-be6b-4f7f-81bd-d6cc027ceaed" type="System.String">
+          <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="pageRewrite1" property="pageRewrite" behavior="readwrite" uniqueId="8f556948-a163-4fed-8327-c7d26e8eb936" type="System.String">
+          <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="e65a503a-e64a-45a1-ada4-37006a043488" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogTagVIEW" uniqueId="8a8318d1-44c8-4879-bc7c-8596ff897451">
+        <orm:table name="BlogTagVIEW" view="true" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="id1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="2ae94e6e-7c85-4956-b4d7-4e62a4cbb4de" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="7008fbf1-6242-4bb2-9fcd-d689f9ebd0e4" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="3998543a-c702-4931-9cde-4966049f12e4" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="isImportant1" property="isImportant" behavior="readwrite" uniqueId="9cf41f6b-7721-4aa7-9288-16521de72123" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isImportant" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="19945bee-282b-4a51-a7bd-57fe66c0fd85" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogArticleVIEW" uniqueId="2f1ad913-0f03-439a-9d98-cbc8c9614243">
+        <orm:table name="BlogArticleVIEW" view="true" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="id1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="81a76cee-171b-4c0d-81de-2267d49bd7f1" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="03de272e-e455-4fae-801a-8ef516fd122f" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="bf95553b-a8eb-4726-ba95-6792877bd5b2" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="subTitle1" property="subTitle" behavior="readwrite" uniqueId="b7c0f63f-5e24-459d-8c8b-c9d394a1e223" type="System.String">
+          <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="fced9992-f576-49dd-8ad0-6544a4fe4280" type="System.String">
+          <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="cd3b99a6-f437-4ddc-8239-8faaed622954" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="2f11fc6b-2619-470c-805f-a3848c93625f" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaTitle1" property="metaTitle" behavior="readwrite" uniqueId="f04f1132-9962-45be-a0d4-05a5c810f074" type="System.String">
+          <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaKeywords1" property="metaKeywords" behavior="readwrite" uniqueId="7066ed74-cec2-424f-86d2-684543311c40" type="System.String">
+          <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaDescription1" property="metaDescription" behavior="readwrite" uniqueId="5546e535-61b2-473b-9443-dd868dd50543" type="System.String">
+          <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="pidParentArticle1" property="pidParentArticle" behavior="readwrite" uniqueId="d0686d8d-2863-496c-b49f-531da82b770c" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidParentArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidCategory1" property="pidCategory" behavior="readwrite" uniqueId="78192f3f-da9e-41c1-9833-27bf7c7f6045" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="imgThumb1" property="imgThumb" behavior="readwrite" uniqueId="1b2cdb1a-4ef9-47ea-afc6-67c6503675db" type="System.String">
+          <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgPreview1" property="imgPreview" behavior="readwrite" uniqueId="f7285756-71fe-4feb-8707-1a8b82ddcbb3" type="System.String">
+          <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgBanner1" property="imgBanner" behavior="readwrite" uniqueId="0587f53e-28dd-4011-895e-0c3017c73097" type="System.String">
+          <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="cssFile1" property="cssFile" behavior="readwrite" uniqueId="86862bf5-0fbb-4ba5-96db-f2c83ac4e6f2" type="System.String">
+          <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="pageRewrite1" property="pageRewrite" behavior="readwrite" uniqueId="e393f787-adcf-4180-bea4-85796c2bff06" type="System.String">
+          <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="c6255597-8aff-4476-a15a-88cea6ce1403" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="publicDate1" property="publicDate" behavior="readwrite" uniqueId="cfbb8317-999a-4c60-b6b0-e29e3fb95d66" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="publicDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="b2b5dfff-2e54-481c-b1ff-ea1c4d9caae5" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="9bd12e8c-95cc-43a7-87e4-3e1356be1304" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="148dd68e-b477-4d94-a851-8b0bccbdb069" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="pidZone1" property="pidZone" behavior="readwrite" uniqueId="f9c7ca10-a9f6-4fe7-a47d-0ab1db2bdc3b" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column nullable="true" length="0" name="pidZone" scale="0" sql-type="int" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogArticleCategoryRL" uniqueId="1afcbb77-0ef7-4193-aef9-ee9332ebd9e2">
+        <orm:table name="BlogArticleCategoryRL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidArticle1" />
+            <orm:single-field field-name="pidCategory1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidArticle1" property="pidArticle" behavior="readwrite" uniqueId="59c075ad-0db6-427f-9dbb-5ba580d60489" type="System.Int64">
+          <orm:column name="pidArticle" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidCategory1" property="pidCategory" behavior="readwrite" uniqueId="17218d27-e58b-4949-8c3d-aae76c373526" type="System.Int64">
+          <orm:column name="pidCategory" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="sequence1" property="sequence" behavior="readwrite" uniqueId="20c7e53f-464a-4880-9add-a1a45a86a0b9" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogArticleMediaTBL" uniqueId="d4d94519-0303-451c-ac86-56e29010b291">
+        <orm:table name="BlogArticleMediaTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="df00befd-0c45-4f0c-96c7-f167c3ba082d" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidArticle1" property="pidArticle" behavior="readwrite" uniqueId="fd364161-4ade-4245-9418-33490f4278fa" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="sequence1" property="sequence" behavior="readwrite" uniqueId="ce96cea5-3295-44d0-86b2-e7b8668ae57f" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="4f043ac3-48ac-4e8d-b977-9cc5a30f4340" type="System.String">
+          <orm:column name="code" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="img_thumb1" property="img_thumb" behavior="readwrite" uniqueId="c3cd1a20-2dd9-43fe-91da-0e08b53ca877" type="System.String">
+          <orm:column name="img_thumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="img_banner1" property="img_banner" behavior="readwrite" uniqueId="40c7f91d-547e-4e6f-8dde-e9e102fa7609" type="System.String">
+          <orm:column name="img_banner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="video_path1" property="video_path" behavior="readwrite" uniqueId="5c5a391a-a85a-49c1-b294-8789a305f2c7" type="System.String">
+          <orm:column name="video_path" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="video_embed1" property="video_embed" behavior="readwrite" uniqueId="e932046a-1bad-45da-b8a4-3a816ace8a2f" type="System.String">
+          <orm:column name="video_embed" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbBlogZoneLN" uniqueId="9f2f0ae8-2642-4b05-85d1-2e75cbf8104c">
+        <orm:table name="BlogZoneLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidZone1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidZone1" property="pidZone" behavior="readwrite" uniqueId="5ebe0398-87fb-458a-bc28-0b6cbcc1f445" type="System.Int64">
+          <orm:column name="pidZone" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="0668d7ce-85bf-4bfa-811a-ed800b67df41" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="64965ac0-8648-4d74-b547-b80a86518ea9" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="subTitle1" property="subTitle" behavior="readwrite" uniqueId="0b91b356-7271-4e78-99e4-cb5b9513b30a" type="System.String">
+          <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="be040f79-68bf-4986-9f13-20d7152d422c" type="System.String">
+          <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="b9767fbf-98d4-4d17-8048-ceae04e11ee7" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="pagePath1" property="pagePath" behavior="readwrite" uniqueId="94339a3e-8150-4db4-87a0-0085df4373e1" type="System.String">
+          <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaTitle1" property="metaTitle" behavior="readwrite" uniqueId="2270be95-1fa1-4990-898b-b04ca5cfe86a" type="System.String">
+          <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaKeywords1" property="metaKeywords" behavior="readwrite" uniqueId="7b3eb4cf-ec78-4ce5-9979-19aabeecde54" type="System.String">
+          <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="metaDescription1" property="metaDescription" behavior="readwrite" uniqueId="3861142d-ac55-497e-8db2-a7b7be897317" type="System.String">
+          <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="BlogTagTB">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="isImportant" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="BlogTagLN">
+        <orm:column name="pidTag" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="BlogCategoryTB">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="pidParentCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="BlogCategoryLN">
+        <orm:column name="pidCategory" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="BlogArticleTB">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="pidParentArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="pidCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="publicDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column nullable="true" length="0" name="pidZone" scale="0" sql-type="int" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="BlogArticleTagRL">
+        <orm:column name="pidArticle" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidTag" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="BlogArticleLN">
+        <orm:column name="pidArticle" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="BlogCommentTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        <orm:column name="typeTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="typeCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="pidLang" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="pidArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="phoneMobile" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="phone" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="nameLast" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameFirst" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="fax" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="email" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="country" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="commentVote" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="commentSubject" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="commentDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="commentBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="browserIP" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="BlogArticleCategoryRL">
+        <orm:column name="pidArticle" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidCategory" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="BlogArticleMediaTBL">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="pidArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="code" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="img_thumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="img_banner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="video_path" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="video_embed" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="BlogZoneLN">
+        <orm:column name="pidZone" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="BlogTagVIEW" view="true">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="isImportant" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="BlogCategoryVIEW" view="true">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="pidParentCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="BlogArticleVIEW" view="true">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="subTitle" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="summary" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="pagePath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaKeywords" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="metaDescription" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="pidParentArticle" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="pidCategory" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="imgThumb" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgPreview" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgBanner" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="cssFile" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="pageRewrite" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="publicDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column nullable="true" length="0" name="pidZone" scale="0" sql-type="int" ado-type="Int32" />
+      </orm:table>
+    </orm:schema>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ModBlogDBConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=178.23.175.73,1433\SQLEXPRESS;initial catalog=rental_in_romeDB;persist security info=True;user id=mssql_remoteaccess;password=G5di8Pr9</AppConfigConnectionString>
+    <InitialCatalog>rental_in_romeDB</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <AddPrefix>db</AddPrefix>
+      </ClassRules>
+      <FieldRules />
+      <PropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Attributes</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>mssql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="2279b650-f95d-4c81-a38a-3b2240e2afbf" name="dbBlogArticleLN" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="6ba78d67-6fd8-43d8-b307-c1f5566d3ed8" name="pidArticle" type="Int64" label="pidArticle : Int64" kind="Persistent" identity="true" fieldName="pidArticle1" />
+      <Property Id="d64f6cee-6fea-43c2-8835-3a5da8ebef25" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="60c633aa-ac4a-4875-b7d3-c68e46bd87b2" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="b4616fce-7169-4c9e-88ab-c0ab341e2434" name="metaDescription" label="metaDescription : String" kind="Persistent" fieldName="metaDescription1" />
+      <Property Id="05752a96-0eea-4ff7-a086-8cd49863e32d" name="metaKeywords" label="metaKeywords : String" kind="Persistent" fieldName="metaKeywords1" />
+      <Property Id="e22ac8fc-6c6b-48cb-8f6c-9842974d9f11" name="metaTitle" label="metaTitle : String" kind="Persistent" fieldName="metaTitle1" />
+      <Property Id="6fd97a32-afdf-4947-9247-840725a778a8" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="659f7293-5c17-4207-82b1-044f3ba8e687" name="subTitle" label="subTitle : String" kind="Persistent" fieldName="subTitle1" />
+      <Property Id="d274355a-25cc-4f7d-81a5-30d2211076c5" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="33798279-2be5-491a-be80-e223f9c6dde7" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="95aab480-7d51-419c-9a7f-dd346fbb0b8f" name="dbBlogArticleTagRL" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="1ea4c673-e481-4f33-b452-66e5315ef0a8" name="pidArticle" type="Int64" label="pidArticle : Int64" kind="Persistent" identity="true" fieldName="pidArticle1" />
+      <Property Id="8b713554-0c7f-426c-9ea7-d86dd782351a" name="pidTag" type="Int64" label="pidTag : Int64" kind="Persistent" identity="true" fieldName="pidTag1" />
+      <Property Id="2e1c34ec-55a6-4aa0-9198-74b6c0bcf8c5" name="sequence" type="Int32" label="sequence : Int32" nullable="true" kind="Persistent" fieldName="sequence1" />
+    </DomainClass>
+    <DomainClass Id="921a737d-c001-4b90-82ce-2b766e5f20b8" name="dbBlogArticleTB" namespace="ModBlog" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="2b448259-45ab-4487-8e86-4246816cd9ab" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="08a23e37-0cab-4297-a961-46a60d22d5fe" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="786c3e00-c632-486a-8367-8b46d7da4d4d" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="649f5252-d06e-46c4-8bf8-b2291c624cc8" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="138d587b-79d4-4199-a152-1b2320a4cffa" name="cssFile" label="cssFile : String" kind="Persistent" fieldName="cssFile1" />
+      <Property Id="cdf7693d-f611-4ecb-8de1-b4f6db89c5e1" name="imgBanner" label="imgBanner : String" kind="Persistent" fieldName="imgBanner1" />
+      <Property Id="a9f5ec08-c8a4-4c31-9661-bc7b24295277" name="imgPreview" label="imgPreview : String" kind="Persistent" fieldName="imgPreview1" />
+      <Property Id="6a07f93e-4747-4d22-8398-cb485bbe5d14" name="imgThumb" label="imgThumb : String" kind="Persistent" fieldName="imgThumb1" />
+      <Property Id="8f38c7e7-4405-44d3-8771-5281fcf147a6" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="000dd699-bf84-4b78-8fc0-ffc4872a5e10" name="pageRewrite" label="pageRewrite : String" kind="Persistent" fieldName="pageRewrite1" />
+      <Property Id="55405de1-4021-4fc5-9b2f-f168804032b2" name="pidCategory" type="Int64" label="pidCategory : Int64" nullable="true" kind="Persistent" fieldName="pidCategory1" />
+      <Property Id="bc665352-bca5-483e-8ed6-87df65280252" name="pidParentArticle" type="Int64" label="pidParentArticle : Int64" nullable="true" kind="Persistent" fieldName="pidParentArticle1" />
+      <Property Id="95375a4a-7b2c-4621-aa42-f119dac39350" name="publicDate" type="DateTime" label="publicDate : DateTime" nullable="true" kind="Persistent" fieldName="publicDate1" />
+      <Property Id="36006366-84b5-40c2-9645-8feaf8a310da" name="pidZone" type="Int32" label="pidZone : Int32" nullable="true" kind="Persistent" fieldName="pidZone1" />
+    </DomainClass>
+    <DomainClass Id="151ae1a5-23f9-4702-a7a9-aae5d2a442bb" name="dbBlogCategoryLN" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="4e1b500a-ba07-444a-8d62-59a24bb2659d" name="pidCategory" type="Int64" label="pidCategory : Int64" kind="Persistent" identity="true" fieldName="pidCategory1" />
+      <Property Id="ccb363c0-7cc6-4882-8139-441a33873dd5" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="e3ac859d-57e5-4412-941c-d70464519d65" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="216faaad-0966-41ad-aa25-86f9cbca1a01" name="metaDescription" label="metaDescription : String" kind="Persistent" fieldName="metaDescription1" />
+      <Property Id="a7c5dad7-27e0-4767-b1e7-2ffe594b4d72" name="metaKeywords" label="metaKeywords : String" kind="Persistent" fieldName="metaKeywords1" />
+      <Property Id="b0638860-2977-4b8b-a4d5-1cff90cbacf4" name="metaTitle" label="metaTitle : String" kind="Persistent" fieldName="metaTitle1" />
+      <Property Id="fffccc55-6363-40dc-908e-578e7ec33403" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="f518e142-c016-46da-ac91-4c536f2e95de" name="subTitle" label="subTitle : String" kind="Persistent" fieldName="subTitle1" />
+      <Property Id="14d52b8c-9494-4f8e-93df-cb4ac32cd61a" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="1e5a3ed4-3f62-4672-9bdc-e859207d8bea" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="db449911-c2ac-4c32-bd24-b517cd25e2a6" name="dbBlogCategoryTB" namespace="ModBlog" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="180c603f-5098-441b-8801-dd722565e743" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="f3b2433f-87ba-4c52-979b-522c712390f5" name="cssFile" label="cssFile : String" kind="Persistent" fieldName="cssFile1" />
+      <Property Id="323ec1a2-63f4-4771-920d-249d283bbd80" name="imgBanner" label="imgBanner : String" kind="Persistent" fieldName="imgBanner1" />
+      <Property Id="fe7b84b6-cd4a-41a0-9fd4-f798456edb53" name="imgPreview" label="imgPreview : String" kind="Persistent" fieldName="imgPreview1" />
+      <Property Id="233f7393-ef19-4051-adb3-6f46b7509245" name="imgThumb" label="imgThumb : String" kind="Persistent" fieldName="imgThumb1" />
+      <Property Id="84d0ab6d-efb1-4e21-aacf-88ee69f6339e" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="a888566f-ab4f-404b-9207-f93bedaee02f" name="pageRewrite" label="pageRewrite : String" kind="Persistent" fieldName="pageRewrite1" />
+      <Property Id="1b57f7f5-2702-429b-b028-7178fdc2cc83" name="pidParentCategory" type="Int64" label="pidParentCategory : Int64" nullable="true" kind="Persistent" fieldName="pidParentCategory1" />
+    </DomainClass>
+    <DomainClass Id="75efc5a7-e27d-4203-8669-b719d20423eb" name="dbBlogCommentTBL" namespace="ModBlog" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="fbe53415-ef3e-4099-8330-9d958a4e82b8" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="8734f97f-0fae-486d-beee-63b6a5217b93" name="browserIP" label="browserIP : String" kind="Persistent" fieldName="browserIP1" />
+      <Property Id="58ccd6a2-195e-4ff6-9f7a-286aa2e318c2" name="commentBody" label="commentBody : String" kind="Persistent" fieldName="commentBody1" />
+      <Property Id="707545e5-a842-49d2-a196-dc77a0000878" name="commentDate" type="DateTime" label="commentDate : DateTime" nullable="true" kind="Persistent" fieldName="commentDate1" />
+      <Property Id="5d62f370-913e-4a9c-afd9-e96c9031078a" name="commentSubject" label="commentSubject : String" kind="Persistent" fieldName="commentSubject1" />
+      <Property Id="2c23f32a-05b1-4175-94f9-a3680e654834" name="commentVote" type="Int32" label="commentVote : Int32" nullable="true" kind="Persistent" fieldName="commentVote1" />
+      <Property Id="028911c3-0f10-4914-a62d-a513ddbfd518" name="country" label="country : String" kind="Persistent" fieldName="country1" />
+      <Property Id="40a1c07c-6b61-446f-8dcd-40594d1bba6b" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="72efe13a-d95a-4188-a0e4-ec6270a926a3" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="ace37169-af71-4fa9-9478-5d995992d742" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="42649af3-1cc6-43c0-a014-237c262ad4cf" name="email" label="email : String" kind="Persistent" fieldName="email1" />
+      <Property Id="dbdc5bf4-10d9-4629-9221-593a8d178daa" name="fax" label="fax : String" kind="Persistent" fieldName="fax1" />
+      <Property Id="1a0eb757-69b1-4290-bc47-40b0278e1463" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="888b9f1e-fe51-471c-aab9-95cdd347123a" name="nameFirst" label="nameFirst : String" kind="Persistent" fieldName="nameFirst1" />
+      <Property Id="b83ecaab-7972-4026-ab56-e780c31476b3" name="nameFull" label="nameFull : String" kind="Persistent" fieldName="nameFull1" />
+      <Property Id="6b1115c0-7375-4f4e-ad01-75a5cca7a31c" name="nameLast" label="nameLast : String" kind="Persistent" fieldName="nameLast1" />
+      <Property Id="a66dc3bc-1054-4d20-b6ca-cebfea3be7f9" name="phone" label="phone : String" kind="Persistent" fieldName="phone1" />
+      <Property Id="51211305-8f7c-469d-b5af-b2338ff68ffe" name="phoneMobile" label="phoneMobile : String" kind="Persistent" fieldName="phoneMobile1" />
+      <Property Id="88d1d312-a3db-4c41-a2d9-384c10b9aad9" name="pidArticle" type="Int64" label="pidArticle : Int64" nullable="true" kind="Persistent" fieldName="pidArticle1" />
+      <Property Id="db7de9a1-6b14-4b25-9550-9e25de1991d4" name="pidLang" type="Int32" label="pidLang : Int32" nullable="true" kind="Persistent" fieldName="pidLang1" />
+      <Property Id="2733e807-f13f-4a7c-9bcc-58617adaeaea" name="typeCode" label="typeCode : String" kind="Persistent" fieldName="typeCode1" />
+      <Property Id="462844b2-fad5-4567-a764-8b21c0ed09c7" name="typeTitle" label="typeTitle : String" kind="Persistent" fieldName="typeTitle1" />
+      <Property Id="6e243856-2723-4efa-a16d-392977eec496" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+    <DomainClass Id="d59eade9-429d-43ed-b3c8-c45ed4d18487" name="dbBlogTagLN" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="a89163b7-ac51-47f6-a0d5-76baff113131" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="f5fdfab0-60cc-45ec-809e-0af87638cc96" name="pidTag" type="Int64" label="pidTag : Int64" kind="Persistent" identity="true" fieldName="pidTag1" />
+      <Property Id="b4c2e066-9fca-4c82-a8ac-f9f9d4f18210" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="f7b8bbe9-85bd-4adc-af23-7668013ae1c4" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="d3dac44d-0163-4cf9-955f-15c10c1759ee" name="dbBlogTagTB" namespace="ModBlog" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="858b36bf-6bd6-4b1c-a595-8feace01ab89" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="3c23a782-60c7-4b53-8a2b-9c2ff714a153" name="isImportant" type="Int32" label="isImportant : Int32" nullable="true" kind="Persistent" fieldName="isImportant1" />
+    </DomainClass>
+    <DomainClass Id="e1f3cb0b-a4a0-46b4-bbf6-2d655ae9a32d" name="dbBlogCategoryVIEW" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="3acaa139-2205-416b-a552-d15e95522853" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="ab510d16-8d00-453e-a5ba-1ec57aeab6f0" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="82cf4f68-be6b-4f7f-81bd-d6cc027ceaed" name="cssFile" label="cssFile : String" kind="Persistent" fieldName="cssFile1" />
+      <Property Id="4c06c6d5-cfd9-403b-9922-153f45ae9acf" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="5a3a434a-16ab-4741-89e0-952b13e37b83" name="imgBanner" label="imgBanner : String" kind="Persistent" fieldName="imgBanner1" />
+      <Property Id="8a56b3f2-4080-4943-810d-7a2c207e6b06" name="imgPreview" label="imgPreview : String" kind="Persistent" fieldName="imgPreview1" />
+      <Property Id="4627f54e-4332-4b9f-a020-1a62e2fdd739" name="imgThumb" label="imgThumb : String" kind="Persistent" fieldName="imgThumb1" />
+      <Property Id="e65a503a-e64a-45a1-ada4-37006a043488" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="50ef8da4-2944-4e5c-98a1-4c8bdad6e598" name="metaDescription" label="metaDescription : String" kind="Persistent" fieldName="metaDescription1" />
+      <Property Id="039178de-2ad6-475f-adf5-153c9eaface2" name="metaKeywords" label="metaKeywords : String" kind="Persistent" fieldName="metaKeywords1" />
+      <Property Id="21f26a79-1b97-4c59-a89e-21f4f22a7838" name="metaTitle" label="metaTitle : String" kind="Persistent" fieldName="metaTitle1" />
+      <Property Id="efc1ecdc-79c5-43b7-8e90-1185d3e7178d" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="8f556948-a163-4fed-8327-c7d26e8eb936" name="pageRewrite" label="pageRewrite : String" kind="Persistent" fieldName="pageRewrite1" />
+      <Property Id="af9281bb-5fff-47ae-a22b-eedc40e15fdd" name="pidParentCategory" type="Int64" label="pidParentCategory : Int64" nullable="true" kind="Persistent" fieldName="pidParentCategory1" />
+      <Property Id="1f42339c-55e2-4fd2-b7a7-fcdae997bfd2" name="subTitle" label="subTitle : String" kind="Persistent" fieldName="subTitle1" />
+      <Property Id="821527d4-4e89-4b9f-8fcd-64502266690d" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="d59f72c7-c2d4-4193-a96b-d602efe5266f" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="8a8318d1-44c8-4879-bc7c-8596ff897451" name="dbBlogTagVIEW" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="2ae94e6e-7c85-4956-b4d7-4e62a4cbb4de" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="7008fbf1-6242-4bb2-9fcd-d689f9ebd0e4" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="9cf41f6b-7721-4aa7-9288-16521de72123" name="isImportant" type="Int32" label="isImportant : Int32" nullable="true" kind="Persistent" fieldName="isImportant1" />
+      <Property Id="19945bee-282b-4a51-a7bd-57fe66c0fd85" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="3998543a-c702-4931-9cde-4966049f12e4" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="2f1ad913-0f03-439a-9d98-cbc8c9614243" name="dbBlogArticleVIEW" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" concurrencyMember="&lt; AUTO &gt;" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="81a76cee-171b-4c0d-81de-2267d49bd7f1" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="03de272e-e455-4fae-801a-8ef516fd122f" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="148dd68e-b477-4d94-a851-8b0bccbdb069" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="9bd12e8c-95cc-43a7-87e4-3e1356be1304" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="b2b5dfff-2e54-481c-b1ff-ea1c4d9caae5" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="86862bf5-0fbb-4ba5-96db-f2c83ac4e6f2" name="cssFile" label="cssFile : String" kind="Persistent" fieldName="cssFile1" />
+      <Property Id="cd3b99a6-f437-4ddc-8239-8faaed622954" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="0587f53e-28dd-4011-895e-0c3017c73097" name="imgBanner" label="imgBanner : String" kind="Persistent" fieldName="imgBanner1" />
+      <Property Id="f7285756-71fe-4feb-8707-1a8b82ddcbb3" name="imgPreview" label="imgPreview : String" kind="Persistent" fieldName="imgPreview1" />
+      <Property Id="1b2cdb1a-4ef9-47ea-afc6-67c6503675db" name="imgThumb" label="imgThumb : String" kind="Persistent" fieldName="imgThumb1" />
+      <Property Id="c6255597-8aff-4476-a15a-88cea6ce1403" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="5546e535-61b2-473b-9443-dd868dd50543" name="metaDescription" label="metaDescription : String" kind="Persistent" fieldName="metaDescription1" />
+      <Property Id="7066ed74-cec2-424f-86d2-684543311c40" name="metaKeywords" label="metaKeywords : String" kind="Persistent" fieldName="metaKeywords1" />
+      <Property Id="f04f1132-9962-45be-a0d4-05a5c810f074" name="metaTitle" label="metaTitle : String" kind="Persistent" fieldName="metaTitle1" />
+      <Property Id="2f11fc6b-2619-470c-805f-a3848c93625f" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="e393f787-adcf-4180-bea4-85796c2bff06" name="pageRewrite" label="pageRewrite : String" kind="Persistent" fieldName="pageRewrite1" />
+      <Property Id="78192f3f-da9e-41c1-9833-27bf7c7f6045" name="pidCategory" type="Int64" label="pidCategory : Int64" nullable="true" kind="Persistent" fieldName="pidCategory1" />
+      <Property Id="d0686d8d-2863-496c-b49f-531da82b770c" name="pidParentArticle" type="Int64" label="pidParentArticle : Int64" nullable="true" kind="Persistent" fieldName="pidParentArticle1" />
+      <Property Id="cfbb8317-999a-4c60-b6b0-e29e3fb95d66" name="publicDate" type="DateTime" label="publicDate : DateTime" nullable="true" kind="Persistent" fieldName="publicDate1" />
+      <Property Id="b7c0f63f-5e24-459d-8c8b-c9d394a1e223" name="subTitle" label="subTitle : String" kind="Persistent" fieldName="subTitle1" />
+      <Property Id="fced9992-f576-49dd-8ad0-6544a4fe4280" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="bf95553b-a8eb-4726-ba95-6792877bd5b2" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+      <Property Id="f9c7ca10-a9f6-4fe7-a47d-0ab1db2bdc3b" name="pidZone" type="Int32" label="pidZone : Int32" nullable="true" kind="Persistent" fieldName="pidZone1" />
+    </DomainClass>
+    <DomainClass Id="1afcbb77-0ef7-4193-aef9-ee9332ebd9e2" name="dbBlogArticleCategoryRL" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="59c075ad-0db6-427f-9dbb-5ba580d60489" name="pidArticle" type="Int64" label="pidArticle : Int64" kind="Persistent" identity="true" fieldName="pidArticle1" />
+      <Property Id="17218d27-e58b-4949-8c3d-aae76c373526" name="pidCategory" type="Int64" label="pidCategory : Int64" kind="Persistent" identity="true" fieldName="pidCategory1" />
+      <Property Id="20c7e53f-464a-4880-9add-a1a45a86a0b9" name="sequence" type="Int32" label="sequence : Int32" nullable="true" kind="Persistent" fieldName="sequence1" />
+    </DomainClass>
+    <DomainClass Id="d4d94519-0303-451c-ac86-56e29010b291" name="dbBlogArticleMediaTBL" namespace="ModBlog" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="df00befd-0c45-4f0c-96c7-f167c3ba082d" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="4f043ac3-48ac-4e8d-b977-9cc5a30f4340" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="40c7f91d-547e-4e6f-8dde-e9e102fa7609" name="img_banner" label="img_banner : String" kind="Persistent" fieldName="img_banner1" />
+      <Property Id="c3cd1a20-2dd9-43fe-91da-0e08b53ca877" name="img_thumb" label="img_thumb : String" kind="Persistent" fieldName="img_thumb1" />
+      <Property Id="fd364161-4ade-4245-9418-33490f4278fa" name="pidArticle" type="Int64" label="pidArticle : Int64" nullable="true" kind="Persistent" fieldName="pidArticle1" />
+      <Property Id="ce96cea5-3295-44d0-86b2-e7b8668ae57f" name="sequence" type="Int32" label="sequence : Int32" nullable="true" kind="Persistent" fieldName="sequence1" />
+      <Property Id="e932046a-1bad-45da-b8a4-3a816ace8a2f" name="video_embed" label="video_embed : String" kind="Persistent" fieldName="video_embed1" />
+      <Property Id="5c5a391a-a85a-49c1-b294-8789a305f2c7" name="video_path" label="video_path : String" kind="Persistent" fieldName="video_path1" />
+    </DomainClass>
+    <DomainClass Id="9f2f0ae8-2642-4b05-85d1-2e75cbf8104c" name="dbBlogZoneLN" namespace="ModBlog" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="0668d7ce-85bf-4bfa-811a-ed800b67df41" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="5ebe0398-87fb-458a-bc28-0b6cbcc1f445" name="pidZone" type="Int64" label="pidZone : Int64" kind="Persistent" identity="true" fieldName="pidZone1" />
+      <Property Id="b9767fbf-98d4-4d17-8048-ceae04e11ee7" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="3861142d-ac55-497e-8db2-a7b7be897317" name="metaDescription" label="metaDescription : String" kind="Persistent" fieldName="metaDescription1" />
+      <Property Id="7b3eb4cf-ec78-4ce5-9979-19aabeecde54" name="metaKeywords" label="metaKeywords : String" kind="Persistent" fieldName="metaKeywords1" />
+      <Property Id="2270be95-1fa1-4990-898b-b04ca5cfe86a" name="metaTitle" label="metaTitle : String" kind="Persistent" fieldName="metaTitle1" />
+      <Property Id="94339a3e-8150-4db4-87a0-0085df4373e1" name="pagePath" label="pagePath : String" kind="Persistent" fieldName="pagePath1" />
+      <Property Id="0b91b356-7271-4e78-99e4-cb5b9513b30a" name="subTitle" label="subTitle : String" kind="Persistent" fieldName="subTitle1" />
+      <Property Id="be040f79-68bf-4986-9f13-20d7152d422c" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="64965ac0-8648-4d74-b547-b80a86518ea9" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="5afb73b1-42ad-4ed6-985a-705e73ffbcd6">
+      <domainContainer name="DCmodBlog" namespace="ModBlog" showPropertiesCompartment="true">
+        <entitySetProperty name="dbBlogArticleLNs" namespace="ModBlog" type="dbBlogArticleLN" label="dbBlogArticleLNs : IQueryable&lt;ModBlog.dbBlogArticleLN&gt;" />
+        <entitySetProperty name="dbBlogArticleTagRLs" namespace="ModBlog" type="dbBlogArticleTagRL" label="dbBlogArticleTagRLs : IQueryable&lt;ModBlog.dbBlogArticleTagRL&gt;" />
+        <entitySetProperty name="dbBlogArticleTBs" namespace="ModBlog" type="dbBlogArticleTB" label="dbBlogArticleTBs : IQueryable&lt;ModBlog.dbBlogArticleTB&gt;" />
+        <entitySetProperty name="dbBlogCategoryLNs" namespace="ModBlog" type="dbBlogCategoryLN" label="dbBlogCategoryLNs : IQueryable&lt;ModBlog.dbBlogCategoryLN&gt;" />
+        <entitySetProperty name="dbBlogCategoryTBs" namespace="ModBlog" type="dbBlogCategoryTB" label="dbBlogCategoryTBs : IQueryable&lt;ModBlog.dbBlogCategoryTB&gt;" />
+        <entitySetProperty name="dbBlogCommentTBLs" namespace="ModBlog" type="dbBlogCommentTBL" label="dbBlogCommentTBLs : IQueryable&lt;ModBlog.dbBlogCommentTBL&gt;" />
+        <entitySetProperty name="dbBlogTagLNs" namespace="ModBlog" type="dbBlogTagLN" label="dbBlogTagLNs : IQueryable&lt;ModBlog.dbBlogTagLN&gt;" />
+        <entitySetProperty name="dbBlogTagTBs" namespace="ModBlog" type="dbBlogTagTB" label="dbBlogTagTBs : IQueryable&lt;ModBlog.dbBlogTagTB&gt;" />
+        <entitySetProperty name="dbBlogCategoryVIEWs" namespace="ModBlog" type="dbBlogCategoryVIEW" label="dbBlogCategoryVIEWs : IQueryable&lt;ModBlog.dbBlogCategoryVIEW&gt;" />
+        <entitySetProperty name="dbBlogTagVIEWs" namespace="ModBlog" type="dbBlogTagVIEW" label="dbBlogTagVIEWs : IQueryable&lt;ModBlog.dbBlogTagVIEW&gt;" />
+        <entitySetProperty name="dbBlogArticleVIEWs" namespace="ModBlog" type="dbBlogArticleVIEW" label="dbBlogArticleVIEWs : IQueryable&lt;ModBlog.dbBlogArticleVIEW&gt;" />
+        <entitySetProperty name="dbBlogArticleCategoryRLs" namespace="ModBlog" type="dbBlogArticleCategoryRL" label="dbBlogArticleCategoryRLs : IQueryable&lt;ModBlog.dbBlogArticleCategoryRL&gt;" />
+        <entitySetProperty name="dbBlogArticleMediaTBLs" namespace="ModBlog" type="dbBlogArticleMediaTBL" label="dbBlogArticleMediaTBLs : IQueryable&lt;ModBlog.dbBlogArticleMediaTBL&gt;" />
+        <entitySetProperty name="dbBlogZoneLNs" namespace="ModBlog" type="dbBlogZoneLN" label="dbBlogZoneLNs : IQueryable&lt;ModBlog.dbBlogZoneLN&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AppServerCommonDB" Class="magaAppServerCommonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1435\EXPRESS01;Initial Catalog=AppServerCommonDB;Persist Security Info=True;User ID=mssql_2017DEVS" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AppServerCommonDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.RntChnlHomeAwayManagerTBL" Member="RntChnlHomeAwayManagerTBL">
+    <Type Name="RntChnlHomeAwayManagerTBL">
+      <Column Name="id" Type="System.String" DbType="VarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="assignedSystemId" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="authorizationToken" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="InquiryEndpointUrl" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="isDemo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

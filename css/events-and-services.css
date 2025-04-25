@@ -1,0 +1,430 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'FuturaStdBook';
+    src: url('../font/futurastd-book.eot');
+    src: url('../font/futurastd-book.eot') format('embedded-opentype'),
+         url('../font/futurastd-book.woff2') format('woff2'),
+         url('../font/futurastd-book.woff') format('woff'),
+         url('../font/futurastd-book.ttf') format('truetype'),
+         url('../font/futurastd-book.svg#FuturaStdBook') format('svg');
+}
+body {
+	background: #FFF !important;
+	color:#5C5C5E;
+	font-size: 11px;
+}
+.containerSimposio {
+	width:100%;
+	clear:both;
+}
+.headerSimposio {
+	width:100%;
+	clear:both;
+	background: url("../images/bg-header-event_search.gif") no-repeat scroll center top;
+	height:110px;
+}
+.headerSimposio > div {
+	width: 950px;
+	height:275px;
+	margin: 0 auto;
+}
+h1, h2, h3, h1 span, h2 span, h3 span, h1 strong, h2 strong, h3 strong {
+	font-family: 'FuturaStdBook';
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.logoSimposio {
+	display:block;
+	float:left;
+}
+.logoSimposio img {
+	display:block;
+	float:left;
+	border:none;
+}
+.titMainSimposio {
+	color: #fff;
+    display: block;
+    float: right;
+    font-size: 76px;
+    letter-spacing: 3px;
+    line-height: 83px;
+    margin-right: 0;
+    margin-top: 17px;
+    text-align: right;
+}
+.titMainSimposio span {
+	color:#771f07;
+}
+.subTitMainSimposio {
+	display:block;
+	float:left;
+	clear:both;
+	width: 100%;
+}
+.subTitMainSimposio > strong {
+	display:block;
+	float:left;
+	clear:both;
+	width: 1024px;
+	margin-left:-10px;
+	font-weight: normal;
+	text-align:center
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine2 {
+	color:#FFF;
+	font-size:61px;
+	line-height:61px;
+	margin-top: 4px;
+	letter-spacing:14.5px;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine2 > span {
+	color:#ea673d;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine3 {
+	color: #333366;
+    font-size: 55px;
+    letter-spacing: 5px;
+    line-height: 61px;
+    margin-top: 3px;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine3 > span {
+	color:#ea673d;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine4 {
+	color: #333366;
+    font-size: 21px;
+    letter-spacing: 3.2px;
+    line-height: 21px;
+    margin-top: 7px;
+	text-align:right;
+	width:1004px;
+	padding-right:20px;
+}
+.subTitMainSimposio > strong.subTitMainSimposioLine4 > span {
+	color:#ea673d;
+}
+.infoClickSimposio {
+	display:block;
+	float:left;
+	position:relative;
+	margin-top:-14px;
+	font-size: 13px;
+	line-height:13px;
+}
+.hotelThumbsSimposioCont {
+	width: 1004px;
+	margin: 7px auto 0;
+	height: 243px;
+}
+.hotelThumbsSimposio {
+	width: 1014px;
+	height: 243px;
+} 
+a.hotelThumbSimposio {
+	display:block;
+	float:left;
+	width:243px;
+	height:243px;
+	text-decoration: none;
+	position: relative;
+	z-index: 1;
+	margin-right: 10px;
+	opacity: 1;
+	-webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-timing-function: ease;
+  -o-transition-property: all;
+  -o-transition-duration: 0.3s;
+  -o-transition-timing-function: ease;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.3s;
+  -ms-transition-timing-function: ease;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+a.hotelThumbSimposio:hover {
+	opacity: 0.7;
+}
+
+a.hotelThumbSimposio:after {
+	content: "+";
+	font-size: 60px;
+	line-height: 60px;
+	display:block;
+	position:absolute;
+	bottom: 0px;
+	right:10px;
+	text-shadow: 0 0 10px #000;
+	z-index:2;
+	color:#FFF;
+}
+.nameHotelSimposio {
+	display:block;
+	position: absolute; 
+	z-index:3;
+	background:url(../images/tit-bg-simposio.png) repeat;
+	color: #FFF;
+	font-size:15px;
+	line-height:15px;
+	padding:7px;
+	top: 10px;
+	left:0;
+}
+.searchSimposioCont {
+	float:left;
+	clear:both;
+	width: 100%;
+	background:url(../images/bg-search-tit-simposio2015.gif) top center no-repeat;
+	height:474px;
+	margin-top: 20px;
+}
+.searchSimposioCont > div {
+	clear:both;
+	width: 1004px;
+	background:url(../images/bg-search-tit-simposio2015.gif) top center no-repeat;
+	height:474px;
+	margin: 0 auto;
+	position:relative;
+	z-index:1;
+}
+.titsearchSimposio {
+	display: block;
+	float: left;
+	width: 100%;
+	clear:both;
+}
+.titsearchSimposio > strong {
+	display: block;
+	float: left;
+	width: 100%;
+	clear:both;
+	width: 1024px;
+	margin-left:-10px;
+	text-align: center;
+}
+.titsearchSimposio > strong.titsearchSimposioLine1 {
+	color: #742103;
+	font-size: 42px;
+	line-height: 42px;
+	letter-spacing: 2px;
+	margin-top:9px;
+}
+.titsearchSimposio > strong.titsearchSimposioLine1 > span {
+	color:#fff;
+}
+.titsearchSimposio > strong.titsearchSimposioLine2 {
+	color: #333366;
+	font-size: 34px;
+	line-height: 34px;
+	letter-spacing: 3px;
+	margin-top:11px;
+}
+.titsearchSimposio > strong.titsearchSimposioLine2 > span {
+	color:#ea673d;
+}
+.titsearchSimposio > strong.titsearchSimposioLine3 {
+	color: #333366;
+	font-size: 40px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	margin-top:3px;
+}
+.titsearchSimposio > strong.titsearchSimposioLine3 > span {
+	color:#ea673d;
+}
+
+.searchSimposioCont #SearchHomepage {
+	top: 161px;
+}
+.imgSearchAptSimposio {
+	float: left;
+	clear:both;
+	margin-top: 12px;
+}
+.footerSimposio {
+	background:#333366;
+	width: 100%;
+	height: 98px;
+	float:left;
+	clear:both;
+	margin-top: 20px;
+}
+.footerSimposio > div {
+	width: 950px;
+	height: 98px;
+	margin: 0 auto;
+}
+.datiSocSimposio {
+	display:block;
+	float:left;
+	margin-top: 22px;
+	font-size: 12px;
+	line-height: 18px;
+	color: #a3a3c5;
+}
+.telFooterSimposio {
+	display:block;
+	float: right;
+	margin-top: 33px;
+}
+a.emailFooterSimposio {
+	display: block;
+	float:right;
+	margin:40px 20px 0 0;
+	height:18px;
+	font-size:17px;
+	line-height: 17px;
+	color:#FFF;
+	font-family: 'FuturaStdBook';
+	text-decoration: none;
+}
+a.emailFooterSimposio:hover {
+	text-decoration: underline;
+	color:#FFF;
+}
+a.emailFooterSimposio img {
+	float:left;
+	margin-right: 10px;
+}
+	
+
+/*added for event_services page by sonal*/
+
+.main_body{
+	margin: 5px auto;
+    width: 950px;
+}
+.titel_events{
+	background: url(../images/event_search_titel_bg.png) no-repeat left top;
+	color: #333366;
+    font-size: 27px;
+    height: 43px;
+    line-height: 43px;
+    padding-left: 10px;
+}
+.event_details_main{
+	margin-top: 10px;
+}
+.event_img{
+	float: left;
+	width: 465px;
+	margin-right: 20px;
+}
+.event_details_description{
+	float: left;
+	width: 458px;
+}
+.detail_area_sec{
+	padding: 10px 0 18px;
+	background: url(../images/saprater_line.png) repeat-x center bottom;
+}
+.detail_area_sec span{
+	color: #ea673d;
+    display: block;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.detail_area_sec p{
+	color: #333366;
+	font-size: 13px;
+}
+.pragraph_main{
+	margin-top: 20px;
+}
+.pragraph_main p{
+	font-size: 12px;
+	color: #39312c;
+	line-height: 18px;
+}
+.pragraph_main ul{	
+	margin: 20px 0;
+    padding-left: 20px;
+}
+.pragraph_main ul li{
+	font-size: 12px;
+	color: #39312c;
+	line-height: 18px;	
+}
+.mail_info{
+	font-weight: bold;
+	margin-top: 20px;
+}
+.mail_info a{
+	color: #333366;	
+}
+.article_main{
+	margin-top: 25px;
+}
+.concert_text{
+	margin-top: 20px;
+}
+.concert_text a{
+	color: #333366;
+}
+.blue a{
+	color: #333366;
+}
+.tour_main .detail_area_sec span{
+	display: inline-block;
+	margin-top: 2px;
+}
+.tour_main .detail_area_sec p{
+	display: inline-block;
+	float: right;
+    margin-top: 6px
+}
+.tour_main .detail_area_sec{
+	padding: 10px 0 5px;
+}
+.services_main{
+	margin-top: 30px;
+}
+.service_box{
+	width: 48%;
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: top;
+}
+.heading_box{
+	background: #333366;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-family: "FuturaStdBook";
+    font-size: 24px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+.detail_box{
+	background: #d5d5e1;
+    color: #333366;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 20px 12px 20px 20px;
+    border-radius: 0 0 10px 10px;
+    height: 162px;
+}
+.service_box.last{
+	margin: 0;
+	width: 49%;
+}
+.detail_box > ul {
+    padding-left: 11px;
+}
+.detail_box > ul > li {
+	line-height: 13px;
+	margin-bottom: 10px;
+}
+.detail_box > p{
+	margin-bottom: 6px;
+}

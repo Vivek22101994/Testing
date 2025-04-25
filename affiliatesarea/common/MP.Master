@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP.Master.cs" Inherits="RentalInRome.areariservataagenzie.common.MP" %>
+
+<%@ Register Src="~/admin/uc/UC_loader.ascx" TagName="UC_loader" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Rental In Rome - Area riservata proprietari</title>
+
+    <script src="../js/tiny_mce/tiny_mce.js" type="text/javascript"></script>
+
+    <script src="../js/tiny_mce/init.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        @import url(/admin/css/adminStyle.css);
+        @import url(/js/chrome/chromestyle-admin.css);
+        @import url(/js/shadowbox/shadowbox.css);
+        @import url(/jquery/css/ui-core.css);
+        @import url(/jquery/css/ui-autocomplete.css);
+        @import url(/jquery/css/ui-datepicker.css);
+    </style>
+
+    <script src="../jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+
+    <script src="../jquery/js/ui--core.min.js" type="text/javascript"></script>
+
+    <script src="../jquery/js/ui-effects.min.js" type="text/javascript"></script>
+
+    <script src="/jquery/js/ui-widget.min.js" type="text/javascript"></script>
+
+    <script src="/jquery/js/ui-position.min.js" type="text/javascript"></script>
+
+    <script src="/jquery/js/ui-autocomplete.min.js" type="text/javascript"></script>
+
+    <script src="../jquery/js/ui-datepicker.min.js" type="text/javascript"></script>
+
+    <script src="../jquery/datepicker-lang/jquery.ui.datepicker-it.js" type="text/javascript"></script>
+
+    <script src="../jquery/plugin/scrollTo/scrollTo.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.tooltip.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript" src="../js/rollover.js"></script>
+
+    <script type="text/javascript" src="../js/chrome/chrome.js"></script>
+
+    <script type="text/javascript" src="../js/shadowbox/shadowbox.js"></script>
+
+    <script type="text/javascript" src="../js/shadowbox/players/shadowbox-iframe.js"></script>
+
+    <script type="text/javascript" src="../js/shadowbox/players/shadowbox-html.js"></script>
+
+    <script type="text/javascript" src="../js/jscalendar/js/jscal2.js"></script>
+
+    <script type="text/javascript" src="../js/jscalendar/js/lang/it.js"></script>
+
+    <script type="text/javascript" src="../js/JSCal_utils.js"></script>
+
+    <script type="text/javascript">
+        function setToolTip() {
+            $('._tooltip').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+        }
+
+    </script>
+    <script type="text/javascript">
+        function refreshDates() {
+
+        }
+        function open_utilForm_sendMailToStaff() {
+            var _url = "utilForm_sendMailToStaff.aspx";
+            //alert(_url);
+            OpenShadowbox(_url, 460, 410);
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:PlaceHolder ID="PH_session_timeout" runat="server">
+        <div id="session_timeout_cont" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0; display: none;" onclick="window.location = 'login.aspx?referer=<%= Server.UrlEncode(Request.RawUrl)%>';">
+            <div class="info_area cont" style="">
+                <span>Sessione scaduta !<br />
+                    si prega di autenticarsi...</span>
+            </div>
+        </div>
+    </asp:PlaceHolder>
+    <asp:PlaceHolder ID="PH_admin_offline" runat="server" Visible="false">
+        <div id="session_timeout_cont" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0;" onclick="window.location = 'login.aspx';">
+            <div class="info_area cont" style="">
+                <span>Gestionale fuori servizio!<br />
+                    si prega di riprovare più tardi...</span>
+            </div>
+        </div>
+    </asp:PlaceHolder>
+    <div id="required_fileds_validator" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0; display: none;" onclick="document.getElementById('required_fileds_validator').style.display = 'none';">
+        <div class="info_area cont">
+            <span>Campi evidenziati in rosso sono obbligatori !<br/>
+                si prega di compilare tutti...</span>
+        </div>
+    </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="10">
+        <ProgressTemplate>
+            <uc1:UC_loader ID="UC_loader1" runat="server" />
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <div id="header_admin">
+        <img src="../images/css/logo.gif" height="76px" alt="" class="logo"/>
+        <div id="menu">
+            <div id="chromemenu" class="chromestyle" style="margin-top: 50px;">
+                <ul>
+                    <li>
+                        <a href="rnt_reservation_list.aspx">Prenotazioni</a>
+                    </li>
+                    <li>
+                        <a href="login.aspx?logout=true">Logout</a></li>
+                    <li>
+                        <a href="#" onclick="return open_utilForm_sendMailToStaff()">Contatta RentalInRome</a></li>
+                    <asp:PlaceHolder ID="PH_admin_menu" runat="server"></asp:PlaceHolder>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="nulla">
+        </div>
+    </div>
+    </form>
+
+    <script type="text/javascript">
+        function SetClassName(elm, cl) {
+            elm.className = "" + cl;
+        }
+        function showTooltip() {
+            setTimeout("document.getElementById('sb-title').style.height = 'auto'", 1500);
+            setTimeout("document.getElementById('sb-title-inner').style.height = 'auto'", 1500);
+        }
+        function Shadowbox_init() {
+            Shadowbox.init({
+                handleOversize: "resize",
+                onOpen: showTooltip
+            });
+        }
+        Shadowbox_init();
+        function openShadowboxImg(path) {
+            Shadowbox.open({
+                content: "" + path,
+                player: 'img'
+            });
+        }
+        function OpenShadowbox(url, width, height) {
+            Shadowbox.open({
+                content: url,
+                player: 'iframe',
+                height: height,
+                width: width
+            });
+        }
+        //cssdropdown.startchrome("chromemenu");
+    </script>
+
+</body>
+</html>

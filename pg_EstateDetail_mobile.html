@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Rental in Rome | Mobile version</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="/kendo/js/jquery.min.js"></script>
+    <script src="/kendo/js/kendo.mobile.min.js"></script>
+    <script src="/kendo/content/shared/js/console.js"></script>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/style-mobile.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <style>
+.swipe { 
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  z-index:1;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+</style>
+
+
+</head>
+
+
+<body>
+    <div data-role="view" data-layout="mobile-view" class="container">
+        <header class="header" data-stretch="true">
+
+
+            <div class="loginAndLangs" data-role="navbar">
+                <a class="loginMobileLink">Login</a>
+                <a href="#" class="langsMobile">
+                    <img src="images/css/flag-ita.gif" />
+                    <span>Italiano</span></a>
+            </div>
+            <a class="nav-button logoCont" href="#index">
+                <img src="images/css/logo.gif" class="logo" alt="Rental in Rome" /></a>
+
+            <a class="openSearch" data-role="touch" data-enable-swipe="1" data-touchstart="openSearchBox.touchstart">Cerca Appartamento</a>
+
+
+
+
+
+
+            <div class="nulla">
+            </div>
+        </header>
+
+        <div class="searchBox" id="searchBox" data-title="Search Form" data-init="initForm" data-use-native-scrolling="true">
+            <a class="closeSearchBox" data-role="touch" data-enable-swipe="1" data-touchstart="closeSearchBox.touchstart">Annulla la ricerca</a>
+            <form>
+                <ul data-style="inset" class="searchForm">
+                    <li class="searchBoxLine">
+                        <input type="text" value="Ricerca Veloce" />
+                    </li>
+                    <li class="searchBoxLine">
+                        <label>Seleziona una zona:</label>
+                        <select id="dropdownZone">
+                            <option>- - -</option>
+                            <option>Colosseo</option>
+                            <option>Trastevere</option>
+                        </select>
+                    </li>
+                    <li class="searchBoxLine">
+                        <span class="searchBoxCol2 checkIn">
+                            <label>Check-In</label>
+                            <input type="text" />
+                        </span>
+                        <span class="searchBoxCol2 checkOut">
+                            <label>Check-Out</label>
+                            <input type="text" />
+                        </span>
+                    </li>
+                    <li class="searchBoxLine">
+                        <span class="searchBoxCol4 nights">
+                            <label>Notti</label>
+                            <input type="text" value="3" />
+                        </span>
+                        <span class="searchBoxCol4 guests">
+                            <label>Ospiti</label>
+                            <input type="text" value="1" />
+                        </span>
+                        <a class="btnBigMobile" href="#">Cerca</a>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+
+        <div id="mainHomeMobile" class="mainMobile" data-stretch="true">
+
+            <a class="btnBack" href="/">Torna Indietro</a>
+
+            <h1 class="titBg">
+                <strong class="aptName">Name of the apartment</strong>
+                <span class="zoneName">Trastevere</span>
+            </h1>
+
+            <div class="nulla">
+            </div>
+            <div id="scrollview-container">
+            <div class="galleryDett" id="galleryDett" data-role="scrollview">
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+                <div class="photo" data-role="page">
+                    <img style="max-width: 100%;" src="images/mobile/example-dett.jpg" alt="Apartment Name" />
+                </div>
+            </div>
+            </div>
+            <div class="nulla">
+            </div>
+
+            <div class="summary" id="summaryDett">
+                <div class="summaryLine" id="SummPeriod">
+                    <span class="summLabel">Period:</span>
+                    <a class="summModify filterBtn"><span>change</span></a>
+                    <span class="periodDates">
+                        <strong id="checkInSumm">01/03/2014</strong> - <strong id="checkOutSumm">07/03/2014</strong>
+                    </span>
+                </div>
+                <div class="summaryLine" id="SummPersons">
+                    <span class="summLabel">Persons:</span>
+                    <a class="summModify filterBtn">change</a>
+                    <span class="periodDates">
+                        <strong id="Adults">2 Adults</strong>, <strong id="Children">2 Children</strong>
+                    </span>
+                </div>
+                <div class="summaryLine" id="SummTotal">
+                    <span class="summLabel">Total price:</span>
+                    <strong class="summTotal">€123,45</strong>
+                </div>
+            </div>
+
+            <div class="nulla">
+            </div>
+
+            <a class="btnBigMobile btnBookNowDett">Book now</a>
+
+            <div class="nulla">
+            </div>
+
+
+            <div id="tabsDett" class="k-content">
+
+                <div id="tabstrip">
+                    <ul id="tabs-view" data-index="0">
+                        <li>Description
+                        </li>
+                        <li>Details
+                        </li>
+                        <li>Prices
+                        </li>
+                        <li>Offers
+                        </li>
+
+                    </ul>
+                    <div class="tabDett">
+                        <div class="txtTabs" style="word-spacing: normal;">
+                            This apartment is located in the Belle Arti Square, a short walk from the Spanish steps and Piazza del Popolo. The apartment is on the 1 floor of an Art Nouveau style building with a concierge service. It is comprised of a large living room and a dining room with a table for 8 people, 2 double bedrooms , a twin bedroom (two singles), a large bathroom with Jacuzzi for 2 people, a bathroom with Jacuzzi shower, a bathroom with shower and a big  fully equipped kitchen. It's provided with air conditioning in all rooms, satellite Tv, dvd player, washing machine, dishwasher, hair dryer in all bathrooms and a fridge withe ice maker. On request, the landlady provides you the password for the Wi-fi internet connection (at an extra cost of €25). Its modern and antique design furnishing , parquet floors in all rooms and high ceilings complete the apartment.
+                        </div>
+                        <a class="filterBtn addtoWishBtn" href="#">Add to Wishlist</a>
+                        <a class="filterBtn resquestInfoBtn" href="#">Request Info</a>
+                    </div>
+                    <div class="tabDett" style="display:none;">
+                        Details
+                    </div>
+                    <div class="tabDett" style="display: none;">
+                        Prices
+                    </div>
+                    <div class="tabDett" style="display: none;">
+                        Offers
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="nulla">
+            </div>
+
+            <h1 class="titPag" style="margin: 2% 0 2% 4%;">GuestBook</h1>
+            <a class="filterBtn" style="margin-top: 0;">Firma </a>
+
+            <div class="nulla">
+            </div>
+
+            <div class="mobileBox" id="guestBook">
+                <div class="commentMobile commento list">
+                    <div class="commCont">
+                        <div style="float: left;">
+                            <span class="userName">User Name(United States)</span>
+                            <div class="nulla">
+                            </div>
+                            <span class="votazione">
+                                <img alt="vote10,00" src="images/estate_vote/vote10.gif">
+                            </span>
+                        </div>
+                        <div class="nulla">
+                        </div>
+                        <div class="commentoTxt">
+                            The Bianca apartment is a very wonderful place to stay in Rome.  The location is RIGHT outside the Vatican City wall (GREAT).The apt. had every comfort of home. The outdoor patio was awesome for our family meals. The 2 young men who met us there were very friendly and helpful.  I will gladly recommend this apt.
+                        </div>
+                    </div>
+                </div>
+                <div class="commentMobile commento list">
+                    <div class="commCont">
+                        <div style="float: left;">
+                            <span class="userName">User Name(United States)</span>
+                            <div class="nulla">
+                            </div>
+                            <span class="votazione">
+                                <img alt="vote10,00" src="images/estate_vote/vote10.gif">
+                            </span>
+                        </div>
+                        <div class="nulla">
+                        </div>
+                        <div class="commentoTxt">
+                            The Bianca apartment is a very wonderful place to stay in Rome.  The location is RIGHT outside the Vatican City wall (GREAT).The apt. had every comfort of home. The outdoor patio was awesome for our family meals. The 2 young men who met us there were very friendly and helpful.  I will gladly recommend this apt.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer id="footerMobile" class="footer" data-stretch="true">
+            <span class="datiSoc">© Rental in Rome 2003 - 2014</span>
+            <menu class="menuFooter">
+                <a href="#">Privacy</a>
+                <a href="#">Versione Desktop</a>
+            </menu>
+            <div class="nulla">
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <script>
+        window.openSearchBox = {
+            touchstart: function (e) {
+                var searchBox = document.getElementById("searchBox");
+                searchBox.style.height = "310px";
+            }
+        }
+        window.closeSearchBox = {
+            touchstart: function (e) {
+                var searchBox = document.getElementById("searchBox");
+                searchBox.style.height = "0";
+            }
+        }
+    </script>
+
+
+
+    <script>
+        function initForm() {
+            var body = $(".km-pane");
+        }
+    </script>
+    <script>
+        window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+        try {
+            $("#tabs-view").kendoMobileButtonGroup({
+                select: function () {
+                    $("#tabstrip .tabDett").hide()
+                             .eq(this.selectedIndex)
+                             .show();
+                },
+                index: 0
+            });
+        } catch (ex) { alert(ex); }
+    </script>
+
+</body>
+</html>

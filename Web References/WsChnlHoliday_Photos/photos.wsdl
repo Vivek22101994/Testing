@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://holidaylettings.co.uk/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://holidaylettings.co.uk/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://holidaylettings.co.uk/webservices/">
+      <s:element name="FetchPhotos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:FetchPicRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FetchPicRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Request" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Test" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordsAffected" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchPhotosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchPhotosResult" type="tns:FetchWebServiceResponseOfPicDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FetchWebServiceResponseOfPicDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfPic" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebServiceResponse" type="tns:WebServiceResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPic">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pic" nillable="true" type="tns:Pic" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pic">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PicId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Shape" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelativePathToPic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelativePathToSmallPic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelativePathToHDPic" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OAuthSoapHeader" type="tns:OAuthSoapHeader" />
+      <s:complexType name="OAuthSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OauthToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OauthTokenSecret" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="DeletePhoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:PicDeleteRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PicDeleteRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="PicId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="DeletePhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletePhotoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPhotoViaUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:PicUploadViaUrlRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PicUploadViaUrlRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="PicId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MakePanoramic" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UploadPhotoViaUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadPhotoViaUrlResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadBase64Photo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:PicUploadViaBase64Request" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PicUploadViaBase64Request">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="PicId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImageId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Base64Image" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MakePanoramic" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UploadBase64PhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadBase64PhotoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePhoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:PicUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PicUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurrentPicId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NewPicId" nillable="true" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdatePhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePhotoResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FetchPhotosSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchPhotos" />
+  </wsdl:message>
+  <wsdl:message name="FetchPhotosSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchPhotosResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchPhotosOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeletePhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePhoto" />
+  </wsdl:message>
+  <wsdl:message name="DeletePhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePhotoOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UploadPhotoViaUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPhotoViaUrl" />
+  </wsdl:message>
+  <wsdl:message name="UploadPhotoViaUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPhotoViaUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPhotoViaUrlOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UploadBase64PhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadBase64Photo" />
+  </wsdl:message>
+  <wsdl:message name="UploadBase64PhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadBase64PhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadBase64PhotoOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePhoto" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePhotoOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="photosSoap">
+    <wsdl:operation name="FetchPhotos">
+      <wsdl:input message="tns:FetchPhotosSoapIn" />
+      <wsdl:output message="tns:FetchPhotosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <wsdl:input message="tns:DeletePhotoSoapIn" />
+      <wsdl:output message="tns:DeletePhotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPhotoViaUrl">
+      <wsdl:input message="tns:UploadPhotoViaUrlSoapIn" />
+      <wsdl:output message="tns:UploadPhotoViaUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadBase64Photo">
+      <wsdl:input message="tns:UploadBase64PhotoSoapIn" />
+      <wsdl:output message="tns:UploadBase64PhotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <wsdl:input message="tns:UpdatePhotoSoapIn" />
+      <wsdl:output message="tns:UpdatePhotoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="photosHttpGet" />
+  <wsdl:binding name="photosSoap" type="tns:photosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FetchPhotos">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/FetchPhotos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FetchPhotosOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/DeletePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeletePhotoOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPhotoViaUrl">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/UploadPhotoViaUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadPhotoViaUrlOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadBase64Photo">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/UploadBase64Photo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadBase64PhotoOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/UpdatePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdatePhotoOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="photosSoap12" type="tns:photosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FetchPhotos">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/FetchPhotos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FetchPhotosOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/DeletePhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeletePhotoOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPhotoViaUrl">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/UploadPhotoViaUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadPhotoViaUrlOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadBase64Photo">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/UploadBase64Photo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadBase64PhotoOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/UpdatePhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdatePhotoOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="photosHttpGet" type="tns:photosHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:service name="photos">
+    <wsdl:port name="photosSoap" binding="tns:photosSoap">
+      <soap:address location="https://agentapi.holidaylettings.co.uk/v0/secure/photos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="photosSoap12" binding="tns:photosSoap12">
+      <soap12:address location="https://agentapi.holidaylettings.co.uk/v0/secure/photos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="photosHttpGet" binding="tns:photosHttpGet">
+      <http:address location="https://agentapi.holidaylettings.co.uk:80/v0/secure/photos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

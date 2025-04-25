@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaLimo_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=217.133.44.160,21\SQLEXPRESS;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=sviluppo" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LIMO_TBL_REQUEST" Member="LIMO_TBL_REQUESTs">
+    <Type Name="LIMO_TBL_REQUEST">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_creator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_client" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_reservation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operator_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="request_country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="num_adult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_child" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_case_s" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_case_m" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_case_l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="in_applied" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="in_pick_type" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="in_pick_place" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="in_pick_details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="in_pick_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="in_departure_place" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="in_dest_pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="in_dest_name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="in_dest_adress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="out_applied" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="out_dest_type" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="out_dest_place" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="out_dest_details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="out_dest_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="out_destination_place" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="out_pick_pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="out_pick_name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="out_pick_adress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="request_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="request_ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="request_date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="state_body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mail_body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_confirmed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LIMO_LK_TRANSPORTTYPE" Member="LIMO_LK_TRANSPORTTYPE">
+    <Type Name="LIMO_LK_TRANSPORTTYPE">
+      <Column Name="code" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LIMO_RL_TRANSPORT_DURATION" Member="LIMO_RL_TRANSPORT_DURATION">
+    <Type Name="LIMO_RL_TRANSPORT_DURATION">
+      <Column Name="pidZone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidPickupPlace" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="transportType" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="inAt00" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt05" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt06" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt07" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt08" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt09" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt15" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt16" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt17" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt18" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt19" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt22" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inAt23" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt00" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt05" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt06" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt07" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt08" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt09" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt14" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt15" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt16" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt17" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt18" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt19" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt21" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt22" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outAt23" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LIMO_TB_PICKUP_PLACE" Member="LIMO_TB_PICKUP_PLACE">
+    <Type Name="LIMO_TB_PICKUP_PLACE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidCity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inTime1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inTime2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outTime1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="outTime2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

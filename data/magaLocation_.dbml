@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaLocation_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=178.23.175.73,1433\SQLEXPRESS;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_remoteaccess" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LOC_TB_CITY" Member="LOC_TB_CITies">
+    <Type Name="LOC_TB_CITY">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_country" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="map" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_map" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_LN_CITY" Member="LOC_LN_CITies">
+    <Type Name="LOC_LN_CITY">
+      <Column Name="pid_city" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_VIEW_CITY" Member="LOC_VIEW_CITies">
+    <Type Name="LOC_VIEW_CITY">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="pid_country" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="map" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_map" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_TB_ZONE" Member="LOC_TB_ZONEs">
+    <Type Name="LOC_TB_ZONE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_area" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="file_extension" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_LN_ZONE" Member="LOC_LN_ZONEs">
+    <Type Name="LOC_LN_ZONE">
+      <Column Name="pid_zone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="folder_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_VIEW_ZONE" Member="LOC_VIEW_ZONEs">
+    <Type Name="LOC_VIEW_ZONE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="pid_area" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="file_extension" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="folder_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_TB_POINT_TYPE" Member="LOC_TB_POINT_TYPEs">
+    <Type Name="LOC_TB_POINT_TYPE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_LN_POINT" Member="LOC_LN_POINTs">
+    <Type Name="LOC_LN_POINT">
+      <Column Name="pid_point" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_LN_POINT_TYPE" Member="LOC_LN_POINT_TYPEs">
+    <Type Name="LOC_LN_POINT_TYPE">
+      <Column Name="pid_point_type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_VIEW_POINT_TYPE" Member="LOC_VIEW_POINT_TYPEs">
+    <Type Name="LOC_VIEW_POINT_TYPE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_VIEW_POINT" Member="LOC_VIEW_POINT">
+    <Type Name="LOC_VIEW_POINT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_point_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="sv_yaw" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_pitch" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_zoom" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="sv_available" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gmaps_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="gmaps_available" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="haPlaceType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_TB_POINT" Member="LOC_TB_POINT">
+    <Type Name="LOC_TB_POINT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_point_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sv_yaw" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_pitch" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_zoom" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="sv_available" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gmaps_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="gmaps_available" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="haPlaceType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOC_LK_COUNTRY" Member="LOC_LK_COUNTRies">
+    <Type Name="LOC_LK_COUNTRY">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="has_region" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="has_province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_flag" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="codeCoGe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="country_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaPayPal_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=217.133.44.160,21\SQLEXPRESS;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=sviluppo" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PP_TBL_TRANSACTION" Member="PP_TBL_TRANSACTIONs">
+    <Type Name="PP_TBL_TRANSACTION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="unique_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="inv_pid_payment" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="date_creation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="txn_verify" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txn_string" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="txn_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txn_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txn_business" Type="System.String" DbType="NVarChar(127)" CanBeNull="true" />
+      <Column Name="txn_charset" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txn_custom" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="txn_notify_version" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txn_parent_txn_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="txn_receipt_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="txn_receiver_email" Type="System.String" DbType="NVarChar(127)" CanBeNull="true" />
+      <Column Name="txn_receiver_id" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="txn_resend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="txn_residence_country" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="txn_verify_sign" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="cl_address_country" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="cl_address_city" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="cl_address_country_code" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="cl_address_name" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="cl_address_state" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="cl_address_street" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_address_zip" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="cl_contact_phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="cl_first_name" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="cl_last_name" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="cl_payer_business_name" Type="System.String" DbType="NVarChar(127)" CanBeNull="true" />
+      <Column Name="cl_payer_email" Type="System.String" DbType="NVarChar(127)" CanBeNull="true" />
+      <Column Name="cl_payer_id" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="pay_auth_amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_auth_exp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pay_auth_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="pay_auth_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_exchange_rate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_invoice" Type="System.String" DbType="NVarChar(127)" CanBeNull="true" />
+      <Column Name="pay_mc_currency" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_mc_fee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_mc_gross" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_mc_handling" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_mc_shipping" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_memo" Type="System.String" DbType="NVarChar(2550)" CanBeNull="true" />
+      <Column Name="pay_num_cart_items" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_payer_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_payment_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pay_payment_gross" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_payment_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_payment_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_pending_reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pay_protection_eligibility" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pay_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_reason_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_remaining_settle" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_settle_amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_settle_currency" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_shipping" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pay_shipping_method" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pay_tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,17 @@
+﻿body {
+	background-color:#EDE9E5;
+	font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+	color:#827973;
+	font-size:12px;
+}
+h1.inline_keyword {
+	color: #5D5550;
+	display:inline;
+	font-size:12px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+}	
+strong{
+	color: #5D5550;
+}

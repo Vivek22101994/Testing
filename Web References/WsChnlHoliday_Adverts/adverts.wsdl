@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://holidaylettings.co.uk/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://holidaylettings.co.uk/webservices/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://holidaylettings.co.uk/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://holidaylettings.co.uk/webservices/">
+      <s:element name="NewStandaloneAdvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyReference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewStandaloneAdvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewStandaloneAdvertResult" type="tns:NewAdvertWebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NewAdvertWebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WebServiceResponse" type="tns:WebServiceResponse" />
+          <s:element minOccurs="1" maxOccurs="1" name="HomeId" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColocatedHomeIds" type="tns:ArrayOfLong" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OAuthSoapHeader" type="tns:OAuthSoapHeader" />
+      <s:complexType name="OAuthSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OauthToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OauthTokenSecret" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="NewColocatedSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numberOfProperties" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="thirdPartyReferences" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupReference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewColocatedSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewColocatedSetResult" type="tns:NewAdvertWebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveSiteUpdateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ActiveSiteUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActiveSiteUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="MapLatitude" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MapLongtitude" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MapZoomLevel" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="HowToAccessDescription" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CarRequired" nillable="true" type="tns:CarRequired" />
+              <s:element minOccurs="0" maxOccurs="1" name="RegionDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TownDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestBeach" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestFerry" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestRailway" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestAirport" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestBeachDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestFerryDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestRailwayDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestAirportDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestAmenitiesDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="SkiResort" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="GolfWithinWalkingDistance" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="GolfWithinDrivingDistance" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WaterSportsNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WaterParkNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TennisNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HorseRidingNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FishingNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WalkingHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RuralHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BeachOrLakesideHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WinterSunHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CityBreakHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="NightlifeHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CyclingHoliday" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Request" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Test" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecordsAffected" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CarRequired">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotNecessary" />
+          <s:enumeration value="Advised" />
+          <s:enumeration value="Essential" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="TriStateOfDecimal">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Value" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActiveSiteUpdateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveSiteUpdateRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveGroupUpdateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ActiveGroupUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActiveGroupUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="CateringNotes" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShowGroupAdvertFirst" nillable="true" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeSummary" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ChangeoverDay" nillable="true" type="tns:ChangeoverDay" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AvailabilityDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherExteriorFacilitiesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherDetails" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SpecialBookingConditions" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guestbook" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CateringType" nillable="true" type="tns:CateringType" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFreezer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasMicrowave" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasToaster" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasKettle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasIron" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHairdryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasVideo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDvd" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasStereo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSafe" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSatelliteTV" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWiFi" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSnooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPingPong" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGamesRoom" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasJacuzziHotTub" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasAirConditioning" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCentralHeating" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFax" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGym" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasInternetAccess" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelephone" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSauna" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClothesDryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDishwasher" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFridge" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFireplace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWashingMachine" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelevision" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHighchair" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParkingAvailable" nillable="true" type="tns:ParkingAvailable" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBalconyOrTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBoat" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateFishing" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTrampoline" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSwingSet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClimbingFrame" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBarbecue" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSolariumRoofTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSeaView" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolForChildren" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LinenProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TowelsProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BicyclesAvailable" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="StaffedProperty" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SuitableForChildren" nillable="true" type="tns:SuitableForChildren" />
+              <s:element minOccurs="1" maxOccurs="1" name="RestrictedMobility" nillable="true" type="tns:RestrictedMobility" />
+              <s:element minOccurs="1" maxOccurs="1" name="WheelchairUsers" nillable="true" type="tns:WheelchairUsers" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHouseSwap" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForLongLet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHenStag" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForCorporate" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForShortBreaks" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowPets" nillable="true" type="tns:AllowPets" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowSmoking" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UsePanoramic1OnAdvert" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ChangeoverDay">
+        <s:restriction base="s:string">
+          <s:enumeration value="Flexible" />
+          <s:enumeration value="Sun" />
+          <s:enumeration value="Mon" />
+          <s:enumeration value="Tue" />
+          <s:enumeration value="Wed" />
+          <s:enumeration value="Thu" />
+          <s:enumeration value="Fri" />
+          <s:enumeration value="Sat" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CateringType">
+        <s:restriction base="s:string">
+          <s:enumeration value="SelfCatering" />
+          <s:enumeration value="BreakfastDinner" />
+          <s:enumeration value="Breakfast" />
+          <s:enumeration value="BreakfastLunchDinner" />
+          <s:enumeration value="BreakfastLunch" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ParkingAvailable">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotAvailable" />
+          <s:enumeration value="Available" />
+          <s:enumeration value="AvailableAndSecure" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="SuitableForChildren">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotSuitable" />
+          <s:enumeration value="Yes" />
+          <s:enumeration value="NotForUnder5s" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RestrictedMobility">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotSuitable" />
+          <s:enumeration value="Yes" />
+          <s:enumeration value="YesWithLiftAccess" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="WheelchairUsers">
+        <s:restriction base="s:string">
+          <s:enumeration value="NotSuitable" />
+          <s:enumeration value="Accessible" />
+          <s:enumeration value="AccessibleAndAdapted" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="AllowPets">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Yes" />
+          <s:enumeration value="PleaseEnquire" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ActiveGroupUpdateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveGroupUpdateRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveUnitUpdateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ActiveUnitUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActiveUnitUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="SleepsMax" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberSingleBeds" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberDoubleBeds" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberSofaBeds" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberCots" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberShowerRooms" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberEnSuiteRooms" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberBathrooms" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeatingInLounge" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeatingForDining" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeSummary" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ChangeoverDay" nillable="true" type="tns:ChangeoverDay" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PremiumHomeSummary" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ColocatedTabOrder" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="HomeSize" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckInTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckOutTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AvailabilityDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherInteriorFacilitiesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherExteriorFacilitiesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherDetails" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SpecialBookingConditions" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guestbook" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CateringType" nillable="true" type="tns:CateringType" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFreezer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasMicrowave" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasToaster" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasKettle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasIron" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHairdryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasVideo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDvd" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasStereo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSafe" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSatelliteTV" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWiFi" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSnooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPingPong" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGamesRoom" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasJacuzziHotTub" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasAirConditioning" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCentralHeating" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFax" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGym" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasInternetAccess" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelephone" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSauna" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClothesDryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDishwasher" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFridge" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFireplace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWashingMachine" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelevision" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHighchair" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParkingAvailable" nillable="true" type="tns:ParkingAvailable" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBalconyOrTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBoat" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateFishing" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTrampoline" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSwingSet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClimbingFrame" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBarbecue" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSolariumRoofTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSeaView" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolForChildren" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LinenProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TowelsProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BicyclesAvailable" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="StaffedProperty" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CleaningServiceProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IroningBoardProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FanProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SuitableForChildren" nillable="true" type="tns:SuitableForChildren" />
+              <s:element minOccurs="1" maxOccurs="1" name="RestrictedMobility" nillable="true" type="tns:RestrictedMobility" />
+              <s:element minOccurs="1" maxOccurs="1" name="WheelchairUsers" nillable="true" type="tns:WheelchairUsers" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHouseSwap" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForLongLet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHenStag" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForCorporate" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForShortBreaks" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowPets" nillable="true" type="tns:AllowPets" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowSmoking" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UsePanoramic1OnAdvert" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ActiveUnitUpdateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveUnitUpdateRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactiveSiteUpdateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:InactiveSiteUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InactiveSiteUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationContinent" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationCountry" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationRegion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationSubRegion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationTown" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LocationSuburb" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostalAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="MapLatitude" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MapLongtitude" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="MapZoomLevel" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="HowToAccessDescription" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CarRequired" nillable="true" type="tns:CarRequired" />
+              <s:element minOccurs="0" maxOccurs="1" name="RegionDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TownDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestBeach" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestFerry" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestRailway" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestAirport" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestBeachDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestFerryDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestRailwayDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestAirportDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="NearestAmenitiesDistance" type="tns:TriStateOfDecimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="SkiResort" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="GolfWithinWalkingDistance" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="GolfWithinDrivingDistance" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WaterSportsNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WaterParkNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TennisNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HorseRidingNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FishingNearby" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WalkingHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="RuralHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BeachOrLakesideHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="WinterSunHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CityBreakHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="NightlifeHoliday" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CyclingHoliday" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InactiveSiteUpdateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InactiveSiteUpdateRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactiveGroupUpdateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:InactiveGroupUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InactiveGroupUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="CateringNotes" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShowGroupAdvertFirst" nillable="true" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeSummary" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ChangeoverDay" nillable="true" type="tns:ChangeoverDay" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AvailabilityDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherExteriorFacilitiesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherDetails" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SpecialBookingConditions" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guestbook" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CateringType" nillable="true" type="tns:CateringType" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFreezer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasMicrowave" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasToaster" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasKettle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasIron" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHairdryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasVideo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDvd" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasStereo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSafe" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSatelliteTV" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWiFi" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSnooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPingPong" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGamesRoom" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasJacuzziHotTub" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasAirConditioning" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCentralHeating" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFax" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGym" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasInternetAccess" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelephone" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSauna" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClothesDryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDishwasher" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFridge" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFireplace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWashingMachine" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelevision" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHighchair" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParkingAvailable" nillable="true" type="tns:ParkingAvailable" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBalconyOrTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBoat" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateFishing" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTrampoline" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSwingSet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClimbingFrame" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBarbecue" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSolariumRoofTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSeaView" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolForChildren" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LinenProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TowelsProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BicyclesAvailable" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="StaffedProperty" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SuitableForChildren" nillable="true" type="tns:SuitableForChildren" />
+              <s:element minOccurs="1" maxOccurs="1" name="RestrictedMobility" nillable="true" type="tns:RestrictedMobility" />
+              <s:element minOccurs="1" maxOccurs="1" name="WheelchairUsers" nillable="true" type="tns:WheelchairUsers" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHouseSwap" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForLongLet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHenStag" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForCorporate" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForShortBreaks" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowPets" nillable="true" type="tns:AllowPets" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowSmoking" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UsePanoramic1OnAdvert" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InactiveGroupUpdateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InactiveGroupUpdateRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactiveUnitUpdateRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:InactiveUnitUpdateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InactiveUnitUpdateRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="HomeType" nillable="true" type="tns:HomeType" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberOfBedrooms" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ThirdPartyReference" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SleepsMax" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberSingleBeds" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberDoubleBeds" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberSofaBeds" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberCots" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberShowerRooms" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberEnSuiteRooms" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberBathrooms" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeatingInLounge" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="SeatingForDining" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeSummary" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ChangeoverDay" nillable="true" type="tns:ChangeoverDay" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesCurrency" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PremiumHomeSummary" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ColocatedTabOrder" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="HomeSize" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckInTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CheckOutTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AvailabilityDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RentalRatesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="HomeDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherInteriorFacilitiesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherExteriorFacilitiesDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FurtherDetails" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SpecialBookingConditions" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guestbook" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CateringType" nillable="true" type="tns:CateringType" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFreezer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasMicrowave" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasToaster" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasKettle" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasIron" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHairdryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasVideo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDvd" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasStereo" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSafe" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSatelliteTV" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWiFi" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSnooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPingPong" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGamesRoom" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasJacuzziHotTub" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasAirConditioning" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCentralHeating" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFax" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasGym" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasInternetAccess" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelephone" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSauna" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClothesDryer" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasDishwasher" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasCooker" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFridge" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasFireplace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasWashingMachine" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTelevision" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasHighchair" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ParkingAvailable" nillable="true" type="tns:ParkingAvailable" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBalconyOrTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateGarden" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBoat" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateFishing" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasTrampoline" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSwingSet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasClimbingFrame" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasBarbecue" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSharedTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPrivateTennisCourt" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSolariumRoofTerrace" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasSeaView" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolForChildren" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorHeated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorUnheated" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateIndoor" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="LinenProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TowelsProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="BicyclesAvailable" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="StaffedProperty" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CleaningServiceProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IroningBoardProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FanProvided" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="SuitableForChildren" nillable="true" type="tns:SuitableForChildren" />
+              <s:element minOccurs="1" maxOccurs="1" name="RestrictedMobility" nillable="true" type="tns:RestrictedMobility" />
+              <s:element minOccurs="1" maxOccurs="1" name="WheelchairUsers" nillable="true" type="tns:WheelchairUsers" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHouseSwap" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForLongLet" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForHenStag" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForCorporate" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AvailableForShortBreaks" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowPets" nillable="true" type="tns:AllowPets" />
+              <s:element minOccurs="1" maxOccurs="1" name="AllowSmoking" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UsePanoramic1OnAdvert" nillable="true" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="HomeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Apartment" />
+          <s:enumeration value="BedAndBreakfast" />
+          <s:enumeration value="Barn" />
+          <s:enumeration value="BoatHouse" />
+          <s:enumeration value="Bungalow" />
+          <s:enumeration value="CaravanOrMobileHome" />
+          <s:enumeration value="Castle" />
+          <s:enumeration value="CaveHouse" />
+          <s:enumeration value="Chalet" />
+          <s:enumeration value="Chateau" />
+          <s:enumeration value="Condo" />
+          <s:enumeration value="ConvertedChapel" />
+          <s:enumeration value="Cottage" />
+          <s:enumeration value="Farmhouse" />
+          <s:enumeration value="Finca" />
+          <s:enumeration value="Fort" />
+          <s:enumeration value="Gite" />
+          <s:enumeration value="GuestHouse" />
+          <s:enumeration value="HotelApartment" />
+          <s:enumeration value="House" />
+          <s:enumeration value="Houseboat" />
+          <s:enumeration value="Lighthouse" />
+          <s:enumeration value="Lodge" />
+          <s:enumeration value="LogCabin" />
+          <s:enumeration value="ManorHouse" />
+          <s:enumeration value="Penthouse" />
+          <s:enumeration value="Riad" />
+          <s:enumeration value="SkiChalet" />
+          <s:enumeration value="Studio" />
+          <s:enumeration value="TipiTeepee" />
+          <s:enumeration value="Trullo" />
+          <s:enumeration value="Tower" />
+          <s:enumeration value="Townhouse" />
+          <s:enumeration value="TreeHouse" />
+          <s:enumeration value="Villa" />
+          <s:enumeration value="Watermill" />
+          <s:enumeration value="Windmill" />
+          <s:enumeration value="Yacht" />
+          <s:enumeration value="Yurt" />
+          <s:enumeration value="ShepherdsHut" />
+          <s:enumeration value="CanalBarge" />
+          <s:enumeration value="Cortijo" />
+          <s:enumeration value="NarrowBoat" />
+          <s:enumeration value="CamperVan" />
+          <s:enumeration value="BeachHut" />
+          <s:enumeration value="TentedCamp" />
+          <s:enumeration value="Room" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="InactiveUnitUpdateRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InactiveUnitUpdateRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandaloneActivationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:StandaloneRequestActivationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StandaloneRequestActivationRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="StandaloneActivationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandaloneActivationRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StandaloneDeactivationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:StandaloneRequestDeactivationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StandaloneRequestDeactivationRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="StandaloneDeactivationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StandaloneDeactivationRequestResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:FetchRentalUnitRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FetchRentalUnitRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="FetchUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUnitResult" type="tns:FetchWebServiceResponseOfRentalUnitDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FetchWebServiceResponseOfRentalUnitDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfRentalUnit" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebServiceResponse" type="tns:WebServiceResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRentalUnit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RentalUnit" nillable="true" type="tns:RentalUnit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RentalUnit">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SiteId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThirdPartyReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeSummary" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChangeoverDay" type="tns:ChangeoverDay" />
+          <s:element minOccurs="0" maxOccurs="1" name="PremiumHomeSummary" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActiveState" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColoAdState" type="tns:ColoAdState" />
+          <s:element minOccurs="0" maxOccurs="1" name="RentalRatesCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdvertType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvailabilityDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RentalRatesDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FurtherExteriorFacilitiesDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FurtherDetails" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecialBookingConditions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Guestbook" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CateringType" type="tns:CateringType" />
+          <s:element minOccurs="0" maxOccurs="1" name="CateringNotes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FurtherInteriorFacilitiesDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasFreezer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasMicrowave" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasToaster" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasKettle" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasIron" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasHairdryer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasVideo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasDvd" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasStereo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSafe" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSatelliteTV" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasWiFi" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolSnooker" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPingPong" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasGamesRoom" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasJacuzziHotTub" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasAirConditioning" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasCentralHeating" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasFax" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasGym" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasInternetAccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasTelephone" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSauna" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasClothesDryer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasDishwasher" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasCooker" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasFridge" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasFireplace" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasWashingMachine" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasTelevision" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasHighchair" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParkingAvailable" type="tns:ParkingAvailable" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasBalconyOrTerrace" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSharedGarden" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPrivateGarden" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasBoat" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPrivateFishing" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasTrampoline" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSwingSet" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasClimbingFrame" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasBarbecue" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSharedTennisCourt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPrivateTennisCourt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSolariumRoofTerrace" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSeaView" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolForChildren" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorHeated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedOutdoorUnheated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolSharedIndoor" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorHeated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateOutdoorUnheated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPoolPrivateIndoor" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LinenProvided" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TowelsProvided" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BicyclesAvailable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="StaffedProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SuitableForChildren" type="tns:SuitableForChildren" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictedMobility" type="tns:RestrictedMobility" />
+          <s:element minOccurs="1" maxOccurs="1" name="WheelchairUsers" type="tns:WheelchairUsers" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableForHouseSwap" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableForLongLet" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableForHenStag" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableForCorporate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableForShortBreaks" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowPets" type="tns:AllowPets" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowSmoking" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SleepsMax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfBedrooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberSingleBeds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberDoubleBeds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberSofaBeds" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberCots" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberShowerRooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberEnSuiteRooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberBathrooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeatingInLounge" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeatingForDining" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DynamicFeedMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ColoAdState">
+        <s:restriction base="s:string">
+          <s:enumeration value="StandAlone" />
+          <s:enumeration value="ColoGroup" />
+          <s:enumeration value="ColoChild" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="FetchSite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ownerId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:FetchSiteRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FetchSiteRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Request">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="HomeId" type="s:long" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="FetchSiteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchSiteResult" type="tns:FetchWebServiceResponseOfSiteDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FetchWebServiceResponseOfSiteDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FetchedData" type="tns:ArrayOfSite" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebServiceResponse" type="tns:WebServiceResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Site" nillable="true" type="tns:Site" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Site">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SiteId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Continent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suburb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MapLatitude" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MapLongitude" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MapZoomLevel" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HowToAccessDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarRequired" type="tns:CarRequired" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegionDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NearestBeach" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NearestFerry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NearestRailway" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NearestAirport" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearestBeachDistance" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearestFerryDistance" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearestRailwayDistance" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearestAirportDistance" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearestAmenitiesDistance" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkiResort" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GolfWithinWalkingDistance" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GolfWithinDrivingDistance" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WaterSportsNearby" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WaterParkNearby" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TennisNearby" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HorseRidingNearby" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FishingNearby" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WalkingHoliday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuralHoliday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeachOrLakesideHoliday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WinterSunHoliday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CityBreakHoliday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NightlifeHoliday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CyclingHoliday" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewAdvertWebServiceResponse" nillable="true" type="tns:NewAdvertWebServiceResponse" />
+    </s:schema>
+    <s:schema targetNamespace="http://holidaylettings.co.uk/webservices/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NewStandaloneAdvertSoapIn">
+    <wsdl:part name="parameters" element="tns:NewStandaloneAdvert" />
+  </wsdl:message>
+  <wsdl:message name="NewStandaloneAdvertSoapOut">
+    <wsdl:part name="parameters" element="tns:NewStandaloneAdvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewStandaloneAdvertOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="NewColocatedSetSoapIn">
+    <wsdl:part name="parameters" element="tns:NewColocatedSet" />
+  </wsdl:message>
+  <wsdl:message name="NewColocatedSetSoapOut">
+    <wsdl:part name="parameters" element="tns:NewColocatedSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewColocatedSetOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ActiveSiteUpdateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ActiveSiteUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="ActiveSiteUpdateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ActiveSiteUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveSiteUpdateRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ActiveGroupUpdateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ActiveGroupUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="ActiveGroupUpdateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ActiveGroupUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveGroupUpdateRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ActiveUnitUpdateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ActiveUnitUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="ActiveUnitUpdateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ActiveUnitUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveUnitUpdateRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InactiveSiteUpdateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:InactiveSiteUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="InactiveSiteUpdateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:InactiveSiteUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="InactiveSiteUpdateRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InactiveGroupUpdateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:InactiveGroupUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="InactiveGroupUpdateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:InactiveGroupUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="InactiveGroupUpdateRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InactiveUnitUpdateRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:InactiveUnitUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="InactiveUnitUpdateRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:InactiveUnitUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="InactiveUnitUpdateRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandaloneActivationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:StandaloneActivationRequest" />
+  </wsdl:message>
+  <wsdl:message name="StandaloneActivationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:StandaloneActivationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandaloneActivationRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="StandaloneDeactivationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:StandaloneDeactivationRequest" />
+  </wsdl:message>
+  <wsdl:message name="StandaloneDeactivationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:StandaloneDeactivationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="StandaloneDeactivationRequestOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="FetchUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUnit" />
+  </wsdl:message>
+  <wsdl:message name="FetchUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUnitOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="FetchSiteSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchSite" />
+  </wsdl:message>
+  <wsdl:message name="FetchSiteSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchSiteOAuthSoapHeader">
+    <wsdl:part name="OAuthSoapHeader" element="tns:OAuthSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="NewStandaloneAdvertHttpGetIn">
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="thirdPartyReference" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewStandaloneAdvertHttpGetOut">
+    <wsdl:part name="Body" element="tns:NewAdvertWebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewColocatedSetHttpGetIn">
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="numberOfProperties" type="s:string" />
+    <wsdl:part name="thirdPartyReferences" type="s1:StringArray" />
+    <wsdl:part name="groupReference" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewColocatedSetHttpGetOut">
+    <wsdl:part name="Body" element="tns:NewAdvertWebServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="advertsSoap">
+    <wsdl:operation name="NewStandaloneAdvert">
+      <wsdl:input message="tns:NewStandaloneAdvertSoapIn" />
+      <wsdl:output message="tns:NewStandaloneAdvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewColocatedSet">
+      <wsdl:input message="tns:NewColocatedSetSoapIn" />
+      <wsdl:output message="tns:NewColocatedSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActiveSiteUpdateRequest">
+      <wsdl:input message="tns:ActiveSiteUpdateRequestSoapIn" />
+      <wsdl:output message="tns:ActiveSiteUpdateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActiveGroupUpdateRequest">
+      <wsdl:input message="tns:ActiveGroupUpdateRequestSoapIn" />
+      <wsdl:output message="tns:ActiveGroupUpdateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActiveUnitUpdateRequest">
+      <wsdl:input message="tns:ActiveUnitUpdateRequestSoapIn" />
+      <wsdl:output message="tns:ActiveUnitUpdateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InactiveSiteUpdateRequest">
+      <wsdl:input message="tns:InactiveSiteUpdateRequestSoapIn" />
+      <wsdl:output message="tns:InactiveSiteUpdateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InactiveGroupUpdateRequest">
+      <wsdl:input message="tns:InactiveGroupUpdateRequestSoapIn" />
+      <wsdl:output message="tns:InactiveGroupUpdateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InactiveUnitUpdateRequest">
+      <wsdl:input message="tns:InactiveUnitUpdateRequestSoapIn" />
+      <wsdl:output message="tns:InactiveUnitUpdateRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandaloneActivationRequest">
+      <wsdl:input message="tns:StandaloneActivationRequestSoapIn" />
+      <wsdl:output message="tns:StandaloneActivationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StandaloneDeactivationRequest">
+      <wsdl:input message="tns:StandaloneDeactivationRequestSoapIn" />
+      <wsdl:output message="tns:StandaloneDeactivationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUnit">
+      <wsdl:input message="tns:FetchUnitSoapIn" />
+      <wsdl:output message="tns:FetchUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchSite">
+      <wsdl:input message="tns:FetchSiteSoapIn" />
+      <wsdl:output message="tns:FetchSiteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="advertsHttpGet">
+    <wsdl:operation name="NewStandaloneAdvert">
+      <wsdl:input message="tns:NewStandaloneAdvertHttpGetIn" />
+      <wsdl:output message="tns:NewStandaloneAdvertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewColocatedSet">
+      <wsdl:input message="tns:NewColocatedSetHttpGetIn" />
+      <wsdl:output message="tns:NewColocatedSetHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="advertsSoap" type="tns:advertsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewStandaloneAdvert">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/NewStandaloneAdvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:NewStandaloneAdvertOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewColocatedSet">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/NewColocatedSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:NewColocatedSetOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveSiteUpdateRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/ActiveSiteUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ActiveSiteUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveGroupUpdateRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/ActiveGroupUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ActiveGroupUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveUnitUpdateRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/ActiveUnitUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ActiveUnitUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactiveSiteUpdateRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/InactiveSiteUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InactiveSiteUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactiveGroupUpdateRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/InactiveGroupUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InactiveGroupUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactiveUnitUpdateRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/InactiveUnitUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InactiveUnitUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandaloneActivationRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/StandaloneActivationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandaloneActivationRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandaloneDeactivationRequest">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/StandaloneDeactivationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:StandaloneDeactivationRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUnit">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/FetchUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FetchUnitOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchSite">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/FetchSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FetchSiteOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="advertsSoap12" type="tns:advertsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewStandaloneAdvert">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/NewStandaloneAdvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:NewStandaloneAdvertOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewColocatedSet">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/NewColocatedSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:NewColocatedSetOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveSiteUpdateRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/ActiveSiteUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ActiveSiteUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveGroupUpdateRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/ActiveGroupUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ActiveGroupUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveUnitUpdateRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/ActiveUnitUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ActiveUnitUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactiveSiteUpdateRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/InactiveSiteUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InactiveSiteUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactiveGroupUpdateRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/InactiveGroupUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InactiveGroupUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactiveUnitUpdateRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/InactiveUnitUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InactiveUnitUpdateRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandaloneActivationRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/StandaloneActivationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandaloneActivationRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandaloneDeactivationRequest">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/StandaloneDeactivationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:StandaloneDeactivationRequestOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUnit">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/FetchUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FetchUnitOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchSite">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/FetchSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FetchSiteOAuthSoapHeader" part="OAuthSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="advertsHttpGet" type="tns:advertsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="NewStandaloneAdvert">
+      <http:operation location="/NewStandaloneAdvert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewColocatedSet">
+      <http:operation location="/NewColocatedSet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="adverts">
+    <wsdl:port name="advertsSoap" binding="tns:advertsSoap">
+      <soap:address location="https://agentapi.holidaylettings.co.uk/v0/secure/adverts.asmx" />
+    </wsdl:port>
+    <wsdl:port name="advertsSoap12" binding="tns:advertsSoap12">
+      <soap12:address location="https://agentapi.holidaylettings.co.uk/v0/secure/adverts.asmx" />
+    </wsdl:port>
+    <wsdl:port name="advertsHttpGet" binding="tns:advertsHttpGet">
+      <http:address location="https://agentapi.holidaylettings.co.uk:80/v0/secure/adverts.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

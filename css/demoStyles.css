@@ -1,0 +1,90 @@
+/* Stylesheet for my demo pages for jScrollPane - these styles aren't necessary for using jScrollPane and aren't specific to any particular example */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+a.jScrollArrowUp {
+	background: url(../images/basic_arrow_up.gif) repeat-x 0 0;
+}
+a.jScrollArrowUp:hover {
+	background-position: 0 -15px;
+}
+a.jScrollArrowDown {
+	background: url(../images/basic_arrow_down.gif) repeat-x 0 0;
+}
+a.jScrollArrowDown:hover {
+	background-position: 0 -15px;
+}
+a.jScrollActiveArrowButton, a.jScrollActiveArrowButton:hover {
+	background-position: 0 -30px;
+}
+
+
+.orange-bar .jScrollPaneTrack {
+	background: #f60;
+}
+.orange-bar .jScrollPaneDrag {
+	background: #00f url(../images/drag_grab.gif) no-repeat 50% 50%;
+}
+.orange-bar .scroll-pane {
+	background: #69f;
+}
+			
+.holder {
+	float: left;
+	margin: 10px;
+}
+#pane1 {
+	width: 303px;
+	height: 62px;	
+}
+.scroll-pane {
+	overflow: auto;
+	margin:7px;
+	float: left;
+}
+.scroll-pane a {
+	text-decoration:none;
+	color:#333;
+	}
+.descrsx {
+	height:100px;
+	width:140px;
+	display:block;
+	float:left;
+	}
+.fondocerca {
+	float:left;
+	width: 293px;
+	height: 27px;
+	background:url(../images/scroll/fondocerca.png) no-repeat;
+	margin:10px 0 10px 23px ;
+	}
+.fondoscroll {
+	width: 293px;
+	height: 80px;
+	margin:0 0 0 23px ;
+	float:left;
+	background:url(../images/scroll/fondoscroll.png) no-repeat;
+	}
+.none {
+	float:left;
+	margin:5px 0 0 7px;
+	border:none;
+	background:none;
+	}
+.wide {
+	width: 400px;
+}
+
+.super-wide {
+	width: 700px;
+}
+
+.tall {
+	height: 400px;
+}
+
+

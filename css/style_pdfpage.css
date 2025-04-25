@@ -1,0 +1,261 @@
+﻿/*CSS Document */
+
+body {
+background: none;
+}
+
+#container {
+width:960px;
+margin: 0 auto;
+}
+    #container #contenuto {
+        box-shadow: none;
+    }
+
+#container #main {
+	background: none;
+	padding-bottom:0;
+}
+	#container #main > div {
+		background: none;
+		padding-top:20px;
+	}
+.mainContent {
+    width: 100%;
+}
+#accomodationNameDett.titTxtBig {
+    float: left;
+    width: auto;
+}
+.titAreaDet {
+    clear: both;
+    color: #76260c;
+    display: block;
+    font-size: 13px;
+	line-height:13px;
+    font-style: normal;
+    line-height: 10px;
+    margin: 5px 20px 0 0;
+    text-transform: uppercase;
+}
+
+#serviceIcons ul {
+    list-style: none;
+}
+#serviceIcons ul li {
+    float: left;
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+#tabListAvailability .ui-datepicker {
+    width: 100% !important;
+}
+.titTestata {
+color: #6B7077; 
+font-weight: bold; 
+font-size: 20px; 
+text-align:right;
+}
+.orange {
+color: #A00000;
+}
+hr {
+height:1px;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom:1px dotted #666; 
+
+}
+td {
+padding:5px;
+}
+.boxFattura {
+background-color:#f4eee290392f;
+border:2px solid #A00000;
+float:right;
+width:490px;
+margin-top:50px;
+}
+.boxFattura td {
+border-bottom:1px dotted #A00000;
+border-right:1px dotted #A00000;
+padding:15px;
+}
+.boxFattura td.totFattura {
+background-color:#A00000;
+color:#FFF;
+font-size:18px;
+font-weight:bold;
+border-right:none;
+border-bottom:none;
+}
+.boxFattura td p {
+    margin:0;
+    padding:0;
+}
+#pagato {
+position:absolute;
+z-index:2000;
+}
+#pagato.sopra {
+top:20px;
+left:125px;
+}
+#pagato.sotto {
+top:350px;
+left:80px;
+}
+.titPdfCont {
+	display:block;
+	float:left;
+	position:relative;
+	z-index:10;
+	background:#fe6634;
+	padding:20px;
+	margin-bottom:-100px;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+.main a.logo {
+	margin-bottom:25px;
+	margin-top:0;
+}
+.pdfMap {
+	float:right;
+	width:451px;
+	height:250px;
+	position:relative;
+}
+.titMapPdf {
+	display:block;
+	float:right;
+	text-align:right;
+	font-weight:bold;
+	font-size:18px;
+	line-height:18px;
+	position:absolute;
+	top:0;
+	right: 0;
+	z-index:10;
+	background:#fe6634;
+	color:#fff;
+	padding:10px;
+	font-style:italic;
+	border-left: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+}
+.txt.txtPdf {
+	width: 441px;
+	clear:none;
+}
+#avvCalendarCont .ui-datepicker .ui-datepicker-prev, #avvCalendarCont .ui-datepicker .ui-datepicker-next {
+	display:none;
+}
+#avvCalendarCont .ui-datepicker td span.ui-state-default, #avvCalendarCont .ui-datepicker td a.ui-state-default:hover {
+	color: #FFF;
+}
+#avvCalendarCont .ui-datepicker-header.ui-widget-header {
+	background:#fe6634;
+	border: 1px solid #fff;
+}
+
+.main table.priceTable {
+	width: 100%;
+	background:none;
+	border: none;
+}
+	.main table.priceTable tr th {
+		border-right: 1px solid #FFF;
+		border-bottom: 1px solid #FFF;
+	}
+	.main table.priceTable tr td {
+		border-right: 1px dotted #d5d5e1;
+		border-bottom: 1px dotted #d5d5e1;
+	}
+		.main table.priceTable tr td:first-child {
+			border-left: 1px dotted #d5d5e1;
+		}
+
+.main #specOffert {
+	width: 100%;
+	margin-top:0;
+}
+
+.main #specOffert .titBar {
+	width: 882px;
+	float: left;
+	clear: both;
+	color: #fff;
+	font-style:italic;
+	font-weight:bold;
+	font-size:18px;
+	line-height:18px;
+	padding:10px;
+	margin-top:20px;
+	margin-bottom:20px;
+	background: #fe6634;
+	height:auto;
+}
+
+.main #ListspecOffert a.commento {
+	width: 883px;
+	border: 1px solid #d5d5e1;
+}
+.pdfPhotosCont {
+	float:left;
+	clear:both;
+	width: 922px;
+}
+	.pdfPhotosCont img {
+		float:left;
+		width: 441px;
+		height:248px;
+		margin: 0 20px 20px 0;
+	}
+.sitePdfTop {
+	float: right;
+	font-size: 18px;
+	line-height: 18px;
+	color: #333366;
+	text-align:right;
+	margin-top:20px;
+}
+.sitePdfTop {
+	float: right;
+	font-size: 18px;
+	line-height: 18px;
+	color: #333366;
+	text-align:right;
+	margin-top:50px;
+}
+
+.main #listPanes, .main #listPanes .tabList {
+	width: 100%;
+	min-width:0;
+}
+.footerPdf {
+	display: block;
+	float: left;
+	clear: both;
+	margin-top: 20px;
+	border-top: 1px solid #d5d5e1;
+	padding: 20px 0;
+	width:100%;
+}
+	.footerPdf img.logoFooterPdf {
+		float: left;
+		height:50px;
+	}
+.datiSocPdf {
+	float:right;
+	font-size: 11px;
+	font-style: italic;
+	line-height: 15px;
+	margin-top: 10px;
+	text-align:right;
+}
+
+
+		

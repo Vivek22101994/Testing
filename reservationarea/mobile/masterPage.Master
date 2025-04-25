@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPage.master.cs" Inherits="RentalInRome.reservationarea.mobile.masterPage" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="NlSx8KjFFw9tuY_pwuH8kIoeoYq88Jvd26kT5mEsSbo" />
+    <asp:ContentPlaceHolder ID="CPH_head_top" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="<%=CurrentAppSettings.ROOT_PATH %>favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/themes/test.css<%="?tmp="+DateTime.Now.Ticks %>" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        @import url(style.css<%="?tmp="+DateTime.Now.Ticks %>);
+    </style>
+    <asp:ContentPlaceHolder ID="CPH_head_bottom" runat="server">
+       http://jquerymobile.com/themeroller/?ver=1.2.0&style_id=20121031-43
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+    </telerik:RadAjaxManager>
+    <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
+    </telerik:RadWindowManager>
+    <asp:UpdateProgress ID="loading_cont" runat="server" DisplayAfter="0">
+        <ProgressTemplate>
+            <div id="loading_big_cont" style="opacity: 0.5; filter: alpha(opacity=50);">
+            </div>
+            <div id="overlay_site">
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <asp:HiddenField ID="HF_unique" runat="server" Value="" Visible="false" />
+    <div data-role="page">
+        <a class="logo" style="display: block; width: 100px; margin: 5px 20px;">
+            <%if (resUtils_currCity == 1)
+                  {%>
+            <img src="/images/css/logo.gif" title="Rent apartments in Rome, Italy" alt="Rent apartments in Rome, Italy" style="width: 100%;" />
+            <%} %>
+            <%if (resUtils_currCity == 2)
+                  {%>
+            <img src="/images/css/logo_RiF.gif" title="Rent apartments in Florence, Italy" alt="Rent apartments in Florence, Italy" style="width: 100%;" />
+            <%} %>
+            <%if (resUtils_currCity == 3)
+                  {%>
+            <img src="/images/css/logo_RiV.gif" title="Rent apartments in Venice, Italy" alt="Rent apartments in Venice, Italy" style="width: 100%;" />
+            <%} %>
+        </a>
+        <asp:ContentPlaceHolder ID="CPH_main" runat="server">
+        </asp:ContentPlaceHolder>
+        <div id="footer" data-role="footer">
+            <div class="links societa" style="color: #FFF;">
+                <strong>Rental in Rome S.r.l.</strong> - P. IVA: 07824541002
+                <br />
+                2003 - 2011© all rights reserved
+            </div>
+            <div class="nulla">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaAuth_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1435\EXPRESS01;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_2017DEVS" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AuthClientTBL" Member="AuthClientTBL">
+    <Type Name="AuthClientTBL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="typeCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pidLang" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="authUsr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="authPwd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nameHonorific" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nameFull" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nameFirst" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nameMiddle" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="nameLast" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactEmail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactPhone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactPhoneTrip" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactPhoneMobile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactPhoneOffice" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="contactFax" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="docType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="docNum" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="docIssuePlace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="docIssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="docExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="docVat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="docCf" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="birthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="birthPlace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="birthCountry" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="birthState" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="locCountry" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="locState" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="locCity" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="locAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="locZipCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdUserNameFull" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="notesInner" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="notesInvoice" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pidAgent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="locProvince" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="idCodice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

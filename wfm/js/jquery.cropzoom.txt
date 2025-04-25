@@ -1,0 +1,148 @@
+﻿<link href="css/jquery-ui-1.7.2.custom.css" rel="Stylesheet" type="text/css" /> 
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.cropzoom.js"></script>
+
+$(document).ready(function(){
+          var cropzoom = $('#crop_container2').cropzoom({
+            width:400,
+            height:300,
+            bgColor: '#CCC',
+            enableRotation:true,
+            enableZoom:true,
+            zoomSteps:10,
+            rotationSteps:10,
+            expose:{
+                slidersOrientation: 'horizontal',
+                zoomElement: '#zoom',
+                rotationElement: '#rot',
+                elementMovement:'#movement'
+            },
+            selector:{        
+              centered:true,
+              borderColor:'blue',
+              borderColorHover:'yellow'
+            },
+            image:{
+                source:'chicas1024.jpg',
+                width:1024,
+                height:768,
+                minZoom:50,
+                maxZoom:200,
+                startZoom:40,
+                useStartZoomAsMinZoom:true,
+                snapToContainer:true
+            }
+        });
+});
+                                                    
+
+Documentation
+General parameters
+Type 	Parameter Name 	Default 	Description
+Property 	width 	640 	Width of the Container
+Property 	Height 	480 	Height of the Container
+Property 	bgColor 	#000 	Background of the Container
+Property 	overlayColor 	#000 	Color of the overlay layer when drag the selector
+Property 	enableRotation 	true 	Enable/Disable the rotation slider
+Property 	enableZoom 	true 	Enable/Disable the zoom slider
+Property 	rotationSteps 	5 	Set the steps for the rotation slider
+Property 	zoomSteps 	1 	Set the steps for the zoom slider
+Method 	restore 		this restore the plugin to the original values
+Method 	send 		this method will send the information to the server for cropping.
+Parameters
+
+    * url: location of the server file to process the cropping
+    * type: post / get
+    * custom: json object to add in the request e.g. {id=1,username='jhon'}
+    * onSuccess: callback to get the response of the request.
+
+e.g: cropzoom.send('process.php','POST',{id=1},function(r){ alert(r); });
+Selector Properties, Callbacks, methods.
+Type 	Parameter Name 	Default 	Description
+Property 	showPositionsOnDrag 	true 	Enable/Disable info of X and Y axis in the selector
+Property 	showDimetionsOnDrag 	true 	Enable/Disable info of width and height in the selector
+Property 	borderColor 	yellow 	Change the border color of the selector
+Property 	borderColorHover 	red 	Change the border color of the selector on mouse over
+Property 	Centered 	false 	Center the selector in the container
+Property 	x 	0 	x axis value from selector
+Property 	y 	0 	y axis value from selector
+Property 	width 	229 	width of the selector (you can resize to this value as minimum)
+Property 	height 	100 	height of the selector (you can resize to this value as minimum)
+Property 	aspectRatio 	false 	this keep the aspect ratio of the selector when resize
+Property 	maxWidth 	null 	this will be the limit of the selector width
+Property 	maxHeight 	null 	this will be the limit of the selector height
+Property 	bgInfoLayer 	#FFF 	this will be set the background-color of the info layer that appears over the selector
+Property 	infoFontSize 	10 	this will be set the font-size of the info layer that appears over the selector
+Property 	infoFontColor 	blue 	this will be set the font color of the info layer that appears over the selector
+Property 	startWithOverlay NEW 	false 	this will be turn on the dark overlay at start
+Property 	hideOverlayOnDragAndResize NEW 	true 	this will be turn on or turn of the dark overlay when you drag or resize.
+Method 	setSelector 		this method will positioned the selector in the axis given and set the width and height, the last parameter is if this transition will be animated fires when the selector is dragged
+Parameters
+
+    * x: value for x axis
+    * y: value for y axis
+    * w: value for width
+    * h: value for height
+    * animated: true/false
+
+e.g: cropzoom.setSelector(15,15,200,100,true);
+Callback 	onSelectorDrag 		fires when the selector is dragged
+Parameters
+
+    * object: selector
+    * positions: x,y, width and height of the selector
+
+Callback 	onSelectorDragStop 		fires when the selector drag stop
+Parameters
+
+    * object: selector
+    * positions: x,y, width and height of the selector
+
+Callback 	onSelectorResize 		fires when the selector is resized
+Parameters
+
+    * object: selector
+    * positions: x,y, width and height of the selector
+
+Callback 	onSelectorResizeStop 		fires when the selector resize stop
+Parameters
+
+    * object: selector
+    * positions: x,y, width and height of the selector
+
+Expose Properties.NEW
+Type 	Parameter Name 	Default 	Description
+Property 	slidersOrientation NEW 	horizontal 	set the direction of the zoom and rotation sliders into the exposed element
+Property 	zoomElement NEW 	NULL 	the DOM Element that will contain the zoom slider.
+Property 	rotationElement NEW 	NULL 	the DOM Element that will contain the rotation slider
+Property 	elementMovement NEW 	NULL 	the DOM Element that will contain the MOVEMENT CONTROL
+Property 	movementSteps NEW 	5 	number of pixel that the image will move when click on one of the buttons into the MOVEMENT CONTROL
+Image Properties, Callbacks and methods.
+Type 	Parameter Name 	Default 	Description
+Property 	source 		path of the image to use
+Property 	rotation 	0 	rotation in degrees of the image
+Property 	width 	0 	original width of the image
+Property 	height 	0 	original height of the image
+Property 	minZoom 	10 	percent of the minimum zoom of the image
+Property 	maxZoom 	150 	percent of the maximum zoom of the image
+Property 	startZoom NEW 	50 	percent of the starting zoom of the image
+Property 	useStartZoomAsMinZoom NEW 	true 	use the minZoom property as startZoom promerty startZoom will be ignored
+Property 	snapToContainer NEW 	false 	this allow to drag the image into the container boundaries.
+Callback 	onZoom 		fires when the image is zommed
+Parameters
+
+    * object: image
+    * positions: x,y, width and height of the image
+
+Callback 	onRotate 		fires when the image is rotated
+Parameters
+
+    * object: image
+    * degrees: number of degrees
+
+Callback 	onImageDrag 		fires when the image is dragged
+Parameters
+
+    * object: image
+    * positions: x,y, width and height of the image

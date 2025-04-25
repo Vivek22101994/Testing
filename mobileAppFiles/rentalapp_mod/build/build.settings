@@ -1,0 +1,30 @@
+-- build.settings 
+settings = 
+{ 
+     androidPermissions  = 
+     { 
+          "android.permission.RECORD_AUDIO", 
+          "android.permission.WRITE_EXTERNAL_STORAGE", 
+     }, 
+     orientation = 
+     { 
+         default = "portrait", 
+         supported = { "portrait", "portraitUpsideDown" } 
+      }, 
+
+      iphone =  
+      {  
+         plist=  
+         {  
+              UIApplicationExitsOnSuspend = false,  
+              UIHiddenStatusBar="YES",  
+              CFBundleIconFile="Icon.png",  
+              CFBundleIconFiles = {  
+                   "Icon.png",  
+                   "Icon@2x.png",  
+                   "Icon-72.png",  
+                   "Icon-72@2x.png",  
+              },  
+         },  
+       },  
+}

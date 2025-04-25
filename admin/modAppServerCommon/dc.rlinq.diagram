@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dc" isDefault="true">
+    <DomainModelMoniker name="/DCmodAppServerCommon" />
+    <nestedChildShapes>
+      <classShape Id="15c25252-7765-4690-bcaf-eeee98f379c9" absoluteBounds="2.5, 0.5, 1.5, 2.1473746744791664">
+        <DomainClassMoniker name="/DCmodAppServerCommon/dbUtlsBlockedIpLST" />
+        <nestedChildShapes>
+          <elementListCompartment Id="bfd97a7b-d1a9-401d-b2b2-d74b01cf9484" absoluteBounds="2.515, 1.01, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="060b3fc8-32a3-409f-af3b-ba1d1d99d65c" absoluteBounds="2.515, 2.0385953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="f47d2a4e-cadb-4a70-a75a-5ddfebe0c2a2" absoluteBounds="2.515, 2.2979850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="91444736-7bb2-477e-b00d-71369ad632b5" absoluteBounds="0.5, 1.5, 1.5, 3.301183268229166">
+        <DomainClassMoniker name="/DCmodAppServerCommon/dbSmtpConfigLST" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f08eed36-6e50-40f3-9ded-7584aa18d29d" absoluteBounds="0.515, 2.01, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4015d6c1-2a5c-4ad5-af8c-e88056be0c1b" absoluteBounds="0.515, 4.1924039713541665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="74f442df-ce51-46a3-92fa-89e7467ba2b3" absoluteBounds="0.515, 4.4517936197916663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="61b4b620-0ed2-4b37-9bf5-fdbe8747ea71" absoluteBounds="2.5, 3.125, 1.5, 2.3396761067708329">
+        <DomainClassMoniker name="/DCmodAppServerCommon/dbRntChnlHomeAwayManagerTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="abc47a0b-b21b-44c0-8427-79b7969befb2" absoluteBounds="2.515, 3.635, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="963bef5c-2533-41ff-939f-026d6fc36999" absoluteBounds="2.515, 4.8558968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3da2b0b0-5ab1-4f86-8c60-48e9327cbe14" absoluteBounds="2.515, 5.1152864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

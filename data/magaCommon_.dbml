@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaCommon_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=178.23.175.73,1433\SQLEXPRESS;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_remoteaccess" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LOG_ADMIN_CONNECTION" Member="LOG_ADMIN_CONNECTIONs">
+    <Type Name="LOG_ADMIN_CONNECTION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="admin_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="admin_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ip_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="host_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date_connection" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_CLIENT_CONNECTION" Member="LOG_CLIENT_CONNECTIONs">
+    <Type Name="LOG_CLIENT_CONNECTION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="referer" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="search_text" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ip_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="host_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date_connection" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_AREARES_CONNECTION" Member="LOG_AREARES_CONNECTION">
+    <Type Name="LOG_AREARES_CONNECTION">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_reservation" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_full_name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ip_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="host_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="date_connection" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

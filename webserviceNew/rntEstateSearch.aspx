@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="rntEstateSearch.aspx.cs" Inherits="RentalInRome.webserviceNew.rntEstateSearch" %>

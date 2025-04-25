@@ -1,0 +1,7 @@
+D:\Project\Rentalinrome\bin\RentalInRome.dll
+D:\Project\Rentalinrome\bin\RentalInRome.pdb
+D:\Project\Rentalinrome\obj\Debug\Interop.LCC11.dll
+D:\Project\Rentalinrome\obj\Debug\RentalInRome.csproj.ResolveComReference.cache
+D:\Project\Rentalinrome\obj\Debug\RentalInRome.dll
+D:\Project\Rentalinrome\obj\Debug\RentalInRome.pdb
+D:\Project\Rentalinrome\obj\Debug\RentalInRome.csprojResolveAssemblyReference.cache

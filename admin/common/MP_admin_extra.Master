@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP_admin_extra.master.cs" Inherits="RentalInRome.admin.common.MP_admin_extra" %>
+<%@ Register src="~/admin/uc/UC_loader.ascx" tagname="UC_loader" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Rental In Rome - Area Amministrativa</title>
+    <link href="~/admin/css/adminStyle.css" rel="stylesheet" type="text/css" /> 
+	<link href="~/js/shadowbox/shadowbox.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="~/js/jscalendar/css/jscal2.css" />
+
+	<script type="text/javascript" src="../js/shadowbox/shadowbox.js"></script>
+	<script type="text/javascript" src="../js/shadowbox/players/shadowbox-iframe.js"></script>
+	<script type="text/javascript" src="../js/shadowbox/players/shadowbox-html.js"></script>
+	<script type="text/javascript" src="../js/jscalendar/js/jscal2.js"></script>
+	<script type="text/javascript" src="../js/jscalendar/js/lang/it.js"></script>
+	<script type="text/javascript" src="../js/JSCal_utils.js"></script>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+	<div id="session_timeout_cont" style="width: 100%; height: 100%; z-index: 999; position: fixed; top: 0; left: 0;display: none;" onclick="window.location = 'login.aspx';">
+		<div class="info_area cont" style="">
+			
+			<span>Sessione scaduta !<br/>
+				si prega di autenticarsi...</span>
+			 
+			<!-- <span>Gestionale fuori servizio!<br />
+				si prega di riprovare più tardi...</span>-->
+		</div>
+	</div>
+	<div id="required_fileds_validator" style="width:100%;height:100%;z-index:999;position:fixed;top:0;left:0;display:none;" onclick="document.getElementById('required_fileds_validator').style.display = 'none';">
+        <div class="info_area cont">
+		    <span>Campi evidenziati in rosso sono obbligatori !<br> si prega di compilare tutti...</span>
+	    </div>
+	</div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="100">
+        <ProgressTemplate> 
+            <uc1:UC_loader ID="UC_loader1" runat="server" />
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+	<div id="header_admin">
+		<img src="../images/css/logo.gif" height="76px" alt="" style="margin: 15px 20px 10px; float: left;" />
+	  <div id="menu">
+	   </div>
+	</div>
+	<div id="main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <script type="text/javascript">
+        function SetClassName(elm, cl) {
+            elm.className = "" + cl;
+        }
+        Shadowbox.init();
+        function openShadowboxImg(path) {
+            Shadowbox.open({
+                content: "" + path,
+                player: 'img'
+            });
+        }
+        function OpenShadowbox(url, width, height) {
+            Shadowbox.open({
+                content: url,
+                player: 'iframe',
+                height: height,
+                width: width
+            });
+        }
+	</script>
+</body>
+</html>

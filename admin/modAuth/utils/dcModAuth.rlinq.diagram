@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 13.875, 12.75" name="dcModAuth" isDefault="true">
+    <DomainModelMoniker name="/DCmodAuth" />
+    <nestedChildShapes>
+      <classShape Id="2d0139af-35e8-4e55-9a11-0ec3e2b59be7" absoluteBounds="0.625, 0.5, 1.5, 1.9550732421875">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthRoleTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="ceba8233-73d5-49df-a2c1-50d5f8c94708" absoluteBounds="0.64, 1.0099999999999998, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="5604e605-bc3d-4267-8dc0-cb7b6dbfa1ec" absoluteBounds="0.64, 1.8462939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9114e248-bb04-4472-82bb-a97ce0f3cd5d" absoluteBounds="0.64, 2.1056835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="8df7511c-4e51-4c14-acfc-d3e02bdf29d2" absoluteBounds="0.5, 4.875, 1.5, 2.3396761067708334">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthRolePermissionTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="c3af0140-7be3-407c-a0ef-4cb9d9715d27" absoluteBounds="0.51500000000000057, 5.385, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6f1b11cf-5a6d-40b9-af8f-0d37293bad77" absoluteBounds="0.51500000000000057, 6.6058968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ea506022-7de0-4a11-a21f-9e840dce864d" absoluteBounds="0.51500000000000057, 6.8652864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="ac1d48fa-8cd7-4f7f-9cfb-1e518cc83dd9" absoluteBounds="0.5, 2.75, 1.5, 1.9550732421875008">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthPermissionLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d46ccd40-ee88-419e-95a6-7c95aa221d52" absoluteBounds="0.51499999999999968, 3.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="68e82484-9d85-488b-9ec1-18803f834508" absoluteBounds="0.51499999999999968, 4.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3366c167-31f2-48dd-b8bb-9524c6d6e1cd" absoluteBounds="0.51499999999999968, 4.35568359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="28ed941d-a842-45d8-9c83-f5cb9874e72c" absoluteBounds="4.5, 0.5, 1.5, 1.9550732421875003">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthDocTypeLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="496f719c-733a-41d1-853e-fc83a359f355" absoluteBounds="4.5150000000000006, 1.01, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="84159bd4-f79c-40d4-92a1-6bfaad5b72da" absoluteBounds="4.5150000000000006, 1.8462939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a8713a64-d68e-4912-b9ef-0431aebd054a" absoluteBounds="4.5150000000000006, 2.1056835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="7cdb5ff0-f13e-44df-ac61-d8a596cd51c6" absoluteBounds="2.5, 0.5, 1.5, 3.3011832682291664">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthUserTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="b95a3f71-9f18-4057-a523-9241d0dc6644" absoluteBounds="2.515, 1.01, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="8071bb72-868e-4a6f-bbd1-8c5c426e64ef" absoluteBounds="2.515, 3.1924039713541665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9c9918eb-a37c-4c47-86b8-b2766bc28c80" absoluteBounds="2.515, 3.4517936197916663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="898062fb-345f-4bf6-bac3-401be3facad5" absoluteBounds="4.5, 2.75, 1.5, 1.9550732421875">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthCountryLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="33a94545-6cc4-4661-8d06-c61b8ece2260" absoluteBounds="4.5150000000000006, 3.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="0734b095-dd69-4f92-82bc-5c80a4a6d18a" absoluteBounds="4.5150000000000006, 4.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="78f330ac-b777-40df-9a30-b8bab932c543" absoluteBounds="4.5150000000000006, 4.35568359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="c937b37d-c837-4377-a441-58fc7075e438" absoluteBounds="2.5, 4.25, 1.5, 3.493484700520832">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthUserReportTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="0dd6e69f-d26d-4bb3-ab7b-bde9f10f698a" absoluteBounds="2.515, 4.76, 1.4700000000000002, 2.364705403645833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a096aebf-6989-45eb-8f19-4854ca8c34a5" absoluteBounds="2.515, 7.1347054036458326, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="76b99405-a7c2-4d2a-b083-0fb44fce16bd" absoluteBounds="2.515, 7.3940950520833324, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="18849767-1221-4ced-b198-5e8d0c7b2a6a" absoluteBounds="8.375, 0.5, 1.5, 1.9550732421875">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthClientTypeLK" />
+        <nestedChildShapes>
+          <elementListCompartment Id="dc85f9fa-e7c9-43af-bb94-2e10a72a216a" absoluteBounds="8.39, 1.0099999999999998, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="f3782926-17dd-433d-a6a0-a8f9dcf88a96" absoluteBounds="8.39, 1.8462939453124996, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b4ff1680-e88a-488e-b588-51979fe25cd4" absoluteBounds="8.39, 2.1056835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="1d967301-1d45-40c6-af66-f5dbe5b46810" absoluteBounds="10.25, 0.5, 1.5, 2.531977539062499">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthErrorLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="2e605d8d-57a2-4d43-9f6c-f2dc1ffeb844" absoluteBounds="10.265, 1.0099999999999998, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="cf577ada-7a37-4ac3-a7de-bfb40a0a38bf" absoluteBounds="10.265, 2.4231982421874996, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="45476c82-7fba-463b-8277-5673c4e6546b" absoluteBounds="10.265, 2.6825878906249994, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="affd9865-aac2-4edf-a6ca-2f51a4439463" absoluteBounds="12.125, 0.5, 1.5, 4.262690429687499">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthMailErrorLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="813fad6f-67ad-4a7b-a054-9a0d123d0166" absoluteBounds="12.14, 1.0099999999999998, 1.4700000000000002, 3.1339111328125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="f541d256-87e0-4fcc-9ebd-7def1ab644bd" absoluteBounds="12.14, 4.1539111328125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="1fd869e6-212d-47d4-a8bf-8cb825f99741" absoluteBounds="12.14, 4.4133007812499994, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="3c372ef1-5276-439b-a841-816bac8db8f1" absoluteBounds="4.5, 6.125, 1.5, 2.531977539062499">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthErrorSrsLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="dc1894b7-143b-41d2-9daa-1d05bc582331" absoluteBounds="4.515, 6.635, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="39d2b51e-4fc2-47b3-a2d0-76476ac2fd78" absoluteBounds="4.515, 8.0481982421875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="db347f04-ed59-40fd-b637-77cabefb4490" absoluteBounds="4.515, 8.307587890625, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="d8e4ad23-912e-4f27-a782-0af010322d5c" absoluteBounds="4.5, 5.125, 1.5, 2.531977539062499">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthErrorEcoLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="44c2e534-ff3f-4738-870b-e243dc9ef940" absoluteBounds="4.515, 5.635, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d63118f2-be22-4719-bdf4-37bd636aa0ea" absoluteBounds="4.515, 7.0481982421875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="630c531b-4dcb-46cb-977e-b26ad0ad8f42" absoluteBounds="4.515, 7.3075878906249994, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="41c9c554-c271-4c3f-82f8-91abe0e87632" absoluteBounds="6.5, 2.875, 1.5, 9.6471305338541651">
+        <DomainClassMoniker name="/DCmodAuth/dbAuthClientTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="3d09fa72-d9d5-4626-a937-375bb7b8bf70" absoluteBounds="6.515, 3.385, 1.4700000000000002, 8.5183512369791661" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c736507d-54a5-464e-84fb-0f51f83bed48" absoluteBounds="6.515, 11.913351236979166, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="69e73ad5-c1ef-49dc-9a7c-5b6ae93842d0" absoluteBounds="6.515, 12.172740885416665, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

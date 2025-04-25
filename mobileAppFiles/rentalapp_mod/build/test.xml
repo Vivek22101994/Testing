@@ -1,0 +1,59 @@
+﻿<?xml version="1.0"?>
+
+<list>
+	<apt_item>
+		<apt_id>1</apt_id>
+		<apt_name>Trevi Fountain View Apartment</apt_name>
+		<apt_vote>10</apt_vote>
+		<apt_img>http://www.rentalinrome.com/romeapartmentsphoto/trevi-fountain_view-apartment2/gallery/thumb/Trevi_Fountain_Luxury_Apartment_-_Rental_in_Rome-22.jpg</apt_img>
+		<zone_id>2</zone_id>
+		<zone_name>Trevi Fountain</zone_name>
+		<pr_total>200,00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>1</apt_id>
+		<apt_name>Colosseo View Apartment 12</apt_name>
+		<apt_vote>8</apt_vote>
+		<apt_img>http://www.rentalinrome.com/romeapartmentsphoto/trevi-fountain_view-apartment2/gallery/thumb/Trevi_Fountain_Luxury_Apartment_-_Rental_in_Rome-12.jpg</apt_img>
+		<zone_id>2</zone_id>
+		<zone_name>Colosseo</zone_name>
+		<pr_total>2200,00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>1</apt_id>
+		<apt_name>Trevi Fountain View Apartment 3</apt_name>
+		<apt_vote>6</apt_vote>
+		<apt_img>http://www.rentalinrome.com/romeapartmentsphoto/trevi-fountain_view-apartment2/gallery/thumb/Trevi_Fountain_Luxury_Apartment_-_Rental_in_Rome-2.jpg</apt_img>
+		<zone_id>2</zone_id>
+		<zone_name>Trevi Fountain</zone_name>
+		<pr_total>212,00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>1</apt_id>
+		<apt_name>Trevi Fountain View Apartment</apt_name>
+		<apt_vote>9</apt_vote>
+		<apt_img>http://www.rentalinrome.com/romeapartmentsphoto/trevi-fountain_view-apartment2/gallery/thumb/Trevi_Fountain_Luxury_Apartment_-_Rental_in_Rome-12.jpg</apt_img>
+		<zone_id>2</zone_id>
+		<zone_name>Trevi Fountain</zone_name>
+		<pr_total>200,00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>1</apt_id>
+		<apt_name>Trevi Fountain View Apartment 1</apt_name>
+		<apt_vote>7</apt_vote>
+		<apt_img>http://www.rentalinrome.com/romeapartmentsphoto/trevi-fountain_view-apartment2/gallery/thumb/Trevi_Fountain_Luxury_Apartment_-_Rental_in_Rome-22.jpg</apt_img>
+		<zone_id>2</zone_id>
+		<zone_name>Trevi Fountain</zone_name>
+		<pr_total>80,00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>1</apt_id>
+		<apt_name>Trevi Fountain View Apartment 3</apt_name>
+		<apt_vote>10</apt_vote>
+		<apt_img>http://www.rentalinrome.com/romeapartmentsphoto/trevi-fountain_view-apartment2/gallery/thumb/Trevi_Fountain_Luxury_Apartment_-_Rental_in_Rome-2.jpg</apt_img>
+		<zone_id>2</zone_id>
+		<zone_name>Trevi Fountain</zone_name>
+		<pr_total>1200,00</pr_total>
+	</apt_item>
+
+</list>

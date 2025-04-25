@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 29.375" name="magaChnlExpedia">
+  <DataContextMoniker Name="/magaChnlExpediaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="92be7643-4284-4d60-8e3f-c0095fb01cb5" absoluteBounds="0.625, 1.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRequestLOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8a429e9-488f-44b0-a760-9ef261f089d4" absoluteBounds="0.64, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="364546de-1b8b-4d0d-941a-f854b51eccd5" absoluteBounds="2.625, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaEstateTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8da2c11-562c-4c6b-b545-890c826f7c8c" absoluteBounds="2.64, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80118d60-0c91-4931-a7d9-7a29ef844b2d" absoluteBounds="0.625, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b4b3957-dae2-45ec-85e9-9c3a30d79992" absoluteBounds="0.64000000000000012, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a718fa59-41dc-44df-a2a9-57c6db1b330f" absoluteBounds="2.625, 2.625, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaHotelTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f71ba5c2-4b01-4d63-8546-cc6c7e11c0c3" absoluteBounds="2.64, 3.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ca060b0-8bb4-4f3d-bbe2-30108c50063c" absoluteBounds="0.625, 5.75, 2, 7.1553369140625">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRatePlanTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df9d6861-721f-41eb-97af-e3e702461feb" absoluteBounds="0.64000000000000012, 6.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f4b853c-76ec-4a1d-b483-967f8aa8955b" absoluteBounds="2.625, 5.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaEstateClosedDatesRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d521082d-459d-41ec-8e7f-ae6e22a9766c" absoluteBounds="2.64, 6.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6bd6ae7f-0eda-4d63-90ef-bb8deeea678f" absoluteBounds="2.625, 9.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaEstateRateChangesRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1c57227-19e9-4ef2-8812-418d05288754" absoluteBounds="2.64, 9.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="345eb640-641a-4b32-a9c6-47a9be7156b1" absoluteBounds="0.625, 12.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRatePlanCancelPolicyTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bd51286-ab11-4af9-92d6-1535fa792e79" absoluteBounds="0.64000000000000012, 13.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f7ca96e4-c305-4f8f-8814-950215821c44" absoluteBounds="2.625, 13, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRatePlanCancelPolicyPenaltyTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54bb5c22-6d02-4626-b16c-ca284ae80ab0" absoluteBounds="2.64, 13.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="536d4d01-f6de-4e8f-97d8-c23ff582903d" absoluteBounds="0.625, 15.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaLKRoomAmenitiesTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27dffd1b-cd71-47bd-a65b-1a127e419a9b" absoluteBounds="0.64000000000000012, 16.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6f314deb-1aff-4298-89ad-b45e1d0a2333" absoluteBounds="2.625, 14.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomAmenitiesDetailCodeTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51b52536-7584-4e75-9bf3-0d3d6b73727c" absoluteBounds="2.64, 15.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8dddbd93-e150-40ba-b34d-56620b9c7080" absoluteBounds="2.625, 16.125, 2, 3.1170068359375">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaBookingTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="071d2f62-094f-4e6c-bbec-ca6dc378a02b" absoluteBounds="2.64, 16.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="156ad7e2-2375-4409-84ff-b0e8cdf6006d" absoluteBounds="0.625, 17.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaEstateRoomRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a94874db-1c83-4599-8289-2cdd4d204973" absoluteBounds="0.64000000000000012, 18.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8123a3da-295f-44fe-8755-8b4892fc292c" absoluteBounds="0.5, 18.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeBedTypeTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6ffbfa0-4937-4ecf-845c-bb40799528a7" absoluteBounds="0.51500000000000012, 19.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="174ed3a5-620d-481f-9e0d-ca2d585a4486" absoluteBounds="2.75, 19.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeOccupancyByAgeTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6fd04ab7-3bdf-4247-bf22-21175fd370e7" absoluteBounds="2.765, 19.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6f5750a-0c08-4226-b841-cd3e692ee197" absoluteBounds="0.5, 20.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRatePlanLinkDefinitionTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47065e49-fbe9-4f87-a214-d4daca2adce8" absoluteBounds="0.51500000000000012, 20.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73404d86-b48d-494a-871b-5ffe14b39001" absoluteBounds="2.75, 20.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRateThresholdTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b70c6c6b-c091-408c-9084-9901409c5c71" absoluteBounds="2.765, 21.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f968b6ff-0ea2-4860-9a44-d69ec4d1b14d" absoluteBounds="0.5, 22.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRatePlanDayOfWeekBookingRestrictionTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21204f0a-67e0-47dd-9ee5-276f003edbd0" absoluteBounds="0.51500000000000012, 22.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="334faa50-3666-4eaa-85ca-e2a6ea78d99b" absoluteBounds="2.75, 22.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRoomTypeRatePlanCompensationTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34850735-9d91-424d-aaff-cd1df297117c" absoluteBounds="2.765, 23.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef1c43d2-14d6-48eb-a259-59c21f077b85" absoluteBounds="0.5, 25.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaAvailabilityTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f94710d-e602-447e-aef5-0b32a406ba06" absoluteBounds="0.51500000000000012, 25.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e79a9de-24b3-4351-9b82-d8ae20c5eff5" absoluteBounds="2.75, 26.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/magaChnlExpediaDataContext/RntChnlExpediaRatesTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52e0f7d2-60a9-4c45-9135-4bb2a6cb6496" absoluteBounds="2.765, 26.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

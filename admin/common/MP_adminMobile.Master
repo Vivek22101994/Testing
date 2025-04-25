@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MP_adminMobile.master.cs" Inherits="RentalInRome.admin.common.MP_adminMobile" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>RentalInRome Mobile - Amministrazione</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="~/admin/css/adminMobile.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="header_mobile">
+        <img src="/images/css/logo.gif" height="54px" width="140px" alt="" />
+        <a href="../login.aspx?logout=true" style="float: right; margin-top: 10px; margin-right: 10px; display: none;">LogOut</a>
+    </div>
+    <div id="main">
+        <asp:ContentPlaceHolder ID="main" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="nulla">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

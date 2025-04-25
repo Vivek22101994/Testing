@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.ecopulizia.it/admin/webservice/WS.asmx?wsdl" docRef="http://www.ecopulizia.it/admin/webservice/WS.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.ecopulizia.it/admin/webservice/WS.asmx" xmlns:q1="http://ecopulizie.it/" binding="q1:WSSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.ecopulizia.it/admin/webservice/WS.asmx" xmlns:q2="http://ecopulizie.it/" binding="q2:WSSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

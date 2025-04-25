@@ -1,0 +1,334 @@
+body
+{
+	background : #FFFFFF;
+	font-family :Verdana;
+	font-size:10px;
+	margin :0px;
+	overflow :auto;
+	scrollbar-base-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-highlight-color: #FEF8E9;
+	scrollbar-3dlight-color: #105DB9;
+	scrollbar-darkshadow-color: #105DB9;
+	scrollbar-shadow-color: #FEF8E9;
+	scrollbar-arrow-color: #105DB9;	
+}
+.flatScroll
+{
+	scrollbar-base-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #105DB9;
+	scrollbar-darkshadow-color: #105DB9;
+	scrollbar-shadow-color: #FFFFFF;
+	scrollbar-arrow-color: #105DB9;	
+}
+
+.NormalTextBox 
+{
+	font-family :Verdana;
+	font-size:9px;
+	border:1px solid #FE9E1F;
+	
+}
+.Normal
+{
+	font-family :Verdana;
+	font-size:10px;
+}
+
+.NormalMessage
+{
+	font-family :Verdana;
+	color :#FF0000;
+	font-size:10px;
+}
+.Header
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: #FEF8E9;
+	font-family: verdana;
+	background-color: #333464;
+}
+.Footer
+{
+	font-size :9px;
+	font-family:Verdana;
+	color : #FEF8E9;
+	background-color: #333464; 
+	
+}
+
+.LinkButtonAzzera
+{
+	font: 10px verdana;
+	color: #FFFFFF;
+}
+
+.LinkButton
+{
+	font: 10px verdana;
+	color: #000033;
+}
+
+A, A:visited, A:hover
+{
+	/*color : #000033;*/
+	font: 10px verdana;
+}
+
+	
+TABLE TD TR
+{
+	font-family :Verdana;
+	font-size:10px;	
+}
+.BaseTable
+{
+	BORDER:1px solid #333464; 
+	BORDER-COLLAPSE:collapse;
+}
+
+.HeaderPage
+{
+	font-weight: bold;
+	font-size: 20px;
+	color: #FFFFFF; 
+	font-family: verdana;
+	background-color: #333464;
+}
+
+.TableHeader
+{
+	color: #FFFFFF;
+	font: 10px verdana;
+	font-weight:bolder ;
+	background-color: #333464; 
+	padding : 2px;
+}
+
+.TableLabel
+{
+	color: #FFFFFF;
+	font: 10px verdana;
+	font-weight:bolder ;
+	background-color: #333464;
+	padding : 2px;
+}
+.TableValue
+{
+	font: 10px verdana;
+	border: 1 solid #999ca1;
+	color: #000000;
+	padding:2px;
+}
+
+.legend
+{
+	color: #3c65a4;
+	font: 10px verdana;
+	font-weight:bolder ;
+	padding : 2px;
+	
+}
+
+@media print 
+{
+	.NoPrint
+	{
+		display : none;
+	}
+}
+
+
+/**********************************
+*				DATAGRID
+*
+**********************************/
+.DataGrid TD
+{
+	font: 9px verdana;
+}
+.DataGridHeader TD
+{
+	color: #FFFFFF;
+	background-color: #333464;
+	font: 10px verdana;
+	font-weight: bolder;
+}
+.DataGridAlternate TD
+{
+	background-color: #105DB9;
+	font: 9px verdana;
+	color:#FFFFFF;
+	border :1px solid #333464;
+
+}
+.DataGridItem TD
+{
+	border :1px solid #333464;
+	font: 9px verdana;
+}
+.DataGridRowSelected TD
+{
+	font: 9px verdana;
+	background-color: #7B94B5;
+}
+.DataGridPageCount
+{
+	color : #000000;
+	font: 9px verdana;
+}
+
+/**********************************
+*				MENU
+*
+**********************************/
+.MenuRoot
+{
+	cursor:hand;
+	color: #FFFFFF;
+	font: 10px verdana;
+	font-weight:bolder ;
+	background-color: #333464;
+	padding : 2px;	
+}
+.Menu
+{
+	border:1px solid #FFFFFF;
+	text-align :left;
+	cursor :hand;
+	font :9px verdana;
+	color: #FFFFFF;
+	background-color: #333464;
+	padding:2px;
+}
+.MenuSelected
+{
+	border:1px solid #FFFFFF;
+	text-align :left;
+	background-color: #105DB9;
+	color : #FFFFFF;
+	font: 10px verdana;
+	font-weight:bold;
+	cursor:default ;
+	padding:2px;
+}
+.MenuOver
+{
+	border:1px solid #333464;
+	text-align :left;
+	cursor :hand;
+	background-color: #FFFFFF;
+	color : #333464;
+	font: 10px verdana;
+	font-weight:bold;
+	padding:2px;
+}
+
+/**********************************
+*				PLANNER
+*
+**********************************/
+.PlannerTable
+{	border-collapse:collapse;
+	border:1px solid #333464;
+	padding : 0px;
+	margin :0px;
+}
+.PlannerDayRow
+{
+	color: #000000;
+	font: 8px verdana;
+	background-color: #FFFFFF;	
+	cursor:hand;
+	border:1px solid #333464;
+}
+.PlannerDayRowHoliday
+{
+	color: #FFFFFF;
+	font: 8px verdana;
+	background-color: #FF0000;	
+	cursor:hand;
+}
+
+.PlannerApartHeader
+{
+	color: #FFFFFF;
+	font: 9px verdana;
+	background-color: #333464;
+	cursor :hand;
+	font-weight:bold;
+	width:100%;
+	height:100%;
+	padding:1px;
+}
+.PlannerCellOPZ
+{
+	background-color: #FFFF00;
+	width:40%;
+	border:1px solid #CCCCFF;
+	cursor:hand;
+}
+.PlannerCellND
+{
+	background-color: #FF0000;
+	width:40%;
+	border:1px solid #CCCCFF;
+	
+}
+..PlannerCellMV
+{
+	background-color: #ff99ff;
+	width:40%;
+	border:1px solid #CCCCFF;
+	cursor:hand;
+	
+}
+.PlannerCellPRT
+{
+	background-color: #0000FF;
+	width:40%;
+	border:1px solid #CCCCFF;
+	cursor:hand;
+	
+}
+.PlannerCellFREE
+{
+	background-color: LimeGreen;
+	width:40%;
+	border:1px solid CCCCFF;
+	cursor:hand;
+}
+.PlannerCellFREENoHand
+{
+	background-color: LimeGreen;
+	width:40%;
+	border:1px solid CCCCFF;
+}
+
+.PlannerCellNULL
+{
+	background-color: #FFFFFF;
+	width:15%;
+	border:0px solid white;	
+}
+.PlannerCellDeleted
+{
+	border :2px solid #FF0000;
+}
+.ToolTip
+{
+	border: #333464 2px dotted;
+	visibility: hidden;
+	margin:2px;
+	padding:2px;
+	position: absolute;
+	background-color: #FFFFFF;
+	font-family : Verdana;
+	font-size :9px;
+	color:#333464;
+}

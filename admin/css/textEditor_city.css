@@ -1,0 +1,30 @@
+﻿html
+{
+    background-color:#B3ACA6;
+}
+body {
+    font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size:11px;
+    line-height:13px;
+    background-color:#EDE9E5;
+    background-image:url("../../images/css/tab-inteno-bottom.gif");
+    background-position:left bottom;
+    background-repeat:no-repeat;
+    clear:both;
+    color:#625B56;
+    float:left;
+    margin:0 0 15px 17px;
+    padding:13px;
+    width:250px;
+}
+h1.inline_keyword {
+	color: #5D5550;
+	display:inline;
+	font-size:11px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+}	
+strong{
+	color: #5D5550;
+}

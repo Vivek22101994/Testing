@@ -1,0 +1,1295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DCmodInvoice" namespace="ModInvoice" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DCmodInvoice" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="ModInvoice" default="true">
+      <orm:class name="dbInvCashTypeLK" behavior="readwrite" uniqueId="69f8394d-10b0-4c0e-9e2f-11bdc905967b">
+        <orm:table name="InvCashTypeLK" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="75e4e0d9-ee3f-4b01-b0d3-1cfb9d64589d" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="6aeda7de-cc70-44d6-9566-b5c34127003c" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="placeTypes1" property="placeTypes" behavior="readwrite" uniqueId="f660fd3a-c4c0-4ab3-b02d-ff66e21be2ae" type="System.String">
+          <orm:column name="placeTypes" sql-type="varchar" nullable="true" length="2000" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="53f2f25e-0199-47be-9629-80ece1f81aa8" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashPlaceLK" behavior="readwrite" uniqueId="1d89e774-b32e-4cde-9b4a-fadc5bdd4f4f">
+        <orm:table name="InvCashPlaceLK" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="id" />
+          </orm:key-generator>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="a6479d40-4366-4a36-9a27-f18365d356b7" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="type1" property="type" behavior="readwrite" uniqueId="453a7c5d-61e8-4bcb-ba4c-ee4250b5330b" type="System.String">
+          <orm:column name="type" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="d6e68bd4-8155-470a-bdb0-854f41aee36f" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="c4d2d335-2988-45c2-aef0-e0594e8ce323" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="1aa8d300-599a-4539-a3c6-17d2ded8e551" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="chargeFeePart21" property="chargeFeePart2" behavior="readwrite" uniqueId="eed607a1-3131-4c70-af1f-0863cdfea598" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="chargeFeePart2" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="chargeFeePart11" property="chargeFeePart1" behavior="readwrite" uniqueId="29f498a7-a89f-4e4a-9408-c9fd99c119e7" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="chargeFeePart1" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="chargeFeeFull1" property="chargeFeeFull" behavior="readwrite" uniqueId="0ea8dda5-733a-4d7b-9d75-7f7618b34f15" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="chargeFeeFull" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="chargeFeeInvoice1" property="chargeFeeInvoice" behavior="readwrite" uniqueId="dc581139-d819-4983-9d16-36fa49ce94b2" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="chargeFeeInvoice" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="chargeFeeTaxId1" property="chargeFeeTaxId" behavior="readwrite" uniqueId="5975c111-aa04-4832-a22e-ef4cebeab82c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="chargeFeeTaxId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="chargeFeeInvoiceDesc1" property="chargeFeeInvoiceDesc" behavior="readwrite" uniqueId="98fc0ddf-0c87-4d80-a649-171c64454dad" type="System.String">
+          <orm:column name="chargeFeeInvoiceDesc" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashDocumentTBL" behavior="readwrite" uniqueId="ab28511d-36c2-4f7e-b3aa-12a7ecf5e482">
+        <orm:table name="InvCashDocumentTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="9e191b22-96a5-41ac-aa42-fa920b7addf5" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="1d17f583-5a49-421c-8ff0-55756314535d" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="5b28f0c1-2a76-4361-b1f7-f2d97f33f519" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="cashInOut1" property="cashInOut" behavior="readwrite" uniqueId="2691d059-981b-4746-9ca1-f7d9fa1d960d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashAmount1" property="cashAmount" behavior="readwrite" uniqueId="bcb9768a-78a0-4988-9c75-f881170710c0" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashUnpayed1" property="cashUnpayed" behavior="readwrite" uniqueId="52f78ea4-ec5f-4241-abef-b81c7c142f78" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashUnpayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="docCaseId1" property="docCaseId" behavior="readwrite" uniqueId="98fa3d72-f09d-4bce-b3d8-00a3acc5b644" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docCaseId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docCaseCode1" property="docCaseCode" behavior="readwrite" uniqueId="4c3127e5-6309-4648-b413-0a46f47e0034" type="System.String">
+          <orm:column name="docCaseCode" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docType1" property="docType" behavior="readwrite" uniqueId="e4b12c82-2d9a-4571-8dc8-8e56d269eb1e" type="System.String">
+          <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docNum1" property="docNum" behavior="readwrite" uniqueId="6823de89-0e77-43dc-9faa-0f54a04d8afe" type="System.String">
+          <orm:column name="docNum" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docBody1" property="docBody" behavior="readwrite" uniqueId="a23f0ca8-486a-4b9c-95da-d3107759a1f1" type="System.String">
+          <orm:column name="docBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="docPath1" property="docPath" behavior="readwrite" uniqueId="25d43fa4-2871-4594-b961-07be38ae606c" type="System.String">
+          <orm:column name="docPath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docIssueDate1" property="docIssueDate" behavior="readwrite" uniqueId="92bf4da3-9efd-42ae-afaf-cbd0f6654195" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docExpiryDate1" property="docExpiryDate" behavior="readwrite" uniqueId="83f766f7-4978-4cf6-9822-89427600ae94" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="ownerId1" property="ownerId" behavior="readwrite" uniqueId="c371be30-3b68-4543-8121-bf0638c90b48" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ownerId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="ownerUid1" property="ownerUid" behavior="readwrite" uniqueId="54e06470-ec14-43cf-96c8-48b4081944a8" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ownerUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="ownerCode1" property="ownerCode" behavior="readwrite" uniqueId="9d530914-846b-4778-81b6-d2b41eac08e6" type="System.String">
+          <orm:column name="ownerCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="ownerNameFull1" property="ownerNameFull" behavior="readwrite" uniqueId="dbe3cf52-153c-4dfc-9930-f17de9267b89" type="System.String">
+          <orm:column name="ownerNameFull" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="extId1" property="extId" behavior="readwrite" uniqueId="a53d20cd-0c65-47f8-831b-73affbbd2f04" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="extId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="extUid1" property="extUid" behavior="readwrite" uniqueId="b1a0513f-2967-4b8f-9399-03ef69241e63" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="extUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="extCode1" property="extCode" behavior="readwrite" uniqueId="ea0a03a2-536e-4a46-9aba-64ffd0f56248" type="System.String">
+          <orm:column name="extCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="extType1" property="extType" behavior="readwrite" uniqueId="93eaadfe-6864-4ed3-b443-ed502175981b" type="System.String">
+          <orm:column name="extType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="extDescription1" property="extDescription" behavior="readwrite" uniqueId="758a9732-652e-4147-9825-587c909691c0" type="System.String">
+          <orm:column name="extDescription" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="ownerType1" property="ownerType" behavior="readwrite" uniqueId="88eef203-43ce-4616-bdaf-f77427d5f875" type="System.String">
+          <orm:column name="ownerType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="13b27a06-f4f4-4082-ab0a-68af9a8eaa6b" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="63c20660-57c3-4659-b879-d96a4418b826" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="c6fa8cf8-64b8-4d30-94bd-bd0f299b189b" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="cashPayed1" property="cashPayed" behavior="readwrite" uniqueId="d3c46274-93e0-4c0e-b7f4-9ec408db9251" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashPayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashDocCaseLK" behavior="readwrite" uniqueId="4c9648a7-4fe8-491b-8692-9c719df1f2b6">
+        <orm:table name="InvCashDocCaseLK" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="27397410-4cb2-4e7a-ae06-3eb6ab1d4982" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="36244b23-d2eb-4a93-984f-ca0bb0332171" type="System.String">
+          <orm:column name="code" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="d45e29d0-5857-48e0-bc4e-7e5f167b9013" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="viewIn1" property="viewIn" behavior="readwrite" uniqueId="7326887a-198e-4118-9830-37b51469f1f6" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="viewIn" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="viewOut1" property="viewOut" behavior="readwrite" uniqueId="4471afc0-768d-46e6-a4c3-b10ab7acd3db" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="viewOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashBookTBL" behavior="readwrite" uniqueId="0c16edbc-fb4a-4210-a846-fb65f0683b07">
+        <orm:table name="InvCashBookTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="c06d90e2-119f-4f83-93e0-485b2bfa67b7" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="pidDocument1" property="pidDocument" behavior="readwrite" uniqueId="cd871917-feb0-416d-beb8-54f26031063a" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidDocument" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="263fa3f4-929e-4bb6-9d5b-4c184768535f" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="ea18e92c-f1f3-48ba-8251-876f4aaf6ebb" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="8d644e40-e831-405d-9ed4-3eb80c2885ee" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="e1a39163-96a4-4479-a943-f19cdc06fb91" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="8aa98618-0d72-4725-8b5b-01db2643908b" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="cashType1" property="cashType" behavior="readwrite" uniqueId="cb7e73b0-f359-4640-90bb-ada890fbab94" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashPlaceType1" property="cashPlaceType" behavior="readwrite" uniqueId="ac23713a-0397-4006-8c4e-d8a691c8ae07" type="System.String">
+          <orm:column name="cashPlaceType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="cashPlace1" property="cashPlace" behavior="readwrite" uniqueId="6f7bb7e0-a370-4968-911a-1d66b3e18179" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashPlace" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashInOut1" property="cashInOut" behavior="readwrite" uniqueId="f3df042d-e191-405e-9f6e-7b1c2dcc2aeb" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashDate1" property="cashDate" behavior="readwrite" uniqueId="c3d49f32-2def-4d95-b1c3-1f1f61a0393d" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="cashAmount1" property="cashAmount" behavior="readwrite" uniqueId="22903699-7cf9-49c4-a67e-55d9f1354fe5" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashBookVIEW" behavior="readwrite" uniqueId="cde3e767-723c-4ae5-93f4-64e34450a1ec">
+        <orm:table name="InvCashBookVIEW" view="true" />
+        <orm:identity>
+          <orm:internal>
+            <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+          </orm:internal>
+        </orm:identity>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="9b6542c9-fd0f-4b26-859d-84f32b413111" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="pidDocument1" property="pidDocument" behavior="readwrite" uniqueId="f1b875b5-663c-48f1-9bcf-b4992f25b992" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidDocument" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="ownerUid1" property="ownerUid" behavior="readwrite" uniqueId="6003a6ee-33be-4bc2-9483-36a1b9bb0375" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ownerUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="ownerType1" property="ownerType" behavior="readwrite" uniqueId="d07161b2-acc4-4c6d-9856-e908b272e4b4" type="System.String">
+          <orm:column name="ownerType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="ownerNameFull1" property="ownerNameFull" behavior="readwrite" uniqueId="011a334f-055f-47d8-b83c-c2befeb67a07" type="System.String">
+          <orm:column name="ownerNameFull" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="ownerId1" property="ownerId" behavior="readwrite" uniqueId="f48922c9-7020-4fe9-8de9-daceccd31fe1" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ownerId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="ownerCode1" property="ownerCode" behavior="readwrite" uniqueId="ac823736-5f38-441a-a297-e11ff1f96953" type="System.String">
+          <orm:column name="ownerCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="8dabdbc2-9480-45c6-a84c-216ff46bf36c" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="extUid1" property="extUid" behavior="readwrite" uniqueId="b47f4ede-27f3-48d2-b4e5-5e8dfd558721" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="extUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="extType1" property="extType" behavior="readwrite" uniqueId="894f4116-42ce-4879-9206-57199d57325e" type="System.String">
+          <orm:column name="extType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="extId1" property="extId" behavior="readwrite" uniqueId="6060d2ed-98d2-4d2f-bd7c-a82cd2b9c5b0" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="extId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="extDescription1" property="extDescription" behavior="readwrite" uniqueId="f2a70df5-bcc9-4ac0-b589-02a0d2eb8e2f" type="System.String">
+          <orm:column name="extDescription" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="extCode1" property="extCode" behavior="readwrite" uniqueId="98e5ac7b-883e-4f48-a0cd-a88ff077ca7f" type="System.String">
+          <orm:column name="extCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docUid1" property="docUid" behavior="readwrite" uniqueId="89cd9aa7-a717-4291-94af-e4d3417d400a" type="System.Guid">
+          <orm:column name="docUid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="docType1" property="docType" behavior="readwrite" uniqueId="b5e40888-9933-43e8-aaef-d47241710256" type="System.String">
+          <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docPath1" property="docPath" behavior="readwrite" uniqueId="3258f533-71f5-4844-b2bb-e7b71e02842f" type="System.String">
+          <orm:column name="docPath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docNum1" property="docNum" behavior="readwrite" uniqueId="78250292-61d2-48d8-a5cc-dec04e51bf60" type="System.String">
+          <orm:column name="docNum" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docIssueDate1" property="docIssueDate" behavior="readwrite" uniqueId="984079d1-f8e1-4c3b-a829-26d24e1103a1" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docExpiryDate1" property="docExpiryDate" behavior="readwrite" uniqueId="ee11a590-5723-4d2f-aea6-18a958950b38" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docCreatedUserNameFull1" property="docCreatedUserNameFull" behavior="readwrite" uniqueId="d4a155fd-499d-4a00-aa8a-bb3854fc70f4" type="System.String">
+          <orm:column name="docCreatedUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docCreatedUserID1" property="docCreatedUserID" behavior="readwrite" uniqueId="e9fdf1ae-379e-43df-b698-8deebc045006" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docCreatedUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docCreatedDate1" property="docCreatedDate" behavior="readwrite" uniqueId="e49c956f-ac1b-49ef-ba44-27a9f485eea3" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docCreatedDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docCode1" property="docCode" behavior="readwrite" uniqueId="0df23d81-484d-4d05-8fe2-2fb2e7e77b04" type="System.String">
+          <orm:column name="docCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docCaseId1" property="docCaseId" behavior="readwrite" uniqueId="70324182-688f-4c37-9c79-77a01d0f3320" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docCaseId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docCaseCode1" property="docCaseCode" behavior="readwrite" uniqueId="5071c23f-2bc1-47aa-91a1-115c2f409a8c" type="System.String">
+          <orm:column name="docCaseCode" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docBody1" property="docBody" behavior="readwrite" uniqueId="27df17e9-27ff-4198-b27c-32cc59a9134d" type="System.String">
+          <orm:column name="docBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="docAmount1" property="docAmount" behavior="readwrite" uniqueId="72bd9e8c-5844-4cf5-b685-5d4aa9ee6f7c" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="1b34a979-4c20-480c-8a42-84d9ae2aee47" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="994b2ef0-7712-4660-a90a-201f85e3d2d1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="2a644384-7baf-4e4b-8910-5001795bf733" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="bd8522f6-9e38-4d54-a48a-1a7cc011267b" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="cashUnpayed1" property="cashUnpayed" behavior="readwrite" uniqueId="8014885f-6501-4bb4-abf5-49442af1ff6d" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashUnpayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashType1" property="cashType" behavior="readwrite" uniqueId="410285b7-be22-4e23-a636-b8e41f35971f" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashPlaceType1" property="cashPlaceType" behavior="readwrite" uniqueId="f9a840b5-270c-4147-8d75-951892122d20" type="System.String">
+          <orm:column name="cashPlaceType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="cashPlace1" property="cashPlace" behavior="readwrite" uniqueId="d399e5bd-1c26-49dd-8c41-bf35089aa1eb" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashPlace" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashPayed1" property="cashPayed" behavior="readwrite" uniqueId="057cd243-1bd5-4888-91e1-1e76cbc332cd" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashPayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashInOut1" property="cashInOut" behavior="readwrite" uniqueId="f8a789e8-774a-4daf-b66b-6bc0b4e781c1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashDate1" property="cashDate" behavior="readwrite" uniqueId="2dbf6e3c-9302-4ffb-afb6-fb87114d5622" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="cashAmount1" property="cashAmount" behavior="readwrite" uniqueId="ef3080ae-6f5b-4832-a28c-4d7396f658c1" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvInvoiceItemTBL" behavior="readwrite" uniqueId="a04bbd1e-3ecb-4d89-adbf-2e718ef962bc">
+        <orm:table name="InvInvoiceItemTBL" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="singleUnitPrice1" property="singleUnitPrice" behavior="readwrite" uniqueId="70d3ff9e-f185-4e5a-a414-c666852720a1" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="singleUnitPrice" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="sequence1" property="sequence" behavior="readwrite" uniqueId="6a33e7be-1e89-473f-875f-0db7fad6daca" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="quantityType1" property="quantityType" behavior="readwrite" uniqueId="1c9455b2-b0d3-45f7-b574-68edad3cb584" type="System.String">
+          <orm:column name="quantityType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="quantityAmount1" property="quantityAmount" behavior="readwrite" uniqueId="f1bb9514-72dc-4d52-8a8a-e4bdb53eb2a1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="quantityAmount" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pidInvoice1" property="pidInvoice" behavior="readwrite" uniqueId="db424bcb-680f-4632-9980-84e86b0547b4" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidInvoice" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="6da27b88-979e-456a-abbe-acb0b68d5c46" type="System.Guid">
+          <orm:column name="id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="4c4db635-9b41-4b39-9585-c77f5175e8bd" type="System.String">
+          <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="cashTotalAmount1" property="cashTotalAmount" behavior="readwrite" uniqueId="7e385620-9b4b-43b0-a90c-d49cad61bb73" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTotalAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashTaxID1" property="cashTaxID" behavior="readwrite" uniqueId="e50fc156-d564-421f-904b-cd34b2c0e78f" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTaxID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="cashTaxFree1" property="cashTaxFree" behavior="readwrite" uniqueId="63d7b9da-e0c4-4f1e-ba29-bed4d899ea48" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTaxFree" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashTaxAmount1" property="cashTaxAmount" behavior="readwrite" uniqueId="4eedc0a8-a470-4dae-942e-c765f4e8a11e" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTaxAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvInvoiceTBL" behavior="readwrite" uniqueId="e6673399-0707-48b2-b9b8-21ab4c84a04f">
+        <orm:table name="InvInvoiceTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="3694a8ca-da73-4802-8da2-76de15bb6fcc" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="ownerUid1" property="ownerUid" behavior="readwrite" uniqueId="c5ad82e4-aba1-471f-b7a8-1b5e1dafb9e5" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ownerUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="ownerType1" property="ownerType" behavior="readwrite" uniqueId="214c7cb3-986a-40ab-88fc-deb1401b560e" type="System.String">
+          <orm:column name="ownerType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="ownerNameFull1" property="ownerNameFull" behavior="readwrite" uniqueId="a5ade6bf-ee2f-495b-ae08-23db262dd9d4" type="System.String">
+          <orm:column name="ownerNameFull" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="ownerId1" property="ownerId" behavior="readwrite" uniqueId="0dcefe26-00fa-4af7-93f5-635605a02500" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ownerId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="ownerCode1" property="ownerCode" behavior="readwrite" uniqueId="581474be-58d6-407e-bdee-4213cba5fbb6" type="System.String">
+          <orm:column name="ownerCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_locZipCode1" property="owner_locZipCode" behavior="readwrite" uniqueId="b499f46d-e2f2-401f-bc52-75382739b55a" type="System.String">
+          <orm:column name="owner_locZipCode" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_locState1" property="owner_locState" behavior="readwrite" uniqueId="d78bcd9b-7e44-43cd-9e8b-825d4080b92d" type="System.String">
+          <orm:column name="owner_locState" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_locCountry1" property="owner_locCountry" behavior="readwrite" uniqueId="a3918caf-0967-451d-a74f-ca3884e5e11d" type="System.String">
+          <orm:column name="owner_locCountry" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_locCity1" property="owner_locCity" behavior="readwrite" uniqueId="bd1c278e-9a63-4573-82b8-9596af06df50" type="System.String">
+          <orm:column name="owner_locCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_locAddress1" property="owner_locAddress" behavior="readwrite" uniqueId="cc7cdea3-c722-4d02-b03e-8f2f289f8f7b" type="System.String">
+          <orm:column name="owner_locAddress" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_docVat1" property="owner_docVat" behavior="readwrite" uniqueId="d256fbb8-ed5d-4532-94cd-0a4421e54367" type="System.String">
+          <orm:column name="owner_docVat" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_docType1" property="owner_docType" behavior="readwrite" uniqueId="177c8bf6-e4e4-4f57-a888-ac406d3920ed" type="System.String">
+          <orm:column name="owner_docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_docNum1" property="owner_docNum" behavior="readwrite" uniqueId="6c493368-3dd6-4574-a8a4-797b33793da5" type="System.String">
+          <orm:column name="owner_docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_docIssuePlace1" property="owner_docIssuePlace" behavior="readwrite" uniqueId="a82c9e80-4ac7-4370-9a00-8b7a3770ba6a" type="System.String">
+          <orm:column name="owner_docIssuePlace" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="owner_docIssueDate1" property="owner_docIssueDate" behavior="readwrite" uniqueId="d9d3925f-6097-498a-8f8c-ef782457d83c" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="owner_docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="owner_docExpiryDate1" property="owner_docExpiryDate" behavior="readwrite" uniqueId="1639322d-9619-4684-a7c8-4bc60ecd1066" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="owner_docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="owner_docCf1" property="owner_docCf" behavior="readwrite" uniqueId="602b9943-1a98-41a4-ad85-d9ec5ff34457" type="System.String">
+          <orm:column name="owner_docCf" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="notesPublic1" property="notesPublic" behavior="readwrite" uniqueId="36161937-2f0d-466d-ae90-a52b1c167e6c" type="System.String">
+          <orm:column name="notesPublic" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="notesInner1" property="notesInner" behavior="readwrite" uniqueId="ecdf00b3-b2b2-487b-8306-e7cdb17bd45b" type="System.String">
+          <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="178c7558-5601-4fc8-be35-ec8a2abfb28d" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="docYearCounter1" property="docYearCounter" behavior="readwrite" uniqueId="a6aaa96e-05a0-4271-8f0b-850708559cbd" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docYearCounter" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docYear1" property="docYear" behavior="readwrite" uniqueId="01b3eecf-b717-4b23-9f60-595ce32619dc" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docYear" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docType1" property="docType" behavior="readwrite" uniqueId="9de4bf0e-22f7-43e2-9280-cf6279f010ce" type="System.String">
+          <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docNum1" property="docNum" behavior="readwrite" uniqueId="c289f1fe-2c01-4f08-9989-388ebdeaced8" type="System.String">
+          <orm:column name="docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docIssueDate1" property="docIssueDate" behavior="readwrite" uniqueId="e78c41de-a446-4270-97bf-c1552c8f3d35" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docIsRegistered1" property="docIsRegistered" behavior="readwrite" uniqueId="96880229-431c-44bf-84d1-cc2693b13876" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docIsRegistered" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docExpiryDate1" property="docExpiryDate" behavior="readwrite" uniqueId="5222c731-7bd1-463d-90e1-df849799a058" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docCaseId1" property="docCaseId" behavior="readwrite" uniqueId="4a51263c-9675-439a-bdd0-3826f0b5fdb3" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docCaseId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="docCaseCode1" property="docCaseCode" behavior="readwrite" uniqueId="013b8782-1747-49ec-a24a-3d4a99c4b8f1" type="System.String">
+          <orm:column name="docCaseCode" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="d643b398-5bae-4708-a7cd-c31a32490203" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="350859fd-56f2-4575-8160-7cf47a7f5a59" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="1ef7d72b-5cc8-45b5-806f-e9a8b5f851be" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="cashUnpayed1" property="cashUnpayed" behavior="readwrite" uniqueId="cef6afc2-a6dc-42af-9912-988922ea22b1" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashUnpayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashTotalAmount1" property="cashTotalAmount" behavior="readwrite" uniqueId="343a77c6-2f3a-40cc-89ef-869fc23c5463" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTotalAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashTaxFree1" property="cashTaxFree" behavior="readwrite" uniqueId="a0a75585-8a05-4242-a5c7-a4aa68ffb3a5" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTaxFree" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashTaxAmount1" property="cashTaxAmount" behavior="readwrite" uniqueId="1f8c547c-7765-4667-afab-676629696b92" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashTaxAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashPayed1" property="cashPayed" behavior="readwrite" uniqueId="c87d0275-822a-4d54-8b6f-1f5471194096" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashPayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="cashInOut1" property="cashInOut" behavior="readwrite" uniqueId="a7220c78-ba30-4da5-89f2-0a14808b9ed9" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="refererInvoiceID1" property="refererInvoiceID" behavior="readwrite" uniqueId="6c9bb284-6a85-4e8f-b1b2-9fa74cb20093" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="refererInvoiceID" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashDocumentFilesTBL" behavior="readwrite" uniqueId="8345ba1b-d6c0-499a-a67e-b7dd97a5e615">
+        <orm:table name="InvCashDocumentFilesTBL" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="2c084c69-d249-4218-9142-2da2b898411f" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="sequence1" property="sequence" behavior="readwrite" uniqueId="cc9a888b-d5a1-4652-b2ac-e5d31c073ff0" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pidDocument1" property="pidDocument" behavior="readwrite" uniqueId="dbe6f257-9363-4c16-a7e9-34edcb781190" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidDocument" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="docPath1" property="docPath" behavior="readwrite" uniqueId="d188c7a4-5187-4c0c-95d2-9e1cb8ce7116" type="System.String">
+          <orm:column name="docPath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="docNum1" property="docNum" behavior="readwrite" uniqueId="18f22bf7-998c-4556-a424-9c713e2d095d" type="System.String">
+          <orm:column name="docNum" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCompanyTaxRL" uniqueId="e8142db6-9759-4ce1-b0c6-2d72faf9c26c">
+        <orm:table name="InvCompanyTaxRL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidCompany1" />
+            <orm:single-field field-name="isPrivate1" />
+            <orm:single-field field-name="locCountry1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidCompany1" property="pidCompany" behavior="readwrite" uniqueId="dbb7f415-30c5-4239-95f9-cf53b6218219" type="System.Int32">
+          <orm:column name="pidCompany" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="isPrivate1" property="isPrivate" behavior="readwrite" uniqueId="4a2cc83f-bc1d-4c9d-bc6b-43f79c924100" type="System.Int32">
+          <orm:column name="isPrivate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="locCountry1" property="locCountry" behavior="readwrite" uniqueId="572a0652-a8c7-4157-891c-d01d2ae756f0" type="System.String">
+          <orm:column name="locCountry" sql-type="nvarchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="invTaxId1" property="invTaxId" behavior="readwrite" uniqueId="8716ec50-b7a3-48fb-884c-c8d535f8de89" type="System.Int32">
+          <orm:column name="invTaxId" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvPayBancaSellaVerifiedByVisaTXN" uniqueId="ee1aee34-ecb3-482e-9265-fcf920211c50">
+        <orm:table name="InvPayBancaSellaVerifiedByVisaTXN" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="uid" />
+          </orm:key-generator>
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="c4a423be-9211-4344-b3bd-98c385e366dc" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="reservationId1" property="reservationId" behavior="readwrite" uniqueId="c9da27b4-504f-490c-9425-9c91f3bb8df8" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="reservationId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="paymentId1" property="paymentId" behavior="readwrite" uniqueId="56b2e3c6-be8e-4fb8-9e3c-10ac873b5c79" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="paymentId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="VbVRisp1" property="VbVRisp" behavior="readwrite" uniqueId="9a1b4eb6-a254-4456-9253-82668214f589" type="System.String">
+          <orm:column name="VbVRisp" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="transKey1" property="transKey" behavior="readwrite" uniqueId="f594bdc3-c4a5-4f0b-b778-48bcb9f14477" type="System.String">
+          <orm:column name="transKey" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="PARes1" property="PARes" behavior="readwrite" uniqueId="2964b8bd-2017-474b-9dc0-bd0ff37d59f4" type="System.String">
+          <orm:column name="PARes" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="352b9aca-1efa-4cf9-b241-aaeaef2d4a9d" type="System.DateTime">
+          <orm:column name="createdDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCashTaxLK" uniqueId="7e781a40-64c9-43af-b33e-9e2513f06c99">
+        <orm:table name="InvCashTaxLK" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="id" />
+          </orm:key-generator>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="0aed0b0f-2947-4341-bcea-fe84bf31e1d7" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="d9e84817-8a0e-4078-826d-c694ae790367" type="System.String">
+          <orm:column name="code" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="taxAmount1" property="taxAmount" behavior="readwrite" uniqueId="02475006-a302-4fdc-a477-334747830f63" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="taxAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbInvCompanyTBL" uniqueId="8fc3e673-9aa8-4334-9908-abe1d45ba9cf">
+        <orm:table name="InvCompanyTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="id" />
+          </orm:key-generator>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="4c31ba9d-21cf-433b-b5c6-82da68974fb3" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="efae5634-8da2-46af-9b16-9d0e41520613" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="480b05af-0225-41fd-a534-a092f9f193f1" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="nameFull1" property="nameFull" behavior="readwrite" uniqueId="0f2be9a3-6356-4ad9-ab64-69fe8863b67f" type="System.String">
+          <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="nameHonorific1" property="nameHonorific" behavior="readwrite" uniqueId="09d6614c-b989-494a-8d38-a83c5e332ec2" type="System.String">
+          <orm:column name="nameHonorific" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="nameFirst1" property="nameFirst" behavior="readwrite" uniqueId="44d8fae1-3291-445a-aa15-58eb8d3e7c15" type="System.String">
+          <orm:column name="nameFirst" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="nameMiddle1" property="nameMiddle" behavior="readwrite" uniqueId="27d41cc6-5493-4dff-8e38-4ea33affdc22" type="System.String">
+          <orm:column name="nameMiddle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="nameLast1" property="nameLast" behavior="readwrite" uniqueId="2ca545ac-3d60-4bf5-83c7-d738540d0aaf" type="System.String">
+          <orm:column name="nameLast" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="contactEmail1" property="contactEmail" behavior="readwrite" uniqueId="1d3b6110-3871-42b8-8c63-261b8da9aa95" type="System.String">
+          <orm:column name="contactEmail" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="contactPhone1" property="contactPhone" behavior="readwrite" uniqueId="8c015e1e-893d-4ce9-bdce-49c0bf7051dc" type="System.String">
+          <orm:column name="contactPhone" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="contactPhoneTrip1" property="contactPhoneTrip" behavior="readwrite" uniqueId="ae604eb4-c7f5-4b34-9be5-a52f2a4ef8c4" type="System.String">
+          <orm:column name="contactPhoneTrip" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="contactPhoneMobile1" property="contactPhoneMobile" behavior="readwrite" uniqueId="330c5e10-2ec8-4670-9531-729e04c7b8f7" type="System.String">
+          <orm:column name="contactPhoneMobile" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="contactPhoneOffice1" property="contactPhoneOffice" behavior="readwrite" uniqueId="7b7d8b58-bd92-42dd-8c07-27d3db3be78d" type="System.String">
+          <orm:column name="contactPhoneOffice" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="contactFax1" property="contactFax" behavior="readwrite" uniqueId="747b5568-2468-4465-bb2b-4e132b7bbd21" type="System.String">
+          <orm:column name="contactFax" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="docType1" property="docType" behavior="readwrite" uniqueId="939851a9-3a64-456d-8b44-ad90a55eee1b" type="System.String">
+          <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="docNum1" property="docNum" behavior="readwrite" uniqueId="8b9f10e5-36b4-4841-aa3e-38a844d3ff21" type="System.String">
+          <orm:column name="docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="docIssuePlace1" property="docIssuePlace" behavior="readwrite" uniqueId="605036dd-81d4-4dee-9a44-1cba1962c87d" type="System.String">
+          <orm:column name="docIssuePlace" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="docIssueDate1" property="docIssueDate" behavior="readwrite" uniqueId="7005a892-b286-4f74-9b92-4a6bc0f0b202" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docExpiryDate1" property="docExpiryDate" behavior="readwrite" uniqueId="e1f368b7-472e-4d38-b68a-2219ff33b89f" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docVat1" property="docVat" behavior="readwrite" uniqueId="9d416b9a-e45d-45f7-a1fc-3ff1fe893bca" type="System.String">
+          <orm:column name="docVat" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="docCf1" property="docCf" behavior="readwrite" uniqueId="35e386b4-5e52-4fd1-96be-4cb773a9866f" type="System.String">
+          <orm:column name="docCf" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="birthDate1" property="birthDate" behavior="readwrite" uniqueId="810842eb-c066-4306-90db-763003efcff7" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="birthDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="birthPlace1" property="birthPlace" behavior="readwrite" uniqueId="d047536b-f3bf-46bd-856d-1a0b4a8332e5" type="System.String">
+          <orm:column name="birthPlace" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="birthCountry1" property="birthCountry" behavior="readwrite" uniqueId="95994833-656b-4dbc-b199-1968e75db30e" type="System.String">
+          <orm:column name="birthCountry" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="birthState1" property="birthState" behavior="readwrite" uniqueId="eaddbe36-5aa4-48f6-bfcc-077d92f9d1d6" type="System.String">
+          <orm:column name="birthState" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="locCountry1" property="locCountry" behavior="readwrite" uniqueId="bae6c9d9-20f0-46b4-be16-c2badd59a1c4" type="System.String">
+          <orm:column name="locCountry" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="locState1" property="locState" behavior="readwrite" uniqueId="1f85c21b-31b8-4876-885c-0fc064d2aa10" type="System.String">
+          <orm:column name="locState" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="locCity1" property="locCity" behavior="readwrite" uniqueId="f0f87058-5205-4616-a699-f591a7e06540" type="System.String">
+          <orm:column name="locCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="locAddress1" property="locAddress" behavior="readwrite" uniqueId="8254079c-4c41-4aa7-be50-b972eb76e5fd" type="System.String">
+          <orm:column name="locAddress" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="locZipCode1" property="locZipCode" behavior="readwrite" uniqueId="07fa94d9-b1e2-41d0-8808-e1aaee27f46f" type="System.String">
+          <orm:column name="locZipCode" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="imgLogo1" property="imgLogo" behavior="readwrite" uniqueId="496ee7f6-b6e4-4ea2-9fc3-e8569419bc08" type="System.String">
+          <orm:column name="imgLogo" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="679a47a4-0a59-40fb-baad-74bd8878dcde" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="58b11b71-d9f1-4bcc-bd36-9d1f7e0db747" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="32279e9f-aba9-4080-aa0d-cd09ce2bd988" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="ccadfc0b-f9f3-46df-8bca-d192b36ad1e1" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="notesInner1" property="notesInner" behavior="readwrite" uniqueId="cb051f55-3ff9-4c8b-9161-907f459451cb" type="System.String">
+          <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="notesInvoice1" property="notesInvoice" behavior="readwrite" uniqueId="f352cf45-c576-45e0-9849-2aa844f20080" type="System.String">
+          <orm:column name="notesInvoice" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="isForReservations1" property="isForReservations" behavior="readwrite" uniqueId="f32bae08-b12f-4d08-b9ee-89ed232e27a2" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isForReservations" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="isForAgencies1" property="isForAgencies" behavior="readwrite" uniqueId="57cd828e-87a2-4a4f-adb3-946bfc8d7d1d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isForAgencies" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="idCodice1" property="idCodice" behavior="readwrite" uniqueId="dee47bd9-84b8-4361-828b-499a621558ee" type="System.String">
+          <orm:column name="idCodice" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="InvCashTypeLK">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="placeTypes" sql-type="varchar" nullable="true" length="2000" scale="0" ado-type="Varchar" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="InvCashPlaceLK">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="type" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="chargeFeePart2" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="chargeFeePart1" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="chargeFeeFull" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="chargeFeeInvoice" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="chargeFeeTaxId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="chargeFeeInvoiceDesc" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="InvCashDocumentTBL">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashUnpayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="docCaseId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docCaseCode" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docNum" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="docBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="docPath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="ownerId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="ownerUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="ownerCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="ownerNameFull" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="extId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="extUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="extCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="extType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="extDescription" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="ownerType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="cashPayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+      </orm:table>
+      <orm:table name="InvCashDocCaseLK">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="code" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="viewIn" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="viewOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="InvCashBookTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="pidDocument" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="cashType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashPlaceType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="cashPlace" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="cashAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+      </orm:table>
+      <orm:table name="InvOwnerTypeLK">
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="InvInvoiceItemTBL">
+        <orm:column name="singleUnitPrice" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="quantityType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="quantityAmount" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="pidInvoice" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="id" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="cashTotalAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashTaxID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashTaxFree" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashTaxAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+      </orm:table>
+      <orm:table name="InvOwnerTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="typeCode" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="locZipCode" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="Varchar" />
+        <orm:column name="locState" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="locCountry" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="locCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="locAddress" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="docVat" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docIssuePlace" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docCf" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="birthPlace" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="birthDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="notesInvoice" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+      </orm:table>
+      <orm:table name="InvInvoiceTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="ownerUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="ownerType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="ownerNameFull" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="ownerId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="ownerCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_locZipCode" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_locState" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_locCountry" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_locCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_locAddress" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_docVat" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_docIssuePlace" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="owner_docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="owner_docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="owner_docCf" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="notesPublic" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="docYearCounter" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docYear" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docIsRegistered" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docCaseId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docCaseCode" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="cashUnpayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashTotalAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashTaxFree" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashTaxAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashPayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="refererInvoiceID" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+      </orm:table>
+      <orm:table name="InvCashDocumentFilesTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="sequence" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="pidDocument" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="docPath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="docNum" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="InvCompanyTaxRL">
+        <orm:column name="pidCompany" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="isPrivate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="locCountry" sql-type="nvarchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="invTaxId" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="InvPayBancaSellaVerifiedByVisaTXN">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        <orm:column name="reservationId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="paymentId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="VbVRisp" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="transKey" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="PARes" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+      </orm:table>
+      <orm:table name="InvCashTaxLK">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="code" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="taxAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+      </orm:table>
+      <orm:table name="InvCompanyTBL">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameHonorific" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameFirst" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameMiddle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="nameLast" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="contactEmail" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="contactPhone" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="contactPhoneTrip" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="contactPhoneMobile" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="contactPhoneOffice" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="contactFax" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="docNum" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="docIssuePlace" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docVat" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="docCf" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="birthDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="birthPlace" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="birthCountry" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="birthState" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="locCountry" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="locState" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="locCity" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="locAddress" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="locZipCode" sql-type="varchar" nullable="true" length="10" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="imgLogo" sql-type="varchar" nullable="true" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="notesInvoice" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="isForReservations" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="isForAgencies" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="idCodice" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="InvCashBookVIEW" view="true">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="pidDocument" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="ownerUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="ownerType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="ownerNameFull" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="ownerId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="ownerCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="extUid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="extType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="extId" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="extDescription" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="extCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docUid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="docType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docPath" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="docNum" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docCreatedUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="docCreatedUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docCreatedDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docCode" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="docCaseId" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="docCaseCode" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="docBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="docAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="cashUnpayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashPlaceType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="cashPlace" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashPayed" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="cashInOut" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="cashDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="cashAmount" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+      </orm:table>
+    </orm:schema>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ModInvoiceDBConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=149.202.168.255,1433\SQLEXPRESS2014;initial catalog=rental_in_romeDB;persist security info=True;user id=mssql_remoteaccess;password=mssql_2018DEVS#</AppConfigConnectionString>
+    <InitialCatalog>eco_pulizieDB</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <AddPrefix>db</AddPrefix>
+      </ClassRules>
+      <FieldRules />
+      <PropertyRules />
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Attributes</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>mssql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="69f8394d-10b0-4c0e-9e2f-11bdc905967b" name="dbInvCashTypeLK" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="75e4e0d9-ee3f-4b01-b0d3-1cfb9d64589d" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="53f2f25e-0199-47be-9629-80ece1f81aa8" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="f660fd3a-c4c0-4ab3-b02d-ff66e21be2ae" name="placeTypes" label="placeTypes : String" kind="Persistent" fieldName="placeTypes1" />
+      <Property Id="6aeda7de-cc70-44d6-9566-b5c34127003c" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="1d89e774-b32e-4cde-9b4a-fadc5bdd4f4f" name="dbInvCashPlaceLK" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="id">
+      <Property Id="a6479d40-4366-4a36-9a27-f18365d356b7" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="c4d2d335-2988-45c2-aef0-e0594e8ce323" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="d6e68bd4-8155-470a-bdb0-854f41aee36f" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+      <Property Id="453a7c5d-61e8-4bcb-ba4c-ee4250b5330b" name="type" label="type : String" kind="Persistent" fieldName="type1" />
+      <Property Id="1aa8d300-599a-4539-a3c6-17d2ded8e551" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="eed607a1-3131-4c70-af1f-0863cdfea598" name="chargeFeePart2" type="Decimal" label="chargeFeePart2 : Decimal" nullable="true" kind="Persistent" fieldName="chargeFeePart21" />
+      <Property Id="29f498a7-a89f-4e4a-9408-c9fd99c119e7" name="chargeFeePart1" type="Decimal" label="chargeFeePart1 : Decimal" nullable="true" kind="Persistent" fieldName="chargeFeePart11" />
+      <Property Id="0ea8dda5-733a-4d7b-9d75-7f7618b34f15" name="chargeFeeFull" type="Decimal" label="chargeFeeFull : Decimal" nullable="true" kind="Persistent" fieldName="chargeFeeFull1" />
+      <Property Id="dc581139-d819-4983-9d16-36fa49ce94b2" name="chargeFeeInvoice" type="Int32" label="chargeFeeInvoice : Int32" nullable="true" kind="Persistent" fieldName="chargeFeeInvoice1" />
+      <Property Id="5975c111-aa04-4832-a22e-ef4cebeab82c" name="chargeFeeTaxId" type="Int32" label="chargeFeeTaxId : Int32" nullable="true" kind="Persistent" fieldName="chargeFeeTaxId1" />
+      <Property Id="98fc0ddf-0c87-4d80-a649-171c64454dad" name="chargeFeeInvoiceDesc" label="chargeFeeInvoiceDesc : String" kind="Persistent" fieldName="chargeFeeInvoiceDesc1" />
+    </DomainClass>
+    <DomainClass Id="ab28511d-36c2-4f7e-b3aa-12a7ecf5e482" name="dbInvCashDocumentTBL" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="9e191b22-96a5-41ac-aa42-fa920b7addf5" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="bcb9768a-78a0-4988-9c75-f881170710c0" name="cashAmount" type="Decimal" label="cashAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashAmount1" />
+      <Property Id="2691d059-981b-4746-9ca1-f7d9fa1d960d" name="cashInOut" type="Int32" label="cashInOut : Int32" nullable="true" kind="Persistent" fieldName="cashInOut1" />
+      <Property Id="52f78ea4-ec5f-4241-abef-b81c7c142f78" name="cashUnpayed" type="Decimal" label="cashUnpayed : Decimal" nullable="true" kind="Persistent" fieldName="cashUnpayed1" />
+      <Property Id="5b28f0c1-2a76-4361-b1f7-f2d97f33f519" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="a23f0ca8-486a-4b9c-95da-d3107759a1f1" name="docBody" label="docBody : String" kind="Persistent" fieldName="docBody1" />
+      <Property Id="4c3127e5-6309-4648-b413-0a46f47e0034" name="docCaseCode" label="docCaseCode : String" kind="Persistent" fieldName="docCaseCode1" />
+      <Property Id="98fa3d72-f09d-4bce-b3d8-00a3acc5b644" name="docCaseId" type="Int32" label="docCaseId : Int32" nullable="true" kind="Persistent" fieldName="docCaseId1" />
+      <Property Id="83f766f7-4978-4cf6-9822-89427600ae94" name="docExpiryDate" type="DateTime" label="docExpiryDate : DateTime" nullable="true" kind="Persistent" fieldName="docExpiryDate1" />
+      <Property Id="92bf4da3-9efd-42ae-afaf-cbd0f6654195" name="docIssueDate" type="DateTime" label="docIssueDate : DateTime" nullable="true" kind="Persistent" fieldName="docIssueDate1" />
+      <Property Id="6823de89-0e77-43dc-9faa-0f54a04d8afe" name="docNum" label="docNum : String" kind="Persistent" fieldName="docNum1" />
+      <Property Id="25d43fa4-2871-4594-b961-07be38ae606c" name="docPath" label="docPath : String" kind="Persistent" fieldName="docPath1" />
+      <Property Id="e4b12c82-2d9a-4571-8dc8-8e56d269eb1e" name="docType" label="docType : String" kind="Persistent" fieldName="docType1" />
+      <Property Id="ea0a03a2-536e-4a46-9aba-64ffd0f56248" name="extCode" label="extCode : String" kind="Persistent" fieldName="extCode1" />
+      <Property Id="758a9732-652e-4147-9825-587c909691c0" name="extDescription" label="extDescription : String" kind="Persistent" fieldName="extDescription1" />
+      <Property Id="a53d20cd-0c65-47f8-831b-73affbbd2f04" name="extId" type="Int64" label="extId : Int64" nullable="true" kind="Persistent" fieldName="extId1" />
+      <Property Id="93eaadfe-6864-4ed3-b443-ed502175981b" name="extType" label="extType : String" kind="Persistent" fieldName="extType1" />
+      <Property Id="b1a0513f-2967-4b8f-9399-03ef69241e63" name="extUid" type="Guid" label="extUid : Guid" nullable="true" kind="Persistent" fieldName="extUid1" />
+      <Property Id="9d530914-846b-4778-81b6-d2b41eac08e6" name="ownerCode" label="ownerCode : String" kind="Persistent" fieldName="ownerCode1" />
+      <Property Id="c371be30-3b68-4543-8121-bf0638c90b48" name="ownerId" type="Int64" label="ownerId : Int64" nullable="true" kind="Persistent" fieldName="ownerId1" />
+      <Property Id="dbe3cf52-153c-4dfc-9930-f17de9267b89" name="ownerNameFull" label="ownerNameFull : String" kind="Persistent" fieldName="ownerNameFull1" />
+      <Property Id="54e06470-ec14-43cf-96c8-48b4081944a8" name="ownerUid" type="Guid" label="ownerUid : Guid" nullable="true" kind="Persistent" fieldName="ownerUid1" />
+      <Property Id="1d17f583-5a49-421c-8ff0-55756314535d" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+      <Property Id="88eef203-43ce-4616-bdaf-f77427d5f875" name="ownerType" label="ownerType : String" kind="Persistent" fieldName="ownerType1" />
+      <Property Id="13b27a06-f4f4-4082-ab0a-68af9a8eaa6b" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="63c20660-57c3-4659-b879-d96a4418b826" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="c6fa8cf8-64b8-4d30-94bd-bd0f299b189b" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="d3c46274-93e0-4c0e-b7f4-9ec408db9251" name="cashPayed" type="Decimal" label="cashPayed : Decimal" nullable="true" kind="Persistent" fieldName="cashPayed1" />
+    </DomainClass>
+    <DomainClass Id="4c9648a7-4fe8-491b-8692-9c719df1f2b6" name="dbInvCashDocCaseLK" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="27397410-4cb2-4e7a-ae06-3eb6ab1d4982" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="36244b23-d2eb-4a93-984f-ca0bb0332171" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="d45e29d0-5857-48e0-bc4e-7e5f167b9013" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="7326887a-198e-4118-9830-37b51469f1f6" name="viewIn" type="Int32" label="viewIn : Int32" nullable="true" kind="Persistent" fieldName="viewIn1" />
+      <Property Id="4471afc0-768d-46e6-a4c3-b10ab7acd3db" name="viewOut" type="Int32" label="viewOut : Int32" nullable="true" kind="Persistent" fieldName="viewOut1" />
+    </DomainClass>
+    <DomainClass Id="0c16edbc-fb4a-4210-a846-fb65f0683b07" name="dbInvCashBookTBL" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="263fa3f4-929e-4bb6-9d5b-4c184768535f" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="22903699-7cf9-49c4-a67e-55d9f1354fe5" name="cashAmount" type="Decimal" label="cashAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashAmount1" />
+      <Property Id="c3d49f32-2def-4d95-b1c3-1f1f61a0393d" name="cashDate" type="DateTime" label="cashDate : DateTime" nullable="true" kind="Persistent" fieldName="cashDate1" />
+      <Property Id="f3df042d-e191-405e-9f6e-7b1c2dcc2aeb" name="cashInOut" type="Int32" label="cashInOut : Int32" nullable="true" kind="Persistent" fieldName="cashInOut1" />
+      <Property Id="6f7bb7e0-a370-4968-911a-1d66b3e18179" name="cashPlace" type="Int32" label="cashPlace : Int32" nullable="true" kind="Persistent" fieldName="cashPlace1" />
+      <Property Id="ac23713a-0397-4006-8c4e-d8a691c8ae07" name="cashPlaceType" label="cashPlaceType : String" kind="Persistent" fieldName="cashPlaceType1" />
+      <Property Id="cb7e73b0-f359-4640-90bb-ada890fbab94" name="cashType" type="Int32" label="cashType : Int32" nullable="true" kind="Persistent" fieldName="cashType1" />
+      <Property Id="8aa98618-0d72-4725-8b5b-01db2643908b" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="e1a39163-96a4-4479-a943-f19cdc06fb91" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="8d644e40-e831-405d-9ed4-3eb80c2885ee" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="ea18e92c-f1f3-48ba-8251-876f4aaf6ebb" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="cd871917-feb0-416d-beb8-54f26031063a" name="pidDocument" type="Int64" label="pidDocument : Int64" nullable="true" kind="Persistent" fieldName="pidDocument1" />
+      <Property Id="c06d90e2-119f-4f83-93e0-485b2bfa67b7" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+    <DomainClass Id="cde3e767-723c-4ae5-93f4-64e34450a1ec" name="dbInvCashBookVIEW" namespace="ModInvoice" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="ef3080ae-6f5b-4832-a28c-4d7396f658c1" name="cashAmount" type="Decimal" label="cashAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashAmount1" />
+      <Property Id="2dbf6e3c-9302-4ffb-afb6-fb87114d5622" name="cashDate" type="DateTime" label="cashDate : DateTime" nullable="true" kind="Persistent" fieldName="cashDate1" />
+      <Property Id="f8a789e8-774a-4daf-b66b-6bc0b4e781c1" name="cashInOut" type="Int32" label="cashInOut : Int32" nullable="true" kind="Persistent" fieldName="cashInOut1" />
+      <Property Id="057cd243-1bd5-4888-91e1-1e76cbc332cd" name="cashPayed" type="Decimal" label="cashPayed : Decimal" nullable="true" kind="Persistent" fieldName="cashPayed1" />
+      <Property Id="d399e5bd-1c26-49dd-8c41-bf35089aa1eb" name="cashPlace" type="Int32" label="cashPlace : Int32" nullable="true" kind="Persistent" fieldName="cashPlace1" />
+      <Property Id="f9a840b5-270c-4147-8d75-951892122d20" name="cashPlaceType" label="cashPlaceType : String" kind="Persistent" fieldName="cashPlaceType1" />
+      <Property Id="410285b7-be22-4e23-a636-b8e41f35971f" name="cashType" type="Int32" label="cashType : Int32" nullable="true" kind="Persistent" fieldName="cashType1" />
+      <Property Id="8014885f-6501-4bb4-abf5-49442af1ff6d" name="cashUnpayed" type="Decimal" label="cashUnpayed : Decimal" nullable="true" kind="Persistent" fieldName="cashUnpayed1" />
+      <Property Id="bd8522f6-9e38-4d54-a48a-1a7cc011267b" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="2a644384-7baf-4e4b-8910-5001795bf733" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="994b2ef0-7712-4660-a90a-201f85e3d2d1" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="1b34a979-4c20-480c-8a42-84d9ae2aee47" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="72bd9e8c-5844-4cf5-b685-5d4aa9ee6f7c" name="docAmount" type="Decimal" label="docAmount : Decimal" nullable="true" kind="Persistent" fieldName="docAmount1" />
+      <Property Id="27df17e9-27ff-4198-b27c-32cc59a9134d" name="docBody" label="docBody : String" kind="Persistent" fieldName="docBody1" />
+      <Property Id="5071c23f-2bc1-47aa-91a1-115c2f409a8c" name="docCaseCode" label="docCaseCode : String" kind="Persistent" fieldName="docCaseCode1" />
+      <Property Id="70324182-688f-4c37-9c79-77a01d0f3320" name="docCaseId" type="Int32" label="docCaseId : Int32" nullable="true" kind="Persistent" fieldName="docCaseId1" />
+      <Property Id="0df23d81-484d-4d05-8fe2-2fb2e7e77b04" name="docCode" label="docCode : String" kind="Persistent" fieldName="docCode1" />
+      <Property Id="e49c956f-ac1b-49ef-ba44-27a9f485eea3" name="docCreatedDate" type="DateTime" label="docCreatedDate : DateTime" nullable="true" kind="Persistent" fieldName="docCreatedDate1" />
+      <Property Id="e9fdf1ae-379e-43df-b698-8deebc045006" name="docCreatedUserID" type="Int32" label="docCreatedUserID : Int32" nullable="true" kind="Persistent" fieldName="docCreatedUserID1" />
+      <Property Id="d4a155fd-499d-4a00-aa8a-bb3854fc70f4" name="docCreatedUserNameFull" label="docCreatedUserNameFull : String" kind="Persistent" fieldName="docCreatedUserNameFull1" />
+      <Property Id="ee11a590-5723-4d2f-aea6-18a958950b38" name="docExpiryDate" type="DateTime" label="docExpiryDate : DateTime" nullable="true" kind="Persistent" fieldName="docExpiryDate1" />
+      <Property Id="984079d1-f8e1-4c3b-a829-26d24e1103a1" name="docIssueDate" type="DateTime" label="docIssueDate : DateTime" nullable="true" kind="Persistent" fieldName="docIssueDate1" />
+      <Property Id="78250292-61d2-48d8-a5cc-dec04e51bf60" name="docNum" label="docNum : String" kind="Persistent" fieldName="docNum1" />
+      <Property Id="3258f533-71f5-4844-b2bb-e7b71e02842f" name="docPath" label="docPath : String" kind="Persistent" fieldName="docPath1" />
+      <Property Id="b5e40888-9933-43e8-aaef-d47241710256" name="docType" label="docType : String" kind="Persistent" fieldName="docType1" />
+      <Property Id="89cd9aa7-a717-4291-94af-e4d3417d400a" name="docUid" type="Guid" label="docUid : Guid" kind="Persistent" fieldName="docUid1" />
+      <Property Id="98e5ac7b-883e-4f48-a0cd-a88ff077ca7f" name="extCode" label="extCode : String" kind="Persistent" fieldName="extCode1" />
+      <Property Id="f2a70df5-bcc9-4ac0-b589-02a0d2eb8e2f" name="extDescription" label="extDescription : String" kind="Persistent" fieldName="extDescription1" />
+      <Property Id="6060d2ed-98d2-4d2f-bd7c-a82cd2b9c5b0" name="extId" type="Int64" label="extId : Int64" nullable="true" kind="Persistent" fieldName="extId1" />
+      <Property Id="894f4116-42ce-4879-9206-57199d57325e" name="extType" label="extType : String" kind="Persistent" fieldName="extType1" />
+      <Property Id="b47f4ede-27f3-48d2-b4e5-5e8dfd558721" name="extUid" type="Guid" label="extUid : Guid" nullable="true" kind="Persistent" fieldName="extUid1" />
+      <Property Id="8dabdbc2-9480-45c6-a84c-216ff46bf36c" name="id" type="Int64" label="id : Int64" kind="Persistent" fieldName="id1" />
+      <Property Id="ac823736-5f38-441a-a297-e11ff1f96953" name="ownerCode" label="ownerCode : String" kind="Persistent" fieldName="ownerCode1" />
+      <Property Id="f48922c9-7020-4fe9-8de9-daceccd31fe1" name="ownerId" type="Int64" label="ownerId : Int64" nullable="true" kind="Persistent" fieldName="ownerId1" />
+      <Property Id="011a334f-055f-47d8-b83c-c2befeb67a07" name="ownerNameFull" label="ownerNameFull : String" kind="Persistent" fieldName="ownerNameFull1" />
+      <Property Id="d07161b2-acc4-4c6d-9856-e908b272e4b4" name="ownerType" label="ownerType : String" kind="Persistent" fieldName="ownerType1" />
+      <Property Id="6003a6ee-33be-4bc2-9483-36a1b9bb0375" name="ownerUid" type="Guid" label="ownerUid : Guid" nullable="true" kind="Persistent" fieldName="ownerUid1" />
+      <Property Id="f1b875b5-663c-48f1-9bcf-b4992f25b992" name="pidDocument" type="Int64" label="pidDocument : Int64" nullable="true" kind="Persistent" fieldName="pidDocument1" />
+      <Property Id="9b6542c9-fd0f-4b26-859d-84f32b413111" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+    <DomainClass Id="a04bbd1e-3ecb-4d89-adbf-2e718ef962bc" name="dbInvInvoiceItemTBL" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="Guid" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="6da27b88-979e-456a-abbe-acb0b68d5c46" name="id" type="Guid" label="id : Guid" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="4eedc0a8-a470-4dae-942e-c765f4e8a11e" name="cashTaxAmount" type="Decimal" label="cashTaxAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashTaxAmount1" />
+      <Property Id="63d7b9da-e0c4-4f1e-ba29-bed4d899ea48" name="cashTaxFree" type="Decimal" label="cashTaxFree : Decimal" nullable="true" kind="Persistent" fieldName="cashTaxFree1" />
+      <Property Id="e50fc156-d564-421f-904b-cd34b2c0e78f" name="cashTaxID" type="Int32" label="cashTaxID : Int32" nullable="true" kind="Persistent" fieldName="cashTaxID1" />
+      <Property Id="7e385620-9b4b-43b0-a90c-d49cad61bb73" name="cashTotalAmount" type="Decimal" label="cashTotalAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashTotalAmount1" />
+      <Property Id="4c4db635-9b41-4b39-9585-c77f5175e8bd" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="db424bcb-680f-4632-9980-84e86b0547b4" name="pidInvoice" type="Int64" label="pidInvoice : Int64" nullable="true" kind="Persistent" fieldName="pidInvoice1" />
+      <Property Id="f1bb9514-72dc-4d52-8a8a-e4bdb53eb2a1" name="quantityAmount" type="Int32" label="quantityAmount : Int32" nullable="true" kind="Persistent" fieldName="quantityAmount1" />
+      <Property Id="1c9455b2-b0d3-45f7-b574-68edad3cb584" name="quantityType" label="quantityType : String" kind="Persistent" fieldName="quantityType1" />
+      <Property Id="6a33e7be-1e89-473f-875f-0db7fad6daca" name="sequence" type="Int32" label="sequence : Int32" nullable="true" kind="Persistent" fieldName="sequence1" />
+      <Property Id="70d3ff9e-f185-4e5a-a414-c666852720a1" name="singleUnitPrice" type="Decimal" label="singleUnitPrice : Decimal" nullable="true" kind="Persistent" fieldName="singleUnitPrice1" />
+    </DomainClass>
+    <DomainClass Id="e6673399-0707-48b2-b9b8-21ab4c84a04f" name="dbInvInvoiceTBL" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="178c7558-5601-4fc8-be35-ec8a2abfb28d" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="a7220c78-ba30-4da5-89f2-0a14808b9ed9" name="cashInOut" type="Int32" label="cashInOut : Int32" nullable="true" kind="Persistent" fieldName="cashInOut1" />
+      <Property Id="c87d0275-822a-4d54-8b6f-1f5471194096" name="cashPayed" type="Decimal" label="cashPayed : Decimal" nullable="true" kind="Persistent" fieldName="cashPayed1" />
+      <Property Id="1f8c547c-7765-4667-afab-676629696b92" name="cashTaxAmount" type="Decimal" label="cashTaxAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashTaxAmount1" />
+      <Property Id="a0a75585-8a05-4242-a5c7-a4aa68ffb3a5" name="cashTaxFree" type="Decimal" label="cashTaxFree : Decimal" nullable="true" kind="Persistent" fieldName="cashTaxFree1" />
+      <Property Id="343a77c6-2f3a-40cc-89ef-869fc23c5463" name="cashTotalAmount" type="Decimal" label="cashTotalAmount : Decimal" nullable="true" kind="Persistent" fieldName="cashTotalAmount1" />
+      <Property Id="cef6afc2-a6dc-42af-9912-988922ea22b1" name="cashUnpayed" type="Decimal" label="cashUnpayed : Decimal" nullable="true" kind="Persistent" fieldName="cashUnpayed1" />
+      <Property Id="1ef7d72b-5cc8-45b5-806f-e9a8b5f851be" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="350859fd-56f2-4575-8160-7cf47a7f5a59" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="d643b398-5bae-4708-a7cd-c31a32490203" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="013b8782-1747-49ec-a24a-3d4a99c4b8f1" name="docCaseCode" label="docCaseCode : String" kind="Persistent" fieldName="docCaseCode1" />
+      <Property Id="4a51263c-9675-439a-bdd0-3826f0b5fdb3" name="docCaseId" type="Int32" label="docCaseId : Int32" nullable="true" kind="Persistent" fieldName="docCaseId1" />
+      <Property Id="5222c731-7bd1-463d-90e1-df849799a058" name="docExpiryDate" type="DateTime" label="docExpiryDate : DateTime" nullable="true" kind="Persistent" fieldName="docExpiryDate1" />
+      <Property Id="96880229-431c-44bf-84d1-cc2693b13876" name="docIsRegistered" type="Int32" label="docIsRegistered : Int32" nullable="true" kind="Persistent" fieldName="docIsRegistered1" />
+      <Property Id="e78c41de-a446-4270-97bf-c1552c8f3d35" name="docIssueDate" type="DateTime" label="docIssueDate : DateTime" nullable="true" kind="Persistent" fieldName="docIssueDate1" />
+      <Property Id="c289f1fe-2c01-4f08-9989-388ebdeaced8" name="docNum" label="docNum : String" kind="Persistent" fieldName="docNum1" />
+      <Property Id="9de4bf0e-22f7-43e2-9280-cf6279f010ce" name="docType" label="docType : String" kind="Persistent" fieldName="docType1" />
+      <Property Id="01b3eecf-b717-4b23-9f60-595ce32619dc" name="docYear" type="Int32" label="docYear : Int32" nullable="true" kind="Persistent" fieldName="docYear1" />
+      <Property Id="a6aaa96e-05a0-4271-8f0b-850708559cbd" name="docYearCounter" type="Int32" label="docYearCounter : Int32" nullable="true" kind="Persistent" fieldName="docYearCounter1" />
+      <Property Id="ecdf00b3-b2b2-487b-8306-e7cdb17bd45b" name="notesInner" label="notesInner : String" kind="Persistent" fieldName="notesInner1" />
+      <Property Id="36161937-2f0d-466d-ae90-a52b1c167e6c" name="notesPublic" label="notesPublic : String" kind="Persistent" fieldName="notesPublic1" />
+      <Property Id="602b9943-1a98-41a4-ad85-d9ec5ff34457" name="owner_docCf" label="owner_docCf : String" kind="Persistent" fieldName="owner_docCf1" />
+      <Property Id="1639322d-9619-4684-a7c8-4bc60ecd1066" name="owner_docExpiryDate" type="DateTime" label="owner_docExpiryDate : DateTime" nullable="true" kind="Persistent" fieldName="owner_docExpiryDate1" />
+      <Property Id="d9d3925f-6097-498a-8f8c-ef782457d83c" name="owner_docIssueDate" type="DateTime" label="owner_docIssueDate : DateTime" nullable="true" kind="Persistent" fieldName="owner_docIssueDate1" />
+      <Property Id="a82c9e80-4ac7-4370-9a00-8b7a3770ba6a" name="owner_docIssuePlace" label="owner_docIssuePlace : String" kind="Persistent" fieldName="owner_docIssuePlace1" />
+      <Property Id="6c493368-3dd6-4574-a8a4-797b33793da5" name="owner_docNum" label="owner_docNum : String" kind="Persistent" fieldName="owner_docNum1" />
+      <Property Id="177c8bf6-e4e4-4f57-a888-ac406d3920ed" name="owner_docType" label="owner_docType : String" kind="Persistent" fieldName="owner_docType1" />
+      <Property Id="d256fbb8-ed5d-4532-94cd-0a4421e54367" name="owner_docVat" label="owner_docVat : String" kind="Persistent" fieldName="owner_docVat1" />
+      <Property Id="cc7cdea3-c722-4d02-b03e-8f2f289f8f7b" name="owner_locAddress" label="owner_locAddress : String" kind="Persistent" fieldName="owner_locAddress1" />
+      <Property Id="bd1c278e-9a63-4573-82b8-9596af06df50" name="owner_locCity" label="owner_locCity : String" kind="Persistent" fieldName="owner_locCity1" />
+      <Property Id="a3918caf-0967-451d-a74f-ca3884e5e11d" name="owner_locCountry" label="owner_locCountry : String" kind="Persistent" fieldName="owner_locCountry1" />
+      <Property Id="d78bcd9b-7e44-43cd-9e8b-825d4080b92d" name="owner_locState" label="owner_locState : String" kind="Persistent" fieldName="owner_locState1" />
+      <Property Id="b499f46d-e2f2-401f-bc52-75382739b55a" name="owner_locZipCode" label="owner_locZipCode : String" kind="Persistent" fieldName="owner_locZipCode1" />
+      <Property Id="581474be-58d6-407e-bdee-4213cba5fbb6" name="ownerCode" label="ownerCode : String" kind="Persistent" fieldName="ownerCode1" />
+      <Property Id="0dcefe26-00fa-4af7-93f5-635605a02500" name="ownerId" type="Int64" label="ownerId : Int64" nullable="true" kind="Persistent" fieldName="ownerId1" />
+      <Property Id="a5ade6bf-ee2f-495b-ae08-23db262dd9d4" name="ownerNameFull" label="ownerNameFull : String" kind="Persistent" fieldName="ownerNameFull1" />
+      <Property Id="214c7cb3-986a-40ab-88fc-deb1401b560e" name="ownerType" label="ownerType : String" kind="Persistent" fieldName="ownerType1" />
+      <Property Id="c5ad82e4-aba1-471f-b7a8-1b5e1dafb9e5" name="ownerUid" type="Guid" label="ownerUid : Guid" nullable="true" kind="Persistent" fieldName="ownerUid1" />
+      <Property Id="3694a8ca-da73-4802-8da2-76de15bb6fcc" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+      <Property Id="6c9bb284-6a85-4e8f-b1b2-9fa74cb20093" name="refererInvoiceID" type="Int64" label="refererInvoiceID : Int64" nullable="true" kind="Persistent" fieldName="refererInvoiceID1" />
+    </DomainClass>
+    <DomainClass Id="8345ba1b-d6c0-499a-a67e-b7dd97a5e615" name="dbInvCashDocumentFilesTBL" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="Guid" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="2c084c69-d249-4218-9142-2da2b898411f" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="18f22bf7-998c-4556-a424-9c713e2d095d" name="docNum" label="docNum : String" kind="Persistent" fieldName="docNum1" />
+      <Property Id="d188c7a4-5187-4c0c-95d2-9e1cb8ce7116" name="docPath" label="docPath : String" kind="Persistent" fieldName="docPath1" />
+      <Property Id="dbe6f257-9363-4c16-a7e9-34edcb781190" name="pidDocument" type="Int64" label="pidDocument : Int64" nullable="true" kind="Persistent" fieldName="pidDocument1" />
+      <Property Id="cc9a888b-d5a1-4652-b2ac-e5d31c073ff0" name="sequence" type="Int32" label="sequence : Int32" nullable="true" kind="Persistent" fieldName="sequence1" />
+    </DomainClass>
+    <DomainClass Id="e8142db6-9759-4ce1-b0c6-2d72faf9c26c" name="dbInvCompanyTaxRL" namespace="ModInvoice" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="4a2cc83f-bc1d-4c9d-bc6b-43f79c924100" name="isPrivate" type="Int32" label="isPrivate : Int32" kind="Persistent" identity="true" fieldName="isPrivate1" />
+      <Property Id="572a0652-a8c7-4157-891c-d01d2ae756f0" name="locCountry" label="locCountry : String" kind="Persistent" identity="true" fieldName="locCountry1" />
+      <Property Id="dbb7f415-30c5-4239-95f9-cf53b6218219" name="pidCompany" type="Int32" label="pidCompany : Int32" kind="Persistent" identity="true" fieldName="pidCompany1" />
+      <Property Id="8716ec50-b7a3-48fb-884c-c8d535f8de89" name="invTaxId" type="Int32" label="invTaxId : Int32" kind="Persistent" fieldName="invTaxId1" />
+    </DomainClass>
+    <DomainClass Id="ee1aee34-ecb3-482e-9265-fcf920211c50" name="dbInvPayBancaSellaVerifiedByVisaTXN" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="uid">
+      <Property Id="c4a423be-9211-4344-b3bd-98c385e366dc" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="2964b8bd-2017-474b-9dc0-bd0ff37d59f4" name="PARes" label="PARes : String" kind="Persistent" fieldName="PARes1" />
+      <Property Id="56b2e3c6-be8e-4fb8-9e3c-10ac873b5c79" name="paymentId" type="Int64" label="paymentId : Int64" nullable="true" kind="Persistent" fieldName="paymentId1" />
+      <Property Id="c9da27b4-504f-490c-9425-9c91f3bb8df8" name="reservationId" type="Int64" label="reservationId : Int64" nullable="true" kind="Persistent" fieldName="reservationId1" />
+      <Property Id="f594bdc3-c4a5-4f0b-b778-48bcb9f14477" name="transKey" label="transKey : String" kind="Persistent" fieldName="transKey1" />
+      <Property Id="9a1b4eb6-a254-4456-9253-82668214f589" name="VbVRisp" label="VbVRisp : String" kind="Persistent" fieldName="VbVRisp1" />
+      <Property Id="352b9aca-1efa-4cf9-b241-aaeaef2d4a9d" name="createdDate" type="DateTime" label="createdDate : DateTime" kind="Persistent" fieldName="createdDate1" />
+    </DomainClass>
+    <DomainClass Id="7e781a40-64c9-43af-b33e-9e2513f06c99" name="dbInvCashTaxLK" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="id">
+      <Property Id="0aed0b0f-2947-4341-bcea-fe84bf31e1d7" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="d9e84817-8a0e-4078-826d-c694ae790367" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="02475006-a302-4fdc-a477-334747830f63" name="taxAmount" type="Decimal" label="taxAmount : Decimal" nullable="true" kind="Persistent" fieldName="taxAmount1" />
+    </DomainClass>
+    <DomainClass Id="8fc3e673-9aa8-4334-9908-abe1d45ba9cf" name="dbInvCompanyTBL" namespace="ModInvoice" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="id">
+      <Property Id="4c31ba9d-21cf-433b-b5c6-82da68974fb3" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="95994833-656b-4dbc-b199-1968e75db30e" name="birthCountry" label="birthCountry : String" kind="Persistent" fieldName="birthCountry1" />
+      <Property Id="810842eb-c066-4306-90db-763003efcff7" name="birthDate" type="DateTime" label="birthDate : DateTime" nullable="true" kind="Persistent" fieldName="birthDate1" />
+      <Property Id="d047536b-f3bf-46bd-856d-1a0b4a8332e5" name="birthPlace" label="birthPlace : String" kind="Persistent" fieldName="birthPlace1" />
+      <Property Id="eaddbe36-5aa4-48f6-bfcc-077d92f9d1d6" name="birthState" label="birthState : String" kind="Persistent" fieldName="birthState1" />
+      <Property Id="480b05af-0225-41fd-a534-a092f9f193f1" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="1d3b6110-3871-42b8-8c63-261b8da9aa95" name="contactEmail" label="contactEmail : String" kind="Persistent" fieldName="contactEmail1" />
+      <Property Id="747b5568-2468-4465-bb2b-4e132b7bbd21" name="contactFax" label="contactFax : String" kind="Persistent" fieldName="contactFax1" />
+      <Property Id="8c015e1e-893d-4ce9-bdce-49c0bf7051dc" name="contactPhone" label="contactPhone : String" kind="Persistent" fieldName="contactPhone1" />
+      <Property Id="330c5e10-2ec8-4670-9531-729e04c7b8f7" name="contactPhoneMobile" label="contactPhoneMobile : String" kind="Persistent" fieldName="contactPhoneMobile1" />
+      <Property Id="7b7d8b58-bd92-42dd-8c07-27d3db3be78d" name="contactPhoneOffice" label="contactPhoneOffice : String" kind="Persistent" fieldName="contactPhoneOffice1" />
+      <Property Id="ae604eb4-c7f5-4b34-9be5-a52f2a4ef8c4" name="contactPhoneTrip" label="contactPhoneTrip : String" kind="Persistent" fieldName="contactPhoneTrip1" />
+      <Property Id="58b11b71-d9f1-4bcc-bd36-9d1f7e0db747" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="32279e9f-aba9-4080-aa0d-cd09ce2bd988" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="ccadfc0b-f9f3-46df-8bca-d192b36ad1e1" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="35e386b4-5e52-4fd1-96be-4cb773a9866f" name="docCf" label="docCf : String" kind="Persistent" fieldName="docCf1" />
+      <Property Id="e1f368b7-472e-4d38-b68a-2219ff33b89f" name="docExpiryDate" type="DateTime" label="docExpiryDate : DateTime" nullable="true" kind="Persistent" fieldName="docExpiryDate1" />
+      <Property Id="7005a892-b286-4f74-9b92-4a6bc0f0b202" name="docIssueDate" type="DateTime" label="docIssueDate : DateTime" nullable="true" kind="Persistent" fieldName="docIssueDate1" />
+      <Property Id="605036dd-81d4-4dee-9a44-1cba1962c87d" name="docIssuePlace" label="docIssuePlace : String" kind="Persistent" fieldName="docIssuePlace1" />
+      <Property Id="8b9f10e5-36b4-4841-aa3e-38a844d3ff21" name="docNum" label="docNum : String" kind="Persistent" fieldName="docNum1" />
+      <Property Id="939851a9-3a64-456d-8b44-ad90a55eee1b" name="docType" label="docType : String" kind="Persistent" fieldName="docType1" />
+      <Property Id="9d416b9a-e45d-45f7-a1fc-3ff1fe893bca" name="docVat" label="docVat : String" kind="Persistent" fieldName="docVat1" />
+      <Property Id="dee47bd9-84b8-4361-828b-499a621558ee" name="idCodice" label="idCodice : String" kind="Persistent" fieldName="idCodice1" />
+      <Property Id="496ee7f6-b6e4-4ea2-9fc3-e8569419bc08" name="imgLogo" label="imgLogo : String" kind="Persistent" fieldName="imgLogo1" />
+      <Property Id="679a47a4-0a59-40fb-baad-74bd8878dcde" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="57cd828e-87a2-4a4f-adb3-946bfc8d7d1d" name="isForAgencies" type="Int32" label="isForAgencies : Int32" nullable="true" kind="Persistent" fieldName="isForAgencies1" />
+      <Property Id="f32bae08-b12f-4d08-b9ee-89ed232e27a2" name="isForReservations" type="Int32" label="isForReservations : Int32" nullable="true" kind="Persistent" fieldName="isForReservations1" />
+      <Property Id="8254079c-4c41-4aa7-be50-b972eb76e5fd" name="locAddress" label="locAddress : String" kind="Persistent" fieldName="locAddress1" />
+      <Property Id="f0f87058-5205-4616-a699-f591a7e06540" name="locCity" label="locCity : String" kind="Persistent" fieldName="locCity1" />
+      <Property Id="bae6c9d9-20f0-46b4-be16-c2badd59a1c4" name="locCountry" label="locCountry : String" kind="Persistent" fieldName="locCountry1" />
+      <Property Id="1f85c21b-31b8-4876-885c-0fc064d2aa10" name="locState" label="locState : String" kind="Persistent" fieldName="locState1" />
+      <Property Id="07fa94d9-b1e2-41d0-8808-e1aaee27f46f" name="locZipCode" label="locZipCode : String" kind="Persistent" fieldName="locZipCode1" />
+      <Property Id="44d8fae1-3291-445a-aa15-58eb8d3e7c15" name="nameFirst" label="nameFirst : String" kind="Persistent" fieldName="nameFirst1" />
+      <Property Id="0f2be9a3-6356-4ad9-ab64-69fe8863b67f" name="nameFull" label="nameFull : String" kind="Persistent" fieldName="nameFull1" />
+      <Property Id="09d6614c-b989-494a-8d38-a83c5e332ec2" name="nameHonorific" label="nameHonorific : String" kind="Persistent" fieldName="nameHonorific1" />
+      <Property Id="2ca545ac-3d60-4bf5-83c7-d738540d0aaf" name="nameLast" label="nameLast : String" kind="Persistent" fieldName="nameLast1" />
+      <Property Id="27d41cc6-5493-4dff-8e38-4ea33affdc22" name="nameMiddle" label="nameMiddle : String" kind="Persistent" fieldName="nameMiddle1" />
+      <Property Id="cb051f55-3ff9-4c8b-9161-907f459451cb" name="notesInner" label="notesInner : String" kind="Persistent" fieldName="notesInner1" />
+      <Property Id="f352cf45-c576-45e0-9849-2aa844f20080" name="notesInvoice" label="notesInvoice : String" kind="Persistent" fieldName="notesInvoice1" />
+      <Property Id="efae5634-8da2-46af-9b16-9d0e41520613" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="028206f7-92a7-41c4-bce2-9c429076421d">
+      <domainContainer name="DCmodInvoice" namespace="ModInvoice" showPropertiesCompartment="true">
+        <entitySetProperty name="dbInvCashTypeLKs" namespace="ModInvoice" type="dbInvCashTypeLK" label="dbInvCashTypeLKs : IQueryable&lt;ModInvoice.dbInvCashTypeLK&gt;" />
+        <entitySetProperty name="dbInvCashPlaceLKs" namespace="ModInvoice" type="dbInvCashPlaceLK" label="dbInvCashPlaceLKs : IQueryable&lt;ModInvoice.dbInvCashPlaceLK&gt;" />
+        <entitySetProperty name="dbInvCashDocumentTBLs" namespace="ModInvoice" type="dbInvCashDocumentTBL" label="dbInvCashDocumentTBLs : IQueryable&lt;ModInvoice.dbInvCashDocumentTBL&gt;" />
+        <entitySetProperty name="dbInvCashDocCaseLKs" namespace="ModInvoice" type="dbInvCashDocCaseLK" label="dbInvCashDocCaseLKs : IQueryable&lt;ModInvoice.dbInvCashDocCaseLK&gt;" />
+        <entitySetProperty name="dbInvCashBookTBLs" namespace="ModInvoice" type="dbInvCashBookTBL" label="dbInvCashBookTBLs : IQueryable&lt;ModInvoice.dbInvCashBookTBL&gt;" />
+        <entitySetProperty name="dbInvCashBookVIEWs" namespace="ModInvoice" type="dbInvCashBookVIEW" label="dbInvCashBookVIEWs : IQueryable&lt;ModInvoice.dbInvCashBookVIEW&gt;" />
+        <entitySetProperty name="dbInvInvoiceItemTBLs" namespace="ModInvoice" type="dbInvInvoiceItemTBL" label="dbInvInvoiceItemTBLs : IQueryable&lt;ModInvoice.dbInvInvoiceItemTBL&gt;" />
+        <entitySetProperty name="dbInvInvoiceTBLs" namespace="ModInvoice" type="dbInvInvoiceTBL" label="dbInvInvoiceTBLs : IQueryable&lt;ModInvoice.dbInvInvoiceTBL&gt;" />
+        <entitySetProperty name="dbInvCashDocumentFilesTBLs" namespace="ModInvoice" type="dbInvCashDocumentFilesTBL" label="dbInvCashDocumentFilesTBLs : IQueryable&lt;ModInvoice.dbInvCashDocumentFilesTBL&gt;" />
+        <entitySetProperty name="dbInvCompanyTaxRLs" namespace="ModInvoice" type="dbInvCompanyTaxRL" label="dbInvCompanyTaxRLs : IQueryable&lt;ModInvoice.dbInvCompanyTaxRL&gt;" />
+        <entitySetProperty name="dbInvPayBancaSellaVerifiedByVisaTXNs" namespace="ModInvoice" type="dbInvPayBancaSellaVerifiedByVisaTXN" label="dbInvPayBancaSellaVerifiedByVisaTXNs : IQueryable&lt;ModInvoice.dbInvPayBancaSellaVerifiedByVisaTXN&gt;" />
+        <entitySetProperty name="dbInvCashTaxLKs" namespace="ModInvoice" type="dbInvCashTaxLK" label="dbInvCashTaxLKs : IQueryable&lt;ModInvoice.dbInvCashTaxLK&gt;" />
+        <entitySetProperty name="dbInvCompanyTBLs" namespace="ModInvoice" type="dbInvCompanyTBL" label="dbInvCompanyTBLs : IQueryable&lt;ModInvoice.dbInvCompanyTBL&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

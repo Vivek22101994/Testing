@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DCchnlHomeAway" namespace="ModRental" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DCchnlHomeAway" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="ModRental" default="true">
+      <orm:class name="dbRntChnlHomeAwayRequestLOG" uniqueId="e3747e49-8b18-4ad4-b943-329735160f5b">
+        <orm:table name="RntChnlHomeAwayRequestLOG" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="uid" />
+          </orm:key-generator>
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="9168aac0-9124-44e0-b177-389ff2df5533" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="logDateTime1" property="logDateTime" behavior="readwrite" uniqueId="d37a6f6d-40c2-45e8-8f9d-ea5f9076562f" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="requesUrl1" property="requesUrl" behavior="readwrite" uniqueId="8c393157-732d-47dd-b181-399499324ff6" type="System.String">
+          <orm:column name="requesUrl" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="requestType1" property="requestType" behavior="readwrite" uniqueId="4ac35e2d-4694-4b8b-8ff1-b7b72b4fa1ea" type="System.String">
+          <orm:column name="requestType" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="requestContent1" property="requestContent" behavior="readwrite" uniqueId="5181adb9-5c50-4dc6-b056-34cc6fc42dd1" type="System.String">
+          <orm:column name="requestContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="responseContent1" property="responseContent" behavior="readwrite" uniqueId="9ddb476e-b630-4634-81cd-56681ce6f15d" type="System.String">
+          <orm:column name="responseContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="requestComments1" property="requestComments" behavior="readwrite" uniqueId="12306cb5-0081-4756-99b0-20f62b51c265" type="System.String">
+          <orm:column name="requestComments" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayOwnerTBL" uniqueId="90446628-e17e-4cfe-9be4-8a2f9c507c6c">
+        <orm:table name="RntChnlHomeAwayOwnerTBL" />
+        <orm:identity>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="username1" property="username" behavior="readwrite" uniqueId="89301857-5fb0-4e55-aec9-8eefe4375b43" type="System.String">
+          <orm:column name="username" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="e58ddc0f-817b-441f-854d-046c4a1fe4c1" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="advertiserAssignedId1" property="advertiserAssignedId" behavior="readwrite" uniqueId="ba83431e-e6b1-4c5a-94d9-0d96c12719cb" type="System.String">
+          <orm:column name="advertiserAssignedId" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="ppb_advertiserAssignedId1" property="ppb_advertiserAssignedId" behavior="readwrite" uniqueId="d01463b5-bc5c-4c2a-9398-9d65f95c3859" type="System.String">
+          <orm:column name="ppb_advertiserAssignedId" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayEstateLN" uniqueId="3f8a4d56-6bbf-4aeb-9310-6cdc64e67281">
+        <orm:table name="RntChnlHomeAwayEstateLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pid_estate1" />
+            <orm:single-field field-name="pid_lang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pid_estate1" property="pid_estate" behavior="readwrite" uniqueId="859a860f-2bd6-4b43-a77c-4312cdf5a4e9" type="System.Int32">
+          <orm:column name="pid_estate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pid_lang1" property="pid_lang" behavior="readwrite" uniqueId="8ac1481a-9c5b-4fc9-b6e8-3fb7af3d15b3" type="System.String">
+          <orm:column name="pid_lang" sql-type="varchar" nullable="false" length="5" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="989b201f-bcc6-496b-b0de-698a5b0f8807" type="System.String">
+          <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="sub_title1" property="sub_title" behavior="readwrite" uniqueId="74633e87-ff85-449e-88d6-c9aecccf013a" type="System.String">
+          <orm:column name="sub_title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="e19eb462-603a-4f84-9f83-35cc16f5640c" type="System.String">
+          <orm:column name="summary" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="281e02ec-023c-4780-8d99-8a6eaaccfa88" type="System.String">
+          <orm:column name="description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="listing_story1" property="listing_story" behavior="readwrite" uniqueId="6ceabf63-94b3-4b1e-b53e-2d14f8fa02ca" type="System.String">
+          <orm:column name="listing_story" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="unique_benifits1" property="unique_benifits" behavior="readwrite" uniqueId="c6bf8cfd-608d-441f-8478-86184fd74466" type="System.String">
+          <orm:column name="unique_benifits" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="why_purchased1" property="why_purchased" behavior="readwrite" uniqueId="0dd1fe3d-cfba-45f1-9c57-10457ca4cdac" type="System.String">
+          <orm:column name="why_purchased" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="location_description1" property="location_description" behavior="readwrite" uniqueId="d868919a-4c5b-4c87-a70c-95f6c7b03875" type="System.String">
+          <orm:column name="location_description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="location_other_activities1" property="location_other_activities" behavior="readwrite" uniqueId="2ef8a3cd-f41e-464c-9bfe-50b5d94237bd" type="System.String">
+          <orm:column name="location_other_activities" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="price_note1" property="price_note" behavior="readwrite" uniqueId="f2d1d7f9-35c3-4de6-a028-54cf45d15d05" type="System.String">
+          <orm:column name="price_note" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="bathroom_details1" property="bathroom_details" behavior="readwrite" uniqueId="46d6decf-eae4-4b32-8a83-9473cb7731f0" type="System.String">
+          <orm:column name="bathroom_details" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="bedroom_details1" property="bedroom_details" behavior="readwrite" uniqueId="6ef89b55-1223-43d4-82c6-683611cd251e" type="System.String">
+          <orm:column name="bedroom_details" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="unit_name1" property="unit_name" behavior="readwrite" uniqueId="98402342-1b5c-4576-b252-7a63116aeaaf" type="System.String">
+          <orm:column name="unit_name" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="unit_description1" property="unit_description" behavior="readwrite" uniqueId="8f16e970-8a55-4b6d-b839-70c47847a099" type="System.String">
+          <orm:column name="unit_description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="features_description1" property="features_description" behavior="readwrite" uniqueId="307d990b-9490-443a-b0e7-edfe78a74ff3" type="System.String">
+          <orm:column name="features_description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayEstatePointsRL" uniqueId="4696651f-74bf-4d95-ab47-bce391262a25">
+        <orm:table name="RntChnlHomeAwayEstatePointsRL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pid_estate1" />
+            <orm:single-field field-name="pid_point1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pid_estate1" property="pid_estate" behavior="readwrite" uniqueId="9060285e-36f7-4d86-acf3-fc1cae2b42e8" type="System.Int32">
+          <orm:column name="pid_estate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pid_point1" property="pid_point" behavior="readwrite" uniqueId="277f9613-1e03-4765-9755-aca105c0656a" type="System.Int32">
+          <orm:column name="pid_point" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="distance1" property="distance" behavior="readwrite" uniqueId="f5c841c6-1a3b-4cd1-8ea6-e98fe1f997db" type="System.String">
+          <orm:column name="distance" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="unit1" property="unit" behavior="readwrite" uniqueId="f54271c0-f350-43cc-a933-fbe52daf6f5c" type="System.String">
+          <orm:column name="unit" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayBookingTBL" uniqueId="91afd62d-69d7-4d69-ad7d-214017d83f66">
+        <orm:table name="RntChnlHomeAwayBookingTBL" />
+        <orm:identity>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="52e0d144-8ec9-4cbe-b781-07d7072005d0" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="trackingUuid1" property="trackingUuid" behavior="readwrite" uniqueId="a226bdd4-fc30-46b0-a99e-3689ddcf29a2" type="System.String">
+          <orm:column name="trackingUuid" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="message1" property="message" behavior="readwrite" uniqueId="bb828489-fca1-496d-9cb3-9351fb377006" type="System.String">
+          <orm:column name="message" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="masterListingChannel1" property="masterListingChannel" behavior="readwrite" uniqueId="1d04fc55-cdac-4af1-bbed-2c13e6fb9a9b" type="System.String">
+          <orm:column name="masterListingChannel" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="locale1" property="locale" behavior="readwrite" uniqueId="1e0626b7-ce10-42da-806a-291df0203999" type="System.String">
+          <orm:column name="locale" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="listingChannel1" property="listingChannel" behavior="readwrite" uniqueId="55b07d5b-5eac-4e74-a7e7-5ac99d6a97fc" type="System.String">
+          <orm:column name="listingChannel" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="inquiryId1" property="inquiryId" behavior="readwrite" uniqueId="9471cf77-71e7-4088-a2aa-8c56f44d1f0b" type="System.String">
+          <orm:column name="inquiryId" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="commission1" property="commission" behavior="readwrite" uniqueId="88a8dd0f-6371-4d14-8991-d97f71c609b4" type="System.String">
+          <orm:column name="commission" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="numberOfPets1" property="numberOfPets" behavior="readwrite" uniqueId="6ba9404a-346c-4436-821c-519e6ecd10b8" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="numberOfPets" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayLkPropertyTypeTBL" uniqueId="33952637-17f9-4d12-9553-e276a43f45e6">
+        <orm:table name="RntChnlHomeAwayLkPropertyTypeTBL" />
+        <orm:identity>
+          <orm:single-field field-name="code1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="ca594e96-2c6c-4cde-bb82-66254278e497" type="System.String">
+          <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="6e7d15f5-013b-4dbd-bdf6-6e63648a4d12" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayLkRoomSubTypeTBL" uniqueId="35d63a18-a38c-4310-a294-9a378a19e6e7">
+        <orm:table name="RntChnlHomeAwayLkRoomSubTypeTBL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="code1" />
+            <orm:single-field field-name="type1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="26768509-71f1-412f-b465-b9fd12264f26" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="type1" property="type" behavior="readwrite" uniqueId="e961d971-9274-4e25-a6fe-dad422ada56f" type="System.String">
+          <orm:column name="type" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="498dbf40-6bb6-4a81-baa6-c8b2e69045cd" type="System.String">
+          <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayLkFeatureValuesTBL" uniqueId="b9cd60c7-9d71-40e6-9d6b-9f883cff83a8">
+        <orm:table name="RntChnlHomeAwayLkFeatureValuesTBL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="code1" />
+            <orm:single-field field-name="type1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="c496d71a-948c-43b1-878a-b0141c9daef7" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="type1" property="type" behavior="readwrite" uniqueId="081dc0cf-7fd9-4c8a-888a-9887b6cd8534" type="System.String">
+          <orm:column name="type" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="81409e79-f749-4961-8807-4c70cc05b04f" type="System.String">
+          <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="subType1" property="subType" behavior="readwrite" uniqueId="8cc9b178-bca6-4318-a201-77736b59118b" type="System.String">
+          <orm:column name="subType" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="refType1" property="refType" behavior="readwrite" uniqueId="9196c356-9a6d-404e-87b4-fb4af152e683" type="System.String">
+          <orm:column name="refType" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="refId1" property="refId" behavior="readwrite" uniqueId="52d95bca-0203-4a2e-89a5-d31f863c4d96" type="System.String">
+          <orm:column name="refId" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayEstateRoomTB" uniqueId="4e2df6bc-b2b3-48b1-bb35-3e1597e77d51">
+        <orm:table name="RntChnlHomeAwayEstateRoomTB" />
+        <orm:identity>
+          <orm:key-generator name="guid">
+            <orm:key-generator-member property-name="uid" />
+          </orm:key-generator>
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="23f3e83d-44b8-4976-90a9-663f5500206c" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="pidEstate1" property="pidEstate" behavior="readwrite" uniqueId="bcf02d43-e74a-4f27-b831-c7c8ae695a43" type="System.Int32">
+          <orm:column name="pidEstate" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="roomType1" property="roomType" behavior="readwrite" uniqueId="95f2be37-b429-4725-8ce9-af02fbf17cb6" type="System.String">
+          <orm:column name="roomType" sql-type="varchar" nullable="false" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="roomSubType1" property="roomSubType" behavior="readwrite" uniqueId="4b85fc31-00fc-4de1-b3a3-adc122ee848e" type="System.String">
+          <orm:column name="roomSubType" sql-type="varchar" nullable="false" length="500" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="features1" property="features" behavior="readwrite" uniqueId="43dbb8b5-a18f-4665-9328-427769c8fea3" type="System.String">
+          <orm:column name="features" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayEstateRoomLN" uniqueId="f85cabd6-6dbc-42f3-827a-3e6307aa297c">
+        <orm:table name="RntChnlHomeAwayEstateRoomLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidRoom1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidRoom1" property="pidRoom" behavior="readwrite" uniqueId="ea0092ec-18f2-4804-9264-a945c6920afa" type="System.Guid">
+          <orm:column name="pidRoom" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="75467229-5df9-4702-afac-72c8ecf0e50f" type="System.String">
+          <orm:column name="pidLang" sql-type="varchar" nullable="false" length="5" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="1272d726-bcb5-4751-98d1-4cc7687e002a" type="System.String">
+          <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="a6e5fe9a-dd63-41a3-968f-e10e1fb00045" type="System.String">
+          <orm:column name="description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayEstateFeaturesRL" uniqueId="1de7f18b-5e69-4d17-ac08-e893493c064f">
+        <orm:table name="RntChnlHomeAwayEstateFeaturesRL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidEstate1" />
+            <orm:single-field field-name="type1" />
+            <orm:single-field field-name="code1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidEstate1" property="pidEstate" behavior="readwrite" uniqueId="7ca21277-419f-4a87-a3d3-c63c0bf9704d" type="System.Int32">
+          <orm:column name="pidEstate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="count1" property="count" behavior="readwrite" uniqueId="133e0b39-e1b1-4c02-8814-a57b604a12f6" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="count" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="type1" property="type" behavior="readwrite" uniqueId="2c1bff90-ff8f-433c-b651-66766bf52706" type="System.String">
+          <orm:column name="type" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="742e6889-c2fb-4adb-aa08-234a9137f71a" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayAcceptedPaymentFormTBL" uniqueId="f5ea073d-73fb-471e-bb84-dd6d9b9a684f">
+        <orm:table name="RntChnlHomeAwayAcceptedPaymentFormTBL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="paymentFormType1" />
+            <orm:single-field field-name="cardCode1" />
+            <orm:single-field field-name="cardType1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="paymentFormType1" property="paymentFormType" behavior="readwrite" uniqueId="a6fcb52b-6ae6-414b-8326-d5f7a5c12e32" type="System.String">
+          <orm:column name="paymentFormType" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="cardCode1" property="cardCode" behavior="readwrite" uniqueId="72cfad44-3336-424f-9e26-882620538371" type="System.String">
+          <orm:column name="cardCode" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="cardType1" property="cardType" behavior="readwrite" uniqueId="fc72d896-75f4-43e1-8c1a-42bafe6ba81c" type="System.String">
+          <orm:column name="cardType" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="dd30ee64-2a2d-405b-aba8-41bb1aa1ca3b" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlHomeAwayEstateTB" uniqueId="eaf891c7-c7d5-4d6b-9890-716124316c18">
+        <orm:table name="RntChnlHomeAwayEstateTB" />
+        <orm:identity>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="9d5e4014-4dba-4170-bf47-a8a58c2518eb" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="propertyType1" property="propertyType" behavior="readwrite" uniqueId="c3852152-ef68-454f-89ed-fb9c22c3b430" type="System.String">
+          <orm:column name="propertyType" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="mq_inner1" property="mq_inner" behavior="readwrite" uniqueId="4609415f-b923-4d0e-9cee-9ece31020081" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="mq_inner" sql-type="decimal" nullable="true" length="8" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="mq_inner_unit1" property="mq_inner_unit" behavior="readwrite" uniqueId="7d6dcfe6-26a1-499c-b253-e7d5976b26bd" type="System.String">
+          <orm:column name="mq_inner_unit" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="year_purchased1" property="year_purchased" behavior="readwrite" uniqueId="b022ed3d-8801-4a25-9438-88fb642b2385" type="System.String">
+          <orm:column name="year_purchased" sql-type="nvarchar" nullable="true" length="30" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="allow_traveler_zoom1" property="allow_traveler_zoom" behavior="readwrite" uniqueId="7e26904c-56a3-4d2c-a9aa-06f36fea6d23" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="allow_traveler_zoom" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="default_zoom_level1" property="default_zoom_level" behavior="readwrite" uniqueId="b668f076-e797-44e4-b4be-345ca9ff83a5" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="default_zoom_level" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="max_zoom_level1" property="max_zoom_level" behavior="readwrite" uniqueId="ece9bfa6-88f3-41de-b17a-37b17914c5df" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="max_zoom_level" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="show_exact_location1" property="show_exact_location" behavior="readwrite" uniqueId="4a52af50-f402-4d55-b12e-0c8b747d27f1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="show_exact_location" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="num_lounge_seating1" property="num_lounge_seating" behavior="readwrite" uniqueId="c8e71c14-21a7-4343-9ea2-431d4e46f486" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="num_lounge_seating" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="num_dining_seating1" property="num_dining_seating" behavior="readwrite" uniqueId="e68ffc7d-c29e-4752-a5fc-5f76733c8171" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="num_dining_seating" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="num_max_sleep1" property="num_max_sleep" behavior="readwrite" uniqueId="eb36196f-03d2-436a-a902-c4296a40b4ba" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="num_max_sleep" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="num_max_sleep_bed1" property="num_max_sleep_bed" behavior="readwrite" uniqueId="3005273a-8a18-46cc-aed2-d17776b9056e" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="num_max_sleep_bed" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="is_slave1" property="is_slave" behavior="readwrite" uniqueId="f199fc57-f0fe-4735-a88b-a3c70808e9bc" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="is_slave" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="is_active1" property="is_active" behavior="readwrite" uniqueId="348fbdb2-b49f-4a0a-8c52-c0f0ae1985a7" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="is_active" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pid_master_estate1" property="pid_master_estate" behavior="readwrite" uniqueId="7f1fdd75-99c0-4a6c-9a4c-e5477781ea42" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pid_master_estate" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="CancellationPolicyDescription1" property="CancellationPolicyDescription" behavior="readwrite" uniqueId="4417239b-344c-405c-a640-107eccb1fe82" type="System.String">
+          <orm:column name="CancellationPolicyDescription" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="CancellationPolicyType1" property="CancellationPolicyType" behavior="readwrite" uniqueId="fb959701-614e-4aa6-b701-663a8eb7d06f" type="System.String">
+          <orm:column name="CancellationPolicyType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="CancellationPolicyDeadlineDaysBeforeCheckIn1" property="CancellationPolicyDeadlineDaysBeforeCheckIn" behavior="readwrite" uniqueId="ea518b73-fca4-4342-bb11-e0cb8ffa4ca8" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CancellationPolicyDeadlineDaysBeforeCheckIn" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="CancellationPolicyCharge1" property="CancellationPolicyCharge" behavior="readwrite" uniqueId="9521893e-a9ed-407b-b995-9bcedf192b2a" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CancellationPolicyCharge" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="CancellationPolicyChargeType1" property="CancellationPolicyChargeType" behavior="readwrite" uniqueId="0520de0a-097d-43d9-80a7-d8002fadb91e" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CancellationPolicyChargeType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="changeAmount1" property="changeAmount" behavior="readwrite" uniqueId="ab6a3631-ccfb-4072-97ea-103b73c72ab1" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="changeAmount" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="changeIsDiscount1" property="changeIsDiscount" behavior="readwrite" uniqueId="aa9f88b7-8472-4204-b04a-6529a4282ca4" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="changeIsDiscount" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="changeIsPercentage1" property="changeIsPercentage" behavior="readwrite" uniqueId="eb14dc49-1b4d-4fe1-a1cd-939ddf4d2c13" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="changeIsPercentage" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="RntChnlHomeAwayRequestLOG">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="requesUrl" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="requestType" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="requestContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="responseContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="requestComments" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayOwnerTBL">
+        <orm:column name="username" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="advertiserAssignedId" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="ppb_advertiserAssignedId" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayEstateLN">
+        <orm:column name="pid_estate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="pid_lang" sql-type="varchar" nullable="false" length="5" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="sub_title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="summary" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="listing_story" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="unique_benifits" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="why_purchased" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="location_description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="location_other_activities" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="price_note" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="bathroom_details" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="bedroom_details" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="unit_name" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="unit_description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="features_description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayEstatePointsRL">
+        <orm:column name="pid_estate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="pid_point" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="distance" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="unit" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayEstateFeaturesRL">
+        <orm:column name="pidEstate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="count" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="type" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayBookingTBL">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int64" />
+        <orm:column name="trackingUuid" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="message" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="masterListingChannel" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="locale" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="listingChannel" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="inquiryId" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="commission" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="numberOfPets" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayLkPropertyTypeTBL">
+        <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayLkRoomSubTypeTBL">
+        <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="type" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayLkFeatureValuesTBL">
+        <orm:column name="code" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="type" sql-type="varchar" nullable="false" length="100" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="subType" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="refType" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="refId" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayEstateRoomTB">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="pidEstate" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="roomType" sql-type="varchar" nullable="false" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="roomSubType" sql-type="varchar" nullable="false" length="500" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="features" sql-type="nvarchar(max)" nullable="false" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayEstateRoomLN">
+        <orm:column name="pidRoom" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="pidLang" sql-type="varchar" nullable="false" length="5" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayAcceptedPaymentFormTBL">
+        <orm:column name="paymentFormType" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="cardCode" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="cardType" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="StringVariableLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="RntChnlHomeAwayEstateTB">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="propertyType" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="mq_inner" sql-type="decimal" nullable="true" length="8" scale="2" ado-type="Decimal" />
+        <orm:column name="mq_inner_unit" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="year_purchased" sql-type="nvarchar" nullable="true" length="30" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="allow_traveler_zoom" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="default_zoom_level" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="max_zoom_level" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="show_exact_location" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="num_lounge_seating" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="num_dining_seating" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="num_max_sleep" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="num_max_sleep_bed" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="is_slave" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="is_active" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="pid_master_estate" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="CancellationPolicyDescription" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="CancellationPolicyType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CancellationPolicyDeadlineDaysBeforeCheckIn" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="CancellationPolicyCharge" sql-type="decimal" nullable="true" length="18" scale="2" ado-type="Decimal" />
+        <orm:column name="CancellationPolicyChargeType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="changeAmount" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="changeIsDiscount" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="changeIsPercentage" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-leading-underscore>False</orm:remove-leading-underscore>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ModRentalDBConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=149.202.168.255,1433\SQLEXPRESS;initial catalog=rental_in_romeDB;persist security info=True;user id=mssql_remoteaccess;password=G5di8Pr9</AppConfigConnectionString>
+    <InitialCatalog>Maga_Rental_2</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <AddPrefix>db</AddPrefix>
+      </ClassRules>
+      <FieldRules />
+      <PropertyRules />
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Attributes</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings>
+      <DeploymentProject>MagaRentalCE</DeploymentProject>
+      <DeploymentDirectory>admin\modRental\utils</DeploymentDirectory>
+    </SchemaUpdateSettings>
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+        <Logging>
+          <MetricStoreSnapshotInterval>0</MetricStoreSnapshotInterval>
+        </Logging>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="e3747e49-8b18-4ad4-b943-329735160f5b" name="dbRntChnlHomeAwayRequestLOG" namespace="ModRental" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="uid">
+      <Property Id="9168aac0-9124-44e0-b177-389ff2df5533" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="d37a6f6d-40c2-45e8-8f9d-ea5f9076562f" name="logDateTime" type="DateTime" label="logDateTime : DateTime" nullable="true" kind="Persistent" fieldName="logDateTime1" />
+      <Property Id="12306cb5-0081-4756-99b0-20f62b51c265" name="requestComments" label="requestComments : String" kind="Persistent" fieldName="requestComments1" />
+      <Property Id="5181adb9-5c50-4dc6-b056-34cc6fc42dd1" name="requestContent" label="requestContent : String" kind="Persistent" fieldName="requestContent1" />
+      <Property Id="4ac35e2d-4694-4b8b-8ff1-b7b72b4fa1ea" name="requestType" label="requestType : String" kind="Persistent" fieldName="requestType1" />
+      <Property Id="8c393157-732d-47dd-b181-399499324ff6" name="requesUrl" label="requesUrl : String" kind="Persistent" fieldName="requesUrl1" />
+      <Property Id="9ddb476e-b630-4634-81cd-56681ce6f15d" name="responseContent" label="responseContent : String" kind="Persistent" fieldName="responseContent1" />
+    </DomainClass>
+    <DomainClass Id="90446628-e17e-4cfe-9be4-8a2f9c507c6c" name="dbRntChnlHomeAwayOwnerTBL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="e58ddc0f-817b-441f-854d-046c4a1fe4c1" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="ba83431e-e6b1-4c5a-94d9-0d96c12719cb" name="advertiserAssignedId" label="advertiserAssignedId : String" kind="Persistent" fieldName="advertiserAssignedId1" />
+      <Property Id="89301857-5fb0-4e55-aec9-8eefe4375b43" name="username" label="username : String" kind="Persistent" fieldName="username1" />
+      <Property Id="d01463b5-bc5c-4c2a-9398-9d65f95c3859" name="ppb_advertiserAssignedId" label="ppb_advertiserAssignedId : String" kind="Persistent" fieldName="ppb_advertiserAssignedId1" />
+    </DomainClass>
+    <DomainClass Id="3f8a4d56-6bbf-4aeb-9310-6cdc64e67281" name="dbRntChnlHomeAwayEstateLN" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="859a860f-2bd6-4b43-a77c-4312cdf5a4e9" name="pid_estate" type="Int32" label="pid_estate : Int32" kind="Persistent" identity="true" fieldName="pid_estate1" />
+      <Property Id="8ac1481a-9c5b-4fc9-b6e8-3fb7af3d15b3" name="pid_lang" label="pid_lang : String" kind="Persistent" identity="true" fieldName="pid_lang1" />
+      <Property Id="46d6decf-eae4-4b32-8a83-9473cb7731f0" name="bathroom_details" label="bathroom_details : String" kind="Persistent" fieldName="bathroom_details1" />
+      <Property Id="6ef89b55-1223-43d4-82c6-683611cd251e" name="bedroom_details" label="bedroom_details : String" kind="Persistent" fieldName="bedroom_details1" />
+      <Property Id="281e02ec-023c-4780-8d99-8a6eaaccfa88" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="307d990b-9490-443a-b0e7-edfe78a74ff3" name="features_description" label="features_description : String" kind="Persistent" fieldName="features_description1" />
+      <Property Id="6ceabf63-94b3-4b1e-b53e-2d14f8fa02ca" name="listing_story" label="listing_story : String" kind="Persistent" fieldName="listing_story1" />
+      <Property Id="d868919a-4c5b-4c87-a70c-95f6c7b03875" name="location_description" label="location_description : String" kind="Persistent" fieldName="location_description1" />
+      <Property Id="2ef8a3cd-f41e-464c-9bfe-50b5d94237bd" name="location_other_activities" label="location_other_activities : String" kind="Persistent" fieldName="location_other_activities1" />
+      <Property Id="f2d1d7f9-35c3-4de6-a028-54cf45d15d05" name="price_note" label="price_note : String" kind="Persistent" fieldName="price_note1" />
+      <Property Id="74633e87-ff85-449e-88d6-c9aecccf013a" name="sub_title" label="sub_title : String" kind="Persistent" fieldName="sub_title1" />
+      <Property Id="e19eb462-603a-4f84-9f83-35cc16f5640c" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="989b201f-bcc6-496b-b0de-698a5b0f8807" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+      <Property Id="c6bf8cfd-608d-441f-8478-86184fd74466" name="unique_benifits" label="unique_benifits : String" kind="Persistent" fieldName="unique_benifits1" />
+      <Property Id="8f16e970-8a55-4b6d-b839-70c47847a099" name="unit_description" label="unit_description : String" kind="Persistent" fieldName="unit_description1" />
+      <Property Id="98402342-1b5c-4576-b252-7a63116aeaaf" name="unit_name" label="unit_name : String" kind="Persistent" fieldName="unit_name1" />
+      <Property Id="0dd1fe3d-cfba-45f1-9c57-10457ca4cdac" name="why_purchased" label="why_purchased : String" kind="Persistent" fieldName="why_purchased1" />
+    </DomainClass>
+    <DomainClass Id="4696651f-74bf-4d95-ab47-bce391262a25" name="dbRntChnlHomeAwayEstatePointsRL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="9060285e-36f7-4d86-acf3-fc1cae2b42e8" name="pid_estate" type="Int32" label="pid_estate : Int32" kind="Persistent" identity="true" fieldName="pid_estate1" />
+      <Property Id="277f9613-1e03-4765-9755-aca105c0656a" name="pid_point" type="Int32" label="pid_point : Int32" kind="Persistent" identity="true" fieldName="pid_point1" />
+      <Property Id="f5c841c6-1a3b-4cd1-8ea6-e98fe1f997db" name="distance" label="distance : String" kind="Persistent" fieldName="distance1" />
+      <Property Id="f54271c0-f350-43cc-a933-fbe52daf6f5c" name="unit" label="unit : String" kind="Persistent" fieldName="unit1" />
+    </DomainClass>
+    <DomainClass Id="91afd62d-69d7-4d69-ad7d-214017d83f66" name="dbRntChnlHomeAwayBookingTBL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="52e0d144-8ec9-4cbe-b781-07d7072005d0" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="a226bdd4-fc30-46b0-a99e-3689ddcf29a2" name="trackingUuid" label="trackingUuid : String" kind="Persistent" fieldName="trackingUuid1" />
+      <Property Id="bb828489-fca1-496d-9cb3-9351fb377006" name="message" label="message : String" kind="Persistent" fieldName="message1" />
+      <Property Id="1d04fc55-cdac-4af1-bbed-2c13e6fb9a9b" name="masterListingChannel" label="masterListingChannel : String" kind="Persistent" fieldName="masterListingChannel1" />
+      <Property Id="1e0626b7-ce10-42da-806a-291df0203999" name="locale" label="locale : String" kind="Persistent" fieldName="locale1" />
+      <Property Id="55b07d5b-5eac-4e74-a7e7-5ac99d6a97fc" name="listingChannel" label="listingChannel : String" kind="Persistent" fieldName="listingChannel1" />
+      <Property Id="9471cf77-71e7-4088-a2aa-8c56f44d1f0b" name="inquiryId" label="inquiryId : String" kind="Persistent" fieldName="inquiryId1" />
+      <Property Id="88a8dd0f-6371-4d14-8991-d97f71c609b4" name="commission" label="commission : String" kind="Persistent" fieldName="commission1" />
+      <Property Id="6ba9404a-346c-4436-821c-519e6ecd10b8" name="numberOfPets" type="Int32" label="numberOfPets : Int32" nullable="true" kind="Persistent" fieldName="numberOfPets1" />
+    </DomainClass>
+    <DomainClass Id="33952637-17f9-4d12-9553-e276a43f45e6" name="dbRntChnlHomeAwayLkPropertyTypeTBL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="ca594e96-2c6c-4cde-bb82-66254278e497" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+      <Property Id="6e7d15f5-013b-4dbd-bdf6-6e63648a4d12" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+    </DomainClass>
+    <DomainClass Id="35d63a18-a38c-4310-a294-9a378a19e6e7" name="dbRntChnlHomeAwayLkRoomSubTypeTBL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="26768509-71f1-412f-b465-b9fd12264f26" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+      <Property Id="e961d971-9274-4e25-a6fe-dad422ada56f" name="type" label="type : String" kind="Persistent" identity="true" fieldName="type1" />
+      <Property Id="498dbf40-6bb6-4a81-baa6-c8b2e69045cd" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="b9cd60c7-9d71-40e6-9d6b-9f883cff83a8" name="dbRntChnlHomeAwayLkFeatureValuesTBL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="c496d71a-948c-43b1-878a-b0141c9daef7" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+      <Property Id="081dc0cf-7fd9-4c8a-888a-9887b6cd8534" name="type" label="type : String" kind="Persistent" identity="true" fieldName="type1" />
+      <Property Id="81409e79-f749-4961-8807-4c70cc05b04f" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+      <Property Id="8cc9b178-bca6-4318-a201-77736b59118b" name="subType" label="subType : String" kind="Persistent" fieldName="subType1" />
+      <Property Id="9196c356-9a6d-404e-87b4-fb4af152e683" name="refType" label="refType : String" kind="Persistent" fieldName="refType1" />
+      <Property Id="52d95bca-0203-4a2e-89a5-d31f863c4d96" name="refId" label="refId : String" kind="Persistent" fieldName="refId1" />
+    </DomainClass>
+    <DomainClass Id="4e2df6bc-b2b3-48b1-bb35-3e1597e77d51" name="dbRntChnlHomeAwayEstateRoomTB" namespace="ModRental" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="uid">
+      <Property Id="23f3e83d-44b8-4976-90a9-663f5500206c" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="43dbb8b5-a18f-4665-9328-427769c8fea3" name="features" label="features : String" kind="Persistent" fieldName="features1" />
+      <Property Id="bcf02d43-e74a-4f27-b831-c7c8ae695a43" name="pidEstate" type="Int32" label="pidEstate : Int32" kind="Persistent" fieldName="pidEstate1" />
+      <Property Id="4b85fc31-00fc-4de1-b3a3-adc122ee848e" name="roomSubType" label="roomSubType : String" kind="Persistent" fieldName="roomSubType1" />
+      <Property Id="95f2be37-b429-4725-8ce9-af02fbf17cb6" name="roomType" label="roomType : String" kind="Persistent" fieldName="roomType1" />
+    </DomainClass>
+    <DomainClass Id="f85cabd6-6dbc-42f3-827a-3e6307aa297c" name="dbRntChnlHomeAwayEstateRoomLN" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="75467229-5df9-4702-afac-72c8ecf0e50f" name="pidLang" label="pidLang : String" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="ea0092ec-18f2-4804-9264-a945c6920afa" name="pidRoom" type="Guid" label="pidRoom : Guid" kind="Persistent" identity="true" fieldName="pidRoom1" />
+      <Property Id="a6e5fe9a-dd63-41a3-968f-e10e1fb00045" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="1272d726-bcb5-4751-98d1-4cc7687e002a" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="1de7f18b-5e69-4d17-ac08-e893493c064f" name="dbRntChnlHomeAwayEstateFeaturesRL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="742e6889-c2fb-4adb-aa08-234a9137f71a" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+      <Property Id="7ca21277-419f-4a87-a3d3-c63c0bf9704d" name="pidEstate" type="Int32" label="pidEstate : Int32" kind="Persistent" identity="true" fieldName="pidEstate1" />
+      <Property Id="2c1bff90-ff8f-433c-b651-66766bf52706" name="type" label="type : String" kind="Persistent" identity="true" fieldName="type1" />
+      <Property Id="133e0b39-e1b1-4c02-8814-a57b604a12f6" name="count" type="Int32" label="count : Int32" nullable="true" kind="Persistent" fieldName="count1" />
+    </DomainClass>
+    <DomainClass Id="f5ea073d-73fb-471e-bb84-dd6d9b9a684f" name="dbRntChnlHomeAwayAcceptedPaymentFormTBL" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="72cfad44-3336-424f-9e26-882620538371" name="cardCode" label="cardCode : String" kind="Persistent" identity="true" fieldName="cardCode1" />
+      <Property Id="fc72d896-75f4-43e1-8c1a-42bafe6ba81c" name="cardType" label="cardType : String" kind="Persistent" identity="true" fieldName="cardType1" />
+      <Property Id="a6fcb52b-6ae6-414b-8326-d5f7a5c12e32" name="paymentFormType" label="paymentFormType : String" kind="Persistent" identity="true" fieldName="paymentFormType1" />
+      <Property Id="dd30ee64-2a2d-405b-aba8-41bb1aa1ca3b" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+    </DomainClass>
+    <DomainClass Id="eaf891c7-c7d5-4d6b-9890-716124316c18" name="dbRntChnlHomeAwayEstateTB" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="9d5e4014-4dba-4170-bf47-a8a58c2518eb" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="7e26904c-56a3-4d2c-a9aa-06f36fea6d23" name="allow_traveler_zoom" type="Int32" label="allow_traveler_zoom : Int32" nullable="true" kind="Persistent" fieldName="allow_traveler_zoom1" />
+      <Property Id="9521893e-a9ed-407b-b995-9bcedf192b2a" name="CancellationPolicyCharge" type="Decimal" label="CancellationPolicyCharge : Decimal" nullable="true" kind="Persistent" fieldName="CancellationPolicyCharge1" />
+      <Property Id="0520de0a-097d-43d9-80a7-d8002fadb91e" name="CancellationPolicyChargeType" type="Int32" label="CancellationPolicyChargeType : Int32" nullable="true" kind="Persistent" fieldName="CancellationPolicyChargeType1" />
+      <Property Id="ea518b73-fca4-4342-bb11-e0cb8ffa4ca8" name="CancellationPolicyDeadlineDaysBeforeCheckIn" type="Int32" label="CancellationPolicyDeadlineDaysBeforeCheckIn : Int32" nullable="true" kind="Persistent" fieldName="CancellationPolicyDeadlineDaysBeforeCheckIn1" />
+      <Property Id="4417239b-344c-405c-a640-107eccb1fe82" name="CancellationPolicyDescription" label="CancellationPolicyDescription : String" kind="Persistent" fieldName="CancellationPolicyDescription1" />
+      <Property Id="fb959701-614e-4aa6-b701-663a8eb7d06f" name="CancellationPolicyType" label="CancellationPolicyType : String" kind="Persistent" fieldName="CancellationPolicyType1" />
+      <Property Id="ab6a3631-ccfb-4072-97ea-103b73c72ab1" name="changeAmount" type="Int32" label="changeAmount : Int32" nullable="true" kind="Persistent" fieldName="changeAmount1" />
+      <Property Id="aa9f88b7-8472-4204-b04a-6529a4282ca4" name="changeIsDiscount" type="Int32" label="changeIsDiscount : Int32" nullable="true" kind="Persistent" fieldName="changeIsDiscount1" />
+      <Property Id="eb14dc49-1b4d-4fe1-a1cd-939ddf4d2c13" name="changeIsPercentage" type="Int32" label="changeIsPercentage : Int32" nullable="true" kind="Persistent" fieldName="changeIsPercentage1" />
+      <Property Id="b668f076-e797-44e4-b4be-345ca9ff83a5" name="default_zoom_level" type="Int32" label="default_zoom_level : Int32" nullable="true" kind="Persistent" fieldName="default_zoom_level1" />
+      <Property Id="348fbdb2-b49f-4a0a-8c52-c0f0ae1985a7" name="is_active" type="Int32" label="is_active : Int32" nullable="true" kind="Persistent" fieldName="is_active1" />
+      <Property Id="f199fc57-f0fe-4735-a88b-a3c70808e9bc" name="is_slave" type="Int32" label="is_slave : Int32" nullable="true" kind="Persistent" fieldName="is_slave1" />
+      <Property Id="ece9bfa6-88f3-41de-b17a-37b17914c5df" name="max_zoom_level" type="Int32" label="max_zoom_level : Int32" nullable="true" kind="Persistent" fieldName="max_zoom_level1" />
+      <Property Id="4609415f-b923-4d0e-9cee-9ece31020081" name="mq_inner" type="Decimal" label="mq_inner : Decimal" nullable="true" kind="Persistent" fieldName="mq_inner1" />
+      <Property Id="7d6dcfe6-26a1-499c-b253-e7d5976b26bd" name="mq_inner_unit" label="mq_inner_unit : String" kind="Persistent" fieldName="mq_inner_unit1" />
+      <Property Id="e68ffc7d-c29e-4752-a5fc-5f76733c8171" name="num_dining_seating" type="Int32" label="num_dining_seating : Int32" nullable="true" kind="Persistent" fieldName="num_dining_seating1" />
+      <Property Id="c8e71c14-21a7-4343-9ea2-431d4e46f486" name="num_lounge_seating" type="Int32" label="num_lounge_seating : Int32" nullable="true" kind="Persistent" fieldName="num_lounge_seating1" />
+      <Property Id="eb36196f-03d2-436a-a902-c4296a40b4ba" name="num_max_sleep" type="Int32" label="num_max_sleep : Int32" nullable="true" kind="Persistent" fieldName="num_max_sleep1" />
+      <Property Id="3005273a-8a18-46cc-aed2-d17776b9056e" name="num_max_sleep_bed" type="Int32" label="num_max_sleep_bed : Int32" nullable="true" kind="Persistent" fieldName="num_max_sleep_bed1" />
+      <Property Id="7f1fdd75-99c0-4a6c-9a4c-e5477781ea42" name="pid_master_estate" type="Int32" label="pid_master_estate : Int32" nullable="true" kind="Persistent" fieldName="pid_master_estate1" />
+      <Property Id="c3852152-ef68-454f-89ed-fb9c22c3b430" name="propertyType" label="propertyType : String" kind="Persistent" fieldName="propertyType1" />
+      <Property Id="4a52af50-f402-4d55-b12e-0c8b747d27f1" name="show_exact_location" type="Int32" label="show_exact_location : Int32" nullable="true" kind="Persistent" fieldName="show_exact_location1" />
+      <Property Id="b022ed3d-8801-4a25-9438-88fb642b2385" name="year_purchased" label="year_purchased : String" kind="Persistent" fieldName="year_purchased1" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="290b1f22-f800-45d8-a41f-853d875eb781">
+      <domainContainer name="DCchnlHomeAway" namespace="ModRental" showPropertiesCompartment="true">
+        <entitySetProperty name="dbRntChnlHomeAwayRequestLOGs" namespace="ModRental" type="dbRntChnlHomeAwayRequestLOG" label="dbRntChnlHomeAwayRequestLOGs : IQueryable&lt;ModRental.dbRntChnlHomeAwayRequestLOG&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayOwnerTBLs" namespace="ModRental" type="dbRntChnlHomeAwayOwnerTBL" label="dbRntChnlHomeAwayOwnerTBLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayOwnerTBL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayEstateLNs" namespace="ModRental" type="dbRntChnlHomeAwayEstateLN" label="dbRntChnlHomeAwayEstateLNs : IQueryable&lt;ModRental.dbRntChnlHomeAwayEstateLN&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayEstatePointsRLs" namespace="ModRental" type="dbRntChnlHomeAwayEstatePointsRL" label="dbRntChnlHomeAwayEstatePointsRLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayEstatePointsRL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayBookingTBLs" namespace="ModRental" type="dbRntChnlHomeAwayBookingTBL" label="dbRntChnlHomeAwayBookingTBLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayBookingTBL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayLkPropertyTypeTBLs" namespace="ModRental" type="dbRntChnlHomeAwayLkPropertyTypeTBL" label="dbRntChnlHomeAwayLkPropertyTypeTBLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayLkPropertyTypeTBL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayLkRoomSubTypeTBLs" namespace="ModRental" type="dbRntChnlHomeAwayLkRoomSubTypeTBL" label="dbRntChnlHomeAwayLkRoomSubTypeTBLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayLkRoomSubTypeTBL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayLkFeatureValuesTBLs" namespace="ModRental" type="dbRntChnlHomeAwayLkFeatureValuesTBL" label="dbRntChnlHomeAwayLkFeatureValuesTBLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayLkFeatureValuesTBL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayEstateRoomTBs" namespace="ModRental" type="dbRntChnlHomeAwayEstateRoomTB" label="dbRntChnlHomeAwayEstateRoomTBs : IQueryable&lt;ModRental.dbRntChnlHomeAwayEstateRoomTB&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayEstateRoomLNs" namespace="ModRental" type="dbRntChnlHomeAwayEstateRoomLN" label="dbRntChnlHomeAwayEstateRoomLNs : IQueryable&lt;ModRental.dbRntChnlHomeAwayEstateRoomLN&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayEstateFeaturesRLs" namespace="ModRental" type="dbRntChnlHomeAwayEstateFeaturesRL" label="dbRntChnlHomeAwayEstateFeaturesRLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayEstateFeaturesRL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayAcceptedPaymentFormTBLs" namespace="ModRental" type="dbRntChnlHomeAwayAcceptedPaymentFormTBL" label="dbRntChnlHomeAwayAcceptedPaymentFormTBLs : IQueryable&lt;ModRental.dbRntChnlHomeAwayAcceptedPaymentFormTBL&gt;" />
+        <entitySetProperty name="dbRntChnlHomeAwayEstateTBs" namespace="ModRental" type="dbRntChnlHomeAwayEstateTB" label="dbRntChnlHomeAwayEstateTBs : IQueryable&lt;ModRental.dbRntChnlHomeAwayEstateTB&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

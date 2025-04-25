@@ -1,0 +1,12 @@
+.tabTitlespa {
+	color: #FFFFFF;
+    float: right;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    height: 26px;
+    margin: 0 18px 0 0;
+    padding: 6px 0 0 10px;
+    width: 225px;
+	background:url(../images/css/bg-tab-arancio.png) top left no-repeat;
+}

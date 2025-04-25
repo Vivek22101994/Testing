@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="magaMail_">
+  <DataContextMoniker Name="/magaMail_DataContext" />
+  <nestedChildShapes>
+    <classShape Id="2fd68665-15f2-4ffb-aad3-037a7b9073df" absoluteBounds="3.25, 2.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaMail_DataContext/MAIL_LN_TEMPLATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d3d0a06-9b75-45cc-85ec-3fa036ddccab" absoluteBounds="3.265, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c697827c-d894-46c3-9243-a337d7373a69" absoluteBounds="3.25, 4, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaMail_DataContext/MAIL_VIEW_TEMPLATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f734b245-6333-4e1f-92e2-7f49e9fce44c" absoluteBounds="3.265, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="320d9f21-36a2-411f-b140-aa8afe5b108e" absoluteBounds="3.25, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaMail_DataContext/MAIL_TB_TEMPLATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e2a819a-a1b8-4fe2-b648-35694ee929dd" absoluteBounds="3.2649999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="367790d4-8a29-430c-9ae2-a86c9268f26d" absoluteBounds="0.5, 0.625, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/magaMail_DataContext/MAIL_TBL_MESSAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16f08fb4-5c6b-4c6e-8615-cfde08e6d498" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

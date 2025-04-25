@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 24.875" name="magaLocation_">
+  <DataContextMoniker Name="/magaLocation_DataContext" />
+  <nestedChildShapes>
+    <classShape Id="105554ec-c194-4d88-bac0-1d6697eabcc9" absoluteBounds="3.5, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_TB_CITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e01dffd-4c58-439f-b3e6-b8fbaca6cc2e" absoluteBounds="3.515, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f9e207b-e832-44a5-84ec-1ec9274b43d9" absoluteBounds="3.5, 3.25, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_LN_CITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba8ed144-55c2-429c-b47b-fc1610d7ad0c" absoluteBounds="3.515, 3.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1aca5f4e-0e03-4357-bbf5-fbe16a1fc1de" absoluteBounds="3.5, 5.75, 2, 4.2708154296875005">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_VIEW_CITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64c6ab99-6e12-4794-ac49-2c03aa495c96" absoluteBounds="3.515, 6.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5abc142e-16a0-47d7-b14c-c110ae386858" absoluteBounds="6.125, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_TB_ZONE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cd7a944-e22f-4107-8026-6c256aa3504f" absoluteBounds="6.14, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33299c57-9d54-4e7d-a484-f89716d6d983" absoluteBounds="6.5, 3.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_LN_ZONE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c323cb40-0383-4708-a3c8-74bbb818db33" absoluteBounds="6.515, 3.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a742de32-64a5-47e2-8c1b-290e88d0bd80" absoluteBounds="6.5, 6, 2, 4.2708154296875">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_VIEW_ZONE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4094b4d-2b4c-47c2-8db4-8ec05e3067f6" absoluteBounds="6.515, 6.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56f57044-4098-4f07-bd35-22df329392c2" absoluteBounds="2.75, 11.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_TB_POINT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="552c7176-1a1b-46bd-9ded-d991fa70bc54" absoluteBounds="2.765, 12.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45bb9c3f-a2e8-4f0d-9634-3d52213d8412" absoluteBounds="0.5, 15.875, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_LN_POINT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2cfb934-f2cb-42e3-9d84-53124cfd3731" absoluteBounds="0.515, 16.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c0f1b34-a95b-46d5-b526-3dbf3cb6bdaa" absoluteBounds="2.75, 13.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_LN_POINT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b2ee4d3-a2f9-46cd-acf4-d0ff4bf33ca1" absoluteBounds="2.765, 14.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1548e9c-8126-40e2-9150-a2ffdfe972df" absoluteBounds="2.75, 16.875, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_VIEW_POINT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b44dbb00-dc6f-4db2-aeac-3a2ca639ef62" absoluteBounds="2.765, 17.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a20cc51-ed6b-4718-bced-94273f7f8cb8" absoluteBounds="0.5, 19, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_VIEW_POINT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ee36a44-5a6d-44a9-a925-e7b412129588" absoluteBounds="0.51499999999999968, 19.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b835fcef-fb88-45b0-9cd9-2c8bbff171d1" absoluteBounds="0.5, 11.875, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_TB_POINT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd81bba9-a2f3-48e2-bfee-15de18bc802a" absoluteBounds="0.51499999999999968, 12.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a196cb3-d248-466f-80f8-360355103a59" absoluteBounds="0.875, 1.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/magaLocation_DataContext/LOC_LK_COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27ffdc64-f4ba-4c0b-8193-d24c3698c521" absoluteBounds="0.89000000000000057, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.125" name="magaPayPal_">
+  <DataContextMoniker Name="/magaPayPal_DataContext" />
+  <nestedChildShapes>
+    <classShape Id="fed70a76-630a-4703-9514-7a94214c091e" absoluteBounds="0.5, 0.5, 2, 12.3474755859375">
+      <DataClassMoniker Name="/magaPayPal_DataContext/PP_TBL_TRANSACTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1aa2497-80ba-4655-8e17-2a7656301549" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 11.7874755859375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

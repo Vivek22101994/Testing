@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 15.875, 19.375" name="DCchnlExpedia" isDefault="true">
+    <DomainModelMoniker name="/DCchnlExpedia" />
+    <nestedChildShapes>
+      <classShape Id="429e56f7-3838-46d3-a213-a48bf2318091" absoluteBounds="0.5, 0.5, 1.5, 2.724278971354166">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRequestLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="add0e554-0a2c-4d70-875d-8423051ba7c5" absoluteBounds="0.515, 1.0099999999999998, 1.4700000000000002, 1.5954996744791667" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="91729040-71eb-47a0-a7f2-875afe383d4b" absoluteBounds="0.515, 2.6154996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a4dbd61c-74bd-4c79-b760-f5197d231044" absoluteBounds="0.515, 2.8748893229166663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="085c987d-1a47-4e1f-8994-3761596f42b9" absoluteBounds="4, 0.5, 1.5, 2.724278971354166">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="0978704d-9f65-499a-8ef6-35d0a8a025ce" absoluteBounds="4.0150000000000006, 1.0099999999999998, 1.4700000000000002, 1.5954996744791667" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d3835ea4-04e9-4556-9666-926aa5c23f61" absoluteBounds="4.0150000000000006, 2.6154996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a49619ad-4c25-4f61-b37a-d30137c257c9" absoluteBounds="4.0150000000000006, 2.8748893229166663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="1f6a78e4-ddac-45b5-823d-1902d4906868" absoluteBounds="4, 3.375, 1.5, 7.724116210937499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRatePlanTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="08dfe544-3c0d-49e8-af3a-ecf463b02485" absoluteBounds="4.0150000000000006, 3.885, 1.4700000000000002, 6.5953369140625" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d500f16d-2b8a-45aa-ba0e-0878a14880ea" absoluteBounds="4.015, 10.4903369140625, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="0a233b2b-4a13-4a79-8f76-bfee991690d2" absoluteBounds="4.015, 10.7497265625, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="1a209932-a302-484a-bed8-6c46dedf3ff1" absoluteBounds="6, 0.5, 1.5, 1.9550732421875003">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaEstateTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="c04051c8-a3c6-414f-b24a-31aa6c220201" absoluteBounds="6.015, 1.01, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="f7c8c019-0d2c-4a52-b2e5-8737296c6d20" absoluteBounds="6.015, 1.8462939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c6140241-c6fa-4158-a907-26afeac92b9e" absoluteBounds="6.015, 2.1056835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="50c24899-b58a-48a8-9101-9b6fae1ab11f" absoluteBounds="9.75, 5.625, 1.5, 2.3396761067708329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRateThresholdTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="5be32d52-5a0a-45aa-9259-78c73ccd6a53" absoluteBounds="9.765, 6.135, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="bd2cdb50-845c-436f-bef9-925c31130dee" absoluteBounds="9.765, 7.3558968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c8302bfe-66bb-4274-903f-31656865eb64" absoluteBounds="9.765, 7.6152864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="cf1d4d0d-a793-4ddc-8688-8cc01048acb3" absoluteBounds="10.75, 0.875, 1.5, 2.3396761067708329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRatePlanLinkDefinitionTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="35039dc7-2d66-4a00-8842-bfd072d84227" absoluteBounds="10.765, 1.3849999999999998, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="82d2845d-5cf6-43b6-81f9-185065c08596" absoluteBounds="10.765, 2.6058968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="80e4ae84-7f04-46f4-8b16-06076f689f19" absoluteBounds="10.765, 2.8652864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="be0790fc-29e3-4de6-a2df-ce045217059c" absoluteBounds="12.625, 0.5, 1.5, 3.493484700520832">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRatePlanDayOfWeekBookingRestrictionTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="a9346756-bbd4-43b9-9071-93f7bb6c3a3a" absoluteBounds="12.64, 1.0099999999999998, 1.4700000000000002, 2.364705403645833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b95833f7-d557-48cb-90db-fbe2d787497f" absoluteBounds="12.64, 3.3847054036458326, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a3945a35-e768-4aa2-9f9e-e140107680d8" absoluteBounds="12.64, 3.6440950520833324, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="fe056354-d017-451c-8f29-c011d5ad2d25" absoluteBounds="13.875, 6, 1.5, 4.262690429687499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRatePlanCompensationTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="13b8f935-f9c0-4b22-88bd-a2624069ddbd" absoluteBounds="13.89, 6.51, 1.4700000000000002, 3.1339111328125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a3bd3d0c-fc1c-437d-8f77-0c783216d03e" absoluteBounds="13.89, 9.6539111328125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3393f6f6-3a83-4a25-91c0-7bfbd4fd1615" absoluteBounds="13.89, 9.91330078125, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="c83cd7ba-b5f9-41cf-9a22-a0b8ea698dd8" absoluteBounds="9.5, 2, 1.5, 3.3011832682291651">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRatePlanCancelPolicyTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="5fa0d9a5-8ddc-49b1-8ad2-7870c8bf64b8" absoluteBounds="9.515, 2.51, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="14c77835-1b6c-435a-b4ca-7ca9ffca58e0" absoluteBounds="9.515, 4.6924039713541674, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="1eec92a1-1ee1-4e1d-ae7b-142bfed7be61" absoluteBounds="9.515, 4.9517936197916654, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="2295bf75-e2ee-4325-bbd7-2a9b7b4f348b" absoluteBounds="11.375, 6.625, 1.5, 2.3396761067708329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRatePlanCancelPolicyPenaltyTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="55a34e82-e7c9-442f-930c-e39b115b0a52" absoluteBounds="11.39, 7.135, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b83521a8-4bd7-4de1-b0a1-ab132a0e4337" absoluteBounds="11.39, 8.3558968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="f5f917e1-4205-432a-935c-1a24d514f77f" absoluteBounds="11.39, 8.6152864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="7340b0bd-9085-4011-8be1-e5750f8c029f" absoluteBounds="11.5, 4.25, 1.5, 2.147374674479166">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeOccupancyByAgeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="bfc5f855-499a-4e97-9644-bb616f44eb99" absoluteBounds="11.515, 4.76, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3b47b759-c2cb-4744-80c3-491d53bc0bf6" absoluteBounds="11.515, 5.7885953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="130595e9-46bb-44de-84fa-93f0182c2329" absoluteBounds="11.515, 6.0479850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="ac600581-a6fd-4817-9679-306430b0ccf6" absoluteBounds="14.125, 3.75, 1.5, 1.955073242187499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeBedTypeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="89cc050a-c095-4cf6-bf91-7a8102876f1a" absoluteBounds="14.14, 4.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="eaee5413-0377-4758-b28a-019a782c1767" absoluteBounds="14.14, 5.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3af6aa91-abdd-4016-a7a8-eb9c6e2a31b8" absoluteBounds="14.14, 5.3556835937499994, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="c470e3e3-8895-4274-9aa9-1b95136e7600" absoluteBounds="6.25, 2.625, 2.25, 3.685786132812499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaBookingTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d99c7683-398b-433e-9451-f7bca8f38405" absoluteBounds="6.265, 3.135, 2.2199999999999998, 2.5570068359375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="92cfce77-b281-46a7-a6f1-762c1ca1d482" absoluteBounds="6.265, 5.7020068359375, 2.2199999999999998, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="28ebb76d-970d-4354-ad69-2a327abc2782" absoluteBounds="6.265, 5.9613964843749994, 2.2199999999999998, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="51b9bfd9-caa7-461f-8ed0-313bfd24a89c" absoluteBounds="3.5, 3.375, 1.5, 4.0703889973958329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaEstateRateChangesRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="7bd084dc-2a39-42a7-aafa-885edaf5292d" absoluteBounds="3.515, 3.885, 1.4700000000000002, 2.941609700520833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="dd90ca7e-bc70-47be-9045-59019349a17f" absoluteBounds="3.515, 6.8366097005208317, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="74c8148d-72cf-4316-a454-638c0fae91a5" absoluteBounds="3.515, 7.0959993489583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="e987bb20-7c3a-4ad1-af68-b909a7e7a0ba" absoluteBounds="1, 3.5, 1.5, 4.4549918619791669">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaEstateClosedDatesRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="ac26b14d-49a8-48cd-8501-da2e83cd62eb" absoluteBounds="1.0150000000000001, 4.01, 1.4700000000000002, 3.326212565104167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e8515f01-5b0a-43fc-91f0-c550950f99aa" absoluteBounds="1.0150000000000001, 7.3462125651041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3edf8c47-e38d-49a0-86a5-fe9dda5aa8bf" absoluteBounds="1.0150000000000001, 7.6056022135416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="26c0779a-74e5-4f6c-a4e8-350e80107ddd" absoluteBounds="0.5, 8.5, 1.5, 3.3011832682291651">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRatesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d25e57bf-b89b-4c4f-a111-95aa2a281f86" absoluteBounds="0.515, 9.01, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ba53932f-7a88-4b92-9789-cbd113f8fccb" absoluteBounds="0.515, 11.192403971354167, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="87e5aa77-f0b3-4f85-9248-f335dfcd450a" absoluteBounds="0.515, 11.451793619791665, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="866882b3-0fbf-4c35-9e58-2e9c379ea958" absoluteBounds="6, 6.75, 1.5, 2.531977539062499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaAvailabilityTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="6ab7c212-6a26-4f2c-9c27-af0676f1ab6f" absoluteBounds="6.015, 7.26, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4c1570da-6cc5-4b8e-b6be-cfa246c8b6ec" absoluteBounds="6.015, 8.6731982421875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d7a47a00-5d66-4ae7-a71b-6a247eaae7c9" absoluteBounds="6.015, 8.932587890625, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="89b4143f-6bcf-42d7-af88-d96fe599319b" absoluteBounds="8, 0.5, 1.5, 2.3396761067708334">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaEstateAllotmentChangeRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f03d3ced-f467-43ee-a1f4-8e82de63f2b0" absoluteBounds="8.015, 1.01, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="1b3211fe-06bd-4250-84e4-484e9380791a" absoluteBounds="8.015, 2.2308968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b7fa5b38-d41e-4e14-9939-8ff44979e1d9" absoluteBounds="8.015, 2.4902864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="e6f50cb9-5266-44b6-a916-9dd2d64ea949" absoluteBounds="6, 9.75, 1.5, 1.7627718098958329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaEstateRoomRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="98fd88f7-7f3d-488e-a1c6-3ba6a7e0e1c2" absoluteBounds="6.015, 10.26, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e3b54826-62b7-4641-ab4e-84b50861cfb7" absoluteBounds="6.015, 10.903992513020834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ad1e842d-525c-4bf3-a959-43fac8b38917" absoluteBounds="6.015, 11.163382161458333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="d3460195-20d6-430c-992a-e5d0828e8fc3" absoluteBounds="8, 8.375, 1.5, 1.7627718098958329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaAssignedEstateRoomRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="2092715b-1861-4a64-9792-cdbd10df487c" absoluteBounds="8.015, 8.885, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e1385dd7-4809-4239-a267-b7ec79418933" absoluteBounds="8.015, 9.5289925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="e4d76fe2-f7a3-4467-ab93-b669d7f2534f" absoluteBounds="8.015, 9.7883821614583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="1d0fa0d3-bef9-4212-a29c-bb58efa9c8d7" absoluteBounds="6.375, 13.125, 1.5, 2.1473746744791669">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomAmenitiesValuesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="a7f7e693-d228-40a2-8a49-dc569061e11d" absoluteBounds="6.39, 13.635, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c37f88dc-2968-4911-8293-b3b020eeca15" absoluteBounds="6.39, 14.663595377604167, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="860f0e99-8d76-40ff-996f-94a7cde99c74" absoluteBounds="6.39, 14.922985026041667, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="8a20add7-4ed1-4057-9cbf-084ae8e0bd33" absoluteBounds="8, 11.375, 1.5, 1.955073242187499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomAmenitiesDetailCodeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="9855abc8-ebc2-4909-959a-6afc299bdb79" absoluteBounds="8.015, 11.885, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="020febcb-a452-4794-8207-4b3541b00c1c" absoluteBounds="8.015, 12.7212939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="f3d53ca6-08be-4a66-90ac-525c3345501d" absoluteBounds="8.015, 12.98068359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="2ebb10e5-edaf-4a8c-8b69-a82a6895921b" absoluteBounds="8.5, 12.25, 1.5, 1.7627718098958329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaPropertyTypeRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="ae0aa564-4858-4b8b-9f1b-1ec0be985150" absoluteBounds="8.515, 12.76, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ca7d733e-be08-412c-995e-443b10d39e36" absoluteBounds="8.515, 13.403992513020834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="0054672a-1f6d-4746-9648-5eb4e86c7643" absoluteBounds="8.515, 13.663382161458333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="26a9fa0a-8f58-4e48-a79d-0198dbba2201" absoluteBounds="2.5, 11.5, 1.5, 1.5704703776041669">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaLkRoomTypeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="273f8106-5ac7-4e47-9f8c-95882ed9b78a" absoluteBounds="2.515, 12.01, 1.4700000000000002, 0.44169108072916663" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="c9c0e043-1acb-454a-a1dd-0ad0f5bfe45a" absoluteBounds="2.515, 12.461691080729167, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="2babacaf-7df4-474b-ae76-8b39cbb62447" absoluteBounds="2.515, 12.721080729166667, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="47ca760a-903a-4ee9-9058-96877a20b7c2" absoluteBounds="8, 10.5, 1.5, 2.531977539062499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaLKRoomAmenitiesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="01d2f860-2dbc-4777-a512-224d37fd5d2f" absoluteBounds="8.015, 11.01, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b616a345-28a6-4ac9-8b57-a5ccc690cd4f" absoluteBounds="8.015, 12.4231982421875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a3cab230-4b6c-4c79-a673-fc1fb37d4b12" absoluteBounds="8.015, 12.682587890625, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="05850c62-a948-4a7f-b0c0-06b8321d077b" absoluteBounds="6.5, 12.25, 1.5, 1.5704703776041669">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaLkPropertyTypeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="c7694377-eedc-4ed9-b033-57bebb22a640" absoluteBounds="6.515, 12.76, 1.4700000000000002, 0.44169108072916663" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="fa720617-8b25-4d28-9407-ec36f7a39c9d" absoluteBounds="6.515, 13.211691080729167, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="03bb0005-ee12-41af-8b0b-630e298267ad" absoluteBounds="6.515, 13.471080729166667, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="51abb0e5-0fae-4f57-bbfc-15b29de4ba0f" absoluteBounds="4.5, 11.875, 1.5, 1.5704703776041669">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaLkBedsTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f252008a-8034-420a-bbe6-cb90e87584b5" absoluteBounds="4.515, 12.385, 1.4700000000000002, 0.44169108072916663" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="602a8b12-82c7-4f2e-8e99-f6f6e2fe7a39" absoluteBounds="4.515, 12.836691080729167, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="aba2b115-55d0-442c-9d23-1a952b0f4c5e" absoluteBounds="4.515, 13.096080729166667, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="907f6d23-a141-451c-b162-276a6316bb6b" absoluteBounds="10, 9.375, 1.5, 1.7627718098958329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaBedsRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="b20e77a7-a899-4f80-9381-1ad5c7876e7d" absoluteBounds="10.015, 9.885, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="37df3668-e571-4aa4-994e-1b6f32f25b25" absoluteBounds="10.015, 10.528992513020834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="cf510f7e-e37a-4353-826f-fc15eee45a1a" absoluteBounds="10.015, 10.788382161458333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="f510cd75-8749-45c4-a64b-1e8a0a88b8e0" absoluteBounds="4.375, 12.75, 1.5, 1.955073242187499">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaAmenitiesDetailCodeTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="4e7dfe84-70de-4087-be2d-9b7fffeb34bf" absoluteBounds="4.39, 13.26, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="26621c6e-fefc-44d5-9773-ac9837cd054e" absoluteBounds="4.39, 14.0962939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d28da07f-a1af-43d5-8fef-ff40d632eb32" absoluteBounds="4.39, 14.35568359375, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="b5315eba-f516-483c-af60-1a9544ec6dc9" absoluteBounds="4.75, 15.75, 1.5, 1.7627718098958347">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaRoomTypeRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="4fc1beee-860f-424e-8134-970efde13330" absoluteBounds="4.765, 16.26, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="237a8704-75f2-455e-885f-0462f7fd0009" absoluteBounds="4.765, 16.903992513020832, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="0f465741-9610-4f16-8ea8-0c2dd20d542e" absoluteBounds="4.765, 17.163382161458333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="842444e5-cf80-4ba8-bb38-f7da45edc7ba" absoluteBounds="0.5, 12.5, 1.5, 2.3396761067708329">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaLkAmenitiesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="63d77fe5-7e4f-4cc3-8d2c-f27ac1c30378" absoluteBounds="0.515, 13.01, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="293c0826-3117-4f5d-a683-5d6ca2ef300f" absoluteBounds="0.515, 14.230896809895834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="679847ab-a57d-4759-ab62-713f9d812bf0" absoluteBounds="0.515, 14.490286458333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="a4dcdc77-93b3-450c-ba47-d22d57f0c38e" absoluteBounds="6.75, 15.625, 1.5, 3.4934847005208347">
+        <DomainClassMoniker name="/DCchnlExpedia/dbRntChnlExpediaHotelTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f648ba06-df55-484e-87e5-703dcca0c916" absoluteBounds="6.765, 16.135, 1.4700000000000002, 2.364705403645833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b64049b3-d1d5-4383-b278-221b22908368" absoluteBounds="6.765, 18.509705403645832, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="1ad7b834-c953-4894-a780-7e0b75715f31" absoluteBounds="6.765, 18.769095052083333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 15.125, 8.5" name="DCchnlAtraveo" isDefault="true">
+    <DomainModelMoniker name="/DCchnlAtraveo" />
+    <nestedChildShapes>
+      <classShape Id="935076d1-99b0-497b-bfe6-45cc2965a2ac" absoluteBounds="0.5, 0.5, 1.5, 2.724278971354166">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoRequestLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="b1418535-0a5b-45b9-87dc-d5ff1f8ad17b" absoluteBounds="0.515, 1.0099999999999998, 1.4700000000000002, 1.5954996744791667" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9130feb8-6f2b-4d17-b0ac-bed6afd32933" absoluteBounds="0.515, 2.6154996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="7702f156-fc82-4185-91b4-838377ff52ed" absoluteBounds="0.515, 2.8748893229166663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="80f6c406-7ccd-40dd-ada4-d5eaa02910f8" absoluteBounds="4.5, 0.5, 1.5, 3.878087565104166">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoEstateTB" />
+        <nestedChildShapes>
+          <elementListCompartment Id="2dcbd159-2cbb-4b9a-8e3a-72d3746f2c2e" absoluteBounds="4.5150000000000006, 1.01, 1.4700000000000002, 2.7493082682291665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9e05f034-a41c-49cf-9d36-41ea518f2b43" absoluteBounds="4.515, 3.7693082682291665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b91ed5d8-47ab-4f2a-bddf-fbdcb890af5d" absoluteBounds="4.515, 4.0286979166666663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="c76b9d8d-5247-41fb-afa1-58f0dbb581d7" absoluteBounds="8.375, 0.5, 1.5, 2.9165804036458329">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoEstateRateChangesRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="b668e7cb-e065-4046-ab0a-08dec8be01f7" absoluteBounds="8.39, 1.0099999999999998, 1.4700000000000002, 1.7878011067708333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="b7425e9d-3917-4521-93a0-c50770387794" absoluteBounds="8.39, 2.8078011067708331, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="bacc5fd0-59f0-486d-8ca3-dbbc6d8575bb" absoluteBounds="8.39, 3.0671907552083328, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="0814ec3a-7813-4007-8b98-073a227912a6" absoluteBounds="6.5, 0.5, 1.5, 2.147374674479166">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoEstateClosedDatesRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="5537d8f4-7af1-4a46-88cf-99baa95cd2cc" absoluteBounds="6.515, 1.0099999999999998, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d3fb237f-7cf2-46f3-b7c6-1378ade322aa" absoluteBounds="6.515, 2.0385953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="46d7b42e-76f2-4120-8bbc-07262e8f8a68" absoluteBounds="6.515, 2.2979850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="894598d1-b7ec-4304-93d6-e59734fdae0c" absoluteBounds="13.375, 0.5, 1.5, 2.5319775390625">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoLkFeatureValuesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="0d8a3327-eb06-4881-9678-154995993bdb" absoluteBounds="13.39, 1.0099999999999998, 1.4700000000000002, 1.4031982421875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4d9b781b-1a35-4dcf-8ab7-8c713838e6dc" absoluteBounds="13.39, 2.4231982421875, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4f805129-62f5-4ea7-81ed-85bb4203c309" absoluteBounds="13.39, 2.682587890625, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="eaae780b-a30c-4276-a598-582eb1ea64b4" absoluteBounds="10.125, 0.5, 1.5, 1.9550732421875">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoEstateFeaturesRL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="e4aa3413-ad45-413e-8405-09bb713341e8" absoluteBounds="10.14, 1.0099999999999998, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6f5070fd-282a-4989-a8f5-4b19d6f1de18" absoluteBounds="10.14, 1.8462939453124996, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="49c86259-6774-4262-9046-dade8cacbf6b" absoluteBounds="10.14, 2.1056835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="6d0b504f-50e4-456d-a20f-b719c8107a88" absoluteBounds="13.375, 3.125, 1.5, 2.3396761067708329">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoLkFeeValuesTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="0cdaeac7-071d-4571-b377-e7f03e3165d8" absoluteBounds="13.39, 3.635, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="440dbee8-f2ae-4002-be80-f4f8dcf6d2ea" absoluteBounds="13.39, 4.8558968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="bf21ed64-6d5c-4e21-a0fa-5dce30f1587f" absoluteBounds="13.39, 5.1152864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="ef26d40a-d87e-417e-bb74-e72746090cbc" absoluteBounds="13.375, 5.625, 1.5, 1.7627718098958329">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoLkFeeUnitsTBL" />
+        <nestedChildShapes>
+          <elementListCompartment Id="aa2b8a81-2600-45e2-8ed6-462b71bf7f1d" absoluteBounds="13.39, 6.135, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="ea76b153-c8ec-4a4c-b171-4df379a1b74e" absoluteBounds="13.39, 6.7789925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="29cf9f42-a6a9-4252-8f5e-709cf4ef9905" absoluteBounds="13.39, 7.0383821614583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="aa29931c-41f5-457e-bc56-41e00eba4c2e" absoluteBounds="10.125, 2.75, 1.5, 4.454991861979166">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoEstateFeeTB" />
+        <nestedChildShapes>
+          <elementListCompartment Id="507a7a79-aab3-4160-9af5-9de89bd8ed6b" absoluteBounds="10.14, 3.26, 1.4700000000000002, 3.3262125651041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="4bb086bf-213f-4155-9d86-1db321ef4dce" absoluteBounds="10.14, 6.5962125651041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="89739321-efc6-4a99-a30e-022167a88cb1" absoluteBounds="10.14, 6.8556022135416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="6ffd02df-8c41-4784-8f9b-29837923253e" absoluteBounds="2.5, 0.5, 1.5, 2.3396761067708334">
+        <DomainClassMoniker name="/DCchnlAtraveo/dbRntChnlAtraveoEstateLN" />
+        <nestedChildShapes>
+          <elementListCompartment Id="e1ecbe65-25d9-499a-89c6-0a74fa572958" absoluteBounds="2.515, 1.01, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3755fe70-f764-4cb8-b05f-c0abf7027ff5" absoluteBounds="2.515, 2.2308968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="8e054e15-af86-4175-9b0d-9014c60ef911" absoluteBounds="2.515, 2.4902864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

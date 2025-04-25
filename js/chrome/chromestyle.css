@@ -1,0 +1,102 @@
+.chromestyle ul {
+	width:766px;
+	height:45px;
+	float:left;
+	clear:both;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.chromestyle ul li {
+	height:45px;
+	width:78px;
+	float:left;
+	display:block;
+	margin:0;
+
+}
+
+.chromestyle ul li a {
+	display:block;
+	line-height:40px;
+	padding-rigth:10px;
+	text-decoration:none;
+	padding-top:16px;
+	font-size:14px;
+	color:#dad7c6;
+	text-align:center;
+	line-height:16px;
+}
+
+.chromestyle ul li a:link, .chromestyle ul li a:visited {
+	height:32px;
+}
+
+.chromestyle ul li a:hover, .chromestyle ul li a:active {
+	background: url(../../../images/menu_hover1.png) no-repeat center;
+	height:32px;
+	color:#FFF;
+}
+
+.chromestyle a#active {
+	color:#FFF;
+	background:url(../../../images/menu_hover.png) no-repeat center;
+}
+
+
+
+
+.chromestyle:after{ /*Add margin between menu and rest of content in Firefox*/
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: visible;
+}
+
+
+/* ######### Style for Drop Down Menu ######### */
+
+.dropmenudiv{
+	position:absolute;
+	top:0;
+	line-height:18px;
+	z-index:100;
+	visibility: visible;
+	font-size: 10px;
+	color: #FFF;
+	background: url(../../../images/tile_men.png) repeat-y;
+	margin-left:12px;
+	top:-1000px;
+	visibility:hidden;
+	width:78px;
+	margin-top:0px;
+	#margin-top:-10px; /* solo per EI */
+	_margin-top:-10px; /* solo per EI 6 o precedenti */
+}
+
+
+.dropmenudiv a{
+	display: block;
+	text-indent: 3px;
+	text-decoration: none;
+	font-size: 10px;
+	text-align: center;
+	padding-bottom: 5px;
+	float: left;
+	-moz-border-radius:2px 2px 2px 2px;
+}
+
+* html .dropmenudiv a{ /*IE only hack*/
+	float: left;
+	margin-top:0;
+}
+
+.dropmenudiv a:visited,.dropmenudiv a:link { 
+	color:#dad7c6 ;
+}
+
+.dropmenudiv a:hover, .dropmenudiv a:active { 
+	color: #fff;
+}

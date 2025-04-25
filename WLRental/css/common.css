@@ -1,0 +1,374 @@
+﻿/*------------------------   Adi    -------------------------------*/
+.errore_form
+{
+    color:red;
+    font-size: 10px;
+    display: block;
+}
+input.required_field,
+select.required_field, 
+.required_field
+{
+    border:1px solid red;
+    background-color: red;
+}
+.info_area {
+	background-color: #FC371C;
+	padding: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	border: 3px solid #FC371C;
+}
+.info_area span {
+	margin-bottom: 2px;
+	display: block;
+	float: left;
+	color:#FC371C;
+	margin-left: 4px;
+	font-style:italic;
+	font-weight:bold;
+}
+#loader {
+	top: 10px;
+	left: 40px;
+	position: fixed;
+	z-index: 1000;
+	width: 90px;
+	height: 16px;
+}
+#required_fileds_validator .cont {
+	top: 40%;
+	left: 40%;
+	position: fixed;
+	z-index: 1000;
+	width: 320px;
+	height: 33px;
+}
+
+
+
+.load_site {
+	height: 100px;
+	width: 100%;
+	background-color: #FFF;
+	position: fixed;
+	z-index: 1500;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #8c8682;
+	border-bottom-color: #8c8682;
+	margin-top:-50px;
+	top:50%;
+	left:0;
+}
+.load_site div {
+	width: 150px;
+	height: 60px;
+	color:#cbbb9d;
+	margin: 20px auto;
+	/*background-image:url(../images/css/loading_site.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;*/
+}
+
+#overlay_site
+{
+display: block; height: 2000em; left: 0; position: fixed; top: 0; width: 2000em; z-index: 999999; opacity: .50; filter: Alpha(Opacity=50);
+}
+/*-------------------------------------------------------*/
+
+/*------- BOX PER INTERNET EXPLORER 6 ----------*/
+
+#ottimizzato {
+    min-height: 100%;
+    width: 100%;
+    position:absolute;
+    z-index:99999;
+    left:0px;
+    top:0px;
+	background:url(../images/css/trasp.png) top left repeat;
+}
+* html #ottimizzato {
+    height: 100%;
+}
+#woopra_bar
+{
+ display:none;
+}
+#ottimiz_text {
+	width: 416px;
+	background-color:#ede9e5;
+	border-top-width: 3px;
+	border:3px solid #d7cfc8;
+	padding: 20px;
+	text-align: center;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:34px;
+}
+#ottimiz_text .a {
+	background:url(../images/css/ottim-titolo.png) top left no-repeat;
+	width:490px;
+	height:58px;
+	position:relative;
+	margin-left:-37px;
+	font-size: 20px;
+	color: #FFF;
+	display: block;
+	line-height: 20px;
+	padding-top:4px;
+	font-weight: bold;
+}
+#ottimiz_text .b {
+	font-size: 14px;
+	color: #276299;
+	line-height: 14px;
+	display: block;
+	margin: 0px;
+}
+#ottimiz_text .c {
+	font-size: 13px;
+	color: #73733d;
+	text-transform: uppercase;
+	line-height: 12px;
+	display: block;
+	margin-top: 3px;
+	margin-bottom: 15px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+#ottimiz_text .bott {
+	margin:20px 20px 0;
+	width: 376px;
+	clear: both;
+}
+#ottimiz_text .bott a {
+	background-repeat:no-repeat;
+	display:block;
+	font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	height:30px;
+	padding-left:9px;
+	padding-top:8px;
+	text-align:left;
+	text-decoration:none;
+	width:376px;
+}
+#ottimiz_text .bott a:link, #ottimiz_text .bott a:visited {
+	background-image: url(../images/css/ottim_bott.jpg);
+	background-position: 0px -38px;
+	color: #FFF;
+}
+#ottimiz_text .bott a:hover, #ottimiz_text .bott a:active {
+	background-position: 0px 0px;
+	color: #FFF;
+}
+#ottimiz_text .brow {
+	background-image: url(../images/css/ottim_1.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 78px;
+	width: 386px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 12px;
+	padding-left: 15px;
+}
+#ottimiz_text .brow .ex {
+	width: 170px;
+	float: left;
+	height: 80px;
+}
+#ottimiz_text .brow .ff {
+	float: left;
+	width: 170px;
+	margin-left: 44px;
+	height: 80px;
+}
+#ottimiz_text .brow span {
+	text-transform: uppercase;
+	font-size: 12px;
+	display: block;
+	margin: 0px;
+}
+#ottimiz_text .brow a {
+	display: block;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	width: 158px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 15px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 7px;
+	line-height: 15px;
+	margin-top: 12px;
+	font-weight:bold;
+}
+#ottimiz_text .brow a:link, #ottimiz_text .brow a:visited {
+	color: #793f27;
+	text-decoration: underline;
+	background-position: 0px 0px;
+}
+#ottimiz_text .brow a:hover, #ottimiz_text .brow a:active {
+	color: #b78972;
+	text-decoration: none;
+	background-position: 0px -40px;
+}
+
+/*------- FINE BOX PER INTERNET EXPLORER 6 ----------*/
+
+div#loading_big_cont {
+    background: url("/images/css-common/loading_big.gif") no-repeat scroll center 200px #FFFFFF;
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+    opacity: 0.5; 
+    filter: alpha(opacity=50);
+}
+div.loading_img {
+    background: url("/images/css-common/loading_big.gif") no-repeat scroll 0 0 #FFFFFF;
+    display: block;
+    width: 128px;
+    height: 128px;
+}
+div.alertError {
+    color:#3fbbef;
+    font-size:11px;
+    font-weight:bold;
+    padding:2px 0;
+}
+span.alertErrorSmall {
+    color: red;
+    float: left;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: bold;
+}
+
+div.alertOk {
+    background:#3fbbef;
+    color:#FFF;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px 15px;
+}
+.hide{
+	display:none !important;
+}
+.error {
+	background-color: #FFDFDF !important;
+	margin-bottom:3px !important;
+}
+input.error {
+	color:#DF0000 !important;
+	font-weight:bold !important;
+	background:#fff !important;
+	border:2px solid #DF0000 !important;
+}
+.error label, .error span.symbol {
+	color:#000 !important;
+}
+.error label.desc {
+	color:#DF0000 !important;
+}
+span.errorAlert {
+	display:none;
+	margin:0 !important;
+	padding:7px 0 0 0 !important;
+	line-height:10px !important;
+	font-weight:bold;
+	font-size:11px;
+	color:#DF0000 !important;
+	clear:both;
+}
+.error span.errorAlert {
+	display:block;
+}
+.div_terms {
+    border: 1px solid #CCCCCC;
+    color: #888888;
+    font-size: 11px;
+    height: 80px;
+    margin-top: 5px;
+    padding: 4px 8px;
+    width: 410px;
+    overflow-y: scroll;
+}
+.loadingSrc
+{
+    margin: 15px 70px 0;
+    width: 445px;
+   /* height: 126px;*/
+    float: left;
+    background: url(/images/css-common/loading-server_small.gif) top left no-repeat;
+    display:block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.loadingSrc span 
+{
+    color: #3fbbef;
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 25px 0 7px 215px;
+}
+.loadingSrc span strong 
+{
+  font-size:12px;
+  font-style:normal;
+  color:#333366;
+  font-weight:normal;
+  line-height:25px;
+}
+#main .formErrorState, #fl_menu .left .form .boxinput  input.formErrorState {border: 1px solid #cd0a0a; }
+#errorLi {
+	width:99%;
+	margin:15px auto 15px auto;
+	background:#fff !important;
+	border:1px solid red;
+	text-align:center;
+	padding:1em 0 1em 0;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+}
+#errorMsgLbl {
+	margin:0 0 5px 0;
+	padding:0;
+	font-size:125%;
+	color:#DF0000 !important;
+}
+#errorMsg {
+	margin:0 0 2px 0;
+	color:#000 !important;
+	font-size:100%;
+}
+#errorMsg strong {
+	padding:2px 8px;
+	background-color: #FFDFDF !important;
+	color:red !important;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+.alert.warning {
+    background: #ffddd8;
+    border: 1px solid #f00;
+    border-radius: 5px;
+    color: #f00;
+    display: block;
+    font-weight: bold;
+    padding: 5px 10px;
+    min-width: 205px;
+}

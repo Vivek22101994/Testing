@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.rentalinvenice.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.rentalinvenice.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.rentalinvenice.com/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication_Test">
+        <s:complexType />
+      </s:element>
+      <s:element name="Authentication_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Authentication_TestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="fillRewriteTool">
+        <s:complexType />
+      </s:element>
+      <s:element name="fillRewriteToolResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="rntReservation_onChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rntReservation_onChangeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="refreshCache">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="refreshCacheResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="Authentication_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication_Test" />
+  </wsdl:message>
+  <wsdl:message name="Authentication_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:Authentication_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Authentication_TestAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="fillRewriteToolSoapIn">
+    <wsdl:part name="parameters" element="tns:fillRewriteTool" />
+  </wsdl:message>
+  <wsdl:message name="fillRewriteToolSoapOut">
+    <wsdl:part name="parameters" element="tns:fillRewriteToolResponse" />
+  </wsdl:message>
+  <wsdl:message name="fillRewriteToolAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="rntReservation_onChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:rntReservation_onChange" />
+  </wsdl:message>
+  <wsdl:message name="rntReservation_onChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:rntReservation_onChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="rntReservation_onChangeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="refreshCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:refreshCache" />
+  </wsdl:message>
+  <wsdl:message name="refreshCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:refreshCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="refreshCacheAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WSSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_Test">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test di autenticazione</wsdl:documentation>
+      <wsdl:input message="tns:Authentication_TestSoapIn" />
+      <wsdl:output message="tns:Authentication_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fillRewriteTool">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">fillRewriteTool</wsdl:documentation>
+      <wsdl:input message="tns:fillRewriteToolSoapIn" />
+      <wsdl:output message="tns:fillRewriteToolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="rntReservation_onChange">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">rntReservation_onChange</wsdl:documentation>
+      <wsdl:input message="tns:rntReservation_onChangeSoapIn" />
+      <wsdl:output message="tns:rntReservation_onChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="refreshCache">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">refreshCache</wsdl:documentation>
+      <wsdl:input message="tns:refreshCacheSoapIn" />
+      <wsdl:output message="tns:refreshCacheSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSoap" type="tns:WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://www.rentalinvenice.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_Test">
+      <soap:operation soapAction="http://www.rentalinvenice.com/Authentication_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Authentication_TestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillRewriteTool">
+      <soap:operation soapAction="http://www.rentalinvenice.com/fillRewriteTool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:fillRewriteToolAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rntReservation_onChange">
+      <soap:operation soapAction="http://www.rentalinvenice.com/rntReservation_onChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:rntReservation_onChangeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refreshCache">
+      <soap:operation soapAction="http://www.rentalinvenice.com/refreshCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:refreshCacheAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSoap12" type="tns:WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://www.rentalinvenice.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_Test">
+      <soap12:operation soapAction="http://www.rentalinvenice.com/Authentication_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Authentication_TestAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillRewriteTool">
+      <soap12:operation soapAction="http://www.rentalinvenice.com/fillRewriteTool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:fillRewriteToolAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rntReservation_onChange">
+      <soap12:operation soapAction="http://www.rentalinvenice.com/rntReservation_onChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:rntReservation_onChangeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refreshCache">
+      <soap12:operation soapAction="http://www.rentalinvenice.com/refreshCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:refreshCacheAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS">
+    <wsdl:port name="WSSoap" binding="tns:WSSoap">
+      <soap:address location="http://localhost:56374/webservice/WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSoap12" binding="tns:WSSoap12">
+      <soap12:address location="http://localhost:56374/webservice/WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1672 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="NlSx8KjFFw9tuY_pwuH8kIoeoYq88Jvd26kT5mEsSbo" />
+	
+    <title>
+        Search apartments in Rome - Rental in Rome</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+	<link rel="shortcut icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link href="/jquery/plugin/shadowbox/shadowbox.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/jquery/css/ui-all.css" />
+    <link href="css/style_new.css" rel="stylesheet" type="text/css">
+    <script src="/jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-all.min.js" type="text/javascript"></script>
+    
+    <script src="/jquery/datepicker-lang/jquery.ui.datepicker-en.js" type="text/javascript"></script>
+
+    <script src="/jquery/plugin/scrollTo/scrollTo.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+            $(window).load(function () {
+                $.getScript("/jquery/plugin/shadowbox/shadowbox.js", function (data, textStatus, jqxhr) {
+                    Shadowbox.init({ modal: true, handleOversize: "none" });
+                });
+            });
+        });
+    </script>
+    
+
+	<script type="text/javascript" src="/js/jquery.tooltip.js"></script>
+	<script type="text/javascript">
+	    function setToolTip() {
+	        $('.ico_tooltip').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+	        $('.ico_tooltip_right').tooltip({ track: true, delay: 0, positionLeft: false, top: 20, left: 20 });
+	    }
+	    function SITE_addDinamicLabel(labelId, controlId) {
+	        $('#' + controlId).bind("blur", function () { if ($.trim($('#' + controlId).val()) == "") { $('#' + labelId).css("display", "block"); } else { $('#' + labelId).css("display", "none"); } });
+	        $('#' + labelId).bind("click", function () { $('#' + controlId).focus(); $('#' + labelId).css("display", "none"); });
+	        $('#' + controlId).bind("focus", function () { $('#' + labelId).css("display", "none"); });
+	        if ($.trim($('#' + controlId).val()) == "") { $('#' + labelId).css("display", "block"); } else { $('#' + labelId).css("display", "none"); }
+	    }
+	    function SITE_showLoader() {
+	        $('#ctl00_loading_cont').show();
+	    }
+	    function SITE_hideLoader() {
+	        $('#ctl00_loading_cont').hide();
+	    }
+	    function SITE_cursorWait_show() {
+	        $(document).bind("mousemove", SITE_cursorWait_move);
+	        $(document).trigger('mousemove');
+	    }
+	    function SITE_cursorWait_hide() {
+	        $(document).unbind("mousemove", SITE_cursorWait_move);
+	        $('#SITE_cursorWait').css({ 'left': '-2000em', 'top': '-2000em' });
+	    }
+	    function SITE_cursorWait_move(e) {
+	        $('#SITE_cursorWait').css({ 'left': e.pageX + 20 + 'px', 'top': e.pageY + 20 + 'px' });
+	    }
+	    function FORM_validateEmail(str) {
+	        return str.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
+	    }
+	    var FORM_errorClass = "formErrorState";
+	    var GLOBAL_currPageID = 6;
+	    var GLOBAL_currPageType = "stp";
+	    var GLOBAL_currPagePath = "http://www.rentalinrome.com/search-apartments-in-rome";
+	    var GLOBAL_currPageName = "Search apartments in Rome";
+    </script>
+    <script type="text/javascript">
+        var GLOBAL_imgLoader = new Array();
+        $(document).ready(function () {
+            $(window).load(function () {
+                for (var i = 0; i < GLOBAL_imgLoader.length; i++) {
+                    $("#" + GLOBAL_imgLoader[i][0]).attr("src", "" + GLOBAL_imgLoader[i][1]);
+                }
+                $("img[realsrc]").each(function (i, selected) {
+                    $(selected).attr("src", $(selected).attr("realsrc"));
+                });
+            });
+        });
+    </script>
+  
+	
+    <script type="text/javascript">
+        function set_switchThumb() {
+
+            $("a.switch_thumb").toggle(function () {
+                $(this).addClass("swap");
+                $("ul.display").fadeOut("fast", function () {
+                    $(this).fadeIn("fast").removeClass("dett_view");
+                    $(this).fadeIn("fast").addClass("thumb_view");
+                });
+            }, function () {
+                $(this).removeClass("swap");
+                $("ul.display").fadeOut("fast", function () {
+                    $(this).fadeIn("fast").removeClass("thumb_view");
+                    $(this).fadeIn("fast").addClass("dett_view");
+                });
+            });
+
+        }
+    </script>
+    <script type="text/javascript">
+        function RNT_changePage(page) {
+            $("#hf_currPage").val("" + page);
+            RNT_fillList("list");
+        }
+        function RNT_fillList(action) {
+            if (action == "list") SITE_showLoader();
+            var _url = "/webservice/rnt_estateListSearch.aspx";
+            _url += "?lang=2";
+            _url += "&SESSION_ID=0c79f8ed-2b18-4c48-b0f9-5c6b86977e62";
+            _url += "&agentID=0";
+            _url += "&dtS=" + $("#ctl00_CPH_main_HF_dtStart").val();
+            _url += "&dtE=" + $("#ctl00_CPH_main_HF_dtEnd").val();
+            _url += "&numPers_adult=" + $("#ctl00_CPH_main_drp_adult").val();
+            _url += "&numPers_childOver=" + $("#ctl00_CPH_main_drp_child_over").val();
+            _url += "&numPers_childMin=" + $("#ctl00_CPH_main_drp_child_min").val();
+            _url += "&title=" + $("#ctl00_CPH_main_HF_searchTitle").val();
+            _url += "&currZoneList=" + $("#ctl00_CPH_main_HF_currZoneList").val();
+            _url += "&currConfigList=" + $("#ctl00_CPH_main_HF_currConfigList").val();
+            _url += "&prRange=" + $("#hf_prRange").val();
+            _url += "&voteRange=" + $("#hf_voteRange").val();
+
+            _url += "&currPage=" + $("#hf_currPage").val();
+            _url += "&numPerPage=" + $("#ctl00_CPH_main_HF_numPerPage").val();
+            _url += "&orderBy=" + $("#ctl00_CPH_main_HF_orderBy").val();
+            _url += "&orderHow=" + $("#ctl00_CPH_main_HF_orderHow").val();
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    $("#estateListCont").html(html);
+                    if (action == "list") {
+                        $.scrollTo($("#estateListCont"), 500);
+                        SITE_hideLoader();
+                    }
+                    RNT_priceRangeSlider_set();
+                    RNT_voteRangeSlider_set();
+                    set_switchThumb();
+                    setToolTip()
+                }
+            });
+        }
+        $(document).ready(function () {
+            RNT_fillList("first");
+            if ($("#ctl00_CPH_main_HF_currZoneList").val() == "0")
+                $("#chk_zone_all").attr("checked", "checked");
+            else
+                $("#chk_zone_all").removeAttr("checked");
+        });
+        function RNT_currZone_onChange(sender) {
+            if (sender != null && sender == "all") {
+                if ($("#chk_zone_all").is(':checked')) {
+                    $(".chk_zone").removeAttr("checked");
+                    $("#ctl00_CPH_main_HF_currZoneList").val("0");
+                    RNT_fillList("list");
+                }
+                return;
+            }
+            var _array = new Array();
+            var _arrStr = $("#ctl00_CPH_main_HF_activeZones").val();
+            var _arrSep = "|";
+            if (_arrStr.indexOf(_arrSep) != -1)
+                _array = _arrStr.split(_arrSep);
+            else
+                _array = [_arrStr];
+            _arrStr = "";
+            _arrSep = "";
+            for (var i = 0; i < _array.length; i++) {
+                if ($("#chk_zone_" + _array[i]).is(':checked')) {
+                    _arrStr += _arrSep + "" + _array[i];
+                    _arrSep = "|";
+                }
+            }
+            if (_arrStr == "") {
+                $(".chk_zone_all").attr("checked", "checked");
+                $("#ctl00_CPH_main_HF_currZoneList").val("0");
+            }
+            else {
+                $("#chk_zone_all").removeAttr("checked");
+                $("#ctl00_CPH_main_HF_currZoneList").val(_arrStr);
+            }
+            RNT_fillList("list");
+        }
+        function RNT_currConfig_onChange() {
+            var _array = new Array();
+            var _arrStr = $("#ctl00_CPH_main_HF_activeConfigs").val();
+            var _arrSep = "|";
+            if (_arrStr.indexOf(_arrSep) != -1)
+                _array = _arrStr.split(_arrSep);
+            else
+                _array = [_arrStr];
+            _arrStr = "";
+            _arrSep = "";
+            for (var i = 0; i < _array.length; i++) {
+                if ($("#chk_config_" + _array[i]).is(':checked')) {
+                    _arrStr += _arrSep + "" + _array[i];
+                    _arrSep = "|";
+                }
+            }
+            $("#ctl00_CPH_main_HF_currConfigList").val(_arrStr);
+            RNT_fillList("list");
+        }
+        function RNT_orderBy(order) {
+            var _orderByCont = $("#ctl00_CPH_main_HF_orderBy");
+            var _orderHowCont = $("#ctl00_CPH_main_HF_orderHow");
+            var _oldOrderBy = _orderByCont.val();
+            var _oldOrderHow = _orderHowCont.val();
+            var _newOrderBy = order;
+            var _newOrderHow = "";
+            if (_newOrderBy == _oldOrderBy)
+                _newOrderHow = _oldOrderHow == "asc" ? "desc" : "asc";
+            else if (_newOrderBy == "price")
+                _newOrderHow = "asc";
+            else if (_newOrderBy == "vote")
+                _newOrderHow = "desc";
+            else if (_newOrderBy == "title")
+                _newOrderHow = "asc";
+            _orderByCont.val(_newOrderBy);
+            _orderHowCont.val(_newOrderHow);
+            RNT_fillList("list");
+            $("#hl_orderBy_price").attr("class", (_newOrderBy == "price") ? _newOrderHow : "");
+            $("#hl_orderBy_vote").attr("class", (_newOrderBy == "vote") ? _newOrderHow : "");
+            $("#hl_orderBy_title").attr("class", (_newOrderBy == "title") ? _newOrderHow : "");
+        }
+    </script>
+    <script type="text/javascript">
+        var RNT_priceRangeSlider;
+        function RNT_priceRangeSlider_set() {
+            if (RNT_priceRangeSlider != null) $("#priceRange-slider").slider("destroy");
+            var RangeMin = parseInt($("#hf_prMin").val());
+            var RangeMax = parseInt($("#hf_prMax").val());
+            var selFrom = parseInt($("#hf_prRange").val().split('|')[0]);
+            var selTo = parseInt($("#hf_prRange").val().split('|')[1]);
+            if (selFrom < RangeMin) selFrom = RangeMin;
+            if (selTo > RangeMax) selTo = RangeMax;
+            RNT_prRangeSlider = $("#priceRange-slider").slider({
+                min: RangeMin,
+                max: RangeMax,
+                range: true,
+                step: 1,
+                values: [selFrom, selTo],
+                slide: function (event, ui) {
+                    var from = ui.values[0];
+                    var to = ui.values[1];
+                    $("#lbl_prFrom").html("" + from);
+                    $("#lbl_prTo").html("" + to);
+                    $("#hf_prRange").val(from + "|" + to);
+                },
+                change: function () {
+                    var _oldVal = "" + $("#hf_prTemp").val();
+                    var _newVal = "" + $("#hf_prRange").val();
+                    $("#hf_prTemp").val(_newVal);
+                    if (_oldVal != _newVal)
+                        RNT_fillList("list");
+                }
+            });
+            $("#lbl_prFrom").html("" + selFrom);
+            $("#lbl_prTo").html("" + selTo);
+        }
+    </script>
+    <script type="text/javascript">
+        var RNT_voteRangeSlider;
+        function RNT_voteRangeSlider_set() {
+            if (RNT_voteRangeSlider != null) $("#voteRange-slider").slider("destroy");
+            var RangeMin = parseInt($("#hf_voteMin").val());
+            var RangeMax = parseInt($("#hf_voteMax").val());
+            var selFrom = parseInt($("#hf_voteRange").val().split('|')[0]);
+            var selTo = parseInt($("#hf_voteRange").val().split('|')[1]);
+            if (selFrom < RangeMin) selFrom = RangeMin;
+            if (selTo > RangeMax) selTo = RangeMax;
+            RNT_voteRangeSlider = $("#voteRange-slider").slider({
+                min: RangeMin,
+                max: RangeMax,
+                range: true,
+                step: 1,
+                values: [selFrom, selTo],
+                slide: function (event, ui) {
+                    var from = ui.values[0];
+                    var to = ui.values[1];
+                    $("#lbl_voteFrom").html("" + from);
+                    $("#lbl_voteTo").html("" + to);
+                    $("#hf_voteRange").val(from + "|" + to);
+                },
+                change: function () {
+                    var _oldVal = "" + $("#hf_voteTemp").val();
+                    var _newVal = "" + $("#hf_voteRange").val();
+                    $("#hf_voteTemp").val(_newVal);
+                    if (_oldVal != _newVal)
+                        RNT_fillList("list");
+                }
+            });
+            $("#lbl_voteFrom").html("" + selFrom);
+            $("#lbl_voteTo").html("" + selTo);
+        }
+        function calculateNumPersons(sender) {
+            var _selNum_adult = parseInt($("#ctl00_CPH_main_drp_adult").val(), 10);
+            var _selNum_child_over = parseInt($("#ctl00_CPH_main_drp_child_over").val(), 10);
+            if (sender == "childMin") { RNT_fillList("list"); return; }
+            $("#ctl00_CPH_main_HF_numPersCount").val("" + (_selNum_adult + _selNum_child_over)); RNT_fillList("list");
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29559505-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+  
+</head> 
+
+<body>
+    <div id="container"> 
+    	<header id="header"><div> 
+        
+        <a  class="logo" href="/">
+            <img src="/images/css/logo.gif" title="Rent apartments in Rome, Italy" alt="Rent apartments in Rome, Italy">
+        </a>
+        
+        <div class="infoTop">
+        
+        	
+            <div class="changeLang">
+            
+            	<span class="language currentLanguage">
+                	<img src="images/css/flag-eng.gif" /> 
+                    <span>English</span>
+                </span>
+                
+                <div class="otherLangs">
+                	<a class="language" href="#">
+                        <img src="images/css/flag-ita.gif" /> 
+                        <span>Italiano</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-spa.gif" /> 
+                        <span>Español</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-fra.gif" /> 
+                        <span>Français</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-ger.gif" /> 
+                        <span>Deutsch</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-rus.gif" /> 
+                        <span>Русский</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-dut.gif" /> 
+                        <span>Dutch</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-jap.gif" /> 
+                        <span>Japanese</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-por.gif" /> 
+                        <span>Português</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-fin.gif" /> 
+                        <span>Suomalainen</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-pl.gif" /> 
+                        <span>Polski</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-cn.gif" /> 
+                        <span>Chinese</span>
+                    </a>
+                    <a class="language" href="#">
+                        <img src="images/css/flag-cnt.gif" /> 
+                        <span>Traditional chinese</span>
+                    </a>
+                </div>
+                
+            </div>
+            <strong class="telTop">+39 06 32 20 068</strong>
+            <a class="emailTop" href="mailto:info@rentalinrome.com" target="_blank">info@rentalinrome.com</a>
+            
+            
+            <strong class="claimTop">Save up to 50% <span>on hotel fees</span></strong>
+            
+            
+
+        </div>
+            
+            
+        </div>
+            <nav id="menuMain">
+            	<ul>
+                	<li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Rome villas</a></li>
+                    <li><a href="#">Castle in Rome</a></li>
+                    <li><a href="#">Rome Bed & Breakfast</a></li>
+                    <li><a href="#">Venice</a></li>
+                    <li><a href="#">Florence</a></li>
+                    <li><a href="#">Cortina</a></li>
+                    <li><a href="#">Pick-up service</a></li>
+            	</ul>
+            </nav>
+        </header>
+        
+        
+        <div class="main mainInt" id="lista_search">
+            
+            <div class="sx">
+            <div id="search_int">
+                <div class="tabTitle" style="float: left;">
+                    Search
+                </div>
+                <div class="cont_form">
+                    <div class="preinput preinputdue">
+                        <label id="lb_QuickSearch" style="position: absolute; display: block; width: 190px;">
+                            Quick Search
+                        </label>
+                        <input name="ctl00$CPH_main$txt_title" type="text" id="ctl00_CPH_main_txt_title" class="search_aptComplete floatnone" style="width:195px;" />
+                        <input type="hidden" name="ctl00$CPH_main$HF_estateId" id="ctl00_CPH_main_HF_estateId" value="0" />
+                        <input type="hidden" name="ctl00$CPH_main$HF_estatePath" id="ctl00_CPH_main_HF_estatePath" />
+                    </div>
+                    <div class="preinput">
+                        <label>
+                            
+                            Check-In
+                        </label>
+                        <input id="txt_dtStart_cettweqp_atyy_redt_idwd_efoecddcfwfp" type="text" readonly="readonly" style="width: 90px" />
+                        <a class="ico_cal" id="startCalTrigger_cettweqp_atyy_redt_idwd_efoecddcfwfp"></a>
+                        <input type="hidden" name="ctl00$CPH_main$HF_dtStartTmp" id="ctl00_CPH_main_HF_dtStartTmp" value="20140721" />
+                    </div>
+                    <div class="preinput">
+                        <label>
+                            
+                            Check-Out
+                        </label>
+                        <input id="txt_dtEnd_cettweqp_atyy_redt_idwd_efoecddcfwfp" type="text" readonly="readonly" style="width: 90px" />
+                        <a class="ico_cal" id="endCalTrigger_cettweqp_atyy_redt_idwd_efoecddcfwfp"></a>
+                        <input type="hidden" name="ctl00$CPH_main$HF_dtEndTmp" id="ctl00_CPH_main_HF_dtEndTmp" value="20140724" />
+                    </div>
+                    <div class="preinput">
+                        <label>
+                            Nights
+                        </label>
+                        <input name="ctl00$CPH_main$txt_dtCount" type="text" id="ctl00_CPH_main_txt_dtCount" />
+                    </div>
+                    <a href="#" onclick="return submitForm()" class="btnMed">
+                        <span>Search</span>
+                    </a>
+                    
+                </div>
+                <script type="text/javascript">
+                    function submitForm() {
+                        $("#ctl00_CPH_main_HF_dtStart").val($("#ctl00_CPH_main_HF_dtStartTmp").val());
+                        $("#ctl00_CPH_main_HF_dtEnd").val($("#ctl00_CPH_main_HF_dtEndTmp").val());
+                        $("#ctl00_CPH_main_HF_searchTitle").val($("#ctl00_CPH_main_txt_title").val());
+                        RNT_fillList("list");
+                        return false;
+                    }
+                    var _JSCal_Range;
+                    function setCal() {
+                        _JSCal_Range = new JSCal.Range({ dtFormat: "d MM yy", minDateInt: 20140715, startCont: "#ctl00_CPH_main_HF_dtStartTmp", startView: "#txt_dtStart_cettweqp_atyy_redt_idwd_efoecddcfwfp", startTrigger: "#startCalTrigger_cettweqp_atyy_redt_idwd_efoecddcfwfp", endCont: "#ctl00_CPH_main_HF_dtEndTmp", endView: "#txt_dtEnd_cettweqp_atyy_redt_idwd_efoecddcfwfp", endTrigger: "#endCalTrigger_cettweqp_atyy_redt_idwd_efoecddcfwfp", countCont: "#ctl00_CPH_main_txt_dtCount", changeMonth: true, changeYear: true, beforeShowDay: checkCalDates_cettweqp_atyy_redt_idwd_efoecddcfwfp });
+                    }
+                    function checkCalDates_cettweqp_atyy_redt_idwd_efoecddcfwfp(date) { var _dtStart = parseInt($('#ctl00_CPH_main_HF_dtStart').val()); var _dtEnd = parseInt($('#ctl00_CPH_main_HF_dtEnd').val()); var dateint = JSCal.dateToInt(date); var _class = ""; var _tooltip = ""; var _controls = ""; var _enabled = true; if (dateint > _dtStart && dateint < _dtEnd) { _controls += '<span class="rntCal sel_f"></span>'; } if (dateint == _dtStart) { _controls += '<span class="rntCal sel_1"></span>'; } if (dateint == _dtEnd) { _controls += '<span class="rntCal sel_2"></span>'; } if (_controls.indexOf('<span class="rntCal nd_2"></span>') != -1 && _controls.indexOf('<span class="rntCal nd_1"></span>') != -1) { _enabled = false; } return [_enabled, _class, _tooltip, _controls]; }
+                    RNT = {};
+                    RNT.EstateOptions = {
+                        id: 0,
+                        path: "",
+                        label: "",
+                        pid_zone: 0
+                    };
+                    var _estateList_cettweqp_atyy_redt_idwd_efoecddcfwfp = new Array();
+                    function getEstateXml_cettweqp_atyy_redt_idwd_efoecddcfwfp() {
+                        var _xml = $.ajax({
+                            type: "GET",
+                            url: "/webservice/rnt_estate_list_xml.aspx?lang=2&SESSION_ID=0c79f8ed-2b18-4c48-b0f9-5c6b86977e62",
+                            dataType: "xml",
+                            success: function (xml) {
+                                $(xml).find('item').each(function () {
+                                    var _estOpt = {
+                                        id: parseInt($(this).find('id').text(), 10),
+                                        path: $(this).find('path').text(),
+                                        label: $(this).find('title').text(),
+                                        pid_zone: parseInt($(this).find('pid_zone').text(), 10)
+                                    };
+                                    _estateList_cettweqp_atyy_redt_idwd_efoecddcfwfp.push(_estOpt);
+                                });
+                                setAutocomplete_cettweqp_atyy_redt_idwd_efoecddcfwfp();
+                            }
+                        });
+                    }
+                    function setAutocomplete_cettweqp_atyy_redt_idwd_efoecddcfwfp() {
+                        $(".search_aptComplete").autocomplete({
+                            source: _estateList_cettweqp_atyy_redt_idwd_efoecddcfwfp,
+                            search: function (event, ui) {
+                                $("#ctl00_CPH_main_HF_estateId").val('0');
+                                $("#ctl00_CPH_main_HF_estatePath").val('');
+                            },
+                            select: function (event, ui) {
+                                $("#ctl00_CPH_main_HF_estateId").val(ui.item.id);
+                                $("#ctl00_CPH_main_HF_estatePath").val(ui.item.path);
+                                if (ui.item.id != 0 && ui.item.path != '')
+                                    $("#zoneCont_cettweqp_atyy_redt_idwd_efoecddcfwfp").hide();
+                                else
+                                    $("#zoneCont_cettweqp_atyy_redt_idwd_efoecddcfwfp").show();
+                            }
+                        });
+                        //alert(_estateList_cettweqp_atyy_redt_idwd_efoecddcfwfp);
+                    }
+                    getEstateXml_cettweqp_atyy_redt_idwd_efoecddcfwfp();
+                    SITE_addDinamicLabel('lb_QuickSearch', 'ctl00_CPH_main_txt_title');
+                </script>
+                
+            </div>
+            <div id="more_search">
+                 <span class="tit">
+                    Guests</span>
+                <div class="box_more_search" style="padding-top:10px;" >
+                    <div class="boxSx" style="padding-bottom:0; border:none;">
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="middle" align="left" style="width: 50px;">
+                                    <select name="ctl00$CPH_main$drp_adult" id="ctl00_CPH_main_drp_adult" onchange="calculateNumPersons(&#39;adult&#39;)" style="width: 40px;">
+	<option value="1">1</option>
+	<option selected="selected" value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+
+</select>
+                                </td>
+                                <td>
+                                    Adults
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" align="left">
+                                    <select name="ctl00$CPH_main$drp_child_over" id="ctl00_CPH_main_drp_child_over" onchange="calculateNumPersons(&#39;childOver&#39;)" style="width: 40px;">
+	<option selected="selected" value="0">---</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+
+</select>
+                                </td>
+                                <td>
+                                    Children 3 or over
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" align="left">
+                                    <select name="ctl00$CPH_main$drp_child_min" id="ctl00_CPH_main_drp_child_min" onchange="calculateNumPersons(&#39;childMin&#39;)" style="width: 40px;">
+	<option selected="selected" value="0">---</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+
+</select>
+                                </td>
+                                <td>
+                                    Children under 3
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <span class="nulla"></span>
+                </div>
+                <span class="tit">
+                    Advanced search</span>
+                <div class="box_more_search">
+                    <div class="line">
+                        <span class="titline">
+                            Prices</span>
+                    </div>
+                    <div class="boxSx">
+                        <div class="slider-range-cont">
+                            <div class="range_label">
+                                <div class="minmax">
+                                    <div class="min">
+                                        min. € <strong>
+                                            <span id="lbl_prFrom">202</span>
+                                        </strong>
+                                    </div>
+                                    <div class="max">
+                                        max € <strong>
+                                            <span id="lbl_prTo">2275</span>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: left; width: 100%;">
+                                <div id="priceRange-slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 5px"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="nulla"></span>
+      
+               
+                    <div class="line">
+                        <span class="titline">
+                            Rating</span>
+                    </div>
+                    <div class="boxSx">
+                        <div class="slider-range-cont">
+                            <div class="range_label">
+                                <div class="minmax">
+                                    <div class="min">
+                                        min&nbsp; <strong>
+                                            <span id="lbl_voteFrom">6</span>
+                                        </strong>
+                                    </div>
+                                    <div class="max">
+                                        max&nbsp; <strong>
+                                            <span id="lbl_voteTo">10</span>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: left; width: 100%;">
+                                <div id="voteRange-slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                <div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 5px;"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="nulla"></span>
+                
+                
+                    <div class="line">
+                        <span class="titline">
+                            Zone</span>
+
+                       <label class="selectAll" for="chk_zone_all">
+                            All</label>
+                        <input  class="checkSelectAll"type="checkbox" id="chk_zone_all" checked="checked" onclick="RNT_currZone_onChange('all')" />
+                        
+                    </div>
+                    <div class="boxSx">
+                        <table cellpadding="0" cellspacing="0" border="0" class="listcheck"><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_16"  onclick="RNT_currZone_onChange()" />        <label for="chk_zone_16">Campo de' Fiori</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_4"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_4">Colosseum</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_9"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_9">Colosseum - Residenza dell'Olmata</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_2"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_2">Piazza Navona</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_17"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_17">Rome Parioli</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_1"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_1">Saint Peter</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_5"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_5">Spanish Steps</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_18"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_18">Termini Station</label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_3"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_3">Trastevere Area </label>    </td></tr><tr>    <td>        <input type="checkbox" class="chk_zone" id="chk_zone_6"  onclick="    RNT_currZone_onChange()" />        <label for="chk_zone_6">Trevi Fountain</label>    </td></tr></table>
+                    </div>
+                    <span class="nulla"></span>
+          
+               
+                    <div class="line">
+                        <span class="titline">
+                            Amenities</span>
+                    </div>
+                    <div class="boxSx" style="padding-bottom:0; border:none;">
+                        <table cellpadding="0" cellspacing="0" border="0" class="listcheck"><tr>    <td>        <input type="checkbox" id="chk_config_2"  onclick="RNT_currConfig_onChange()" />        <label for="chk_config_2">ADSL Internet (ethernet cable only)</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_1"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_1">Air Conditioning</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_15"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_15">Dishwasher</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_5"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_5">Elevator</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_4"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_4">Pets Allowed</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_54"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_54">Terrace/Balcony</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_6"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_6">Washing machine</label>    </td></tr><tr>    <td>        <input type="checkbox" id="chk_config_3"  onclick="    RNT_currConfig_onChange()" />        <label for="chk_config_3">Wi-Fi Internet</label>    </td></tr></table>
+                    </div>
+                    <span class="nulla"></span>
+                </div>
+            </div>
+            
+            <div class="nulla">
+            </div>
+        </div>
+
+            <div class="dx">
+            
+<div id="breadcrumbs">
+    <a class="breadLink" href="/">Home</a>
+    
+    
+    
+    <span class="currentPage" id="ctl00_CPH_main_UC_menu_breadcrumb1_lbl_current">Search apartments in Rome</span>
+</div>
+
+            <div id="estateListCont">
+            <input type="hidden" value="6" id="hf_voteMin">
+            <input type="hidden" value="10" id="hf_voteMax">
+            <input type="hidden" value="6|10" id="hf_voteRange">
+            <input type="hidden" value="6|10" id="hf_voteTemp">
+            <input type="hidden" value="202" id="hf_prMin">
+            <input type="hidden" value="2275" id="hf_prMax">
+            <input type="hidden" value="202|2275" id="hf_prRange">
+            <input type="hidden" value="202|2275" id="hf_prTemp">
+            <input type="hidden" value="1" id="hf_currPage">
+            <div id="div_searchDetails" class="dati_ricercati">
+                <div class="left_dati">
+                    Monday, 21 July 2014 - Thursday, 24 July 2014<br>Guests: 2
+                </div>
+                <div class="ico">
+                    <a href="#" class="switch_thumb"></a>
+                </div>
+            </div>
+            <div class="ordina">
+                <span class="ord_sx">Sort by</span>
+                <div class="ord_dx">
+                    
+                    <a class="" href="javascript:RNT_orderBy('title')">
+                        <span>Name</span></a>
+                    <a class="" href="javascript:RNT_orderBy('price')">
+                        <span>Price</span></a>
+                    <a class="" href="javascript:RNT_orderBy('vote')">
+                        <span>Rating</span></a>
+                </div>
+            </div>
+            <div class="lista lista_dettagli">
+                <div class="ordina pageCount"><span class="page">1</span><a href="javascript:RNT_changePage(2)" class="page">2</a><a href="javascript:RNT_changePage(3)" class="page">3</a><a href="javascript:RNT_changePage(4)" class="page">4</a><a href="javascript:RNT_changePage(5)" class="page">5</a><a href="javascript:RNT_changePage(6)" class="page">6</a><a href="javascript:RNT_changePage(7)" class="page">7</a><a href="javascript:RNT_changePage(8)" class="page">8</a><a href="javascript:RNT_changePage(9)" class="page">9</a><a href="javascript:RNT_changePage(10)" class="page">10</a><a href="javascript:RNT_changePage(11)" class="page">..</a><a href="javascript:RNT_changePage(14)" class="page">14</a><a href="javascript:RNT_changePage(0)" class="page showAll">Show all</a></div>
+                
+                <ul class="display dett_view" style="display: block;"> <!-- vista normale classe dett_view, vista compressa thumb_view --> 
+                    
+            <li>
+                <a href="/altrezone/gildaapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/gilda-apartment_2053/gallery/thumb/Tola_Apartment_-_Rental_in_Rome-18.jpg" class="fotosmall" alt="Gilda Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Gilda Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Other areas</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/gilda-apartment_2053/gallery/thumb/Tola_Apartment_-_Rental_in_Rome-18.jpg" class="foto" alt="Gilda Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/gilda-apartment_2053/gallery/thumb/Tola_Apartment_-_Rental_in_Rome-7.jpg" class="foto" alt="Gilda Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/gilda-apartment_2053/gallery/thumb/Tola_Apartment_-_Rental_in_Rome-8.jpg" class="foto" alt="Gilda Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Cozy mini-apartment located on the third floor of a building with elevator on Via Pasquale Tola, in the Appio-Latino district.</p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                280,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/campodefiori/grottapintastudio?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/grotta-pinta-studio_2046/gallery/thumb/Grotta_Pinta_Studio_Apartment_-_Rental_in_Rome-1.jpg" class="fotosmall" alt="Grotta Pinta Studio">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Grotta Pinta Studio</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Campo de' Fiori</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/grotta-pinta-studio_2046/gallery/thumb/Grotta_Pinta_Studio_Apartment_-_Rental_in_Rome-1.jpg" class="foto" alt="Grotta Pinta Studio">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/grotta-pinta-studio_2046/gallery/thumb/Grotta_Pinta_Studio_Apartment_-_Rental_in_Rome-2.jpg" class="foto" alt="Grotta Pinta Studio">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/grotta-pinta-studio_2046/gallery/thumb/Grotta_Pinta_Studio_Apartment_-_Rental_in_Rome-3.jpg" class="foto" alt="Grotta Pinta Studio">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Cozy mini-apartment located on the first floor of a building without elevator on Via di Grotta Pinta, a stone’s throw from Campo de’ Fiori and its famous open-air market, and close to the Pantheon, Piazza Navona, the Capitol Hill and Torre Argentina archaeological site.</p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                295,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/saintpeterapartments/houseinthecityapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/anastasio-apartment_2054/gallery/thumb/Anastasio_Secondo_Apartment_-_Rental_in_Rome-17.jpg" class="fotosmall" alt="House in the City Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>House in the City Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Saint Peter</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="9" src="/images/estate_vote/vote9.gif">9/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/anastasio-apartment_2054/gallery/thumb/Anastasio_Secondo_Apartment_-_Rental_in_Rome-17.jpg" class="foto" alt="House in the City Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/anastasio-apartment_2054/gallery/thumb/Anastasio_Secondo_Apartment_-_Rental_in_Rome-2.jpg" class="foto" alt="House in the City Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/anastasio-apartment_2054/gallery/thumb/Anastasio_Secondo_Apartment_-_Rental_in_Rome-1.jpg" class="foto" alt="House in the City Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant 150 sq. meters apartment located on the fourth floor of a building with elevator on Via Anastasio II, close to St.Peter’s Basilica and the Vatican Museums.</p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                355,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/saintpeterapartments/vaticanvintageapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/vatican-vintage-apartment/gallery/thumb/Vatican_Vintage_Apartment_-_Rental_in_Rome-25.jpg" class="fotosmall" alt="Vatican Vintage Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Vatican Vintage Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Saint Peter</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/vatican-vintage-apartment/gallery/thumb/Vatican_Vintage_Apartment_-_Rental_in_Rome-25.jpg" class="foto" alt="Vatican Vintage Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/vatican-vintage-apartment/gallery/thumb/Vatican_Vintage_Apartment_-_Rental_in_Rome-28.jpg" class="foto" alt="Vatican Vintage Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/vatican-vintage-apartment/gallery/thumb/Vatican_Vintage_Apartment_-_Rental_in_Rome-2.jpg" class="foto" alt="Vatican Vintage Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant 100 sq. meters apartment located on the third floor of a building with elevator on Circonvallazione Trionfale, close to St. Peter’s Basilica and the Vatican Museums.</p>
+                        </span>
+                        <span class="dx_dett">
+                             
+            
+            <span class="euro">
+                310,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/spagnastepsapartments/128frattinahouse?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/128-frattina-house_1998/gallery/thumb/128_Frattina_House_Apartment_-_Rental_in_Rome-21.jpg" class="fotosmall" alt="128 Frattina House">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>128 Frattina House</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Spanish Steps</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="9" src="/images/estate_vote/vote9.gif">9/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/128-frattina-house_1998/gallery/thumb/128_Frattina_House_Apartment_-_Rental_in_Rome-21.jpg" class="foto" alt="128 Frattina House">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/128-frattina-house_1998/gallery/thumb/128_Frattina_House_Apartment_-_Rental_in_Rome-11.jpg" class="foto" alt="128 Frattina House">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/128-frattina-house_1998/gallery/thumb/128_Frattina_House_Apartment_-_Rental_in_Rome-16.jpg" class="foto" alt="128 Frattina House">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant 80 sq. meters located on the second floor of a building with elevator and porter service on Via Frattina, in the heart of downtown, at a stone’s throw from the Spanish Steps and the boutiques of Via del Corso and Via Condotti, and close to Piazza del Popolo, the Trevi Fountain and Villa Borghese public park.</p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                550,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/altrezone/chiariapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/chiari-apartment_2003/gallery/thumb/Chiari_Apartment_-_Rental_in_Rome-6.jpg" class="fotosmall" alt="Chiari Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Chiari Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Other areas</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/chiari-apartment_2003/gallery/thumb/Chiari_Apartment_-_Rental_in_Rome-6.jpg" class="foto" alt="Chiari Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/chiari-apartment_2003/gallery/thumb/Chiari_Apartment_-_Rental_in_Rome-5.jpg" class="foto" alt="Chiari Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/chiari-apartment_2003/gallery/thumb/Chiari_Apartment_-_Rental_in_Rome-11.jpg" class="foto" alt="Chiari Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant 80 sq. meters apartment located on the fifth floor of a building with elevator on Via Chiari, a quiet private street close to the Basilica of San Giovanni in Laterano.</p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                280,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/saintpeterapartments/romasognataapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/roma-sognata-apartment_2017/gallery/thumb/Roma_Sognata_Apartment_-_Rental_in_Rome-11.jpg" class="fotosmall" alt="Roma Sognata Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Roma Sognata Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Saint Peter</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/roma-sognata-apartment_2017/gallery/thumb/Roma_Sognata_Apartment_-_Rental_in_Rome-11.jpg" class="foto" alt="Roma Sognata Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/roma-sognata-apartment_2017/gallery/thumb/Roma_Sognata_Apartment_-_Rental_in_Rome-12.jpg" class="foto" alt="Roma Sognata Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/roma-sognata-apartment_2017/gallery/thumb/Roma_Sognata_Apartment_-_Rental_in_Rome-13.jpg" class="foto" alt="Roma Sognata Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant 90 sq. meters apartment located on the sixth and top floor of a building with elevator and porter service on Via Teodoro Valfrè, close to the Vatican City and Villa Pamphili public park. </p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="prezzobarrato">
+                 <span>Special offer &nbsp;</span>  
+                 <strong>325,00€<em></em></strong>
+            </span>
+        
+            <span class="euro">
+                295,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/trevifountainapartments/trevirelaxapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/trevi-relax-apartment_2024/gallery/thumb/Trevi_Relax__Apartment_-_Rental_in_Rome-13.jpg" class="fotosmall" alt="Trevi Relax Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Trevi Relax Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Trevi Fountain</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/trevi-relax-apartment_2024/gallery/thumb/Trevi_Relax__Apartment_-_Rental_in_Rome-13.jpg" class="foto" alt="Trevi Relax Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/trevi-relax-apartment_2024/gallery/thumb/Trevi_Relax__Apartment_-_Rental_in_Rome-14.jpg" class="foto" alt="Trevi Relax Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/trevi-relax-apartment_2024/gallery/thumb/Trevi_Relax__Apartment_-_Rental_in_Rome-15.jpg" class="foto" alt="Trevi Relax Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant apartment located on the second floor of a building without elevator on Via dei Crociferi, a stone’s throw from the Trevi Fountain and close to the Pantheon, the Quirinale Palace, the Spanish Steps and the boutiques of Via del Corso. </p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                565,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/trevifountainapartments/trevirelaxstudio?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/trevi-relax-studio_2025/gallery/thumb/Trevi_Relax__Studio_-_Rental_in_Rome-1.jpg" class="fotosmall" alt="Trevi Relax Studio">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Trevi Relax Studio</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Trevi Fountain</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/trevi-relax-studio_2025/gallery/thumb/Trevi_Relax__Studio_-_Rental_in_Rome-1.jpg" class="foto" alt="Trevi Relax Studio">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/trevi-relax-studio_2025/gallery/thumb/Trevi_Relax__Studio_-_Rental_in_Rome-2.jpg" class="foto" alt="Trevi Relax Studio">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/trevi-relax-studio_2025/gallery/thumb/Trevi_Relax__Studio_-_Rental_in_Rome-3.jpg" class="foto" alt="Trevi Relax Studio">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Cozy studio located on the second floor of a building without elevator on Via dei Crociferi, a stone’s throw from the Trevi Fountain and close to the Pantheon, the Quirinale Palace, the Spanish Steps and the boutiques of Via del Corso. </p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                322,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/spagnastepsapartments/caterina101apartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/caterina-101-apartment/gallery/thumb/Piemonte_Apartment_-_Rental_in_Rome-7.jpg" class="fotosmall" alt="Caterina 101 Apartment ">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Caterina 101 Apartment </h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Spanish Steps</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="8" src="/images/estate_vote/vote8.gif">8/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/caterina-101-apartment/gallery/thumb/Piemonte_Apartment_-_Rental_in_Rome-7.jpg" class="foto" alt="Caterina 101 Apartment ">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/caterina-101-apartment/gallery/thumb/Piemonte_Apartment_-_Rental_in_Rome-1.jpg" class="foto" alt="Caterina 101 Apartment ">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/caterina-101-apartment/gallery/thumb/Piemonte_Apartment_-_Rental_in_Rome-5.jpg" class="foto" alt="Caterina 101 Apartment ">
+                        </span>
+                        <span class="tx_dett">
+                            <p>Elegant 80 sq. meters apartment located at the first floor of a building with elevator and porter service on Via Piemonte, in the heart of downtown, close to the famous Via Veneto, the Spanish Steps and Villa Borghese public park.</p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="prezzobarrato">
+                 <span>Special offer &nbsp;</span>  
+                 <strong>415,00€<em></em></strong>
+            </span>
+        
+            <span class="euro">
+                376,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="/saintpeterapartments/celestinoapartment?bts=true" class="content_block">
+                    <img width="162" height="89px" src="/romeapartmentsphoto/celestino-apartment/gallery/thumb/Celestino_Apartment_-_Rental_in_Rome-12.jpg" class="fotosmall" alt="Celestino Apartment">
+                    <span class="testi">
+                        <span class="tit">
+                            <h2>Celestino Apartment</h2>
+                            <img class="ico_book_list" src="/images/css/book-now.gif">
+                            <span class="nulla"></span>
+                            <span class="cat">Saint Peter</span>
+                        </span>
+                        <span class="voto">
+                            <img alt="10" src="/images/estate_vote/vote10.gif">10/10</span>
+                        <span class="nulla"></span>
+                    </span>
+                    <span class="dettaglio">
+                        <span class="cont_foto">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/celestino-apartment/gallery/thumb/Celestino_Apartment_-_Rental_in_Rome-12.jpg" class="foto" alt="Celestino Apartment">
+                            <img width="162" height="89px" src="/romeapartmentsphoto/celestino-apartment/gallery/thumb/Celestino_Apartment_-_Rental_in_Rome-8.jpg" class="foto" alt="Celestino Apartment">
+                            <img width="162" height="89px" style="margin-right: 0;" src="/romeapartmentsphoto/celestino-apartment/gallery/thumb/Celestino_Apartment_-_Rental_in_Rome-3.jpg" class="foto" alt="Celestino Apartment">
+                        </span>
+                        <span class="tx_dett">
+                            <p></p><p>Excellent <em>holiday rental</em> located in <em>Via degli Scipioni</em> a few steps from Saint Peter's Square and the <strong>historical centre</strong> of Rome.</p><p></p>
+                        </span>
+                        <span class="dx_dett">
+                            
+            
+            <span class="euro">
+                325,00<span style="font-size: 24px;">€</span>
+            </span>
+        
+                            <span class="btnMed"><span>View details</span></span>
+                        </span>
+                        <span class="nulla"></span>
+                    </span>
+                </a>
+            </li>
+        
+            
+        
+                </ul>
+                <div class="ordina pageCount"><span class="page">1</span><a href="javascript:RNT_changePage(2)" class="page">2</a><a href="javascript:RNT_changePage(3)" class="page">3</a><a href="javascript:RNT_changePage(4)" class="page">4</a><a href="javascript:RNT_changePage(5)" class="page">5</a><a href="javascript:RNT_changePage(6)" class="page">6</a><a href="javascript:RNT_changePage(7)" class="page">7</a><a href="javascript:RNT_changePage(8)" class="page">8</a><a href="javascript:RNT_changePage(9)" class="page">9</a><a href="javascript:RNT_changePage(10)" class="page">10</a><a href="javascript:RNT_changePage(11)" class="page">..</a><a href="javascript:RNT_changePage(14)" class="page">14</a><a href="javascript:RNT_changePage(0)" class="page showAll">Show all</a></div>
+            </div>
+            <div class="nulla">
+            </div>
+        </div>
+            <div class="nulla">
+            </div>
+        </div>
+            
+            <div class="nulla">
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="footerTop"><div>
+                <menu class="menuFooterTop">
+                    <ul>
+                        <li>
+                            <a href="#">about us</a>
+                        </li>
+                        <li>
+                            <a href="#">faqs</a>
+                        </li>
+                        <li>
+                            <a href="#">press</a>
+                        </li>
+                        <li>
+                            <a href="#">services</a>
+                        </li>
+                        <li>
+                            <a href="#">contacts</a>
+                        </li>
+                        <li>
+                            <a href="#">affiliates</a>
+                        </li>
+                        <li>
+                            <a href="#">terms of service</a>
+                        </li>
+                        <li>
+                            <a href="#">links</a>
+                        </li>
+                    </ul>
+                </menu>
+                <div class="socialLinks">
+                    <h3 class="socialLinksTit">Follow us on:</h3>
+                    <a href="https://www.facebook.com/rentalinrome" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/rentalinrome" target="_blank">Twitter</a>
+                    <a href="https://plus.google.com/103933449760811324223" target="_blank">Google+</a>
+                    <a href="https://www.youtube.com/user/rentalinrome" target="_blank">YouTube</a>
+                </div>
+            </div></div> 
+
+            <div class="nulla">
+            </div>
+
+            <div class="footerBottom"><div>
+                <menu class="menuFooterBottom">
+                    <h3 class="menuFooterTit">Special properties</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Last minute booking</a>
+                        </li>
+                        <li>
+                            <a href="#">Office in Rome</a>
+                        </li>
+                        <li>
+                            <a href="#">Properties for sale in Rome</a>
+                        </li>
+                        <li>
+                            <a href="#">Maximum Luxury Villa in Rome</a>
+                        </li>
+                        <li>
+                            <a href="#">Rent a Castle</a>
+                        </li>
+                        <li>
+                            <a href="#">For Sale in Cortina</a>
+                        </li>
+                    </ul>
+                </menu>
+                <menu class="menuFooterBottom">
+                    <h3 class="menuFooterTit">Services and info</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Wedding in Rome</a>
+                        </li>
+                        <li>
+                            <a href="#">Airport Transfer and City Tour</a>
+                        </li>
+                        <li>
+                            <a href="#">Satisfaction Guaranteed or Full Refound!</a>
+                        </li>
+                        <li>
+                            <a href="#">Shocking prices!</a>
+                        </li>
+                        <li>
+                            <a href="#">Guestbook</a>
+                        </li>
+                    </ul>
+                </menu>
+                <menu class="menuFooterBottom">
+                    <h3 class="menuFooterTit">Our partners/affiliates</h3>
+                    <ul>
+                        <li>
+                            <a href="http://www.liontravel.it/" target="_blank">LionTravel.com</a>
+                        </li>
+                        <li>
+                            <a href="http://www.rentalsinmauritius.com/" target="_blank">Rental in Mauritius</a>
+                        </li>
+                        <li>
+                            <a href="http://www.enit.it/it/" target="_blank">Club Italia</a>
+                        </li>
+                        <li>
+                            <a href="http://www.warchild.org/" target="_blank">Warchild.org</a>
+                        </li>
+                        <li>
+                            <a href="http://www.greenmalindi.com/" target="_blank">Green Malindi</a>
+                        </li>
+                        <li>
+                            <a href="http://www.magadesign.net" target="_blank">web agency</a>
+                        </li>
+                    </ul>
+                </menu>
+                <menu class="menuFooterBottom" style="padding-right:0; width: 242px;">
+                    <h3 class="menuFooterTit">Events</h3>
+                    <ul class="eventsFooter">
+                        <li>
+                            <a href="#">
+                                <strong>Event name</strong>
+                                <em>01 September 2014</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <strong>Event name 2</strong>
+                                <em>02 October 2014</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <strong>Event name 3</strong>
+                                <em>03 November 2014</em>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </menu>
+                
+                <div class="nulla">
+                </div>
+
+                <div class="societyData">
+                    <span>Rental in Rome s.r.l.</span> - P. IVA: 07824541002 - 2003 - 2014 © all rights reserved <br />
+                    <strong>Operative Office:</strong> Via Marianna Dionigi, 57 - 00193 Roma   |  <strong>Administrative Office:</strong> Via Appia Nuova, 677 - 00179 Roma 
+                </div>
+
+                <div class="payFooter">
+                    <img width="45" height="28" border="0" src="/images/css/master_p.gif">
+                    <img width="43" height="28" border="0" src="/images/css/visa_p.gif">
+                    <div class="payPalFooter">
+                        <!-- PayPal Logo -->
+                        <table border="0" cellspacing="0" cellpadding="10" align="center">
+                        <tbody>
+                        <tr>
+                        <td align="center"><a onclick="javascript:window.open('https://www.paypal.com/it/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside','olcwhatispaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=400, height=350');" href="#"><img src="https://www.paypal.com/it_IT/IT/i/bnr/bnr_shopNowUsing_150x40.gif" border="0" alt="Acquista ora con PayPal" /></a></td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        <!-- PayPal Logo -->
+                    </div>
+                    <div id="shinystatContent">
+                        <!-- PUT REAL SHINY STAT HERE -->
+                        <img src="images/shinystat-FAKE.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="nulla">
+                </div>
+            </div></div>
+
+            <div class="nulla">
+            </div>
+        </footer>
+
+    <div class="nulla">
+    </div>
+    </div>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    setCal(); setToolTip(); Sys.Application.add_init(function () {
+        $create(Sys.UI._UpdateProgress, { "associatedUpdatePanelId": null, "displayAfter": 0, "dynamicLayout": true }, null, null, $get("ctl00_loading_cont"));
+    });
+    //]]>
+</script>
+</form>
+
+    <input type="hidden" id="sendMailToFriend_state" />
+
+    <script type="text/javascript">
+        function closeAll() {
+            $("#sendMailToFriend_cont").slideUp();
+            $("#sendMailToFriend_state").val("0");
+            $("#myAptList_cont").slideUp();
+            $("#myAptList_state").val("0");
+            $("#lastVisitedEstateList_cont").slideUp();
+            $("#lastVisitedEstateList_state").val("0");
+            return true;
+        }
+    </script>
+    
+    <script type="text/javascript">
+        function pdfDownLoad(elm) {
+            var iFrameSrc = 'http://modpdf.ts.magadesign.net/createPdf.aspx?url=http%3a%2f%2fwww.rentalinrome.com%2fpg_estate_pdf.aspx%3fid%3d6%26lang%3d2&filename=search-apartments-in-rome.pdf';
+            //iFrameSrc = "/admin/modPdf/createPdf.aspx?url=http%3a%2f%2fwww.rentalinrome.com%2fsearch-apartments-in-rome&filename=search-apartments-in-rome.pdf";
+            var iFrameHtml = '<iframe width="0" height="0" id="ajax-temp" name="ajax-temp" border="0" style="width: 0; height: 0; border: none; display: none;" onload="$(\'#lnk_getPdf\').removeClass(\'loading\');" src="' + iFrameSrc + '"></iframe>';
+            var iFrameCont = document.createElement("div");
+            iFrameCont.setAttribute("width", "0");
+            iFrameCont.setAttribute("height", "0");
+            iFrameCont.setAttribute("border", "0");
+            iFrameCont.setAttribute("style", "width: 0; height: 0; border: none; display: none;");
+            $("#lnk_getPdf").addClass("loading");
+            document.body.appendChild(iFrameCont);
+            $(iFrameCont).html(iFrameHtml);
+
+            return;
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("id", "ajax-temp");
+            iframe.setAttribute("name", "ajax-temp");
+            iframe.setAttribute("width", "0");
+            iframe.setAttribute("height", "0");
+            iframe.setAttribute("border", "0");
+            iframe.setAttribute("style", "width: 0; height: 0; border: none; display: none;");
+            iframe.setAttribute("onload", "$('#lnk_getPdf').removeClass('loading');");
+            iframe.src = iFrameSrc;
+            //$(iframe).load(function () {  });
+            $("#lnk_getPdf").addClass("loading");
+            document.body.appendChild(iframe);
+        }
+        function sendMailToFriend_toggle() {
+            if ($("#sendMailToFriend_state").val() == "1") {
+                $("#sendMailToFriend_toggler").removeClass("opened");
+                $("#sendMailToFriend_toggler").addClass("closed");
+                $("#sendMailToFriend_cont").slideUp();
+                $("#sendMailToFriend_state").val("0");
+            }
+            else {
+                $("#sendMailToFriend_toggler").removeClass("closed");
+                $("#sendMailToFriend_toggler").addClass("opened");
+                if (closeAll()) $("#sendMailToFriend_cont").slideDown();
+                $("#sendMailToFriend_state").val("1");
+            }
+        }
+        $("#sendMailToFriend_state").val("0");
+        function sendMailToFriend_reset() {
+            $("#ctl00_txt_pagetofriend_senderName").val('');
+            $("#ctl00_txt_pagetofriend_receiverMail").val('');
+            $("#sendMailToFriend_done").hide();
+            $("#sendMailToFriend_loading").hide();
+            $("#sendMailToFriend_lnk").show();
+        }
+        function sendMailToFriend_check() {
+            $("#sendMailToFriend_check").html('');
+            $("#ctl00_txt_pagetofriend_senderName").removeClass(FORM_errorClass);
+            $("#ctl00_txt_pagetofriend_receiverMail").removeClass(FORM_errorClass);
+            if ($.trim($("#ctl00_txt_pagetofriend_senderName").val()) == "") {
+                $("#sendMailToFriend_check").html('This section is required. Please enter a value.');
+                $("#ctl00_txt_pagetofriend_senderName").addClass(FORM_errorClass);
+                return false;
+            }
+            if ($.trim($("#ctl00_txt_pagetofriend_receiverMail").val()) == "") {
+                $("#sendMailToFriend_check").html('This section is required. Please enter a value.');
+                $("#ctl00_txt_pagetofriend_receiverMail").addClass(FORM_errorClass);
+                return false;
+            }
+            if (!FORM_validateEmail($("#ctl00_txt_pagetofriend_receiverMail").val())) {
+                $("#sendMailToFriend_check").html('Please enter a valid e-mail address.');
+                $("#ctl00_txt_pagetofriend_receiverMail").addClass(FORM_errorClass);
+                return false;
+            }
+            return true;
+        }
+        function sendMailToFriend_send() {
+            if (!sendMailToFriend_check()) return;
+            $("#sendMailToFriend_done").hide();
+            $("#sendMailToFriend_loading").show();
+            $("#sendMailToFriend_lnk").hide();
+            var _url = "/webservice/util_mail_pagetofriend.aspx";
+            _url += "?senderName=" + encodeURIComponent($("#ctl00_txt_pagetofriend_senderName").val());
+            _url += "&receiverMail=" + encodeURIComponent($("#ctl00_txt_pagetofriend_receiverMail").val());
+            _url += "&currPagePath=http%3a%2f%2fwww.rentalinrome.com%2fsearch-apartments-in-rome";
+            _url += "&currPageName=Search+apartments+in+Rome";
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    $("#sendMailToFriend_done").show();
+                    $("#sendMailToFriend_loading").hide();
+                    $("#sendMailToFriend_lnk").hide();
+                    setTimeout('sendMailToFriend_reset()', 5000);
+                }
+            });
+        }
+    </script>
+
+    <input type="hidden" id="myAptList_state" />
+
+    <script type="text/javascript">
+        function myAptList_toggle() {
+            if ($("#myAptList_state").val() == "1") {
+                $("#myAptList_toggler").removeClass("opened");
+                $("#myAptList_toggler").addClass("closed");
+                $("#myAptList_cont").slideUp();
+                $("#myAptList_state").val("0");
+            }
+            else {
+                $("#myAptList_toggler").removeClass("closed");
+                $("#myAptList_toggler").addClass("opened");
+                if (closeAll()) $("#myAptList_cont").slideDown();
+                $("#myAptList_state").val("1");
+            }
+        }
+        function refreshMyList(id) {
+            var _url = "/webservice/rnt_myPreferedEstateList.aspx";
+            _url += "?SESSION_ID=0c79f8ed-2b18-4c48-b0f9-5c6b86977e62";
+            _url += "&currEstate=" + id;
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    if (html != "") {
+                        $("#myAptList_list").html(html);
+                        $("#myAptList_toggler").show();
+                        if (id == 0) return;
+                        $("#myAptList_toggler").removeClass("closed");
+                        $("#myAptList_toggler").addClass("opened");
+                        if (closeAll()) $("#myAptList_cont").slideDown();
+                        $("#myAptList_state").val("1");
+                    }
+                    else {
+                        $("#myAptList_cont").slideUp();
+                        $("#myAptList_toggler").hide();
+                        $("#myAptList_list").html(html);
+                    }
+                }
+            });
+            if (id != 0)
+                $(".addToMyList_toggler").hide();
+        }
+        $(document).ready(function () {
+            $(window).load(function () {
+                $("#myAptList_state").val("0");
+                refreshMyList(0);
+            });
+        });
+    </script>
+
+    <input type="hidden" id="lastVisitedEstateList_state" />
+
+    <script type="text/javascript">
+        function lastVisitedEstateList_toggle() {
+            if ($("#lastVisitedEstateList_state").val() == "1") {
+                $("#lastVisitedEstateList_toggler").removeClass("opened");
+                $("#lastVisitedEstateList_toggler").addClass("closed");
+                $("#lastVisitedEstateList_cont").slideUp();
+                $("#lastVisitedEstateList_state").val("0");
+            }
+            else {
+                $("#lastVisitedEstateList_toggler").removeClass("closed");
+                $("#lastVisitedEstateList_toggler").addClass("opened");
+                if (closeAll()) $("#lastVisitedEstateList_cont").slideDown();
+                $("#lastVisitedEstateList_state").val("1");
+            }
+        }
+        function refresh_lastVisitedEstateList() {
+            var _url = "/webservice/rnt_myLastVisitedEstateList.aspx";
+            _url += "?SESSION_ID=0c79f8ed-2b18-4c48-b0f9-5c6b86977e62";
+            //_url += "?currEstate=" + id;
+            var _xml = $.ajax({
+                type: "GET",
+                url: _url,
+                dataType: "html",
+                success: function (html) {
+                    if (html != "") {
+                        $("#lastVisitedEstateList_list").html(html);
+                        $("#lastVisitedEstateList_toggler").show();
+                    }
+                    else {
+                        $("#lastVisitedEstateList_cont").slideUp();
+                        $("#lastVisitedEstateList_toggler").hide();
+                        $("#lastVisitedEstateList_list").html(html);
+                    }
+                }
+            });
+        }
+        $(document).ready(function () {
+            $(window).load(function () {
+                $("#lastVisitedEstateList_state").val("0");
+                refresh_lastVisitedEstateList();
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        //config
+        $float_speed = 1500; //milliseconds
+        $float_easing = "easeOutQuint";
+        $menu_fade_speed = 500; //milliseconds
+        $closed_menu_opacity = 0.75;
+
+        //cache vars
+        $fl_menu = $("#fl_menu");
+        //$fl_menu_menu = $("#fl_menu .menu");
+        //$fl_menu_label = $("#fl_menu .label");
+
+        $(document).ready(function () {
+            menuPosition = $fl_menu.position().top;
+            $fl_menu.css("display", "block");
+            FloatMenu();
+            //            $fl_menu.hover(
+            //		function() { //mouse over
+            //		    $fl_menu_label.fadeTo($menu_fade_speed, 1);
+            //		    $fl_menu_menu.fadeIn($menu_fade_speed);
+            //		},
+            //		function() { //mouse out
+            //		    $fl_menu_label.fadeTo($menu_fade_speed, $closed_menu_opacity);
+            //		    $fl_menu_menu.fadeOut($menu_fade_speed);
+            //		}
+            //	);
+        });
+
+        $(window).scroll(function () {
+            FloatMenu();
+        });
+
+        function FloatMenu() {
+            var scrollAmount = $(document).scrollTop();
+            var newPosition = scrollAmount + 200;
+            //var newPosition = menuPosition + scrollAmount;
+            var max_top = $("#main").height() - 100;
+            if (max_top < newPosition) {
+                newPosition = max_top;
+            }
+            if ($($("#main")).height() < $fl_menu.height()) {
+                $fl_menu.css("top", menuPosition);
+            } else {
+                $fl_menu.stop().animate({ top: newPosition }, $float_speed, $float_easing);
+            }
+        }
+    </script>
+    <img id="SITE_cursorWait" alt="loading" src="/images/css-common/cursor_loader.gif" style="position: absolute; left: -2000em; top: -2000em;" />
+    <!-- Start of Woopra Code -->
+<script type="text/javascript">
+    function woopraReady(tracker) {
+        tracker.setDomain('rentalinrome.com');
+        tracker.setIdleTimeout(300000);
+        tracker.track({ type: 'pageview', url: window.location.pathname + window.location.search, title: document.title });
+        return false;
+    }
+    $(document).ready(function () {
+        $(window).load(function () {
+            var wsc = document.createElement('script');
+            wsc.src = document.location.protocol + '//static.woopra.com/js/woopra.js';
+            wsc.type = 'text/javascript';
+            wsc.async = true;
+            var ssc = document.getElementsByTagName('script')[0];
+            ssc.parentNode.insertBefore(wsc, ssc);
+        });
+    });
+</script>
+<!-- End of Woopra Code -->
+    <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+    _atrk_opts = { atrk_acct: "XpP1j1a4ZP00iO", domain: "rentalinrome.com", dynamic: true };
+    (function () { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=XpP1j1a4ZP00iO" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+﻿body {
+	color:#5C5C5E;
+	font-size: 11px;
+}
+.nulla{
+	clear:both; 
+	height:0px;
+	line-height:0px;
+	font-size:0px;
+	display:block;
+}
+.error {
+    color: red;
+    font-size: 11px;
+}
+input, select {
+    font-size:12px;
+    color:#5c5c5e;
+}
+
+
+#infoCont {
+    background:url(/images/css/bg_search_int.jpg) #d5d5e1 top left repeat-x;
+    border: 1px solid #b9b9cd;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+#infoCont .infoBox{
+    background:none;
+    color: #333366;
+}
+#infoCont .infoBox span {
+    display: block;
+    font-size: 10px;
+    line-height: 11px;
+    border-bottom:1px dotted #FFF;
+    padding-bottom:5px;
+    margin-bottom: 3px;
+    color:#595959;
+}
+#infoCont .infoBox span.titles {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 20px 0 0;
+    border:none;
+    padding-bottom: 0;
+    color:#333366;
+}
+#infoCont .infoBox a {
+    color:#333366;
+}
+#infoCont .infoBox a:hover {
+    color:#FE6634;
+}
+#infoCont .infoBox table {
+    color:#333366;
+    font-size:12px;
+    line-height:16px;
+    border-bottom:1px dotted #bfbfd0;
+    padding: 5px 0;
+}
+.paymentdata .dati_ord_sx {
+    width: 270px;
+    font-size:12px;
+    line-height:14px;
+}
+.paymentdata .dati_ord_sx .n_ord {
+    background-color: #333366;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 10px;
+    margin: 0 0 10px;
+    padding: 2px 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+.paymentdata .dati_ord_sx h3 {
+    font-size:18px;
+    font-weight:bold;
+    font-style:italic;
+    color:#333366;
+    line-height: 20px;
+    margin: 0 0 5px;
+}
+.paymentdata .dati_ord_sx h4 {
+    font-size:12px;
+    font-weight:bold;
+    color:#fe6634;
+    line-height: 14px;
+    margin: 0;
+}
+											
+.paymentdata .costo {
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    padding: 7px 4px;
+    width:130px;
+    color: #FFFFFF;
+    text-align: center;
+    float:left;
+    margin-left: 5px;
+    text-shadow: none;
+}
+.paymentdata a.costo, .ui-body-c .ui-link.costo {
+    color: #FFFFFF;
+    text-shadow: none;
+}
+.paymentdata .costo .t_pagam {
+    display: block;
+    font-size: 10px;
+    line-height: 10px;
+    text-transform: uppercase;
+}
+.paymentdata a.costo.pagared:hover .t_pagam {
+    color:#420000;
+}
+.paymentdata .costo .euro {
+    font-size:17px;
+    line-height: 21px;
+    font-weight:bold;
+    display:block;
+}
+.paymentdata a.costo.pagared:hover .euro {
+    color:#420000;
+}
+.paymentdata .costo .euro strong {
+    font-size:20px;
+}
+.paymentdata .costo .stato {
+    display:block;
+    padding-top: 4px;
+    margin-top: 4px;
+    position:relative;
+}
+.paymentdata .costo .stato .pagamento {
+    background-repeat:no-repeat;
+    background-position:left top;
+    padding-left:27px;
+    font-size:11px;
+    font-weight:bold;
+    display:block;
+    height: 20px;
+}
+.paymentdata .costo.pagato {
+    background-color:#45d100;
+}
+
+.paymentdata .costo.pagagray {
+    background-color:#b5b3b3;
+}
+.paymentdata .costo.pagato .stato {
+    border-top:1px dashed #379808;
+}
+.paymentdata .costo.pagagray .stato {
+    border-top:1px dashed #FFF;
+}
+.paymentdata .pagatotal {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #B5B3B3;
+    color: #FFFFFF;
+    float: left;
+    margin-left: 5px;
+    margin-top: 4px;
+    padding: 3px 5px;
+    text-align: center;
+    width: 95%;
+    font-size: 18px;
+}
+.paymentdata .pagatotal strong {
+    font-weight:bold;
+    font-size:10px;
+}
+.paymentdata .pagatotal span {
+    font-size:17px;
+}
+.paymentdata a.costo.pagared {
+    background-color:#ff0000;
+    text-decoration:none;
+}
+.paymentdata a.costo.pagared .stato {
+    border-top:1px dashed #FFF;
+}
+.paymentdata a.costo.pagared .stato .cartered {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    padding: 3px 5px;
+    margin-bottom:3px;
+    display:block;
+    text-decoration: none;
+    font-size:10px;
+    background-color:#FFF;
+    color:#12315f;
+}
+.paymentdata a.costo.pagared:link .stato .cartered,
+.paymentdata a.costo.pagared:visited .stato .cartered{
+    border:1px solid #FFF;
+}
+.paymentdata a.costo.pagared:hover .stato .cartered,
+.paymentdata a.costo.pagared:active .stato .cartered {
+    color:#12315f;
+    border:1px solid #12315f;
+}
+a.costo.pagared .pagaora_ris {
+    float: left;
+    font-size: 13px;
+    line-height:16px;
+    font-weight:bold;
+    background-image:url(/images/css/btn_ris_pagaora2.gif);
+    background-repeat:no-repeat;
+    margin:0 1px;
+    *float: none; /*-- targets IE6 and IE7 --*/
+    *background-image:none;
+}
+a.costo.pagared .pagaora_ris > span {
+    float: left;
+    min-height: 16px;
+    padding: 4px 8px;
+    width: 112px;
+    background-image:url(/images/css/btn_ris_pagaora1.gif);
+    background-repeat:no-repeat;
+    *float: none; /*-- targets IE6 and IE7 --*/
+    *background-image:none;
+}
+a.costo.pagared:link .pagaora_ris, a.costo.pagared:visited .pagaora_ris {
+     
+     background-position:left bottom;
+}
+a.costo.pagared:hover .pagaora_ris, a.costo.pagared:active .pagaora_ris {
+     background-position:right bottom;
+}
+a.costo.pagared:link .pagaora_ris > span, a.costo.pagared:visited .pagaora_ris {
+    color:#FFF;
+    background-position:left top;
+}
+a.costo.pagared:hover .pagaora_ris > span, a.costo.pagared:active .pagaora_ris {
+    background-position:right top;
+    color:#420000;
+}
+.links {
+    color: #FFFFFF;
+    float: left;
+    margin-left: 10px;
+    text-align: left;
+    clear: both;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: none;
+}

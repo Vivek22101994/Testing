@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="magaCommon_">
+  <DataContextMoniker Name="/magaCommon_DataContext" />
+  <nestedChildShapes>
+    <classShape Id="286a322f-8020-4bdb-9b9a-6104b0f7a1d3" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/magaCommon_DataContext/LOG_ADMIN_CONNECTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84a0d893-65e9-4676-8202-476f6f50ed1b" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f378db4-04cf-4922-8f0a-f51d98dc3f24" absoluteBounds="3.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/magaCommon_DataContext/LOG_CLIENT_CONNECTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cf667bd-949d-483c-bc6f-f64c0ce2e943" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="babba468-2f2a-4d9c-81b5-84bb8aa0b23d" absoluteBounds="0.5, 3.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/magaCommon_DataContext/LOG_AREARES_CONNECTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0c9761d-bda9-418b-bbfe-5acfec5d2d15" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,186 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPage.master.cs" Inherits="RentalInRome.affiliatesarea.masterPage" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="NlSx8KjFFw9tuY_pwuH8kIoeoYq88Jvd26kT5mEsSbo" />
+    <asp:ContentPlaceHolder ID="CPH_head_top" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="<%=CurrentAppSettings.ROOT_PATH %>favicon.ico" />
+    <style type="text/css">
+        @import url(/css/style.css<%="?tmp="+DateTime.Now.Ticks %>);
+        @import url(/css/common.css<%="?tmp="+DateTime.Now.Ticks %>);
+        @import url(/js/shadowbox/shadowbox.css);
+        @import url(/jquery/css/ui-core.css);
+        @import url(/jquery/css/ui-slider.css);
+        @import url(/jquery/css/ui-datepicker.css);
+        @import url(/jquery/css/ui-slider.css);
+        @import url(/jquery/css/ui-autocomplete.css);
+        @import url(/css/styleagent.css);
+    </style>
+    <style type="text/css"> 
+        div.rwDialogPopup 
+        { 
+            background-image: none !important; 
+        } 
+    </style>
+    <script src="/jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="/jquery/js/ui-all.min.js" type="text/javascript"></script>
+    <script src="/jquery/datepicker-lang/jquery.ui.datepicker-<%= CurrentLang.JS_CAL_FILE %>" type="text/javascript"></script>
+    <script src="/jquery/plugin/scrollTo/scrollTo.min.js" type="text/javascript"></script>
+    <script src="/js/shadowbox/shadowbox.js" type="text/javascript"></script>
+    <script src="/js/shadowbox/players/shadowbox-iframe.js" type="text/javascript"></script>
+    <script src="/js/shadowbox/players/shadowbox-html.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/jquery.tooltip.js"></script>
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+        <script type="text/javascript">
+	    function setToolTip() {
+	        $('.ico_tooltip').tooltip({ track: true, delay: 0, positionLeft: true, top: 0, left: 0 });
+	        $('.ico_tooltip_right').tooltip({ track: true, delay: 0, positionLeft: false, top: 20, left: 20 });
+	    }
+	    function SITE_addDinamicLabel(labelId, controlId) {
+	        $('#'+controlId).bind("blur",function(){if($.trim($('#'+controlId).val())==""){$('#'+labelId).css("display","block");}else{ $('#'+labelId).css("display","none");}});
+	        $('#'+labelId).bind("click",function(){$('#'+controlId).focus();$('#'+labelId).css("display","none");});
+	        $('#'+controlId).bind("focus",function(){$('#'+labelId).css("display","none");});
+	    }
+	    function SITE_showLoader() {
+	        $('#<%=loading_cont.ClientID %>').show();
+	    }
+	    function SITE_hideLoader() {
+	        $('#<%=loading_cont.ClientID %>').hide();
+	    }
+	    function FORM_validateEmail(str) {
+	        return str.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/);
+	    }
+	    var FORM_errorClass = "formErrorState";
+        </script>
+        <script type="text/javascript">
+            function callAlert(message) {
+                radalert(message, 340, 110);
+            } 
+        </script>
+    </telerik:RadCodeBlock>
+    <asp:ContentPlaceHolder ID="CPH_head_bottom" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="required_fileds_validator" style="overflow: auto; width: 100%; height: 2000em; z-index: 999; position: fixed; top: 0; left: 0; display: none;" onclick="document.getElementById('required_fileds_validator').style.display = 'none';">
+        <div class="info_area cont">
+            <span>Campi evidenziati in rosso sono obbligatori !<br />
+                si prega di compilarli tutti...</span>
+        </div>
+    </div>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+    </telerik:RadAjaxManager>
+    <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
+    </telerik:RadWindowManager>
+    <asp:UpdateProgress ID="loading_cont" runat="server" DisplayAfter="0">
+        <ProgressTemplate>
+            <div id="loading_big_cont" style="opacity: 0.5; filter: alpha(opacity=50);">
+            </div>
+            <div id="overlay_site">
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <asp:HiddenField ID="HF_unique" runat="server" Value="" Visible="false" />
+    <div id="container" class="agency">
+        <div id="header">
+            <a class="logo" href="<%=CurrentSource.getPagePath("1", "stp", CurrentLang.ID.ToString()) %>">
+                <img src="/images/css/logo.gif" title="Rent apartments in Rome, Italy" alt="Rent apartments in Rome, Italy" />
+            </a>
+            <div class="dxhead_privagency">
+                <span class="titag"><%=CurrentSource.getSysLangValue("lblAffiliatesArea")%></span>
+                <asp:Literal ID="ltr_nameFull" runat="server" Visible="false"></asp:Literal>
+                <asp:PlaceHolder ID="PH_agentInfo" runat="server" Visible="false">
+                    <span class="nomeag">
+                        <%=CurrentSource.getSysLangValue("lblWelcome")%>
+                        <strong>
+                            <%=ltr_nameFull.Text%>
+                        </strong>
+                        <a href="login.aspx?logout=true" class="menulogout">Logout</a></span>
+                </asp:PlaceHolder>
+            </div>
+            <div class="nulla">
+            </div>
+            <asp:PlaceHolder ID="PH_menu" runat="server">
+                <div id="menuMain">
+                    <ul>
+                        <li>
+                            <a href="/affiliatesarea/" style="border-left: none;">Home</a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/clientList.aspx">Clients</a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/reservationNew.aspx">New Reservation</a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/reservationList.aspx">Reservations</a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/invoiceList.aspx"><%=CurrentSource.getSysLangValue("lblInvoiceList")%></a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/Terms.aspx">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="/images/brochure/rentalinrome_agency_eng.pdf">Agency area Step by Step</a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/Contacts.aspx"><%=CurrentSource.getSysLangValue("lblContacts")%></a>
+                        </li>
+                        <li>
+                            <a href="/affiliatesarea/assignedEstateList.aspx"><%=CurrentSource.getSysLangValue("lblPrices")%></a>
+                        </li>
+                    </ul>
+                    <div class="nulla">
+                    </div>
+                </div>
+                <div class="nulla">
+                </div>
+            </asp:PlaceHolder>
+        </div>
+        <div class="nulla">
+        </div>
+        <div id="main">
+            <div>
+                <asp:ContentPlaceHolder ID="CPH_main" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <table class="indirizzi">
+            <tr>
+                <td align="left" valign="middle">
+                    <strong>Roma</strong><br />
+                    <strong style="color: #FFF">
+                        <%= CurrentSource.getSysLangValue("lblufficiooperativo")%></strong>: 
+                    Via Marianna Dionigi 57 - 00193 Roma
+                </td>
+                <td align="left" valign="middle">
+                    <strong>Roma</strong><br />
+                    <strong style="color: #FFF">
+                        <%= CurrentSource.getSysLangValue("lblufficioamm")%></strong>: 
+                    Via Appia Nuova, 677 - 00179 Roma
+                </td>
+               
+            </tr>
+        </table>
+        <div class="nulla">
+        </div>
+        <div class="links societa" style="color: #FFF;">
+           <strong>Rental in Rome S.r.l.</strong> - P. IVA: 07824541002 - 2003 - 2014 © all rights reserved
+        </div>
+    </div>
+    </form>
+    <telerik:RadCodeBlock ID="RadCodeBlock2" runat="server">
+        <script type="text/javascript">
+            Shadowbox.init();
+        </script>
+    </telerik:RadCodeBlock>
+</body>
+</html>

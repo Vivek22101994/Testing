@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Rental in Rome | Mobile version</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="/kendo/js/jquery.min.js"></script>
+    <script src="/kendo/js/kendo.mobile.min.js"></script>
+    <script src="/kendo/content/shared/js/console.js"></script>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/style-mobile.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <style>
+.swipe { 
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  z-index:1;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+</style>
+
+
+</head>
+
+
+<body>
+    <div data-role="view" data-layout="mobile-view" class="container">
+        <header class="header" data-stretch="true">
+
+
+            <div class="loginAndLangs" data-role="navbar">
+                <a class="loginMobileLink">Login</a>
+                <a href="#" class="langsMobile">
+                    <img src="images/css/flag-ita.gif" />
+                    <span>Italiano</span></a>
+            </div>
+            <a class="nav-button logoCont" href="#index">
+                <img src="images/css/logo.gif" class="logo" alt="Rental in Rome" /></a>
+
+            <a class="openSearch" data-role="touch" data-enable-swipe="1" data-touchstart="openSearchBox.touchstart">Cerca Appartamento</a>
+
+
+
+
+
+
+            <div class="nulla">
+            </div>
+        </header>
+
+        <div class="searchBox" id="searchBox" data-title="Search Form" data-init="initForm" data-use-native-scrolling="true">
+            <a class="closeSearchBox" data-role="touch" data-enable-swipe="1" data-touchstart="closeSearchBox.touchstart">Annulla la ricerca</a>
+            <form>
+                <ul data-style="inset" class="searchForm">
+                    <li class="searchBoxLine">
+                        <input type="text" value="Ricerca Veloce" />
+                    </li>
+                    <li class="searchBoxLine">
+                        <label>Seleziona una zona:</label>
+                        <select id="dropdownZone">
+                            <option>- - -</option>
+                            <option>Colosseo</option>
+                            <option>Trastevere</option>
+                        </select>
+                    </li>
+                    <li class="searchBoxLine">
+                        <span class="searchBoxCol2 checkIn">
+                            <label>Check-In</label>
+                            <input type="text" />
+                        </span>
+                        <span class="searchBoxCol2 checkOut">
+                            <label>Check-Out</label>
+                            <input type="text" />
+                        </span>
+                    </li>
+                    <li class="searchBoxLine">
+                        <span class="searchBoxCol4 nights">
+                            <label>Notti</label>
+                            <input type="text" value="3" />
+                        </span>
+                        <span class="searchBoxCol4 guests">
+                            <label>Ospiti</label>
+                            <input type="text" value="1" />
+                        </span>
+                        <a class="btnBigMobile" href="#">Cerca</a>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+
+        <div id="mainHomeMobile" class="mainMobile" data-stretch="true">
+
+            <a class="btnBack" href="/">Torna Indietro</a>
+
+            <h1 class="titBg" style="text-align:center;">
+                <strong class="aptName" style="font-size:1.5em; ">Completa la tua prenotazione</strong>
+            </h1>
+
+            <div class="nulla">
+            </div>
+            
+            <div class="mobileBox boxBooking">
+                 <a class="fbLogin btnBigMobile" href="#"> Accedi con Facebook</a>
+            </div>
+
+            <div class="nulla">
+            </div>
+
+            <h1 class="titPag" style="margin: 2% 0 2% 4%;">Utente registrato</h1>
+
+            <div class="nulla">
+            </div>
+
+             <div class="mobileBox boxBooking">
+                 <div class="lineBooking">
+                     <label>Nome Utente</label>
+                     <input type="text" />
+                 </div>
+                 <div class="lineBooking">
+                     <label>Password</label>
+                     <input type="password" />
+                     <a class="forgotPass">Hai dimenticato la password?</a>
+                 </div>
+                 <a class="btnBigMobile" href="#">Accedi</a>
+             </div>
+
+            <h1 class="titPag" style="margin: 2% 0 2% 4%;">Nuovo utente</h1>
+
+            <div class="nulla">
+            </div>
+
+            <div class="mobileBox boxBooking">
+                 <div class="lineBooking">
+                     <label>Email</label>
+                     <input type="text" />
+                 </div>
+                <div class="lineBooking">
+                     <select class="mrSelect" style="width:50px; padding:1%; margin-bottom:10px;">
+                           <option>Mr.</option>
+                           <option>Ms.</option>
+                           <option>Mrs.</option> 
+                     </select>
+                    <label style="margin-top:1%; margin-left:10px;">Nome</label>
+                     <input type="text" />
+                 </div>
+                <div class="lineBooking">
+                     <label>Cognome</label>
+                     <input type="text" />
+                 </div>
+                 <div class="lineBooking">
+                     <label>Telefono/Cellulare</label>
+                     <input type="text" />
+                 </div>
+                <div class="lineBooking">
+                     <label>Il tuo Paese</label>
+                    <select>
+                           <option>Italia</option>
+                           <option>USA</option>
+                           <option>UK</option> 
+                     </select>
+                 </div>
+                <div class="lineBooking">
+                    <input type="checkbox" />
+                    <a href="#" target="_blank" class="linkTerms">Dichiaro di aver letto ed accettato i "Termini e Condizioni" </a>
+                 </div>
+                <div class="lineBooking">
+                    <input type="checkbox" />
+                    <a href="#" target="_blank" class="linkTerms">Dichiaro di aver letto ed accettato il trattamento dei dati personali ai sensi dell'art. 13 del D.Lgs. 196/2003</a>
+                 </div>
+                 <a class="btnBigMobile" href="#">Paga ora</a>
+             </div>
+            
+            <div class="nulla">
+            </div>
+        </div>
+
+        <footer id="footerMobile" class="footer" data-stretch="true">
+            <span class="datiSoc">© Rental in Rome 2003 - 2014</span>
+            <menu class="menuFooter">
+                <a href="#">Privacy</a>
+                <a href="#">Versione Desktop</a>
+            </menu>
+            <div class="nulla">
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <script>
+        window.openSearchBox = {
+            touchstart: function (e) {
+                var searchBox = document.getElementById("searchBox");
+                searchBox.style.height = "310px";
+            }
+        }
+        window.closeSearchBox = {
+            touchstart: function (e) {
+                var searchBox = document.getElementById("searchBox");
+                searchBox.style.height = "0";
+            }
+        }
+    </script>
+
+
+
+    <script>
+        function initForm() {
+            var body = $(".km-pane");
+        }
+    </script>
+    <script>
+        window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+    </script>
+
+</body>
+</html>

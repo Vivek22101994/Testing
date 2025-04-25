@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rental in Rome | Mobile version</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style-mobile_old.css" rel="stylesheet" />
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <link href="styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="styles/kendo.rtl.min.css" rel="stylesheet">
+    <link href="styles/kendo.default.min.css" rel="stylesheet">
+    <script src="content/shared/js/console.js"></script>
+    <link href="styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <style>
+        [href*=index], #back-button
+        {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-role="view" data-layout="mobile-view" id="listview-templates" data-init="mobileListViewTemplatesInit" data-title="Rental in Rome | Mobile version" class="container">
+    <header class="header" data-stretch="true">
+        
+
+        <div class="loginAndLangs" data-role="navbar">
+                <a class="loginMobileLink">Login</a>
+                <a href="#" class="langsMobile"><img src="images/css/flag-ita.gif" /> <span>Italiano</span></a>
+        </div>
+        <a class="nav-button logoCont" href="#index"><img src="images/css/logo.gif" class="logo" alt="Rental in Rome"/></a>
+        
+        <a class="openSearch"  data-role="touch" data-enable-swipe="1" data-touchstart="openSearchBox.touchstart">Cerca Appartamento</a>
+
+       
+        
+
+        
+
+        <div class="nulla">
+        </div>
+    </header>
+
+         <div class="searchBox" id="searchBox" data-title="Search Form" data-init="initForm" data-use-native-scrolling="true">
+             <a class="closeSearchBox" data-role="touch" data-enable-swipe="1" data-touchstart="closeSearchBox.touchstart">Annulla la ricerca</a>
+             <form>
+                 <ul data-style="inset" class="searchForm">
+               <li class="searchBoxLine">
+                   <input type="text" value="Ricerca Veloce" />
+               </li>
+                <li class="searchBoxLine">
+                    <label>Seleziona una zona:</label>
+                    <select id="dropdownZone">
+                        <option>- - -</option>
+                        <option>Colosseo</option>
+                        <option>Trastevere</option>
+                    </select>
+                </li>
+                 <li class="searchBoxLine">
+                     <span class="searchBoxCol2 checkIn">
+                         <label>Check-In</label>
+                        <input type="text" />
+                     </span>
+                     <span class="searchBoxCol2 checkOut">
+                        <label>Check-Out</label>
+                        <input type="text" />
+                     </span>
+                 </li>
+                <li class="searchBoxLine">
+                     <span class="searchBoxCol4 nights">
+                          <label>Notti</label>
+                        <input type="text" value="3" />
+                     </span>
+                     <span class="searchBoxCol4 guests">
+                          <label>Ospiti</label>
+                        <input type="text" value="1" />
+                     </span>
+                    <a class="btnBigMobile" href="#">Cerca</a>
+                 </li>
+                     </ul>
+
+             </form>
+            </div>
+
+    <div id="mainHomeMobile" class="mainMobile" data-stretch="true">
+
+            
+        <select class="selectZone">
+            <option >Seleziona un zona</option>
+            <option>Tutte</option>
+            <option>Colosseo</option>
+            <option>Trastevere</option>
+            <option>Piazza Navona</option>
+        </select>
+
+        <h1 class="titPag">Offerte speciali</h1>
+        <a class="filterBtn">Filtra </a>
+
+        <div class="filters">
+            <!-- insert filters here -->
+        </div>
+
+         <div class="listCont" id="OffersHomeMobile specialOfferItems">
+       
+             <ul id="custom-listview"></ul>
+
+             <div class="nulla">
+              </div>
+
+                <a class="LoadMore">Carica altre Offerte Speciali</a>
+         </div>
+
+    </div>
+
+         <footer id="footerMobile" class="footer" data-stretch="true">
+            <span class="datiSoc">© Rental in Rome 2003 - 2014</span>
+            <menu class="menuFooter">
+                <a href="#">Privacy</a>
+                <a href="#">Versione Desktop</a>
+            </menu>
+            <div class="nulla">
+            </div>
+        </footer>
+</div>
+
+
+    <script>
+            window.openSearchBox = {
+                touchstart: function (e) {
+                    var searchBox = document.getElementById("searchBox");
+                    searchBox.style.height = "310px";
+                }
+            }
+            window.closeSearchBox = {
+                touchstart: function (e) {
+                    var searchBox = document.getElementById("searchBox");
+                    searchBox.style.height = "0";
+                }
+            }
+    </script>
+
+    <script>
+        function initForm() {
+            var body = $(".km-pane");
+
+            if (kendo.ui.DropDownList) {
+                $("#dropdownZone").kendoDropDownList({
+                    // The options are needed only for the desktop demo, remove them for mobile.
+                    popup: { appendTo: body },
+                    animation: { open: { effects: body.hasClass("km-android") ? "fadeIn" : body.hasClass("km-ios") || body.hasClass("km-wp") ? "slideIn:up" : "slideIn:down" } }
+                });
+            }
+
+            if (kendo.ui.Slider) {
+                $("#slider").kendoSlider({ tooltip: { enabled: false } });
+            }
+        }
+</script>
+    
+    <script type="text/x-kendo-template" id="customListViewTemplate">
+    <a class="listItemMobile" data-role="button">
+        <span class="imgCont"><img class="item-photo" src="${url}" /></span>
+
+     <span class="listItemMobileDesc">
+    <h3 class="item-title">${name}</h3>
+    <span class="item-info">${zone}</span>
+    
+    
+    <span class="nulla">
+    </span>
+
+    <span class="listSpecialOfferDate">
+        <span>dal</span>
+        <strong>01.02.2014</strong>
+    </span>
+    <span class="listSpecialOfferDate">
+        <span>Al</span>
+        <strong>01.02.2014</strong>
+    </span>
+    
+    </span>
+        <img src="images/css/book-now.gif" class="icoBookNowMobile" alt="book now!" />
+        <span class="price SpOffDiscout" >-20%</span>
+        </a>
+</script>
+
+
+    <script>
+        function mobileListViewPressToLoadMore() {
+            var dataSource = new kendo.data.DataSource({
+                type: "odata",
+                transport: {
+                    read: {
+                        url: "http://demos.kendoui.com/service/Northwind.svc/Products"
+                    }
+                },
+                serverPaging: true,
+                pageSize: 50
+            });
+
+            $("#load-more").kendoMobileListView({
+                dataSource: dataSource,
+                template: $("#load-more-template").text(),
+                loadMore: true
+            });
+        }
+</script>
+
+    <script>
+        var groupedData = [
+            { name: "Nome appartmanento", zone: "Colosseo", url: "content/mobile/listview/sashimi-salad.jpg" },
+            { name: "Appartmanento 2", zone: "Trastevere", url: "content/mobile/listview/seaweed-salad.jpg" },
+            { name: "Nome appartmanento", zone: "Piazza Navona", url: "content/mobile/listview/edamame.jpg" },
+            { name: "Appartmanento 4", zone: "Piazza di Spagna", url: "content/mobile/listview/maguro.jpg" },
+            { name: "Nome appartmanento", zone: "Campo de Fiori", url: "content/mobile/listview/tekka-maki.jpg" },
+            { name: "Appartmanento 6", zone: "San Pietro", url: "content/mobile/listview/california-rolls.jpg" }
+        ];
+
+        function mobileListViewTemplatesInit() {
+            $("#custom-listview").kendoMobileListView({
+                dataSource: kendo.data.DataSource.create({ data: groupedData, group: "letter" }),
+                template: $("#customListViewTemplate").html(),
+                headerTemplate: "<h2>Letter ${value}</h2>"
+            });
+        }
+</script>
+
+  <style scoped>
+
+#listview-templates .head {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    background: url(../../content/mobile/listview/food.jpg) no-repeat center top;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+
+
+
+
+
+#custom-listview {
+    margin: 0;
+}
+
+#listview-templates .details-link {
+    margin-top: -1em;
+    position: absolute;
+    right: 0.6em;
+    top: 50%;
+}
+
+#listview-templates .km-listview .km-list {
+    margin: 0;
+}
+
+
+#listview-templates .km-group-title h2 {
+    margin: 0;
+    padding-top: .2em;
+    text-shadow: none;
+}
+
+#listview-templates .km-group-title h2 {
+    color: #974d2e;
+    font-weight: normal;
+    font-size: 1.4em;
+    background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.45) 6%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(100, 100, 100, 0)), url(../../content/shared/images/patterns/pattern4.png);
+    background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.5)), color-stop(0.06, rgba(255, 255, 255, 0.45)), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(1, rgba(100, 100, 100, 0))), url(../../content/shared/images/patterns/pattern4.png);
+}
+
+
+.km-tablet .km-ios #listview-templates .km-view-title
+{
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,.5);
+}
+.km-wp .km-group-title .km-text {
+    padding: 0;
+}
+.km-wp .km-group-title .km-text h2 {
+    padding: 0 0 .1em .7em;
+}
+.km-ios7 #listview-templates .km-navbar .km-button,
+.km-ios7 #listview-templates .km-navbar .km-view-title
+{
+    background: transparent;
+    color: #fff;
+}
+</style>
+
+
+    <script>
+        window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+    </script>
+
+</body>
+</html>

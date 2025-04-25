@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://holidaylettings.co.uk/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://holidaylettings.co.uk/webservices/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://holidaylettings.co.uk/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://holidaylettings.co.uk/webservices/">
+      <s:element name="Clear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupSize" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClearResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WebServiceResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetCurrency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currencyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCurrencyResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tariffName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weeklyRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="minNights" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekdayRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekendRate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetOneResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOne2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tariffName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weeklyRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="minNights" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekdayRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekendRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="changeoverDay" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOne2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetOne2Result" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="tariffNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="weeklyRates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="minNights" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekdayRates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekendRates" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetAllResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAll2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupSize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="tariffNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="weeklyRates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="minNights" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekdayRates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="weekendRates" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="changeoverDays" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAll2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetAll2Result" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearOutOfDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ownerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearOutOfDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClearOutOfDateResult" type="tns:WebServiceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceResponse" nillable="true" type="tns:WebServiceResponse" />
+    </s:schema>
+    <s:schema targetNamespace="http://holidaylettings.co.uk/webservices/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ClearSoapIn">
+    <wsdl:part name="parameters" element="tns:Clear" />
+  </wsdl:message>
+  <wsdl:message name="ClearSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencySoapIn">
+    <wsdl:part name="parameters" element="tns:SetCurrency" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencySoapOut">
+    <wsdl:part name="parameters" element="tns:SetCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOneSoapIn">
+    <wsdl:part name="parameters" element="tns:SetOne" />
+  </wsdl:message>
+  <wsdl:message name="SetOneSoapOut">
+    <wsdl:part name="parameters" element="tns:SetOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOne2SoapIn">
+    <wsdl:part name="parameters" element="tns:SetOne2" />
+  </wsdl:message>
+  <wsdl:message name="SetOne2SoapOut">
+    <wsdl:part name="parameters" element="tns:SetOne2Response" />
+  </wsdl:message>
+  <wsdl:message name="SetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAll" />
+  </wsdl:message>
+  <wsdl:message name="SetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAll2SoapIn">
+    <wsdl:part name="parameters" element="tns:SetAll2" />
+  </wsdl:message>
+  <wsdl:message name="SetAll2SoapOut">
+    <wsdl:part name="parameters" element="tns:SetAll2Response" />
+  </wsdl:message>
+  <wsdl:message name="ClearOutOfDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearOutOfDate" />
+  </wsdl:message>
+  <wsdl:message name="ClearOutOfDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearOutOfDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+    <wsdl:part name="groupSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearHttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencyHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+    <wsdl:part name="currencyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrencyHttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOneHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+    <wsdl:part name="groupSize" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="tariffName" type="s:string" />
+    <wsdl:part name="weeklyRate" type="s:string" />
+    <wsdl:part name="minNights" type="s:string" />
+    <wsdl:part name="weekdayRate" type="s:string" />
+    <wsdl:part name="weekendRate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetOneHttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOne2HttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+    <wsdl:part name="groupSize" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="tariffName" type="s:string" />
+    <wsdl:part name="weeklyRate" type="s:string" />
+    <wsdl:part name="minNights" type="s:string" />
+    <wsdl:part name="weekdayRate" type="s:string" />
+    <wsdl:part name="weekendRate" type="s:string" />
+    <wsdl:part name="changeoverDay" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetOne2HttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAllHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+    <wsdl:part name="groupSize" type="s:string" />
+    <wsdl:part name="startDates" type="s1:StringArray" />
+    <wsdl:part name="endDates" type="s1:StringArray" />
+    <wsdl:part name="tariffNames" type="s1:StringArray" />
+    <wsdl:part name="weeklyRates" type="s1:StringArray" />
+    <wsdl:part name="minNights" type="s1:StringArray" />
+    <wsdl:part name="weekdayRates" type="s1:StringArray" />
+    <wsdl:part name="weekendRates" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="SetAllHttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAll2HttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+    <wsdl:part name="groupSize" type="s:string" />
+    <wsdl:part name="startDates" type="s1:StringArray" />
+    <wsdl:part name="endDates" type="s1:StringArray" />
+    <wsdl:part name="tariffNames" type="s1:StringArray" />
+    <wsdl:part name="weeklyRates" type="s1:StringArray" />
+    <wsdl:part name="minNights" type="s1:StringArray" />
+    <wsdl:part name="weekdayRates" type="s1:StringArray" />
+    <wsdl:part name="weekendRates" type="s1:StringArray" />
+    <wsdl:part name="changeoverDays" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="SetAll2HttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearOutOfDateHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ownerId" type="s:string" />
+    <wsdl:part name="homeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearOutOfDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:WebServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="service_ratesSoap">
+    <wsdl:operation name="Clear">
+      <wsdl:input message="tns:ClearSoapIn" />
+      <wsdl:output message="tns:ClearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <wsdl:input message="tns:SetCurrencySoapIn" />
+      <wsdl:output message="tns:SetCurrencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOne">
+      <wsdl:input message="tns:SetOneSoapIn" />
+      <wsdl:output message="tns:SetOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOne2">
+      <wsdl:input message="tns:SetOne2SoapIn" />
+      <wsdl:output message="tns:SetOne2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAll">
+      <wsdl:input message="tns:SetAllSoapIn" />
+      <wsdl:output message="tns:SetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAll2">
+      <wsdl:input message="tns:SetAll2SoapIn" />
+      <wsdl:output message="tns:SetAll2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearOutOfDate">
+      <wsdl:input message="tns:ClearOutOfDateSoapIn" />
+      <wsdl:output message="tns:ClearOutOfDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="service_ratesHttpGet">
+    <wsdl:operation name="Clear">
+      <wsdl:input message="tns:ClearHttpGetIn" />
+      <wsdl:output message="tns:ClearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <wsdl:input message="tns:SetCurrencyHttpGetIn" />
+      <wsdl:output message="tns:SetCurrencyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOne">
+      <wsdl:input message="tns:SetOneHttpGetIn" />
+      <wsdl:output message="tns:SetOneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOne2">
+      <wsdl:input message="tns:SetOne2HttpGetIn" />
+      <wsdl:output message="tns:SetOne2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAll">
+      <wsdl:input message="tns:SetAllHttpGetIn" />
+      <wsdl:output message="tns:SetAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAll2">
+      <wsdl:input message="tns:SetAll2HttpGetIn" />
+      <wsdl:output message="tns:SetAll2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearOutOfDate">
+      <wsdl:input message="tns:ClearOutOfDateHttpGetIn" />
+      <wsdl:output message="tns:ClearOutOfDateHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="service_ratesSoap" type="tns:service_ratesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Clear">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/Clear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/SetCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOne">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/SetOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOne2">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/SetOne2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAll">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/SetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAll2">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/SetAll2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearOutOfDate">
+      <soap:operation soapAction="http://holidaylettings.co.uk/webservices/ClearOutOfDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="service_ratesSoap12" type="tns:service_ratesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Clear">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/Clear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/SetCurrency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOne">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/SetOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOne2">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/SetOne2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAll">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/SetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAll2">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/SetAll2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearOutOfDate">
+      <soap12:operation soapAction="http://holidaylettings.co.uk/webservices/ClearOutOfDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="service_ratesHttpGet" type="tns:service_ratesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Clear">
+      <http:operation location="/Clear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrency">
+      <http:operation location="/SetCurrency" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOne">
+      <http:operation location="/SetOne" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOne2">
+      <http:operation location="/SetOne2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAll">
+      <http:operation location="/SetAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAll2">
+      <http:operation location="/SetAll2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearOutOfDate">
+      <http:operation location="/ClearOutOfDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="service_rates">
+    <wsdl:port name="service_ratesSoap" binding="tns:service_ratesSoap">
+      <soap:address location="https://agentapi.holidaylettings.co.uk/service_rates.asmx" />
+    </wsdl:port>
+    <wsdl:port name="service_ratesSoap12" binding="tns:service_ratesSoap12">
+      <soap12:address location="https://agentapi.holidaylettings.co.uk/service_rates.asmx" />
+    </wsdl:port>
+    <wsdl:port name="service_ratesHttpGet" binding="tns:service_ratesHttpGet">
+      <http:address location="https://agentapi.holidaylettings.co.uk:80/service_rates.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

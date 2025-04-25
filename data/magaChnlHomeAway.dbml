@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaChnlHomeAwayDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1435\EXPRESS01;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_2017DEVS" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.RntChnlHomeAwayEstateTB" Member="RntChnlHomeAwayEstateTB">
+    <Type Name="RntChnlHomeAwayEstateTB">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="propertyType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="mq_inner" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_inner_unit" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="year_purchased" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="allow_traveler_zoom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="default_zoom_level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="max_zoom_level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="show_exact_location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_lounge_seating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_dining_seating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_max_sleep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_max_sleep_bed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_slave" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_master_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CancellationPolicyDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CancellationPolicyType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CancellationPolicyDeadlineDaysBeforeCheckIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CancellationPolicyCharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CancellationPolicyChargeType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="changeAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="changeIsDiscount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="changeIsPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayRequestLOG" Member="RntChnlHomeAwayRequestLOG">
+    <Type Name="RntChnlHomeAwayRequestLOG">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="logDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="requesUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="requestType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="requestContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="responseContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="requestComments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayOwnerTBL" Member="RntChnlHomeAwayOwnerTBL">
+    <Type Name="RntChnlHomeAwayOwnerTBL">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="advertiserAssignedId" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ppb_advertiserAssignedId" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayEstateRoomTB" Member="RntChnlHomeAwayEstateRoomTB">
+    <Type Name="RntChnlHomeAwayEstateRoomTB">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="roomType" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="roomSubType" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="features" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayEstateLN" Member="RntChnlHomeAwayEstateLN">
+    <Type Name="RntChnlHomeAwayEstateLN">
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="listing_story" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="unique_benifits" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="why_purchased" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="location_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="location_other_activities" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="price_note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bathroom_details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bedroom_details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="unit_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="unit_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="features_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayEstateFeaturesRL" Member="RntChnlHomeAwayEstateFeaturesRL">
+    <Type Name="RntChnlHomeAwayEstateFeaturesRL">
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayLkFeatureValuesTBL" Member="RntChnlHomeAwayLkFeatureValuesTBL">
+    <Type Name="RntChnlHomeAwayLkFeatureValuesTBL">
+      <Column Name="code" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="subType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="refType" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="refId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayBookingTBL" Member="RntChnlHomeAwayBookingTBL">
+    <Type Name="RntChnlHomeAwayBookingTBL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="inquiryId" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="trackingUuid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="listingChannel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="masterListingChannel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="numberOfPets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="commission" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="locale" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayAcceptedPaymentFormTBL" Member="RntChnlHomeAwayAcceptedPaymentFormTBL">
+    <Type Name="RntChnlHomeAwayAcceptedPaymentFormTBL">
+      <Column Name="paymentFormType" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardType" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlHomeAwayEstateRoomLN" Member="RntChnlHomeAwayEstateRoomLN">
+    <Type Name="RntChnlHomeAwayEstateRoomLN">
+      <Column Name="pidRoom" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidLang" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

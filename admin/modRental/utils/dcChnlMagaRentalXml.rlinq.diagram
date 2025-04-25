@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DCchnlMagaRentalXml" isDefault="true">
+    <DomainModelMoniker name="/DCchnlMagaRentalXml" />
+    <nestedChildShapes>
+      <classShape Id="202263d5-a60a-41ea-be1a-f31c2ab1aed7" absoluteBounds="0.75, 0.75, 1.5, 2.7242789713541669">
+        <DomainClassMoniker name="/DCchnlMagaRentalXml/dbRntChnlMagaRentalXmlRequestLOG" />
+        <nestedChildShapes>
+          <elementListCompartment Id="4eafe07d-855e-410c-9f5a-912bc01bbcaa" absoluteBounds="0.76500000000000012, 1.26, 1.4700000000000002, 1.5954996744791667" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="fd621719-96a0-4899-9a00-556f48c7b853" absoluteBounds="0.76500000000000012, 2.8654996744791665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="118d88b0-cd01-4cde-833e-5ea41b707d66" absoluteBounds="0.76500000000000012, 3.1248893229166663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="8b1bbac4-4483-4ebb-968d-d6e06928f534" absoluteBounds="2.75, 0.5, 1.5, 2.3396761067708334">
+        <DomainClassMoniker name="/DCchnlMagaRentalXml/dbRntChnlMagaRentalXmlEstateLN" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d0571635-02a6-4e8b-b8ef-ba60e28a65fd" absoluteBounds="2.765, 1.01, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9cce8277-8152-4b28-94d8-ab6a23a4658d" absoluteBounds="2.765, 2.2308968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="d799452e-0cfa-4c0f-90f5-7b50165555b0" absoluteBounds="2.765, 2.4902864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

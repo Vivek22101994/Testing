@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="magaChnlAirbnb">
+  <DataContextMoniker Name="/magaChnlAirbnbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1392305c-b6f1-4310-9d1b-f15c5c91690d" absoluteBounds="0.625, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaChnlAirbnbDataContext/RntChnlAirbnbAccessToken" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50adef58-29ce-44f3-9368-09e20f1c5e55" absoluteBounds="0.64, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d63797b4-30ce-48ef-87fd-7983013709e1" absoluteBounds="2.625, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaChnlAirbnbDataContext/RntChnlAirbnbAuthenticationCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cc3644f-1975-43b3-92a7-5b8497443e4d" absoluteBounds="2.64, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="268c24b5-1e26-46da-afd7-4aeed3e84d39" absoluteBounds="0.75, 3.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaChnlAirbnbDataContext/RntChnlAirbnbPropertyHostRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9af3effd-b24d-4c5e-bbeb-b821f888f1a8" absoluteBounds="0.76500000000000012, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

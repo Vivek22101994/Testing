@@ -1,0 +1,1421 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaRental_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1435\EXPRESS01;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_2017DEVS" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.RNT_LK_REQUEST_STATE" Member="RNT_LK_REQUEST_STATEs">
+    <Type Name="RNT_LK_REQUEST_STATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_REQUEST_ITEM" Member="RNT_RL_REQUEST_ITEMs">
+    <Type Name="RNT_RL_REQUEST_ITEM">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_request" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_zone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="notes" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LK_RESERVATION_STATE" Member="RNT_LK_RESERVATION_STATEs">
+    <Type Name="RNT_LK_RESERVATION_STATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="abbr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="css_class" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_REQUEST_STATE" Member="RNT_RL_REQUEST_STATEs">
+    <Type Name="RNT_RL_REQUEST_STATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_state" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_PERIOD" Member="RNT_LN_PERIODs">
+    <Type Name="RNT_LN_PERIOD">
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_period" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_PERIOD" Member="RNT_TB_PERIODs">
+    <Type Name="RNT_TB_PERIOD">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="start_month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="start_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_PERIOD" Member="RNT_VIEW_PERIODs">
+    <Type Name="RNT_VIEW_PERIOD">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="start_month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="start_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_CONFIG" Member="RNT_TB_CONFIGs">
+    <Type Name="RNT_TB_CONFIG">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inner_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="inner_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inner_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_important" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_CONFIG_OPTION" Member="RNT_LN_CONFIG_OPTIONs">
+    <Type Name="RNT_LN_CONFIG_OPTION">
+      <Column Name="pid_config_option" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_CONFIG" Member="RNT_LN_CONFIGs">
+    <Type Name="RNT_LN_CONFIG">
+      <Column Name="pid_config" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_CONFIG_OPTION" Member="RNT_LN_CONFIG_OPTION1s">
+    <Type Name="RNT_LN_CONFIG_OPTION1">
+      <Column Name="pid_config_option" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_CONFIG" Member="RNT_VIEW_CONFIGs">
+    <Type Name="RNT_VIEW_CONFIG">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inner_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="inner_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inner_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_important" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_CONFIG_OPTION" Member="RNT_VIEW_CONFIG_OPTIONs">
+    <Type Name="RNT_VIEW_CONFIG_OPTION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pid_config" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="img_icon" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_ESTATE_MEDIA" Member="RNT_RL_ESTATE_MEDIAs">
+    <Type Name="RNT_RL_ESTATE_MEDIA">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="video_path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="video_embed" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_RESIDENCE" Member="RNT_TB_RESIDENCEs">
+    <Type Name="RNT_TB_RESIDENCE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_zone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loc_zip_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="loc_address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_inner_bell" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_referer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_phone_1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="loc_phone_2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="on_levels" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mq_inner" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_outer" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_terrace" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="media_folder" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_3" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="sv_yaw" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_pitch" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_zoom" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_street_view" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_google_maps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_RESIDENCE" Member="RNT_LN_RESIDENCEs">
+    <Type Name="RNT_LN_RESIDENCE">
+      <Column Name="pid_residence" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="how_to_get" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_RESIDENCE_CONFIG" Member="RNT_RL_RESIDENCE_CONFIGs">
+    <Type Name="RNT_RL_RESIDENCE_CONFIG">
+      <Column Name="pid_residence" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_config" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="option_value" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_RESIDENCE_MEDIA" Member="RNT_RL_RESIDENCE_MEDIAs">
+    <Type Name="RNT_RL_RESIDENCE_MEDIA">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_residence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="video_path" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="video_embed" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_RESIDENCE" Member="RNT_VIEW_RESIDENCEs">
+    <Type Name="RNT_VIEW_RESIDENCE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_zone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loc_zip_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="loc_address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_inner_bell" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_referer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_phone_1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="loc_phone_2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="on_levels" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mq_inner" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_outer" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_terrace" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="media_folder" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_3" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="sv_yaw" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_pitch" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_zoom" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_street_view" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_google_maps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="how_to_get" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_SPECIAL_OFFER" Member="RNT_LN_SPECIAL_OFFERs">
+    <Type Name="RNT_LN_SPECIAL_OFFER">
+      <Column Name="pid_special_offer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_RESERVATION_STATE" Member="RNT_RL_RESERVATION_STATEs">
+    <Type Name="RNT_RL_RESERVATION_STATE">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_reservation" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="pid_state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_state" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_ESTATE_POINT" Member="RNT_RL_ESTATE_POINTs">
+    <Type Name="RNT_RL_ESTATE_POINT">
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_point" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="distance" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TBL_ESTATE_COMMENT" Member="RNT_TBL_ESTATE_COMMENTs">
+    <Type Name="RNT_TBL_ESTATE_COMMENT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pers" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="vote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtComment" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_ESTATE_POSITION" Member="RNT_TB_ESTATE_POSITION">
+    <Type Name="RNT_TB_ESTATE_POSITION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="css_class" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_ESTATE_POSITION" Member="RNT_LN_ESTATE_POSITION">
+    <Type Name="RNT_LN_ESTATE_POSITION">
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_position" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_ESTATE_POSITION" Member="RNT_VIEW_ESTATE_POSITION">
+    <Type Name="RNT_VIEW_ESTATE_POSITION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="css_class" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_SPECIAL_OFFER" Member="RNT_TB_SPECIAL_OFFER">
+    <Type Name="RNT_TB_SPECIAL_OFFER">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="class_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pr_discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_night_2pax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_night_opt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_period_2pax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_period_opt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="night_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="night_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtPublicStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtPublicEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_RESERVATION_PERSON" Member="RNT_RL_RESERVATION_PERSON">
+    <Type Name="RNT_RL_RESERVATION_PERSON">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_reservation" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="birth_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="birth_place" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birth_country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="birth_state" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="doc_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_issue_place" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="doc_issue_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="doc_expiry_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_ESTATE_SERVICE_PERIOD" Member="RNT_RL_ESTATE_SERVICE_PERIOD">
+    <Type Name="RNT_RL_ESTATE_SERVICE_PERIOD">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="service" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_SPECIAL_OFFER" Member="RNT_VIEW_SPECIAL_OFFER">
+    <Type Name="RNT_VIEW_SPECIAL_OFFER">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="night_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="night_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtPublicStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtPublicEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="pr_night_2pax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_night_opt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_period_2pax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_period_opt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="class_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pr_discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntHaPropertyTypeLK" Member="RntHaPropertyTypeLK">
+    <Type Name="RntHaPropertyTypeLK">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="value" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_RESERVATION_EVENT" Member="RNT_VIEW_RESERVATION_EVENT">
+    <Type Name="RNT_VIEW_RESERVATION_EVENT">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="unique_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="num_adult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_child_over" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_child_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtEvent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEventTime" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="direction" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pr_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_payment_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_owner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="state_pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="state_abbr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="state_css_class" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="is_srs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_ecopulizie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_is_active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="est_is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_dtTimeChanged" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_is_exclusive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_is_online_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_pr_has_overnight_tax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_isContratto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_is_HomeAway" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="est_pr_percentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_RL_ESTATE_CONFIG" Member="RNT_RL_ESTATE_CONFIG">
+    <Type Name="RNT_RL_ESTATE_CONFIG">
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_config" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="option_value" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_HomeAway" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_HACONFIG" Member="RNT_TB_HACONFIG">
+    <Type Name="RNT_TB_HACONFIG">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inner_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_LN_ESTATE" Member="RNT_LN_ESTATE">
+    <Type Name="RNT_LN_ESTATE">
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="how_to_get" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="stay_min" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="stay_max" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mobileDescription" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="haHeadLine" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="haDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="haOtherActivities" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="haRateNote" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TBL_RESERVATION" Member="RNT_TBL_RESERVATION">
+    <Type Name="RNT_TBL_RESERVATION">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="unique_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="uid_2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_related_request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_creator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operator_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pid_estate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidEstateCity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_pid_discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_loc_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_isCompleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_reminderLast" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cl_reminderNext" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cl_reminderCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_browserInfo" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="cl_browserIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="num_adult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_child_over" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_child_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visa_isRequested" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="visa_persons" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtStartTime" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dtEndTime" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="is_dtStartTimeChanged" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_dtEndTimeChanged" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_easyShuttleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="limo_easyShuttleInUID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="limo_easyShuttleOutUID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="limo_in_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="limo_in_isRequested" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_inPoint_type" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_inPoint_transportType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_inPoint_pickupPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_inPoint_pickupPlaceName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_inPoint_details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_inPoint_detailsType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_out_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="limo_out_isRequested" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_outPoint_type" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_outPoint_transportType" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_outPoint_pickupPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_outPoint_pickupPlaceName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_outPoint_details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="limo_outPoint_detailsType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_num_case_s" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_num_case_m" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_num_case_l" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limo_request" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="limo_isCompleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="state_body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="notesInner" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="notesClient" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="notesEco" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="block_expire" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="block_expire_hours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="block_pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="block_comments" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="srs_ext_meetingPoint" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="pr_deposit_modified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_deposit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_depositNotes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pr_depositWithCard" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_total_tf" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_total_tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_total_tax_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_total_margin" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_total_desc" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pr_discount_owner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_discount_commission" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_discount_desc" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pr_discount_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_discount_custom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_reservation" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_modified" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_part_modify_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pr_part_commission_tf" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_commission_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_agency_fee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_agentDiscountNotPayed" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_payment_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_forPayment" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_owner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_ecoPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_ecoCount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_srsPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="payed_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="payed_part" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="payed_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="payed_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="payed_mode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="requestRenewal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="requestRenewalDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="requestFullPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="requestFullPayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="requestFullPayAccepted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="requestFullPayAcceptedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_toCreate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedSingle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedDouble" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedDoubleD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedDoubleDConfig" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedDouble2level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedDouble2levelConfig" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bedSofaSingle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bedSofaDouble" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_isDifferent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inv_name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inv_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="inv_loc_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="inv_loc_state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inv_loc_city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inv_loc_address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="inv_loc_zip_code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="inv_doc_vat_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inv_doc_cf_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="problemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="problemDesc" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="agentID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="agentPaymentType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentDiscountNotPayed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentDiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentCommissionPerc" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentCommissionPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentFinalCommissionPerc" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentFinalCommissionPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdAdMedia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IdLink" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pr_part_extraServices" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prRefundDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="prRefundTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prRefundPayMode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prTotalRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prTotalOwner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prTotalCommission" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountSpecialOffer" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLongStay" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLongStayDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prDiscountLongRange" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLongRangeDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prDiscountLastMinute" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLastMinuteDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_resId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_roomResId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_loyalityid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_commissionamount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="bcom_currencycode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_extrainfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_facilities" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_info" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_mealplan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_rateid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_smoking" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_cancel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcom_cancelcharge" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="bcom_guest_name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bcom_room_remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcom_room_price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="bcom_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_country_code" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="bcom_pid_parent_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcom_maxChidren" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_paymentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcom_totalForOwner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pidEstateCountry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creatorHost" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdLastOperator" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="conversionScriptsShown" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_reminderFullPaymentSent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isSendBalancePayementEmail" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paymentConversionScriptsShown" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isWL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsDiscount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeAmount_Agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsDiscount_Agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsPercentage_Agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HAstateCancelledBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_VIEW_ESTATE" Member="RNT_VIEW_ESTATEs">
+    <Type Name="RNT_VIEW_ESTATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="how_to_get" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="stay_min" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="stay_max" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_zone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loc_zip_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="loc_address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_inner_bell" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_referer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_phone_1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="loc_phone_2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="mq_inner" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_outer" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="nights_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nights_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="importance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_google_maps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_online_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_exclusive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="importance_stars" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="on_floor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="on_floor_of_total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="on_levels" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_persons_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_bed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_bath" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_terraces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_loft" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TBL_REQUEST" Member="RNT_TBL_REQUEST">
+    <Type Name="RNT_TBL_REQUEST">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_reservation" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="pid_related_request" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_creator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="operator_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_first" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="name_last" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="request_country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="request_choice_1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="request_choice_2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="request_transport" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="request_area" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="request_choices" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="request_price_range" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="request_services" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="request_adult_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="request_child_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="request_child_num_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="request_date_start" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="request_date_end" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="request_date_is_flexible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="request_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="request_ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="request_date_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="state_pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state_subject" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="state_body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mail_body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mail_in" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mail_out" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAdMedia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IdLink" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ha_inquiryId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isFreeMinStay" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isFreeArrivalDay" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="conversionScriptsShown" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chnlRefId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="request_subject" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RNT_TB_ESTATE" Member="RNT_TB_ESTATE">
+    <Type Name="RNT_TB_ESTATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="pid_residence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_owner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_zone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loc_zip_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="loc_address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_inner_bell" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_referer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="loc_phone_1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="loc_phone_2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="mq_inner" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_outer" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="mq_terrace" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="on_floor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="on_floor_of_total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="on_levels" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_bed_single" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_bed_double" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_bed_double_divisible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_bed_double_2level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_sofa_single" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_sofa_double" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_persons_adult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_persons_child" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_persons_optional" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_persons_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_persons_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_bed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_bath" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_terraces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eco_pr_1" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="eco_pr_2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="eco_time_preview" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eco_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="eco_ext_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="eco_ext_email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="eco_ext_phone" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="eco_ext_price" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="eco_ext_payInDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eco_ext_clientPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="srs_ext_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="srs_ext_email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="srs_ext_phone" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="srs_ext_phone_2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="srs_ext_phone_3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="srs_ext_phone_4" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="srs_ext_price" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="srs_ext_clientPay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="srs_ext_meetingPoint" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="pr_basePersons" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_1_2pax" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_1_opt" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_2_2pax" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_2_opt" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_3_2pax" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_3_opt" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_tableViewType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_discount7days" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_discount30days" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_startDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pr_dcSUsed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_1_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_1_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_dcS2_2_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_2_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_dcS2_3_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_3_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_dcS2_4_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_4_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_dcS2_5_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_5_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_dcS2_6_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_6_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_dcS2_7_inDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_dcS2_7_percent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_percentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_deposit" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_depositWithCard" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_has_overnight_tax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ext_ownerdaysinyear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lm_inhours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lm_discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lm_nights_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lm_nights_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lpb_is" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lpb_nights_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lpb_afterdays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lpb_onlyhighseason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nights_minVHSeason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nights_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nights_max" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="longTermRent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="longTermPrMonthly" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="importance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="importance_vote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="importance_stars" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="media_folder" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_2" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview_3" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="mobileVideoFilePath" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="sv_yaw" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_pitch" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_zoom" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="sv_coords" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_street_view" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="google_maps" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_google_maps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_loft" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_exclusive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_srs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_ecopulizie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_online_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isCedolareSecca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ext_gps_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ext_gps_pid_maga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="in_attention" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="t_xmlPrezzo" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="t_piano" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="t_terrazzo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propCognome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propNome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propContatti" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propCFPI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propIndirizzo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_mezzi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="t_modPagamento" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="t_propWeb" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="t_metriQ" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="t_extra" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="t_link" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="isContratto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="haPropertyType" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="haListingId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="haAdvertiserId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="is_HomeAway" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidSeasonGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iCalUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="bcomHotelId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcomRoomId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bcomEnabled" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcomName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="mediaFolderOriginalPhotos" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="is_chidren_allowed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pr_4_2pax" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="pr_4_opt" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="zoneSequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_rooms_living" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="num_kitchen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_best_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_country" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="baseAvailability" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sqFeet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="registrationNumber" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="dtCreation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntAgentTBL" Member="RntAgentTBL">
+    <Type Name="RntAgentTBL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pidLang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidReferer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidPaymentType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidDiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="payDiscountNotPayed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="payFullPayment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hasAcceptedContract" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typeCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="typeTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nameCompany" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="nameHonor" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="nameFull" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="nameFirst" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nameLast" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="docType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docIssuePlace" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docIssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="docExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="docVat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="docVat_isEuReg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="docCf" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="birthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="birthPlace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="locCountry" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="locState" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="locCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="locAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="locZipCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="contactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactEmailInvoice" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactPhoneMobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactFax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactWebSite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contactComeFrom" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="authUsr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="authPwd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdUserNameFull" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="notesClient" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="notesInner" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="notesInvoice" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="cashDiscount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTaxFree" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTaxAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashTotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashPayed" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cashPayedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cashPayedTxnID" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="mailSentCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mailSentLast" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdAdMedia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="invCompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invTaxId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isMsgsEnabled" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isAgencyFeeApplied" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fattura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsCustomerPaysAgency" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Voucher" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsPaymentBefore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsInvoiceComplete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoicePercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="sentVoucherToOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="imgLogo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isSendManualEmail" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="WL_logo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WL_mapMarker" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WL_mainColor" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="WL_supportColor" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="WL_domainName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="WL_changeAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsDiscount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsPercentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeAmount_Agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsDiscount_Agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_changeIsPercentage_Agent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WL_css" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="chnlMGetPhotos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chnlMGetTexts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chnlMGetAddress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chnlMGetAmenities" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_integrate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_loc_province" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntBcomHotelTBL" Member="RntBcomHotelTBL">
+    <Type Name="RntBcomHotelTBL">
+      <Column Name="hotelId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rateIdStandard" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rateIdNotRefund" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rateIdSpecial" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rateIdStandard2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rateIdStandard3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rateIdStandard4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntBcomRequestLOG" Member="RntBcomRequestLOG">
+    <Type Name="RntBcomRequestLOG">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="logDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="requesUrl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="requestType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="requestContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="responseContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntBcomEstateClosedDatesRL" Member="RntBcomEstateClosedDatesRL">
+    <Type Name="RntBcomEstateClosedDatesRL">
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="changeDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isClosed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="minStay" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntBcomEstateRateChangesRL" Member="RntBcomEstateRateChangesRL">
+    <Type Name="RntBcomEstateRateChangesRL">
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="priceType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rateType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="changeDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="changeAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="changeIsDiscount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="changeIsPercentage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntBcomEstateRatesRL" Member="RntBcomEstateRatesRL">
+    <Type Name="RntBcomEstateRatesRL">
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="priceType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rateType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="changeAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="changeIsDiscount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="changeIsPercentage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbEstateTBL" Member="RntChnlAirbnbEstateTBL">
+    <Type Name="RntChnlAirbnbEstateTBL">
+      <Column Name="mr_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="airbnb_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isSentBasicDetails" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isSentDescription" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isSentImages" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syncCategory" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="syncDtae" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hasAvailbility" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isAllowRequest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cancelltionPolicy" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="checkinStartTime" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="checkinEndTime" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="checkOutTime" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="isExisting" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hostId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbRequestLOG" Member="RntChnlAirbnbRequestLOG">
+    <Type Name="RntChnlAirbnbRequestLOG">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="logDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="requestUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="requestType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="requestContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="responseContent" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="requestComments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntEstateInternsTB" Member="RntEstateInternsTB">
+    <Type Name="RntEstateInternsTB">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pidInternsType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pidInternsSubType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntEstateInternsFeatureRL" Member="RntEstateInternsFeatureRL">
+    <Type Name="RntEstateInternsFeatureRL">
+      <Column Name="pidEstateInterns" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidInternsFeature" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntEstateExtrasRL" Member="RntEstateExtrasRL">
+    <Type Name="RntEstateExtrasRL">
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidEstateExtras" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="priceType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="priceAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="optionValue" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="isFixed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbLkAmenityTBL" Member="RntChnlAirbnbLkAmenityTBL">
+    <Type Name="RntChnlAirbnbLkAmenityTBL">
+      <Column Name="code" Type="System.String" DbType="VarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="refId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pidCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbLkPropertyTypeTBL" Member="RntChnlAirbnbLkPropertyTypeTBL">
+    <Type Name="RntChnlAirbnbLkPropertyTypeTBL">
+      <Column Name="code" Type="System.String" DbType="VarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="refId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbMediaTBL" Member="RntChnlAirbnbMediaTBL">
+    <Type Name="RntChnlAirbnbMediaTBL">
+      <Column Name="mediaId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="airbnbId" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="extraLargeUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="extraMediumUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="large_url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="small_url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thumbnail_url" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntAgentContractPricesTBL" Member="RntAgentContractPricesTBL">
+    <Type Name="RntAgentContractPricesTBL">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidAgentContract" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="commissionAmount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntAgentContractTBL" Member="RntAgentContractTBL">
+    <Type Name="RntAgentContractTBL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidAgent" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="contractNumber" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="contractType" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="commissionAmount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="IsSendPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntEstateAgentContractRL" Member="RntEstateAgentContractRL">
+    <Type Name="RntEstateAgentContractRL">
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidAgent" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidAgentContract" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntReservationLastUpdatedLOG" Member="RntReservationLastUpdatedLOG">
+    <Type Name="RntReservationLastUpdatedLOG">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntSeasonDatesTBL" Member="RntSeasonDatesTBL">
+    <Type Name="RntSeasonDatesTBL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidSeasonGroup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pidPeriod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbEstateSyncRL" Member="RntChnlAirbnbEstateSyncRL">
+    <Type Name="RntChnlAirbnbEstateSyncRL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="airbnbEstate" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="syncCategory" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntChnlAirbnbEstateStatusRL" Member="RntChnlAirbnbEstateStatusRL">
+    <Type Name="RntChnlAirbnbEstateStatusRL">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="airbnbEstate" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntIcalImportLOG" Member="RntIcalImportLOG">
+    <Type Name="RntIcalImportLOG">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="logDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="errorCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iCalType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="iCalUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntIcalImportErrorLOG" Member="RntIcalImportErrorLOG">
+    <Type Name="RntIcalImportErrorLOG">
+      <Column Name="uid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="logUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="logDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="iCalComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="iCalDtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="iCalDtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="reservationId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="reservationStateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservationStateName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntEstateInternsLN" Member="RntEstateInternsLN">
+    <Type Name="RntEstateInternsLN">
+      <Column Name="pidEstateInterns" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pidLang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntReservationTMP" Member="RntReservationTMP">
+    <Type Name="RntReservationTMP">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pidEstate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidEstateCity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidRelatedRequest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidOperator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createdUserNameFull" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_pid_lang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cl_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_name_honorific" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cl_name_full" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cl_loc_country" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cl_contact_phone_mobile" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="numPers_adult" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numPers_childOver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numPers_childMin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dtEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pr_reservation" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_payment_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_owner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_agency_fee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_ecoPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_ecoCount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_srsPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_forPayment" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_deposit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_isManual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agentID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="agentCommissionPerc" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentCommissionPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="pr_part_extraServices" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_tax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prTotalRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prTotalOwner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prTotalCommission" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountSpecialOffer" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLongStay" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLongStayDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prDiscountLongRange" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLongRangeDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prDiscountLastMinute" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prDiscountLastMinuteDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="deleteFromHere" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_commission" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="prOptioniExtra" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_OptioniExtra" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_optioni_feeling" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_optioni_owner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentCommissionNotInTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="requestFullPayAccepted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pidEstateCountry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_related_request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_operator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_discount_owner" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_discount_commission" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_discount_desc" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pr_discount_custom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pr_part_commission_tf" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pr_part_commission_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="agentDiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntSeasonGroupTBL" Member="RntSeasonGroupTBL">
+    <Type Name="RntSeasonGroupTBL">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RntAgentPriceChangeLimitTBL" Member="RntAgentPriceChangeLimitTBLs">
+    <Type Name="RntAgentPriceChangeLimitTBL">
+      <Column Name="pidAgent" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="numPersons" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="discountLimit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

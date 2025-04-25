@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 12.25, 15" name="dcModBlog">
+  <DomainModelMoniker name="/DCmodBlog" />
+  <nestedChildShapes>
+    <classShape Id="23e5ddef-c74f-4fb3-8a2f-fe707ecc77f6" absoluteBounds="0.5, 1.5, 1.5, 3.301183268229166" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogArticleLN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd534223-620b-40cb-a4b0-9beca265f738" absoluteBounds="0.515, 2.01, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5f50386e-d8b3-4f46-8f40-288462f6d33a" absoluteBounds="0.515, 4.1924039713541665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="32ce04c9-5533-47b8-8030-fe378575a1ac" absoluteBounds="0.515, 4.4517936197916663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="978dafd5-0986-4d1a-9f3c-7150f910a6f1" absoluteBounds="2.5, 1.375, 1.5, 1.9550732421875003" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogArticleTagRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e397e050-6556-4dfb-a7d0-4c192cdefe49" absoluteBounds="2.515, 1.885, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="972dab4b-0564-4478-824a-d5838316b3c0" absoluteBounds="2.515, 2.7212939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="54e34577-bec6-4fa7-9c5c-a17a600382a2" absoluteBounds="2.515, 2.9806835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81c4bbe3-2986-4b08-bcb9-3925c95319d8" absoluteBounds="2.5, 3.75, 1.5, 4.070388997395832" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogArticleTB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a6df9fc-55dc-4ebc-ac13-cd79d26c325f" absoluteBounds="2.515, 4.26, 1.4700000000000002, 2.941609700520833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bd0d6932-2ecd-4347-b264-f9c1ed13a418" absoluteBounds="2.515, 7.2116097005208326, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a68bb929-52da-4ad2-9232-0f236dad6532" absoluteBounds="2.515, 7.4709993489583324, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a8319e5-1594-4926-a6df-4dceb91420b7" absoluteBounds="0.5, 5.25, 1.5, 3.3011832682291651" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogCategoryLN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a615c0e5-c178-49d0-92fb-ef208df00822" absoluteBounds="0.515, 5.76, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a3c7c392-5ca2-42b3-92e2-6fd7154827d9" absoluteBounds="0.515, 7.9424039713541665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="76257b71-b4aa-421f-bd91-a8260926d837" absoluteBounds="0.515, 8.2017936197916654, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="98f35f2e-50f9-4e08-bf9e-a41323c18b13" absoluteBounds="4.5, 1.375, 1.5, 2.9165804036458329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogCategoryTB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6556f3c-c628-4ab2-9f24-35a9dc0b12a7" absoluteBounds="4.515, 1.885, 1.4700000000000002, 1.7878011067708333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1fc86b9a-f2fb-423d-9a1f-6cf0e4e0d3cf" absoluteBounds="4.515, 3.6828011067708331, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f8410e59-23a4-4d91-b22c-addba671dc43" absoluteBounds="4.515, 3.9421907552083328, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b90113d5-b401-48b1-b0bb-89c7692c3019" absoluteBounds="4.5, 4.75, 1.5, 5.8011018880208329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogCommentTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc69a876-2818-43eb-80a3-d05586bb78c0" absoluteBounds="4.515, 5.26, 1.4700000000000002, 4.672322591145833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6b422442-4c87-49dc-b9c4-c8255ee16221" absoluteBounds="4.515, 9.9423225911458317, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="37ae3092-f07b-4a46-a5a2-5ebdb4dd9f35" absoluteBounds="4.515, 10.201712239583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e182e7b-f4ff-4573-8c27-3241348b5bc9" absoluteBounds="6.5, 1.375, 1.5, 2.1473746744791664" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogTagLN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05cfa21e-ffba-47b5-97b4-1519f32c674c" absoluteBounds="6.515, 1.885, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="973ef401-16bc-44c8-9683-b5d4e406d36e" absoluteBounds="6.515, 2.9135953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0bfec7af-dee2-4f14-a9dc-b45105b6e754" absoluteBounds="6.515, 3.1729850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6ea9874-e82d-46cf-a386-6e34e75ced00" absoluteBounds="6.5, 4, 1.5, 1.7627718098958329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogTagTB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="133a4ba3-35c5-472b-bf1f-b6063f11d00e" absoluteBounds="6.515, 4.51, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="490e4437-e032-4fc7-bf3f-b8c3935e4d86" absoluteBounds="6.515, 5.1539925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6c9f6321-6133-4cec-9447-8480d8ca9e1b" absoluteBounds="6.515, 5.4133821614583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77cacad4-c4af-47b4-a534-7df0dba69499" absoluteBounds="2.5, 8.125, 1.5, 4.6472932942708329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogCategoryVIEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7de0b167-5870-44fd-a446-4c9b4febeacb" absoluteBounds="2.515, 8.635, 1.4700000000000002, 3.518513997395833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b8773966-4b1b-43d2-95d0-954d4fefe835" absoluteBounds="2.515, 12.163513997395832, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f1efd6c4-a7e6-49c5-9eaa-29f6b976f803" absoluteBounds="2.515, 12.422903645833333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46853d2b-b9ee-498c-816a-bfb8baf6e69d" absoluteBounds="4.5, 11, 1.5, 2.3396761067708329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogTagVIEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63b51402-c570-4fc8-8860-5531df4b7ab8" absoluteBounds="4.515, 11.51, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="db23f56b-e6bd-4b33-838f-d44687b71c24" absoluteBounds="4.515, 12.730896809895834, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9392cf8e-dbc6-46bb-ab5f-abb9627429f2" absoluteBounds="4.515, 12.990286458333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69c3a4c8-8c41-42ac-8a77-c296d62bb2e1" absoluteBounds="0.5, 9, 1.5, 5.8011018880208329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogArticleVIEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="315690ef-ffc1-4391-9362-4fb18ca5ae8c" absoluteBounds="0.515, 9.51, 1.4700000000000002, 4.672322591145833" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d0c9ebf1-78ee-4347-ada6-a1045e860b94" absoluteBounds="0.515, 14.192322591145832, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6f7e8d98-13b9-4475-a901-a0e565bfab6a" absoluteBounds="0.515, 14.451712239583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0074ef78-2258-4cc7-b9ac-cf4eca1f43bf" absoluteBounds="8.625, 1.625, 1.5, 1.9550732421875003" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogArticleCategoryRL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0087cc8b-1a92-40fd-94ba-4b32ecb61edd" absoluteBounds="8.64, 2.135, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="50311b6f-ec18-4768-b527-59cc4ffe9596" absoluteBounds="8.64, 2.9712939453125, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1d2fbea9-e7b1-45c9-94ce-68752194611e" absoluteBounds="8.64, 3.2306835937500002, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73b83c95-267e-4299-bbd8-3a5157733210" absoluteBounds="2.5, 0.5, 1.5, 2.9165804036458329" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogArticleMediaTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bcf24f4-e240-4e04-934d-853985ce446d" absoluteBounds="2.515, 1.01, 1.4700000000000002, 1.7878011067708333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d96a4b90-4b4a-495a-ae61-b4c447f555df" absoluteBounds="2.515, 2.8078011067708331, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="897c9db4-d94b-4ab0-9b77-a7f22d6c4ff5" absoluteBounds="2.515, 3.0671907552083328, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3263d528-6f40-409e-9baf-f47308d914a7" absoluteBounds="10.5, 0.5, 1.5, 3.3011832682291664" fillColor="253, 184, 119" outlineColor="213, 71, 0">
+      <DomainClassMoniker name="/DCmodBlog/dbBlogZoneLN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d990db0-7fbb-4e58-b291-dedd28b7a987" absoluteBounds="10.515, 1.01, 1.4700000000000002, 2.172403971354167" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c0d4175b-4379-475e-8ac5-4003fa143148" absoluteBounds="10.515, 3.1924039713541665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4664906c-b0d7-4312-b3bc-0156733363e9" absoluteBounds="10.515, 3.4517936197916663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</entityDiagramsDiagram>

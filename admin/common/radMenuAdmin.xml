@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Group>
+    <Item Text="Home" Href="/admin" />
+    <Item Text="Contenuti" >
+      <Group>
+        <Item Text="Richieste"  Href="/admin/modContent/requestList.aspx"/>
+        <Item Text="Pagine Statiche"  Href="/admin/modContent/stpList.aspx"/>
+        <Item Text="Blocchi Statici"  Href="/admin/modContent/blockEdit.aspx"/>
+        <Item IsSeparator="True" />
+      </Group>
+    </Item>
+    <Item Text="Contabilità" >
+      <Group>
+        <Item Text="Fatture"  Href="/admin/modInvoice/invoiceList.aspx"/>
+        <Item Text="Prima Nota"  Href="/admin/modInvoice/invCashBook.aspx"/>
+        <Item Text="Documenti"  Href="/admin/modInvoice/invCashDocumentList.aspx"/>
+        <Item Text="Elenco Causale Pagamento"  Href="/admin/modInvoice/invCashDocCaseEdit.aspx"/>
+        <Item Text="Elenco Posti di Pagamento"  Href="/admin/modInvoice/invCashPlaceEdit.aspx"/>
+        <Item Text="Elenco Tipi di Pagamento"  Href="/admin/modInvoice/invCashTypeEdit.aspx"/>
+        <Item Text="Anagrafica Contabilità "  Href="/admin/modInvoice/ownerList.aspx"/>
+        <Item IsSeparator="True" Text="Documenti"  Href="/admin/modInvoice/invCashDocumentList.aspx"/>
+        <Item IsSeparator="True" />
+      </Group>
+    </Item>
+    <Item Text="Anagrafica" >
+      <Group>
+        <Item Text="Elenco Utenti"  Href="/admin/modAuth/userList.aspx"/>
+        <Item Text="Ruoli-Permessi"  Href="/admin/modAuth/roleList.aspx"/>
+        <Item IsSeparator="True" />
+        <Item Text="Tipologie documenti"  Href="/admin/modAuth/docTypeEdit.aspx"/>
+        <Item IsSeparator="True" />
+      </Group>
+    </Item>
+  </Group>
+</Menu>

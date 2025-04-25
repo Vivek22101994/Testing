@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Rental in Rome - xml api v2</title>
+    <meta name="description" content="SleepInItay - xml api v2" />
+    <style type="text/css">
+        @import url(/css/style.css);
+        @import url(/css/common.css);
+    </style>
+    <style type="text/css"> 
+		h1{
+			margin-top: 30px;
+			font-size: 26px;
+			line-height: 26px;
+			border-bottom: 1px dashed #B4BCBC;
+			clear: both;
+			display: block;
+			padding-bottom: 10px;
+			width: 100%;
+			text-align: center;
+		}
+		h1.tit{
+			font-family: 'AlegreyaBold',Georgia,serif;
+			font-size: 30px;
+			line-height: 30px;
+			color: #394548;
+			border-bottom: 1px solid #B4BCBC;
+			margin-top: 10px;
+		}
+		h2{
+			margin-top: 10px;
+		}
+		h3{
+			margin-left: 50px;
+			margin-top: 5px;
+		}
+        table.params {
+			clear: both;
+			width: 600px;
+			margin-left: 50px;
+			margin-top: 10px;
+		}
+        table.params th, table.params td {
+			padding: 5px 20px;
+			text-align: left;
+		}
+        table.params th {
+			background-color: #D5DDDF;
+		}
+        table.params th.params {
+			width: 40%;
+		}
+        table.params td {
+			font-style: italic;
+		}
+        table.params td.params {
+			font-style: normal;
+		}
+		textarea.code {
+			background: none repeat scroll 0 0 #FFFFFF;
+			color: #848C8C;
+			font-family: Verdana,Geneva,sans-serif;
+			font-style: italic;
+			font-size: 11px;
+			line-height: 13px;
+			border: 1px dotted #666666;
+			padding: 2px;
+			margin-left: 50px;
+			margin-top: 3px;
+			display: block;
+			width: 600px;
+			padding: 3px;
+			text-align: left;
+		}
+		input.url {
+			border: 1px dotted #666666;
+			padding: 2px;
+			margin-top: 3px;
+			display: inline-block;
+			font-style: normal;
+			margin-left: 5px;
+			font-weight: bold;
+			width: 600px;
+			color: #000000;
+		}
+		
+    </style>
+</head>
+<body style="background: none repeat scroll 0% 0% #FFF;">
+    <form id="form1" runat="server">
+	<div id="preContainer" style="background: none repeat scroll 0% 0% #FFF;"><div id="container" style="width: 800px;"><div id="" style="width: auto;"><div><div id="">
+<h1 class='tit'>Rental in Rome - xml api v2 - Agencies</h1>
+
+<h1>Overview</h1>
+<h2>HTTP Method</h2>
+All requests are done with HTTP <b>GET</b> or HTTP <b>POST</b> Method.
+
+<h2>Authentication</h2>
+The authentication parameter is <b>required</b> for any request made with the api.
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			auth
+		</td>
+		<td>
+			your xml api key (uniqueidentifier)
+		</td>
+	</tr>
+</table>
+
+<h2>Language</h2>
+Language is an <b>optional</b> parameter that should be passed to retrieve results or specify the langage of the client in case of a new reservation creation.
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			lang
+		</td>
+		<td>
+			Language ID (int)
+		</td>
+	</tr>
+</table>
+<h3>Active language IDs</h3>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Language ID
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			1
+		</td>
+		<td>
+			Italian
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			2
+		</td>
+		<td>
+			English (Default)
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			6
+		</td>
+		<td>
+			Russian
+		</td>
+	</tr>
+</table>
+
+<h2>Accepted <i>date</i> parameters format</h2>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Format
+		</th>
+		<th>
+			Example ( December 1, 2012 )
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			yyyymmdd
+		</td>
+		<td>
+			20121201
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			yyyy-mm-dd
+		</td>
+		<td>
+			2012-12-01
+		</td>
+	</tr>
+</table>
+<i>Note: there is no difference between two formats, you can use either of them.</i>
+
+<h2>Error messages</h2>
+For any type of request you can get custom error messages. <i>See the example below.</i><br/>
+<textarea class="code" readonly="readonly" style="height: 17px;">
+<root><check>fail</check><error>{custom errors here}</error></root></textarea>
+
+
+<h1>Method: <i>Search apartments</i></h1>
+Retrieve a list of apartments available in requested period.<br/>
+url: <input class="url" value="http://www.rentalinrome.com/xmlapi/v2/search" />
+
+<h3>Parameters</h3>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			start
+		</td>
+		<td>
+			check-in (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			end
+		</td>
+		<td>
+			check-out (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			pax
+		</td>
+		<td>
+			num. of guests (int) <b>required</b>
+		</td>
+	</tr>
+</table>
+<i>Note: the <b>last night</b> of stay is the night before <b>check-out date (end)</b></i>
+
+<h3>Sample response</h3>
+<textarea class="code" readonly="readonly" style="height: 340px;">
+<list prMin="1100" prMax="2130" totalCount="4">
+	<apt_item>
+		<apt_id>698</apt_id>
+		<apt_name>Valle Chic</apt_name>
+		<zone_name>Rome / Musei Vaticani-Prati</zone_name>
+		<pr_total>1629.00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>639</apt_id>
+		<apt_name>Bardi</apt_name>
+		<zone_name>Florence / Ponte Vecchio</zone_name>
+		<pr_total>1112</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>670</apt_id>
+		<apt_name>Savelli Petit</apt_name>
+		<zone_name>Rome / Campo dei Fiori</zone_name>
+		<pr_total>1100.00</pr_total>
+	</apt_item>
+	<apt_item>
+		<apt_id>634</apt_id>
+		<apt_name>BiaVerso</apt_name>
+		<zone_name>Venice / Rialto</zone_name>
+		<pr_total>2130.00</pr_total>
+	</apt_item>
+</list></textarea>
+
+
+<h1>Method: <i>Single apartment details</i></h1>
+Once you have the <b>ID</b> of the apartments, you can get more specific information for each of them.<br/>
+url: <input class="url" value="http://www.rentalinrome.com/xmlapi/v2/get" />
+
+<h3>Required parameters</h3>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			id
+		</td>
+		<td>
+			ID of the apartment (int) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			action
+		</td>
+		<td>
+			the action to perform (string) <b>required</b>
+		</td>
+	</tr>
+</table>
+<i>Note: see available <b>action</b> values below</i>
+
+<h3>Period parameters for actions: <i>rates</i> / <i>calendar</i> / <i>closed_dates</i></h3>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			start
+		</td>
+		<td>
+			first date of the period (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			end
+		</td>
+		<td>
+			last date of the period (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2" style="text-align: center;">
+			or
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			year
+		</td>
+		<td>
+			year of the period (int) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			month
+		</td>
+		<td>
+			month of the period (int) <b>optional</b>
+		</td>
+	</tr>
+</table>
+
+
+<h2>Action: <i>rates</i></h2>
+Retrieve rates/prices for the requested period
+<textarea class="code" readonly="readonly" style="height: 17px;">
+action=rates&{Period parameters as described above}</textarea>
+
+<h3>Sample response</h3>
+<textarea class="code" readonly="readonly" style="height: 365px;">
+<root>
+	<period>
+		<discount></discount>
+		<pax_price>
+			<pax>2</pax>
+			<price>170.00</price>
+		</pax_price>
+		<pax_price>
+			<pax>3</pax>
+			<price>180.00</price>
+		</pax_price>
+		<start>2013-01-01</start>
+		<end>2013-01-07</end>
+	</period>
+	<period>
+		<discount></discount>
+		<pax_price>
+			<pax>2</pax>
+			<price>144.00</price>
+		</pax_price>
+		<pax_price>
+			<pax>3</pax>
+			<price>153.00</price>
+		</pax_price>
+		<start>2013-01-08</start>
+		<end>2013-01-26</end>
+	</period>
+</root></textarea>
+
+
+<h2>Action: <i>calendar</i></h2>
+Retrieve available and not available date ranges for the requested period
+<textarea class="code" readonly="readonly" style="height: 17px;">
+action=calendar&{Period parameters as described above}</textarea>
+
+<h3>Sample response</h3>
+<textarea class="code" readonly="readonly" style="height: 353px;">
+<root>
+	<period>
+		<available>false</available>
+		<start>2012-11-03</start>
+		<end>2012-11-04</end>
+	</period>
+	<period>
+		<available>true</available>
+		<start>2012-11-05</start>
+		<end>2012-11-05</end>
+	</period>
+	<period>
+		<available>false</available>
+		<start>2012-11-06</start>
+		<end>2012-11-09</end>
+	</period>
+	<period>
+		<available>true</available>
+		<start>2012-11-10</start>
+		<end>2012-12-20</end>
+	</period>
+	<period>
+		<available>false</available>
+		<start>2012-12-21</start>
+		<end>2012-12-30</end>
+	</period>
+</root></textarea>
+
+
+<h2>Action: <i>closed_dates</i></h2>
+Retrieve only not available dates for the requested period
+<textarea class="code" readonly="readonly" style="height: 17px;">
+action=closed_dates&{Period parameters as described above}</textarea>
+
+<h3>Sample response</h3>
+<textarea class="code" readonly="readonly" style="height: 315px;">
+<root>
+	<date>2012-11-01</date>
+	<date>2012-11-02</date>
+	<date>2012-11-03</date>
+	<date>2012-11-04</date>
+	<date>2012-11-06</date>
+	<date>2012-11-07</date>
+	<date>2012-11-08</date>
+	<date>2012-11-09</date>
+	<date>2012-12-21</date>
+	<date>2012-12-22</date>
+	<date>2012-12-23</date>
+	<date>2012-12-24</date>
+	<date>2012-12-25</date>
+	<date>2012-12-26</date>
+	<date>2012-12-27</date>
+	<date>2012-12-28</date>
+	<date>2012-12-29</date>
+	<date>2012-12-30</date>
+	<date>2012-12-31</date>
+	<date>2013-01-01</date>
+	<date>2013-01-02</date>
+	<date>2013-01-03</date>
+</root></textarea>
+
+
+<h2>Action: <i>availability</i></h2>
+Check the availability of the aparment for the requested period
+<textarea class="code" readonly="readonly" style="height: 17px;">
+action=availability&{Se the parameters below}</textarea>
+
+<h3>Parameters</h3>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			start
+		</td>
+		<td>
+			check-in (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			end
+		</td>
+		<td>
+			check-out (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			pax
+		</td>
+		<td>
+			num. of guests (int) <b>required</b>
+		</td>
+	</tr>
+</table>
+<i>Note: the <b>last night</b> of stay is the night before <b>check-out date (end)</b></i><br/>
+<i>Note: the <b>pax</b> parameter is neaded to check the min/max num. of guests for the apartment</i>
+<h3>Sample response</h3>
+<textarea class="code" readonly="readonly" style="height: 55px;">
+<root>
+	<check>ok</check>
+	<availability>false</availability>
+</root></textarea>	
+<h3>or</h3>
+<textarea class="code" readonly="readonly" style="height: 55px;">
+<root>
+	<check>ok</check>
+	<availability>true</availability>
+</root></textarea>
+
+
+<h1>Method: <i>Book an apartment</i></h1>
+
+url: <input class="url" value="http://www.rentalinrome.com/xmlapi/v2/create" />
+
+<h3>Parameters</h3>
+<table class="params" border="1" cellspacing="0">
+	<tr>
+		<th class="params">
+			Parameter
+		</th>
+		<th>
+			Value
+		</th>
+	</tr>
+	<tr>
+		<td class="params">
+			id
+		</td>
+		<td>
+			ID of the apartment (int) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			start
+		</td>
+		<td>
+			check-in (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			end
+		</td>
+		<td>
+			check-out (date) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			pax
+		</td>
+		<td>
+			num. of guests (int) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			client_name_full
+		</td>
+		<td>
+			Name and surname of the guest (string) <b>required</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			client_contact_email
+		</td>
+		<td>
+			E-mail of the guest (string) <b>recommended</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			client_loc_country
+		</td>
+		<td>
+			Country of the guest (string) <b>recommended</b>
+		</td>
+	</tr>
+	<tr>
+		<td class="params">
+			client_contact_phone_mobile
+		</td>
+		<td>
+			Mobile phone of the guest (string) <b>recommended</b>
+		</td>
+	</tr>
+</table>
+<i>Note: the <b>last night</b> of stay is the night before <b>check-out date (end)</b></i>
+
+<h3>Sample response</h3>
+<textarea class="code" readonly="readonly" style="height: 80px;">
+<root>
+	<check>ok</check>
+	<availability>true</availability>
+	<total_price>724.25</total_price>
+	<reservation_code>0201099</reservation_code>
+</root></textarea>
+<i>Note: the <b>total_price</b> is the price after your discount is applied, including final cleaning if exists.</i>
+<h3>or <i>(if the apartment cannot be booked for the requested period)</i></h3>
+<textarea class="code" readonly="readonly" style="height: 55px;">
+<root>
+	<check>ok</check>
+	<availability>false</availability>
+</root></textarea>	
+
+
+
+	</div></div></div> </div></div>
+    </form>
+</body>
+</html>

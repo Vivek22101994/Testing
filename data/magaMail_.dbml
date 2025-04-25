@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaMail_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=C95\SQLEXPRESS2008;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MAIL_LN_TEMPLATE" Member="MAIL_LN_TEMPLATEs">
+    <Type Name="MAIL_LN_TEMPLATE">
+      <Column Name="pid_template" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="subject" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAIL_VIEW_TEMPLATE" Member="MAIL_VIEW_TEMPLATEs">
+    <Type Name="MAIL_VIEW_TEMPLATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inner_notes" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="replace_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="subject" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="body" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAIL_TB_TEMPLATE" Member="MAIL_TB_TEMPLATEs">
+    <Type Name="MAIL_TB_TEMPLATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="inner_notes" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="replace_notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAIL_TBL_MESSAGE" Member="MAIL_TBL_MESSAGE">
+    <Type Name="MAIL_TBL_MESSAGE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_request" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_request_state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UidOnServer" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MessageID" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="pid_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="from_email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="from_name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="to_email" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="to_name" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="body_html_text" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="body_plain_text" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date_sent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_received" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="date_imported" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="is_new" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsReply" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservationID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

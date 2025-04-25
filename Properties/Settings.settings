@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RentalInRome.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RentalInRome_WS_eco_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.ecopulizia.it/admin/webservice/WS.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WS_RiV_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:56374/webservice/WS.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WS_RiF_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:56373/webservice/WS.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WS_RiKenya_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://kenya.cloud.magadesign.net/webservice/WS.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WsBancaSellaS2S_WSs2s" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ecomms2s.sella.it/gestpay/gestpayws/wss2s.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome__WsChnlHoliday_adverts" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://agentapi.holidaylettings.co.uk/v0/secure/adverts.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WsChnlHoliday_ServiceRates_service_rates" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://agentapi.holidaylettings.co.uk/service_rates.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WsChnlHoliday_Photos_photos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://agentapi.holidaylettings.co.uk/v0/secure/photos.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WsChnlHoliday_Enquiries_enquiries" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://agentapi.holidaylettings.co.uk/v0/secure/enquiries.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WS_Srs_WS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://srs.cloud.magadesign.net/admin/webservice/WS.asmx</Value>
+    </Setting>
+    <Setting Name="RentalInRome_WsChnlMagaRentalWs_v01" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://vision.dev.magarental.com/agentapi/v01.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

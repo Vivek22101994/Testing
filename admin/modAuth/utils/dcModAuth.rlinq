@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DCmodAuth" namespace="ModAuth" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DCmodAuth" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="ModAuth" default="true">
+      <orm:class name="dbAuthRoleTBL" behavior="readwrite" uniqueId="09ffa79b-e097-4ae5-9d66-6292642df492">
+        <orm:table name="AuthRoleTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="0ca46227-50e0-4b32-91f1-2fb2ae721072" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="427c629b-a6ff-472d-95d0-73f4f317a046" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="notesInner1" property="notesInner" behavior="readwrite" uniqueId="ab88408f-ee2f-48f0-861e-5cfcd23989cf" type="System.String">
+          <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthRolePermissionTBL" behavior="readwrite" uniqueId="b19fe5d7-943c-40cb-8c37-1cd2d9e7f366">
+        <orm:table name="AuthRolePermissionTBL" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidRole1" />
+            <orm:single-field field-name="permission1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:field name="pidRole1" property="pidRole" behavior="readwrite" uniqueId="6ae65837-f5ff-4ba9-b118-a94128f2a6fc" type="System.Int32">
+          <orm:column name="pidRole" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="permission1" property="permission" behavior="readwrite" uniqueId="ca89012b-db5e-48e3-a7f0-174c04516d22" type="System.String">
+          <orm:column name="permission" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="canEdit1" property="canEdit" behavior="readwrite" uniqueId="e99deea1-c4fc-4f40-9d21-85b173fcce9d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="canEdit" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="canCreate1" property="canCreate" behavior="readwrite" uniqueId="62df4a3f-34f8-4352-bf03-1e0aa377b59a" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="canCreate" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="canDelete1" property="canDelete" behavior="readwrite" uniqueId="03965267-2f52-4c15-b2ce-80a9d080a95f" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="canDelete" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthPermissionLK" behavior="readwrite" uniqueId="defcdd33-d5cb-443d-a78a-ae8c082d344a">
+        <orm:table name="AuthPermissionLK" />
+        <orm:identity>
+          <orm:single-field field-name="code1" />
+        </orm:identity>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="738c0a34-8df4-448c-ab6c-e3288ce7280f" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="475cbf8d-e79f-40af-a8b2-ce9c4a2bb0e8" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="notesInner1" property="notesInner" behavior="readwrite" uniqueId="ba39810e-afda-4002-99ff-acb825c0527a" type="System.String">
+          <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthDocTypeLK" behavior="readwrite" uniqueId="a51f1698-68fa-4c98-a699-fa60acc27cfa">
+        <orm:table name="AuthDocTypeLK" />
+        <orm:identity>
+          <orm:single-field field-name="code1" />
+        </orm:identity>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="77304c07-3c27-47a7-98aa-7a9c5e34acb9" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="notesInner1" property="notesInner" behavior="readwrite" uniqueId="1cd84fb4-00ce-4d64-8315-79be46138a63" type="System.String">
+          <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="cbe00a4d-3e34-4cba-bd9b-b6026aa2f610" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthUserTBL" behavior="readwrite" uniqueId="988a4b3e-6324-491b-b9bb-559f1ca799b0">
+        <orm:table name="AuthUserTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="9a578a0d-d4eb-415b-ac8a-ad6a76972726" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="pidRole1" property="pidRole" behavior="readwrite" uniqueId="8e215315-28cc-4dec-87ea-8df52be6b48f" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidRole" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="phoneMobile1" property="phoneMobile" behavior="readwrite" uniqueId="fcc74f9d-3b23-47ec-ada2-12eb14fbe3b9" type="System.String">
+          <orm:column name="phoneMobile" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="phone1" property="phone" behavior="readwrite" uniqueId="2ef37911-cf79-4686-8a2a-796c223e17fe" type="System.String">
+          <orm:column name="phone" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="password1" property="password" behavior="readwrite" uniqueId="e520b864-6423-4390-9768-4f296b6f9b57" type="System.String">
+          <orm:column name="password" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="nameFull1" property="nameFull" behavior="readwrite" uniqueId="57a41a2d-69f0-4b03-ad23-390133129089" type="System.String">
+          <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="login1" property="login" behavior="readwrite" uniqueId="e005ac3a-8682-4700-a2f5-c9516e1f0da6" type="System.String">
+          <orm:column name="login" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="6c4c0a24-db17-41e0-a8cf-a18c4afe560f" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="5c6e0000-b76e-469d-9cf9-577a05891bd6" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="email1" property="email" behavior="readwrite" uniqueId="18c60b51-ed59-4b78-95e2-4104275c7e55" type="System.String">
+          <orm:column name="email" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthCountryLK" behavior="readwrite" uniqueId="c8169c00-0970-4896-b782-0b37557ae723">
+        <orm:table name="AuthCountryLK" />
+        <orm:identity>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="2354d873-cd13-429d-b6a3-f3f099cb6b1d" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="39d55804-fc42-4527-93ff-5a4e610996b9" type="System.Int32">
+          <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="4db0e8ca-4518-4fe9-99bb-857f3182be64" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthUserReportTBL" behavior="readwrite" uniqueId="645b8245-25e3-44c2-b5ce-df4f61e4caf7">
+        <orm:table name="AuthUserReportTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="aa9597cb-7c2c-48f4-9c69-9028175c6372" type="System.Nullable`1[[System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="repType1" property="repType" behavior="readwrite" uniqueId="5f7b24b4-fd03-4900-8142-d405dcdfeba7" type="System.String">
+          <orm:column name="repType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="repTitle1" property="repTitle" behavior="readwrite" uniqueId="08530194-b5f1-45f7-9ded-1e8ef5f3ba9a" type="System.String">
+          <orm:column name="repTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="repDesc1" property="repDesc" behavior="readwrite" uniqueId="7c02046a-b6ed-412e-a965-fa7e2d4446fd" type="System.String">
+          <orm:column name="repDesc" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="repDateTime1" property="repDateTime" behavior="readwrite" uniqueId="6ae81f17-f4d2-41f0-89f5-2aaf53ad068e" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="repDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="pidUser1" property="pidUser" behavior="readwrite" uniqueId="62c554c7-8e33-4373-b053-0c88b0129f9e" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidUser" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="c4f2e8c7-f382-4684-862a-844bdc3d473c" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="9da80ae8-04a5-444a-ba52-dc018e073d5b" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="057c32c4-693b-42d7-a060-c9d8dcdcf80c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="470a197f-9a11-4fdf-84d2-8d81973dc663" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="5eaf24a5-b56c-4366-adb2-af0b8f12dfda" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthClientTypeLK" behavior="readwrite" uniqueId="040537bb-e240-412d-8b10-178d997ee2e6">
+        <orm:table name="AuthClientTypeLK" />
+        <orm:identity>
+          <orm:single-field field-name="code1" />
+        </orm:identity>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="04a2910c-2219-48a1-aaab-2f5ff8832f60" type="System.String">
+          <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="87b5d8e8-743d-49b2-a8f2-f744327a4943" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="99e9a25d-3122-43e6-bce9-387d5108b696" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthErrorLOG" behavior="readwrite" uniqueId="84a7ebf1-ce39-4f00-9451-65abe149b283">
+        <orm:table name="AuthErrorLOG" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="720063e7-83da-406c-a382-8c103946e039" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="logUrl1" property="logUrl" behavior="readwrite" uniqueId="003d50b8-6313-4fe1-9498-d22f4c659548" type="System.String">
+          <orm:column name="logUrl" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="logIp1" property="logIp" behavior="readwrite" uniqueId="76ef23e3-d07a-433c-babc-4a04a4bb5789" type="System.String">
+          <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="logDateTime1" property="logDateTime" behavior="readwrite" uniqueId="ff8025d1-5df3-4a27-8b29-e6f4b0b06126" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="errorType1" property="errorType" behavior="readwrite" uniqueId="1505d831-fbf8-4f2d-805c-b892f850c0ee" type="System.String">
+          <orm:column name="errorType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="errorContent1" property="errorContent" behavior="readwrite" uniqueId="3b1a5cdd-4e23-44c7-8e06-01b3dfe0d803" type="System.String">
+          <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthMailErrorLOG" behavior="readwrite" uniqueId="c2100d6e-f14d-4bb2-9846-e2037c58eefe">
+        <orm:table name="AuthMailErrorLOG" />
+        <orm:identity>
+          <orm:key-generator name="guid" />
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="4d022974-e60a-43ff-9666-3fea02516552" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="mailTOs1" property="mailTOs" behavior="readwrite" uniqueId="88c3f405-6aba-4e22-80e7-314d974a0e25" type="System.String">
+          <orm:column name="mailTOs" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="mailSubject1" property="mailSubject" behavior="readwrite" uniqueId="dcd70ccc-5316-4796-ba3e-4199b8d34c7d" type="System.String">
+          <orm:column name="mailSubject" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="mailIsResent1" property="mailIsResent" behavior="readwrite" uniqueId="35a68715-1a5e-419a-9fee-3a0f6f049e49" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="mailIsResent" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="mailDetails1" property="mailDetails" behavior="readwrite" uniqueId="1dabcb53-2bec-44a7-881d-28cf3f68ad3f" type="System.String">
+          <orm:column name="mailDetails" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="mailDescrtiption1" property="mailDescrtiption" behavior="readwrite" uniqueId="0e8bd609-11f9-4b15-940b-b3391288ba8b" type="System.String">
+          <orm:column name="mailDescrtiption" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="mailCCs1" property="mailCCs" behavior="readwrite" uniqueId="784b0cf6-c5a1-4f39-a639-785501fee894" type="System.String">
+          <orm:column name="mailCCs" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="mailBody1" property="mailBody" behavior="readwrite" uniqueId="51786c66-6370-400f-9c8d-faaa818b99f7" type="System.String">
+          <orm:column name="mailBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="mailBcc1" property="mailBcc" behavior="readwrite" uniqueId="c2b810ac-ea54-45b2-918e-d7a7f7a4d1f8" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="mailBcc" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="mailAttachments1" property="mailAttachments" behavior="readwrite" uniqueId="48dfe7b0-afbd-43be-aaa6-f1d639367a37" type="System.String">
+          <orm:column name="mailAttachments" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="logIp1" property="logIp" behavior="readwrite" uniqueId="c9b55bff-7936-4124-a5c1-53d6b41f751e" type="System.String">
+          <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="logDateTime1" property="logDateTime" behavior="readwrite" uniqueId="9e9199ba-1d4f-4474-8007-928ab39dbc9c" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="errorContent1" property="errorContent" behavior="readwrite" uniqueId="4c10aab6-a757-4ef3-aac5-6b123775392d" type="System.String">
+          <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        </orm:field>
+        <orm:field name="mailFromName1" property="mailFromName" behavior="readwrite" uniqueId="1a451877-94fd-47bd-910a-3a3528819699" type="System.String">
+          <orm:column name="mailFromName" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+        <orm:field name="mailFromEmail1" property="mailFromEmail" behavior="readwrite" uniqueId="05a04590-00e8-40ec-b617-7c73d078c79d" type="System.String">
+          <orm:column name="mailFromEmail" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthErrorSrsLOG" uniqueId="669ec84f-47a1-48c4-833c-818fa92f8b5e">
+        <orm:table name="AuthErrorSrsLOG" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="uid" />
+          </orm:key-generator>
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="ccd84399-91a1-4899-8464-7370f0c95fdc" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="logDateTime1" property="logDateTime" behavior="readwrite" uniqueId="a5c36730-39d2-4318-ac70-73759f8344bc" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="logIp1" property="logIp" behavior="readwrite" uniqueId="44fb3417-4187-4897-a481-133e04f38773" type="System.String">
+          <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="logUrl1" property="logUrl" behavior="readwrite" uniqueId="f0047e49-0a1a-4cc6-aab9-571925ae486c" type="System.String">
+          <orm:column name="logUrl" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="errorType1" property="errorType" behavior="readwrite" uniqueId="c142a09f-4bba-4f2e-a450-23689ba581eb" type="System.String">
+          <orm:column name="errorType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="errorContent1" property="errorContent" behavior="readwrite" uniqueId="86515b34-4a4e-4733-9442-2f812b3dc9dc" type="System.String">
+          <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthErrorEcoLOG" uniqueId="18b1822e-32f8-4d00-97a1-b3af0248aae5">
+        <orm:table name="AuthErrorEcoLOG" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="uid" />
+          </orm:key-generator>
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="2cfe39c2-d166-47f5-9b7e-04c55e98d541" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="logDateTime1" property="logDateTime" behavior="readwrite" uniqueId="f04a3a55-21cc-4712-8b05-0ad36a15418f" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="logIp1" property="logIp" behavior="readwrite" uniqueId="a57c71c0-f0f9-4904-a3e4-4652fefcb8bd" type="System.String">
+          <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="logUrl1" property="logUrl" behavior="readwrite" uniqueId="846b8e81-653a-4f1e-a5eb-679d1e7ccc52" type="System.String">
+          <orm:column name="logUrl" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="errorType1" property="errorType" behavior="readwrite" uniqueId="48ee8e95-7b60-43ce-a02c-3b1d30f9dd76" type="System.String">
+          <orm:column name="errorType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="errorContent1" property="errorContent" behavior="readwrite" uniqueId="2ce3dbe7-b41c-4014-b6c5-ba3496d670f1" type="System.String">
+          <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbAuthClientTBL" uniqueId="c2628529-5bdc-4624-b8ae-faf243cd62c8">
+        <orm:table name="AuthClientTBL" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="id" />
+          </orm:key-generator>
+          <orm:single-field field-name="id1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="id1" property="id" behavior="readwrite" uniqueId="bd78fec0-9f55-465e-aab0-ac3811b8aa0a" type="System.Int64">
+          <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="d2297492-9737-42ff-b910-adbcf4afa7a2" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="code1" property="code" behavior="readwrite" uniqueId="157ebd86-7385-4ac8-aa75-fdaf7eb38639" type="System.String">
+          <orm:column name="code" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="typeCode1" property="typeCode" behavior="readwrite" uniqueId="97ebb802-eae7-42c6-9020-f8176c405592" type="System.String">
+          <orm:column name="typeCode" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="47281c7d-a158-40c3-b421-ed68e663b536" type="System.String">
+          <orm:column name="pidLang" sql-type="varchar" nullable="true" length="2" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="authUsr1" property="authUsr" behavior="readwrite" uniqueId="71348dad-b020-4cdc-8e69-2ec4e63baf8a" type="System.String">
+          <orm:column name="authUsr" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="authPwd1" property="authPwd" behavior="readwrite" uniqueId="26ae7ca4-9bf8-49c2-8dc9-13f9b5c0a09b" type="System.String">
+          <orm:column name="authPwd" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="nameHonorific1" property="nameHonorific" behavior="readwrite" uniqueId="b84e830c-7d10-44d4-a7fa-9eb58aaf4f1d" type="System.String">
+          <orm:column name="nameHonorific" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="nameFull1" property="nameFull" behavior="readwrite" uniqueId="738349cc-8923-4373-aaad-6744654a2014" type="System.String">
+          <orm:column name="nameFull" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="nameFirst1" property="nameFirst" behavior="readwrite" uniqueId="1c70027a-d0f2-446c-b6f9-15c7819237cb" type="System.String">
+          <orm:column name="nameFirst" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="nameMiddle1" property="nameMiddle" behavior="readwrite" uniqueId="5307f8ad-8592-4a90-a337-9aa88667d048" type="System.String">
+          <orm:column name="nameMiddle" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="nameLast1" property="nameLast" behavior="readwrite" uniqueId="33aa422c-2d7f-46ed-b3a9-e450355c7e8e" type="System.String">
+          <orm:column name="nameLast" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactEmail1" property="contactEmail" behavior="readwrite" uniqueId="636a97e2-6e54-4035-804e-46db058ea6e8" type="System.String">
+          <orm:column name="contactEmail" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactPhone1" property="contactPhone" behavior="readwrite" uniqueId="2ce729f5-f529-4a76-beb2-baae2f8be2d2" type="System.String">
+          <orm:column name="contactPhone" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactPhoneTrip1" property="contactPhoneTrip" behavior="readwrite" uniqueId="c0abb831-5b51-4310-99fe-cdc328a2679c" type="System.String">
+          <orm:column name="contactPhoneTrip" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactPhoneMobile1" property="contactPhoneMobile" behavior="readwrite" uniqueId="5cc78f4f-6939-424d-b683-bc46fc4f5c63" type="System.String">
+          <orm:column name="contactPhoneMobile" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactPhoneOffice1" property="contactPhoneOffice" behavior="readwrite" uniqueId="68782fbf-f977-4c29-91e9-ae43b0c2ebe9" type="System.String">
+          <orm:column name="contactPhoneOffice" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactFax1" property="contactFax" behavior="readwrite" uniqueId="cf9a7481-bd07-4c67-a0ff-279f908d2220" type="System.String">
+          <orm:column name="contactFax" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="docType1" property="docType" behavior="readwrite" uniqueId="4591fecf-7a08-4b40-89cd-d9ee72d01d20" type="System.String">
+          <orm:column name="docType" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="docNum1" property="docNum" behavior="readwrite" uniqueId="9d8f1f57-5668-4df0-90b9-3ae9ddfbc688" type="System.String">
+          <orm:column name="docNum" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="docIssuePlace1" property="docIssuePlace" behavior="readwrite" uniqueId="3a39159d-1c1f-453f-b72b-44f03ac86883" type="System.String">
+          <orm:column name="docIssuePlace" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="docIssueDate1" property="docIssueDate" behavior="readwrite" uniqueId="c244894b-f8c6-4404-9d53-85d4ee2aec3a" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docExpiryDate1" property="docExpiryDate" behavior="readwrite" uniqueId="b7463e75-f97c-43d0-a7d2-bb13cae36350" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="docVat1" property="docVat" behavior="readwrite" uniqueId="437c4d81-d40e-4264-9147-887f45a467c4" type="System.String">
+          <orm:column name="docVat" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="docCf1" property="docCf" behavior="readwrite" uniqueId="4a5ea29d-490a-4491-99bf-c921d13b5bd5" type="System.String">
+          <orm:column name="docCf" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="birthDate1" property="birthDate" behavior="readwrite" uniqueId="d7dde705-d904-4a18-9e5f-dafc59200736" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="birthDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="birthPlace1" property="birthPlace" behavior="readwrite" uniqueId="0b92de5b-47e6-4686-bc2a-4b750ce5a246" type="System.String">
+          <orm:column name="birthPlace" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="birthCountry1" property="birthCountry" behavior="readwrite" uniqueId="f07fbdc0-819e-4f58-9b92-5357266c80f6" type="System.String">
+          <orm:column name="birthCountry" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="birthState1" property="birthState" behavior="readwrite" uniqueId="cff33d50-351d-4d5f-8c62-55e9175d3b95" type="System.String">
+          <orm:column name="birthState" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="locCountry1" property="locCountry" behavior="readwrite" uniqueId="ec73ae53-9f9e-4c29-8f16-8bdd209a5408" type="System.String">
+          <orm:column name="locCountry" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="locState1" property="locState" behavior="readwrite" uniqueId="e6d6cfaf-7801-44c6-80d1-51f03a25cb7c" type="System.String">
+          <orm:column name="locState" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="locCity1" property="locCity" behavior="readwrite" uniqueId="18b24475-8e8b-4f79-bbb4-b8ee777c74cb" type="System.String">
+          <orm:column name="locCity" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="locAddress1" property="locAddress" behavior="readwrite" uniqueId="9372d045-d3f0-4955-85ed-e252924ea784" type="System.String">
+          <orm:column name="locAddress" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="locZipCode1" property="locZipCode" behavior="readwrite" uniqueId="d302494e-554c-4437-987c-01562418a679" type="System.String">
+          <orm:column name="locZipCode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="isActive1" property="isActive" behavior="readwrite" uniqueId="c5a0af56-ba55-4cfc-81f8-e88880913b2c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdDate1" property="createdDate" behavior="readwrite" uniqueId="bf857690-3e86-4dcb-bc4f-1ca3e2bb3bc8" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="createdUserID1" property="createdUserID" behavior="readwrite" uniqueId="62044539-99d9-43da-9965-e8e34dc69d55" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="createdUserNameFull1" property="createdUserNameFull" behavior="readwrite" uniqueId="043244b8-b028-49c0-9520-d42d6e517aea" type="System.String">
+          <orm:column name="createdUserNameFull" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="notesInner1" property="notesInner" behavior="readwrite" uniqueId="ff27b74d-fc59-44d6-9bbb-22be9aaa2bcd" type="System.String">
+          <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="notesInvoice1" property="notesInvoice" behavior="readwrite" uniqueId="1a8c35cd-69f8-443a-9e81-c082ed9cac68" type="System.String">
+          <orm:column name="notesInvoice" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="pidAgent1" property="pidAgent" behavior="readwrite" uniqueId="5bef11fe-8cbf-4407-8bf8-9f0313e3e096" type="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="pidAgent" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        </orm:field>
+        <orm:field name="locProvince1" property="locProvince" behavior="readwrite" uniqueId="0fe97ad1-d11c-4ac7-bd56-c36897dbc8a0" type="System.String">
+          <orm:column name="locProvince" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="idCodice1" property="idCodice" behavior="readwrite" uniqueId="2a0de16c-9bca-4074-8c0b-5e58f1fb409f" type="System.String">
+          <orm:column name="idCodice" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="AuthRoleTBL">
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+      </orm:table>
+      <orm:table name="AuthRolePermissionTBL">
+        <orm:column name="pidRole" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="permission" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+        <orm:column name="canEdit" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="canCreate" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="canDelete" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+      </orm:table>
+      <orm:table name="AuthPermissionLK">
+        <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+      </orm:table>
+      <orm:table name="AuthDocTypeLK">
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="AuthUserTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="pidRole" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="phoneMobile" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="phone" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="password" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="nameFull" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="login" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="email" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="AuthCountryLK">
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="AuthUserReportTBL">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="true" length="0" scale="0" ado-type="Guid" />
+        <orm:column name="repType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="repTitle" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="repDesc" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="repDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="pidUser" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar" nullable="true" length="200" scale="0" ado-type="Varchar" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="AuthClientTypeLK">
+        <orm:column name="title" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="Varchar" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="code" sql-type="varchar" nullable="false" length="50" scale="0" primary-key="true" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="AuthErrorLOG">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="logUrl" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="errorType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+      </orm:table>
+      <orm:table name="AuthMailErrorLOG">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" ado-type="Guid" />
+        <orm:column name="mailTOs" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="mailSubject" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="mailIsResent" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="mailDetails" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="mailDescrtiption" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="mailCCs" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="mailBody" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="mailBcc" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="mailAttachments" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="Varchar" />
+        <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="Clob" />
+        <orm:column name="mailFromName" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+        <orm:column name="mailFromEmail" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="Varchar" />
+      </orm:table>
+      <orm:table name="AuthErrorSrsLOG">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="logUrl" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="errorType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="AuthErrorEcoLOG">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="logIp" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="logUrl" sql-type="nvarchar" nullable="true" length="500" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="errorType" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="errorContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="AuthClientTBL">
+        <orm:column name="id" sql-type="bigint" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int64" />
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Guid" />
+        <orm:column name="code" sql-type="varchar" nullable="true" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="typeCode" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="pidLang" sql-type="varchar" nullable="true" length="2" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="authUsr" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="authPwd" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="nameHonorific" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="nameFull" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="nameFirst" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="nameMiddle" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="nameLast" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="contactEmail" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="contactPhone" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="contactPhoneTrip" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="contactPhoneMobile" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="contactPhoneOffice" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="contactFax" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="docType" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="docNum" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="docIssuePlace" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="docIssueDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docExpiryDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="docVat" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="docCf" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="birthDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="birthPlace" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="birthCountry" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="birthState" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="locCountry" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="locState" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="locCity" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="locAddress" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="locZipCode" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="isActive" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdDate" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="createdUserID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="createdUserNameFull" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="notesInner" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="notesInvoice" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="pidAgent" sql-type="bigint" nullable="true" length="0" scale="0" ado-type="Int64" />
+        <orm:column name="locProvince" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="idCodice" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+    </orm:schema>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ModAuthDBConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=149.202.168.255,1435\EXPRESS01;initial catalog=rental_in_romeDB;persist security info=True;user id=mssql_2017DEVS;password=Pippone@#@#202122#@</AppConfigConnectionString>
+    <InitialCatalog>eco_pulizieDB</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <AddPrefix>db</AddPrefix>
+      </ClassRules>
+      <FieldRules />
+      <PropertyRules />
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Attributes</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>mssql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="09ffa79b-e097-4ae5-9d66-6292642df492" name="dbAuthRoleTBL" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="0ca46227-50e0-4b32-91f1-2fb2ae721072" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="ab88408f-ee2f-48f0-861e-5cfcd23989cf" name="notesInner" label="notesInner : String" kind="Persistent" fieldName="notesInner1" />
+      <Property Id="427c629b-a6ff-472d-95d0-73f4f317a046" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="b19fe5d7-943c-40cb-8c37-1cd2d9e7f366" name="dbAuthRolePermissionTBL" namespace="ModAuth" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="ca89012b-db5e-48e3-a7f0-174c04516d22" name="permission" label="permission : String" kind="Persistent" identity="true" fieldName="permission1" />
+      <Property Id="6ae65837-f5ff-4ba9-b118-a94128f2a6fc" name="pidRole" type="Int32" label="pidRole : Int32" kind="Persistent" identity="true" fieldName="pidRole1" />
+      <Property Id="62df4a3f-34f8-4352-bf03-1e0aa377b59a" name="canCreate" type="Int32" label="canCreate : Int32" nullable="true" kind="Persistent" fieldName="canCreate1" />
+      <Property Id="03965267-2f52-4c15-b2ce-80a9d080a95f" name="canDelete" type="Int32" label="canDelete : Int32" nullable="true" kind="Persistent" fieldName="canDelete1" />
+      <Property Id="e99deea1-c4fc-4f40-9d21-85b173fcce9d" name="canEdit" type="Int32" label="canEdit : Int32" nullable="true" kind="Persistent" fieldName="canEdit1" />
+    </DomainClass>
+    <DomainClass Id="defcdd33-d5cb-443d-a78a-ae8c082d344a" name="dbAuthPermissionLK" namespace="ModAuth" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="738c0a34-8df4-448c-ab6c-e3288ce7280f" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+      <Property Id="ba39810e-afda-4002-99ff-acb825c0527a" name="notesInner" label="notesInner : String" kind="Persistent" fieldName="notesInner1" />
+      <Property Id="475cbf8d-e79f-40af-a8b2-ce9c4a2bb0e8" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="a51f1698-68fa-4c98-a699-fa60acc27cfa" name="dbAuthDocTypeLK" namespace="ModAuth" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="cbe00a4d-3e34-4cba-bd9b-b6026aa2f610" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+      <Property Id="1cd84fb4-00ce-4d64-8315-79be46138a63" name="notesInner" label="notesInner : String" kind="Persistent" fieldName="notesInner1" />
+      <Property Id="77304c07-3c27-47a7-98aa-7a9c5e34acb9" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="988a4b3e-6324-491b-b9bb-559f1ca799b0" name="dbAuthUserTBL" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="5c6e0000-b76e-469d-9cf9-577a05891bd6" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="18c60b51-ed59-4b78-95e2-4104275c7e55" name="email" label="email : String" kind="Persistent" fieldName="email1" />
+      <Property Id="6c4c0a24-db17-41e0-a8cf-a18c4afe560f" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="e005ac3a-8682-4700-a2f5-c9516e1f0da6" name="login" label="login : String" kind="Persistent" fieldName="login1" />
+      <Property Id="57a41a2d-69f0-4b03-ad23-390133129089" name="nameFull" label="nameFull : String" kind="Persistent" fieldName="nameFull1" />
+      <Property Id="e520b864-6423-4390-9768-4f296b6f9b57" name="password" label="password : String" kind="Persistent" fieldName="password1" />
+      <Property Id="2ef37911-cf79-4686-8a2a-796c223e17fe" name="phone" label="phone : String" kind="Persistent" fieldName="phone1" />
+      <Property Id="fcc74f9d-3b23-47ec-ada2-12eb14fbe3b9" name="phoneMobile" label="phoneMobile : String" kind="Persistent" fieldName="phoneMobile1" />
+      <Property Id="8e215315-28cc-4dec-87ea-8df52be6b48f" name="pidRole" type="Int32" label="pidRole : Int32" nullable="true" kind="Persistent" fieldName="pidRole1" />
+      <Property Id="9a578a0d-d4eb-415b-ac8a-ad6a76972726" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+    <DomainClass Id="c8169c00-0970-4896-b782-0b37557ae723" name="dbAuthCountryLK" namespace="ModAuth" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="39d55804-fc42-4527-93ff-5a4e610996b9" name="id" type="Int32" label="id : Int32" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="4db0e8ca-4518-4fe9-99bb-857f3182be64" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="2354d873-cd13-429d-b6a3-f3f099cb6b1d" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="645b8245-25e3-44c2-b5ce-df4f61e4caf7" name="dbAuthUserReportTBL" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="c4f2e8c7-f382-4684-862a-844bdc3d473c" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="5eaf24a5-b56c-4366-adb2-af0b8f12dfda" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="470a197f-9a11-4fdf-84d2-8d81973dc663" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="057c32c4-693b-42d7-a060-c9d8dcdcf80c" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="9da80ae8-04a5-444a-ba52-dc018e073d5b" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="62c554c7-8e33-4373-b053-0c88b0129f9e" name="pidUser" type="Int32" label="pidUser : Int32" nullable="true" kind="Persistent" fieldName="pidUser1" />
+      <Property Id="6ae81f17-f4d2-41f0-89f5-2aaf53ad068e" name="repDateTime" type="DateTime" label="repDateTime : DateTime" nullable="true" kind="Persistent" fieldName="repDateTime1" />
+      <Property Id="7c02046a-b6ed-412e-a965-fa7e2d4446fd" name="repDesc" label="repDesc : String" kind="Persistent" fieldName="repDesc1" />
+      <Property Id="08530194-b5f1-45f7-9ded-1e8ef5f3ba9a" name="repTitle" label="repTitle : String" kind="Persistent" fieldName="repTitle1" />
+      <Property Id="5f7b24b4-fd03-4900-8142-d405dcdfeba7" name="repType" label="repType : String" kind="Persistent" fieldName="repType1" />
+      <Property Id="aa9597cb-7c2c-48f4-9c69-9028175c6372" name="uid" type="Guid" label="uid : Guid" nullable="true" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+    <DomainClass Id="040537bb-e240-412d-8b10-178d997ee2e6" name="dbAuthClientTypeLK" namespace="ModAuth" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="99e9a25d-3122-43e6-bce9-387d5108b696" name="code" label="code : String" kind="Persistent" identity="true" fieldName="code1" />
+      <Property Id="87b5d8e8-743d-49b2-a8f2-f744327a4943" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="04a2910c-2219-48a1-aaab-2f5ff8832f60" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+    <DomainClass Id="84a7ebf1-ce39-4f00-9451-65abe149b283" name="dbAuthErrorLOG" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="720063e7-83da-406c-a382-8c103946e039" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="3b1a5cdd-4e23-44c7-8e06-01b3dfe0d803" name="errorContent" label="errorContent : String" kind="Persistent" fieldName="errorContent1" />
+      <Property Id="1505d831-fbf8-4f2d-805c-b892f850c0ee" name="errorType" label="errorType : String" kind="Persistent" fieldName="errorType1" />
+      <Property Id="ff8025d1-5df3-4a27-8b29-e6f4b0b06126" name="logDateTime" type="DateTime" label="logDateTime : DateTime" nullable="true" kind="Persistent" fieldName="logDateTime1" />
+      <Property Id="76ef23e3-d07a-433c-babc-4a04a4bb5789" name="logIp" label="logIp : String" kind="Persistent" fieldName="logIp1" />
+      <Property Id="003d50b8-6313-4fe1-9498-d22f4c659548" name="logUrl" label="logUrl : String" kind="Persistent" fieldName="logUrl1" />
+    </DomainClass>
+    <DomainClass Id="c2100d6e-f14d-4bb2-9846-e2037c58eefe" name="dbAuthMailErrorLOG" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="Guid" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="4d022974-e60a-43ff-9666-3fea02516552" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="4c10aab6-a757-4ef3-aac5-6b123775392d" name="errorContent" label="errorContent : String" kind="Persistent" fieldName="errorContent1" />
+      <Property Id="9e9199ba-1d4f-4474-8007-928ab39dbc9c" name="logDateTime" type="DateTime" label="logDateTime : DateTime" nullable="true" kind="Persistent" fieldName="logDateTime1" />
+      <Property Id="c9b55bff-7936-4124-a5c1-53d6b41f751e" name="logIp" label="logIp : String" kind="Persistent" fieldName="logIp1" />
+      <Property Id="48dfe7b0-afbd-43be-aaa6-f1d639367a37" name="mailAttachments" label="mailAttachments : String" kind="Persistent" fieldName="mailAttachments1" />
+      <Property Id="c2b810ac-ea54-45b2-918e-d7a7f7a4d1f8" name="mailBcc" type="Boolean" label="mailBcc : Boolean" nullable="true" kind="Persistent" fieldName="mailBcc1" />
+      <Property Id="51786c66-6370-400f-9c8d-faaa818b99f7" name="mailBody" label="mailBody : String" kind="Persistent" fieldName="mailBody1" />
+      <Property Id="784b0cf6-c5a1-4f39-a639-785501fee894" name="mailCCs" label="mailCCs : String" kind="Persistent" fieldName="mailCCs1" />
+      <Property Id="0e8bd609-11f9-4b15-940b-b3391288ba8b" name="mailDescrtiption" label="mailDescrtiption : String" kind="Persistent" fieldName="mailDescrtiption1" />
+      <Property Id="1dabcb53-2bec-44a7-881d-28cf3f68ad3f" name="mailDetails" label="mailDetails : String" kind="Persistent" fieldName="mailDetails1" />
+      <Property Id="35a68715-1a5e-419a-9fee-3a0f6f049e49" name="mailIsResent" type="Int32" label="mailIsResent : Int32" nullable="true" kind="Persistent" fieldName="mailIsResent1" />
+      <Property Id="dcd70ccc-5316-4796-ba3e-4199b8d34c7d" name="mailSubject" label="mailSubject : String" kind="Persistent" fieldName="mailSubject1" />
+      <Property Id="88c3f405-6aba-4e22-80e7-314d974a0e25" name="mailTOs" label="mailTOs : String" kind="Persistent" fieldName="mailTOs1" />
+      <Property Id="1a451877-94fd-47bd-910a-3a3528819699" name="mailFromName" label="mailFromName : String" kind="Persistent" fieldName="mailFromName1" />
+      <Property Id="05a04590-00e8-40ec-b617-7c73d078c79d" name="mailFromEmail" label="mailFromEmail : String" kind="Persistent" fieldName="mailFromEmail1" />
+    </DomainClass>
+    <DomainClass Id="669ec84f-47a1-48c4-833c-818fa92f8b5e" name="dbAuthErrorSrsLOG" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="uid">
+      <Property Id="ccd84399-91a1-4899-8464-7370f0c95fdc" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="86515b34-4a4e-4733-9442-2f812b3dc9dc" name="errorContent" label="errorContent : String" kind="Persistent" fieldName="errorContent1" />
+      <Property Id="c142a09f-4bba-4f2e-a450-23689ba581eb" name="errorType" label="errorType : String" kind="Persistent" fieldName="errorType1" />
+      <Property Id="a5c36730-39d2-4318-ac70-73759f8344bc" name="logDateTime" type="DateTime" label="logDateTime : DateTime" nullable="true" kind="Persistent" fieldName="logDateTime1" />
+      <Property Id="44fb3417-4187-4897-a481-133e04f38773" name="logIp" label="logIp : String" kind="Persistent" fieldName="logIp1" />
+      <Property Id="f0047e49-0a1a-4cc6-aab9-571925ae486c" name="logUrl" label="logUrl : String" kind="Persistent" fieldName="logUrl1" />
+    </DomainClass>
+    <DomainClass Id="18b1822e-32f8-4d00-97a1-b3af0248aae5" name="dbAuthErrorEcoLOG" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="uid">
+      <Property Id="2cfe39c2-d166-47f5-9b7e-04c55e98d541" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="2ce3dbe7-b41c-4014-b6c5-ba3496d670f1" name="errorContent" label="errorContent : String" kind="Persistent" fieldName="errorContent1" />
+      <Property Id="48ee8e95-7b60-43ce-a02c-3b1d30f9dd76" name="errorType" label="errorType : String" kind="Persistent" fieldName="errorType1" />
+      <Property Id="f04a3a55-21cc-4712-8b05-0ad36a15418f" name="logDateTime" type="DateTime" label="logDateTime : DateTime" nullable="true" kind="Persistent" fieldName="logDateTime1" />
+      <Property Id="a57c71c0-f0f9-4904-a3e4-4652fefcb8bd" name="logIp" label="logIp : String" kind="Persistent" fieldName="logIp1" />
+      <Property Id="846b8e81-653a-4f1e-a5eb-679d1e7ccc52" name="logUrl" label="logUrl : String" kind="Persistent" fieldName="logUrl1" />
+    </DomainClass>
+    <DomainClass Id="c2628529-5bdc-4624-b8ae-faf243cd62c8" name="dbAuthClientTBL" namespace="ModAuth" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="id">
+      <Property Id="bd78fec0-9f55-465e-aab0-ac3811b8aa0a" name="id" type="Int64" label="id : Int64" kind="Persistent" identity="true" fieldName="id1" />
+      <Property Id="26ae7ca4-9bf8-49c2-8dc9-13f9b5c0a09b" name="authPwd" label="authPwd : String" kind="Persistent" fieldName="authPwd1" />
+      <Property Id="71348dad-b020-4cdc-8e69-2ec4e63baf8a" name="authUsr" label="authUsr : String" kind="Persistent" fieldName="authUsr1" />
+      <Property Id="f07fbdc0-819e-4f58-9b92-5357266c80f6" name="birthCountry" label="birthCountry : String" kind="Persistent" fieldName="birthCountry1" />
+      <Property Id="d7dde705-d904-4a18-9e5f-dafc59200736" name="birthDate" type="DateTime" label="birthDate : DateTime" nullable="true" kind="Persistent" fieldName="birthDate1" />
+      <Property Id="0b92de5b-47e6-4686-bc2a-4b750ce5a246" name="birthPlace" label="birthPlace : String" kind="Persistent" fieldName="birthPlace1" />
+      <Property Id="cff33d50-351d-4d5f-8c62-55e9175d3b95" name="birthState" label="birthState : String" kind="Persistent" fieldName="birthState1" />
+      <Property Id="157ebd86-7385-4ac8-aa75-fdaf7eb38639" name="code" label="code : String" kind="Persistent" fieldName="code1" />
+      <Property Id="636a97e2-6e54-4035-804e-46db058ea6e8" name="contactEmail" label="contactEmail : String" kind="Persistent" fieldName="contactEmail1" />
+      <Property Id="cf9a7481-bd07-4c67-a0ff-279f908d2220" name="contactFax" label="contactFax : String" kind="Persistent" fieldName="contactFax1" />
+      <Property Id="2ce729f5-f529-4a76-beb2-baae2f8be2d2" name="contactPhone" label="contactPhone : String" kind="Persistent" fieldName="contactPhone1" />
+      <Property Id="5cc78f4f-6939-424d-b683-bc46fc4f5c63" name="contactPhoneMobile" label="contactPhoneMobile : String" kind="Persistent" fieldName="contactPhoneMobile1" />
+      <Property Id="68782fbf-f977-4c29-91e9-ae43b0c2ebe9" name="contactPhoneOffice" label="contactPhoneOffice : String" kind="Persistent" fieldName="contactPhoneOffice1" />
+      <Property Id="c0abb831-5b51-4310-99fe-cdc328a2679c" name="contactPhoneTrip" label="contactPhoneTrip : String" kind="Persistent" fieldName="contactPhoneTrip1" />
+      <Property Id="bf857690-3e86-4dcb-bc4f-1ca3e2bb3bc8" name="createdDate" type="DateTime" label="createdDate : DateTime" nullable="true" kind="Persistent" fieldName="createdDate1" />
+      <Property Id="62044539-99d9-43da-9965-e8e34dc69d55" name="createdUserID" type="Int32" label="createdUserID : Int32" nullable="true" kind="Persistent" fieldName="createdUserID1" />
+      <Property Id="043244b8-b028-49c0-9520-d42d6e517aea" name="createdUserNameFull" label="createdUserNameFull : String" kind="Persistent" fieldName="createdUserNameFull1" />
+      <Property Id="4a5ea29d-490a-4491-99bf-c921d13b5bd5" name="docCf" label="docCf : String" kind="Persistent" fieldName="docCf1" />
+      <Property Id="b7463e75-f97c-43d0-a7d2-bb13cae36350" name="docExpiryDate" type="DateTime" label="docExpiryDate : DateTime" nullable="true" kind="Persistent" fieldName="docExpiryDate1" />
+      <Property Id="c244894b-f8c6-4404-9d53-85d4ee2aec3a" name="docIssueDate" type="DateTime" label="docIssueDate : DateTime" nullable="true" kind="Persistent" fieldName="docIssueDate1" />
+      <Property Id="3a39159d-1c1f-453f-b72b-44f03ac86883" name="docIssuePlace" label="docIssuePlace : String" kind="Persistent" fieldName="docIssuePlace1" />
+      <Property Id="9d8f1f57-5668-4df0-90b9-3ae9ddfbc688" name="docNum" label="docNum : String" kind="Persistent" fieldName="docNum1" />
+      <Property Id="4591fecf-7a08-4b40-89cd-d9ee72d01d20" name="docType" label="docType : String" kind="Persistent" fieldName="docType1" />
+      <Property Id="437c4d81-d40e-4264-9147-887f45a467c4" name="docVat" label="docVat : String" kind="Persistent" fieldName="docVat1" />
+      <Property Id="2a0de16c-9bca-4074-8c0b-5e58f1fb409f" name="idCodice" label="idCodice : String" kind="Persistent" fieldName="idCodice1" />
+      <Property Id="c5a0af56-ba55-4cfc-81f8-e88880913b2c" name="isActive" type="Int32" label="isActive : Int32" nullable="true" kind="Persistent" fieldName="isActive1" />
+      <Property Id="9372d045-d3f0-4955-85ed-e252924ea784" name="locAddress" label="locAddress : String" kind="Persistent" fieldName="locAddress1" />
+      <Property Id="18b24475-8e8b-4f79-bbb4-b8ee777c74cb" name="locCity" label="locCity : String" kind="Persistent" fieldName="locCity1" />
+      <Property Id="ec73ae53-9f9e-4c29-8f16-8bdd209a5408" name="locCountry" label="locCountry : String" kind="Persistent" fieldName="locCountry1" />
+      <Property Id="0fe97ad1-d11c-4ac7-bd56-c36897dbc8a0" name="locProvince" label="locProvince : String" kind="Persistent" fieldName="locProvince1" />
+      <Property Id="e6d6cfaf-7801-44c6-80d1-51f03a25cb7c" name="locState" label="locState : String" kind="Persistent" fieldName="locState1" />
+      <Property Id="d302494e-554c-4437-987c-01562418a679" name="locZipCode" label="locZipCode : String" kind="Persistent" fieldName="locZipCode1" />
+      <Property Id="1c70027a-d0f2-446c-b6f9-15c7819237cb" name="nameFirst" label="nameFirst : String" kind="Persistent" fieldName="nameFirst1" />
+      <Property Id="738349cc-8923-4373-aaad-6744654a2014" name="nameFull" label="nameFull : String" kind="Persistent" fieldName="nameFull1" />
+      <Property Id="b84e830c-7d10-44d4-a7fa-9eb58aaf4f1d" name="nameHonorific" label="nameHonorific : String" kind="Persistent" fieldName="nameHonorific1" />
+      <Property Id="33aa422c-2d7f-46ed-b3a9-e450355c7e8e" name="nameLast" label="nameLast : String" kind="Persistent" fieldName="nameLast1" />
+      <Property Id="5307f8ad-8592-4a90-a337-9aa88667d048" name="nameMiddle" label="nameMiddle : String" kind="Persistent" fieldName="nameMiddle1" />
+      <Property Id="ff27b74d-fc59-44d6-9bbb-22be9aaa2bcd" name="notesInner" label="notesInner : String" kind="Persistent" fieldName="notesInner1" />
+      <Property Id="1a8c35cd-69f8-443a-9e81-c082ed9cac68" name="notesInvoice" label="notesInvoice : String" kind="Persistent" fieldName="notesInvoice1" />
+      <Property Id="5bef11fe-8cbf-4407-8bf8-9f0313e3e096" name="pidAgent" type="Int64" label="pidAgent : Int64" nullable="true" kind="Persistent" fieldName="pidAgent1" />
+      <Property Id="47281c7d-a158-40c3-b421-ed68e663b536" name="pidLang" label="pidLang : String" kind="Persistent" fieldName="pidLang1" />
+      <Property Id="97ebb802-eae7-42c6-9020-f8176c405592" name="typeCode" label="typeCode : String" kind="Persistent" fieldName="typeCode1" />
+      <Property Id="d2297492-9737-42ff-b910-adbcf4afa7a2" name="uid" type="Guid" label="uid : Guid" kind="Persistent" fieldName="uid1" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="2bc5d1c4-4ca0-4d00-b71c-1241bab6b41e">
+      <domainContainer name="DCmodAuth" namespace="ModAuth" showPropertiesCompartment="true">
+        <entitySetProperty name="dbAuthRoleTBLs" namespace="ModAuth" type="dbAuthRoleTBL" label="dbAuthRoleTBLs : IQueryable&lt;ModAuth.dbAuthRoleTBL&gt;" />
+        <entitySetProperty name="dbAuthRolePermissionTBLs" namespace="ModAuth" type="dbAuthRolePermissionTBL" label="dbAuthRolePermissionTBLs : IQueryable&lt;ModAuth.dbAuthRolePermissionTBL&gt;" />
+        <entitySetProperty name="dbAuthPermissionLKs" namespace="ModAuth" type="dbAuthPermissionLK" label="dbAuthPermissionLKs : IQueryable&lt;ModAuth.dbAuthPermissionLK&gt;" />
+        <entitySetProperty name="dbAuthDocTypeLKs" namespace="ModAuth" type="dbAuthDocTypeLK" label="dbAuthDocTypeLKs : IQueryable&lt;ModAuth.dbAuthDocTypeLK&gt;" />
+        <entitySetProperty name="dbAuthUserTBLs" namespace="ModAuth" type="dbAuthUserTBL" label="dbAuthUserTBLs : IQueryable&lt;ModAuth.dbAuthUserTBL&gt;" />
+        <entitySetProperty name="dbAuthCountryLKs" namespace="ModAuth" type="dbAuthCountryLK" label="dbAuthCountryLKs : IQueryable&lt;ModAuth.dbAuthCountryLK&gt;" />
+        <entitySetProperty name="dbAuthUserReportTBLs" namespace="ModAuth" type="dbAuthUserReportTBL" label="dbAuthUserReportTBLs : IQueryable&lt;ModAuth.dbAuthUserReportTBL&gt;" />
+        <entitySetProperty name="dbAuthClientTypeLKs" namespace="ModAuth" type="dbAuthClientTypeLK" label="dbAuthClientTypeLKs : IQueryable&lt;ModAuth.dbAuthClientTypeLK&gt;" />
+        <entitySetProperty name="dbAuthErrorLOGs" namespace="ModAuth" type="dbAuthErrorLOG" label="dbAuthErrorLOGs : IQueryable&lt;ModAuth.dbAuthErrorLOG&gt;" />
+        <entitySetProperty name="dbAuthMailErrorLOGs" namespace="ModAuth" type="dbAuthMailErrorLOG" label="dbAuthMailErrorLOGs : IQueryable&lt;ModAuth.dbAuthMailErrorLOG&gt;" />
+        <entitySetProperty name="dbAuthErrorSrsLOGs" namespace="ModAuth" type="dbAuthErrorSrsLOG" label="dbAuthErrorSrsLOGs : IQueryable&lt;ModAuth.dbAuthErrorSrsLOG&gt;" />
+        <entitySetProperty name="dbAuthErrorEcoLOGs" namespace="ModAuth" type="dbAuthErrorEcoLOG" label="dbAuthErrorEcoLOGs : IQueryable&lt;ModAuth.dbAuthErrorEcoLOG&gt;" />
+        <entitySetProperty name="dbAuthClientTBLs" namespace="ModAuth" type="dbAuthClientTBL" label="dbAuthClientTBLs : IQueryable&lt;ModAuth.dbAuthClientTBL&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

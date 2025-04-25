@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rental_in_romeDB" Class="magaContent_DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=149.202.168.255,1433\SQLEXPRESS2014;Initial Catalog=rental_in_romeDB;Persist Security Info=True;User ID=mssql_remoteaccess" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rental_in_romeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CONT_RL_BLOCK_LANG" Member="CONT_RL_BLOCK_LANGs">
+    <Type Name="CONT_RL_BLOCK_LANG">
+      <Column Name="pid_block" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="CONT_TBL_BLOCK_CONT_RL_BLOCK_LANG" Member="CONT_TBL_BLOCK" ThisKey="pid_block" OtherKey="id" Type="CONT_TBL_BLOCK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_RL_COLLECTION_BLOCK" Member="CONT_RL_COLLECTION_BLOCKs">
+    <Type Name="CONT_RL_COLLECTION_BLOCK">
+      <Column Name="pid_collection" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_block" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CONT_TBL_BLOCK_CONT_RL_COLLECTION_BLOCK" Member="CONT_TBL_BLOCK" ThisKey="pid_block" OtherKey="id" Type="CONT_TBL_BLOCK" IsForeignKey="true" />
+      <Association Name="CONT_TBL_COLLECTION_CONT_RL_COLLECTION_BLOCK" Member="CONT_TBL_COLLECTION" ThisKey="pid_collection" OtherKey="id" Type="CONT_TBL_COLLECTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_RL_PAGE_LANG" Member="CONT_RL_PAGE_LANGs">
+    <Type Name="CONT_RL_PAGE_LANG">
+      <Column Name="pid_page" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="CONT_TBL_PAGE_CONT_RL_PAGE_LANG" Member="CONT_TBL_PAGE" ThisKey="pid_page" OtherKey="id" Type="CONT_TBL_PAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TBL_PAGE" Member="CONT_TBL_PAGEs">
+    <Type Name="CONT_TBL_PAGE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_collection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="page_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="css_file" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="page_rewrite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="holder_site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CONT_TBL_PAGE_CONT_RL_PAGE_LANG" Member="CONT_RL_PAGE_LANGs" ThisKey="id" OtherKey="pid_page" Type="CONT_RL_PAGE_LANG" />
+      <Association Name="CONT_TBL_PAGE_CONT_RL_PAGE_BLOCK" Member="CONT_RL_PAGE_BLOCKs" ThisKey="id" OtherKey="pid_page" Type="CONT_RL_PAGE_BLOCK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_TBL_PAGE" Member="CONT_VIEW_TBL_PAGEs">
+    <Type Name="CONT_VIEW_TBL_PAGE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_collection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="page_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="page_rewrite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="holder_site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="css_file" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TBL_BLOCK" Member="CONT_TBL_BLOCKs">
+    <Type Name="CONT_TBL_BLOCK">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="block_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="show_delay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CONT_TBL_BLOCK_CONT_RL_BLOCK_LANG" Member="CONT_RL_BLOCK_LANGs" ThisKey="id" OtherKey="pid_block" Type="CONT_RL_BLOCK_LANG" />
+      <Association Name="CONT_TBL_BLOCK_CONT_RL_COLLECTION_BLOCK" Member="CONT_RL_COLLECTION_BLOCKs" ThisKey="id" OtherKey="pid_block" Type="CONT_RL_COLLECTION_BLOCK" />
+      <Association Name="CONT_TBL_BLOCK_CONT_RL_PAGE_BLOCK" Member="CONT_RL_PAGE_BLOCKs" ThisKey="id" OtherKey="pid_block" Type="CONT_RL_PAGE_BLOCK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_TBL_BLOCK" Member="CONT_VIEW_TBL_BLOCKs">
+    <Type Name="CONT_VIEW_TBL_BLOCK">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="block_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="show_delay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_RL_COLLECTION_BLOCK" Member="CONT_VIEW_RL_COLLECTION_BLOCKs">
+    <Type Name="CONT_VIEW_RL_COLLECTION_BLOCK">
+      <Column Name="pid_collection" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_block" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="block_name" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="show_delay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TBL_IMAGE_POINTER" Member="CONT_TBL_IMAGE_POINTERs">
+    <Type Name="CONT_TBL_IMAGE_POINTER">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_image_holder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="coords" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_pointer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_RL_LANG_IMAGE_POINTER" Member="CONT_RL_LANG_IMAGE_POINTERs">
+    <Type Name="CONT_RL_LANG_IMAGE_POINTER">
+      <Column Name="pid_image_pointer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_TBL_IMAGE_POINTER" Member="CONT_VIEW_TBL_IMAGE_POINTERs">
+    <Type Name="CONT_VIEW_TBL_IMAGE_POINTER">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_image_holder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="coords" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_pointer" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_RL_PAGE_MULTIMEDIA" Member="CONT_RL_PAGE_MULTIMEDIAs">
+    <Type Name="CONT_RL_PAGE_MULTIMEDIA">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_page" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_RL_PAGE_BLOCK" Member="CONT_RL_PAGE_BLOCKs">
+    <Type Name="CONT_RL_PAGE_BLOCK">
+      <Column Name="pid_page" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_block" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CONT_TBL_BLOCK_CONT_RL_PAGE_BLOCK" Member="CONT_TBL_BLOCK" ThisKey="pid_block" OtherKey="id" Type="CONT_TBL_BLOCK" IsForeignKey="true" />
+      <Association Name="CONT_TBL_PAGE_CONT_RL_PAGE_BLOCK" Member="CONT_TBL_PAGE" ThisKey="pid_page" OtherKey="id" Type="CONT_TBL_PAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TBL_COLLECTION" Member="CONT_TBL_COLLECTIONs">
+    <Type Name="CONT_TBL_COLLECTION">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="CONT_TBL_COLLECTION_CONT_RL_COLLECTION_BLOCK" Member="CONT_RL_COLLECTION_BLOCKs" ThisKey="id" OtherKey="pid_collection" Type="CONT_RL_COLLECTION_BLOCK" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LK_REQUEST_STATE" Member="LK_REQUEST_STATEs">
+    <Type Name="LK_REQUEST_STATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_REQUEST_FLIGHT_DATE" Member="TBL_REQUEST_FLIGHT_DATEs">
+    <Type Name="TBL_REQUEST_FLIGHT_DATE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(320)" CanBeNull="true" />
+      <Column Name="name_first" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="name_last" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="in_airport_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="in_other_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="in_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="out_airport_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="out_other_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="out_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aa_CONT_LANG_TEMP" Member="aa_CONT_LANG_TEMPs">
+    <Type Name="aa_CONT_LANG_TEMP">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="var_name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_LN_STP" Member="CONT_LN_STPs">
+    <Type Name="CONT_LN_STP">
+      <Column Name="pid_page" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="CONT_TB_STP_CONT_LN_STP" Member="CONT_TB_STP" ThisKey="pid_page" OtherKey="id" Type="CONT_TB_STP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_STP" Member="CONT_VIEW_STPs">
+    <Type Name="CONT_VIEW_STP">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_collection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="page_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="page_rewrite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="holder_site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="css_file" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TB_TOUR" Member="CONT_TB_TOURs">
+    <Type Name="CONT_TB_TOUR">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TB_TOUR_ITEM" Member="CONT_TB_TOUR_ITEMs">
+    <Type Name="CONT_TB_TOUR_ITEM">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_tour" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_LN_TOUR" Member="CONT_LN_TOURs">
+    <Type Name="CONT_LN_TOUR">
+      <Column Name="pid_tour" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_LN_TOUR_ITEM" Member="CONT_LN_TOUR_ITEMs">
+    <Type Name="CONT_LN_TOUR_ITEM">
+      <Column Name="pid_tour_item" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_TOUR" Member="CONT_VIEW_TOURs">
+    <Type Name="CONT_VIEW_TOUR">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_VIEW_TOUR_ITEM" Member="CONT_VIEW_TOUR_ITEMs">
+    <Type Name="CONT_VIEW_TOUR_ITEM">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid_tour" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="is_acitve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid_lang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sub_title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price_description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TB_STP" Member="CONT_TB_STP">
+    <Type Name="CONT_TB_STP">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pid_collection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="page_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="img_banner" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="css_file" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="page_rewrite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="holder_site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pid_city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CONT_TB_STP_CONT_LN_STP" Member="CONT_LN_STP" ThisKey="id" OtherKey="pid_page" Type="CONT_LN_STP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONT_TBL_LANG" Member="CONT_TBL_LANGs">
+    <Type Name="CONT_TBL_LANG">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lang_title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="common_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="img_thumb" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="js_cal_file" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_public" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="abbr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="img_preview" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="template_city_page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="template_area_page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="template_zone_page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="template_apartment_page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="template_estate_page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="template_related_link_page_path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="pid_country" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HACode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

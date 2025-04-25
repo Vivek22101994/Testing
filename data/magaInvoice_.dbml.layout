@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.875, 17.125" name="magaInvoice_">
+  <DataContextMoniker Name="/magaInvoice_DataContext" />
+  <nestedChildShapes>
+    <classShape Id="d3be3ab4-f27c-41dc-a65e-277f7c567e83" absoluteBounds="0.5, 2, 2, 1.3862939453125">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_LK_PAYMENT_CAUSE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1747b34-dab5-430b-a137-678f70643ba9" absoluteBounds="0.515, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fcf782de-dd82-461c-bcdc-32141b52fa7b" absoluteBounds="7.875, 0.625, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_TBL_INVOICE_ITEM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f9c0427-1ab1-4039-bf54-55ecfca68e48" absoluteBounds="7.8900000000000006, 1.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1839bc91-514c-4059-948f-5a10732799f1" absoluteBounds="3.875, 0.5, 2, 8.1168440755208326">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_TBL_PAYMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9c98149-435f-45d7-af69-8d15cd4426c5" absoluteBounds="3.8899999999999997, 0.96, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79c67d7b-1a0f-436e-827c-3ac7e7aee37b" absoluteBounds="1.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_TBL_DIGITAL_INVOICE_ERROR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3e3b9d9-1a9a-4740-9660-1eb7d8be87ab" absoluteBounds="1.5149999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acfe2c88-212f-408a-9ace-4ec153e3aa2f" absoluteBounds="9.625, 5.625, 2, 11.193666992187502">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_TBL_INVOICE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4475b675-7f23-4b2e-af0a-115bcd41817c" absoluteBounds="9.64, 6.085, 1.9700000000000002, 10.6336669921875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92fffad8-c312-4b29-8d2d-4f17993958f1" absoluteBounds="1.375, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_TBL_DIGITAL_CREDITNOTE_ERROR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7070bdf3-a44f-4ab4-a837-9aa1573359a4" absoluteBounds="1.3900000000000001, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4aea7f89-fd3d-4db7-bddd-5059f92a912d" absoluteBounds="6.25, 5.25, 2.25, 2.1554996744791666">
+      <DataClassMoniker Name="/magaInvoice_DataContext/INV_TBL_INVOICE_NOTIFICATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fc9dd78-669d-4cbd-b68d-f2c636bec694" absoluteBounds="6.265, 5.71, 2.2199999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0fa9c08-a615-4226-862e-a1dc69697f45" absoluteBounds="0.5, 3.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/magaInvoice_DataContext/InvPayBancaSellaVerifiedByVisaTXN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f4cb537-a87a-4f51-9d9d-bc34c5e23f28" absoluteBounds="0.51500000000000012, 3.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9487d1d-1cc0-4804-8078-a07142bac0b7" absoluteBounds="0.5, 1.125, 2, 8.5014469401041666">
+      <DataClassMoniker Name="/magaInvoice_DataContext/InvInvoiceTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61510dd7-05c7-4f51-a162-641066fcc0d5" absoluteBounds="0.515, 1.585, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4db838b7-3085-4520-b356-af2dc14caf78" absoluteBounds="0.5, 1.5, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/magaInvoice_DataContext/InvInvoiceItemTBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6f8ad02-9c60-4f1a-ae8c-347cf4c32bd0" absoluteBounds="0.515, 1.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

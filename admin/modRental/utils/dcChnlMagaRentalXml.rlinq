@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="DCchnlMagaRentalXml" namespace="ModRental" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="DCchnlMagaRentalXml" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="ModRental" default="true">
+      <orm:class name="dbRntChnlMagaRentalXmlRequestLOG" uniqueId="07614bf7-2555-4e6c-a469-fda1fa86f4de">
+        <orm:table name="RntChnlMagaRentalXmlRequestLOG" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="uid" />
+          </orm:key-generator>
+          <orm:single-field field-name="uid1" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="uid1" property="uid" behavior="readwrite" uniqueId="c9a166dc-db92-467a-9caf-92956d3e5eb2" type="System.Guid">
+          <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        </orm:field>
+        <orm:field name="logDateTime1" property="logDateTime" behavior="readwrite" uniqueId="4fcbbbcc-17e6-4949-9629-73814c313762" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="requesUrl1" property="requesUrl" behavior="readwrite" uniqueId="d746e24d-149d-42f8-825d-ca164e966ad5" type="System.String">
+          <orm:column name="requesUrl" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="requestType1" property="requestType" behavior="readwrite" uniqueId="0fc60f11-39a1-4e08-b42d-e74d772cb6ad" type="System.String">
+          <orm:column name="requestType" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="requestContent1" property="requestContent" behavior="readwrite" uniqueId="a7217922-7504-40ee-9269-21474bb486b6" type="System.String">
+          <orm:column name="requestContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="responseContent1" property="responseContent" behavior="readwrite" uniqueId="e1f2b549-30f5-4a42-807d-150410014571" type="System.String">
+          <orm:column name="responseContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="requestComments1" property="requestComments" behavior="readwrite" uniqueId="01ec2d3c-817b-456c-906c-3873c95a361c" type="System.String">
+          <orm:column name="requestComments" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="dbRntChnlMagaRentalXmlEstateLN" uniqueId="d858ebdc-a1be-449a-a283-fd417abedff4">
+        <orm:table name="RntChnlMagaRentalXmlEstateLN" />
+        <orm:identity>
+          <orm:multiple-field>
+            <orm:single-field field-name="pidEstate1" />
+            <orm:single-field field-name="pidLang1" />
+          </orm:multiple-field>
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="pidEstate1" property="pidEstate" behavior="readwrite" uniqueId="b91b462f-7f65-4c60-9fe5-cd3bfe887050" type="System.Int32">
+          <orm:column name="pidEstate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="pidLang1" property="pidLang" behavior="readwrite" uniqueId="bcc5c6f1-1737-4670-8eb3-a0c2bad11be0" type="System.Int32">
+          <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="title1" property="title" behavior="readwrite" uniqueId="914f92a2-65e0-4b2b-8092-eb28aff447fb" type="System.String">
+          <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="summary1" property="summary" behavior="readwrite" uniqueId="34b3098c-0ee1-4dea-a346-f4d484c1c6bf" type="System.String">
+          <orm:column name="summary" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="description1" property="description" behavior="readwrite" uniqueId="4f4c6132-2ab0-413a-a3e2-44328197f419" type="System.String">
+          <orm:column name="description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="RntChnlMagaRentalXmlRequestLOG">
+        <orm:column name="uid" sql-type="uniqueidentifier" nullable="false" length="0" scale="0" primary-key="true" has-default-value="true" backend-calculated="true" ado-type="Guid" />
+        <orm:column name="logDateTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="requesUrl" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="requestType" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="requestContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="responseContent" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="requestComments" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+      <orm:table name="RntChnlMagaRentalXmlEstateLN">
+        <orm:column name="pidEstate" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="pidLang" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="title" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="summary" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="description" sql-type="nvarchar(max)" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>ModRentalDBConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=149.202.168.255,1433\SQLEXPRESS;initial catalog=rental_in_romeDB;persist security info=True;user id=mssql_remoteaccess;password=G5di8Pr9</AppConfigConnectionString>
+    <InitialCatalog>Maga_Rental_2</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <AddPrefix>db</AddPrefix>
+      </ClassRules>
+      <FieldRules />
+      <PropertyRules />
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+      <GenerateMultipleFiles>false</GenerateMultipleFiles>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="07614bf7-2555-4e6c-a469-fda1fa86f4de" name="dbRntChnlMagaRentalXmlRequestLOG" namespace="ModRental" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="uid">
+      <Property Id="c9a166dc-db92-467a-9caf-92956d3e5eb2" name="uid" type="Guid" label="uid : Guid" kind="Persistent" identity="true" fieldName="uid1" />
+      <Property Id="4fcbbbcc-17e6-4949-9629-73814c313762" name="logDateTime" type="DateTime" label="logDateTime : DateTime" nullable="true" kind="Persistent" fieldName="logDateTime1" />
+      <Property Id="01ec2d3c-817b-456c-906c-3873c95a361c" name="requestComments" label="requestComments : String" kind="Persistent" fieldName="requestComments1" />
+      <Property Id="a7217922-7504-40ee-9269-21474bb486b6" name="requestContent" label="requestContent : String" kind="Persistent" fieldName="requestContent1" />
+      <Property Id="0fc60f11-39a1-4e08-b42d-e74d772cb6ad" name="requestType" label="requestType : String" kind="Persistent" fieldName="requestType1" />
+      <Property Id="d746e24d-149d-42f8-825d-ca164e966ad5" name="requesUrl" label="requesUrl : String" kind="Persistent" fieldName="requesUrl1" />
+      <Property Id="e1f2b549-30f5-4a42-807d-150410014571" name="responseContent" label="responseContent : String" kind="Persistent" fieldName="responseContent1" />
+    </DomainClass>
+    <DomainClass Id="d858ebdc-a1be-449a-a283-fd417abedff4" name="dbRntChnlMagaRentalXmlEstateLN" namespace="ModRental" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="b91b462f-7f65-4c60-9fe5-cd3bfe887050" name="pidEstate" type="Int32" label="pidEstate : Int32" kind="Persistent" identity="true" fieldName="pidEstate1" />
+      <Property Id="bcc5c6f1-1737-4670-8eb3-a0c2bad11be0" name="pidLang" type="Int32" label="pidLang : Int32" kind="Persistent" identity="true" fieldName="pidLang1" />
+      <Property Id="4f4c6132-2ab0-413a-a3e2-44328197f419" name="description" label="description : String" kind="Persistent" fieldName="description1" />
+      <Property Id="34b3098c-0ee1-4dea-a346-f4d484c1c6bf" name="summary" label="summary : String" kind="Persistent" fieldName="summary1" />
+      <Property Id="914f92a2-65e0-4b2b-8092-eb28aff447fb" name="title" label="title : String" kind="Persistent" fieldName="title1" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="4e03a2ed-677b-4395-a82f-edbf5561ef7a">
+      <domainContainer name="DCchnlMagaRentalXml" namespace="ModRental" showPropertiesCompartment="true">
+        <entitySetProperty name="dbRntChnlMagaRentalXmlRequestLOGs" namespace="ModRental" type="dbRntChnlMagaRentalXmlRequestLOG" label="dbRntChnlMagaRentalXmlRequestLOGs : IQueryable&lt;ModRental.dbRntChnlMagaRentalXmlRequestLOG&gt;" />
+        <entitySetProperty name="dbRntChnlMagaRentalXmlEstateLNs" namespace="ModRental" type="dbRntChnlMagaRentalXmlEstateLN" label="dbRntChnlMagaRentalXmlEstateLNs : IQueryable&lt;ModRental.dbRntChnlMagaRentalXmlEstateLN&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
